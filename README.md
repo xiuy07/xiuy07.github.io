@@ -2,11 +2,13 @@
 
 公开的 GitHub Pages 讲义网站。
 
-- 主页：https://finn-307.github.io/
+- 讲义入口：https://finn-307.github.io/handbooks/
 - 计算机组成原理：https://finn-307.github.io/coa/
 - 人工智能导论（IAI）：https://finn-307.github.io/iai/
 
 `coa/` 与 `iai/` 是相互独立的静态讲义，图片、公式、代码和图解直接在正文中阅读。修改并推送 `main` 分支后，GitHub Pages 自动发布。
+
+根网址预留作其他用途；讲义入口位于 `handbooks/`，不在仓库根目录放置讲义首页。
 
 计组包含28章、38份课件共1608页及233页作业、答案和试卷原页，配七项互动演示。IAI为13讲教材正文版，含53组算法、28组公式推导或算例、182幅内嵌课件图例、26幅重绘图和五项互动演示。
 
