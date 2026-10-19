@@ -2,9 +2,9 @@
 
 公开的 GitHub Pages 讲义网站。
 
-- 讲义入口：https://finn-307.github.io/handbooks/
-- 计算机组成原理：https://finn-307.github.io/coa/
-- 人工智能导论（IAI）：https://finn-307.github.io/iai/
+- 讲义入口：https://xiuy07.github.io/handbooks/
+- 计算机组成原理：https://xiuy07.github.io/coa/
+- 人工智能导论（IAI）：https://xiuy07.github.io/iai/
 
 `coa/` 与 `iai/` 是相互独立的静态讲义，图片、公式、代码和图解直接在正文中阅读。修改并推送 `main` 分支后，GitHub Pages 自动发布。
 
