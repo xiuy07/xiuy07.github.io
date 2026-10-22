@@ -1,7 +1,7 @@
 /* Site-level adaptations for the unmodified official Butterfly theme. */
-@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=1e5c7ad13eed') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=1e5c7ad13eed') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=1e5c7ad13eed') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=9cb613174ef2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=9cb613174ef2') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=9cb613174ef2') format('woff2');font-weight:400;font-display:swap}
 :root{--card-bg:rgba(255,255,255,.94);--card-meta:#657984;--font-color:#2b414d;--text-highlight-color:#1b3748;--card-box-shadow:0 8px 32px rgba(29,64,83,.06);--card-hover-box-shadow:0 12px 36px rgba(29,64,83,.1);--preloader-bg:#edf3f6;--preloader-color:#28637b;--xiu-glass:rgba(245,251,255,.78)}
 [data-theme='dark']{--card-bg:rgba(28,45,57,.96);--card-meta:#b0c2cd;--font-color:#d8e5ed;--text-highlight-color:#edf5fa;--card-box-shadow:0 8px 32px rgba(0,0,0,.12);--preloader-bg:#14232d;--preloader-color:#b9dbe8;--xiu-glass:rgba(28,45,57,.82)}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -9,7 +9,8 @@ body{font-family:'Journal WenKai','Noto Sans SC',serif;line-height:1.9}
 button,input{font:inherit}
 #page-header.full_page{height:64svh;min-height:460px;max-height:680px;background-attachment:scroll;border-radius:0 0 28px 28px;overflow:hidden}
 #page-header.full_page #site-info{top:42%;transform:translateY(-30%)}
-#page-header #site-title{font-family:'Zhi Mang Xing','STXingkai','Noto Serif SC',serif;font-weight:400;letter-spacing:.06em;font-size:clamp(2.7rem,5.6vw,5.2rem);line-height:1.4;padding:.08em 0 .14em;text-shadow:0 3px 24px rgba(0,29,41,.35)}
+#page-header #site-title{font-family:'Journal WenKai','Noto Serif SC',serif;font-weight:400;letter-spacing:.06em;font-size:clamp(2.7rem,5.6vw,4.4rem);line-height:1.4;padding:.08em 0 .14em;text-shadow:0 3px 24px rgba(0,29,41,.35)}
+#page-header.full_page #site-title{font-family:'Zhi Mang Xing','Journal WenKai',serif;font-size:clamp(2.7rem,5.6vw,5.2rem)}
 #page-header #site-subtitle{margin-top:18px;font-family:'Noto Sans SC',sans-serif;font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:400;letter-spacing:.1em}
 #page-header:not(.not-top-img):before{background:rgba(6,34,50,.28)}
 #nav{padding:0 clamp(20px,4vw,64px);height:70px;font-size:14px;background:rgba(14,45,64,.12);backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);border-bottom:1px solid rgba(255,255,255,.16)}
@@ -108,14 +109,8 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 #loading-box .spinner-box .loading-word{position:static;letter-spacing:.18em;font-size:12px}
 #loading-box.loaded{pointer-events:none}
 .ocean-motion{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;border-radius:inherit}
-.ocean-sheen{position:absolute;bottom:-5%;left:-15%;width:130%;height:58%;opacity:.22;background:repeating-linear-gradient(112deg,transparent 0 9%,rgba(224,252,255,.34) 10%,transparent 12% 23%);mix-blend-mode:soft-light;animation:ocean-sheen 16s ease-in-out infinite alternate}
-.ocean-waves{position:absolute;bottom:-1px;left:0;width:100%;height:130px}
-.ocean-waves use{animation:ocean-tide 16s linear infinite;fill:rgba(222,250,255,.21);transform:translateX(-360px)}
-.ocean-waves use:nth-child(2){animation-duration:23s;animation-delay:-12s;fill:rgba(235,253,255,.26)}
-.ocean-waves use:nth-child(3){animation-duration:30s;animation-delay:-24s;fill:rgba(248,254,255,.32)}
-.ocean-motion[data-paused='true'] *,.ocean-motion[data-offscreen='true'] *{animation-play-state:paused!important}
-@keyframes ocean-tide{to{transform:translateX(360px)}}
-@keyframes ocean-sheen{from{transform:translate3d(-3%,0,0) skewX(-4deg)}to{transform:translate3d(3%,3%,0) skewX(2deg)}}
+.ocean-motion canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .65s ease}
+.ocean-motion[data-ready='true'] canvas{opacity:1}
 #page-header.full_page #site-info,#page-header.full_page #scroll-down{z-index:2}
 #ocean-click-layer{position:fixed;inset:0;z-index:1000;pointer-events:none;overflow:hidden}
 .sea-click{position:absolute;left:var(--drop-x);top:var(--drop-y);width:88px;height:88px;margin:-44px 0 0 -44px;pointer-events:none}
@@ -125,7 +120,7 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 .sea-click i:nth-child(2){animation-delay:30ms}.sea-click i:nth-child(3){animation-delay:50ms}
 @keyframes sea-ring{0%{transform:scale(.14);opacity:.9}100%{transform:scale(1.45);opacity:0}}
 @keyframes sea-spray{0%{transform:translate(0,0) scale(.4);opacity:0}18%{opacity:.85}100%{transform:translate(var(--spray-x),var(--spray-y)) scale(.25);opacity:0}}
-@media(max-width:600px){#page-header #site-title{font-size:3.1rem}.ocean-waves{height:90px}#nav .site-name{font-size:23px}#recent-posts .recent-post-item .article-title{font-size:1.65rem}}
+@media(max-width:600px){#nav .site-name{font-size:23px}#recent-posts .recent-post-item .article-title{font-size:1.65rem}}
 @media(prefers-reduced-motion:reduce){.ocean-motion,#ocean-click-layer{display:none}}
 @media(min-width:901px){#aside-content .sticky_layout{position:static}}
 @media(max-width:900px){.layout{padding:24px 18px 36px;gap:0}#recent-posts{width:100%}#aside-content{width:100%}#recent-posts .recent-post-item{height:245px}#recent-posts .recent-post-item>.recent-post-info{padding:22px}#aside-content{margin-top:0}}
@@ -135,7 +130,7 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 
 #page-header #post-info .post-title{font-family:'Zhi Mang Xing','Noto Serif SC',serif;font-weight:400;font-size:clamp(2.2rem,4vw,3.8rem)}
 
-@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=1e5c7ad13eed') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=9cb613174ef2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 #page-header #site-subtitle,.journal-index-heading h2,#article-container h2,#article-container h3,#article-container .music-intro{font-family:'Journal WenKai','Noto Serif SC',serif;font-weight:400}
 #page-header #site-subtitle{font-size:1.2rem;letter-spacing:.035em}
 .journal-index-heading h2{font-size:1.45rem}
@@ -160,6 +155,7 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 @media(max-width:600px){#page-header #site-subtitle{font-size:.98rem}#article-container .music-intro{font-size:1.12rem}.music-gallery{gap:22px 14px}.music-photo figcaption>span{font-size:17px}.music-photo figcaption small{font-size:9px}}
 
 #recent-posts .recent-post-item .article-title,#aside-content .author-info-name,#article-container,#page-header #post-info .post-title,#nav .menus_items{font-family:'Journal WenKai','Noto Sans SC',serif;font-weight:400}
+@media(max-width:600px){#page-header.full_page #site-title{font-size:clamp(2.6rem,11.5vw,3rem)}}
 #recent-posts .recent-post-item .article-title{font-size:1.75rem;line-height:1.5}
 #article-container{font-size:17px;line-height:1.95}
 #aside-content .author-info-name{font-size:27px}
