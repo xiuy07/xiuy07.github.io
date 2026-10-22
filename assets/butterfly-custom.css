@@ -11,6 +11,7 @@ button,input{font:inherit}
 #page-header.full_page #site-info{top:42%;transform:translateY(-30%)}
 #page-header #site-title{font-family:'Journal WenKai','Noto Serif SC',serif;font-weight:400;letter-spacing:.06em;font-size:clamp(2.7rem,5.6vw,4.4rem);line-height:1.4;padding:.08em 0 .14em;text-shadow:0 3px 24px rgba(0,29,41,.35)}
 #page-header.full_page #site-title{font-family:'Zhi Mang Xing','Journal WenKai',serif;font-size:clamp(2.7rem,5.6vw,5.2rem)}
+#page-header #site-title.journal-category-title{font-family:'Noto Serif SC',Georgia,serif;font-size:clamp(2.5rem,5.2vw,4rem);font-weight:400;letter-spacing:.055em}
 #page-header #site-subtitle{margin-top:18px;font-family:'Noto Sans SC',sans-serif;font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:400;letter-spacing:.1em}
 #page-header:not(.not-top-img):before{background:rgba(6,34,50,.28)}
 #nav{padding:0 clamp(20px,4vw,64px);height:70px;font-size:14px;background:rgba(14,45,64,.12);backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);border-bottom:1px solid rgba(255,255,255,.16)}
@@ -57,7 +58,7 @@ button,input{font:inherit}
 .journal-index-heading h2{margin:0;color:var(--font-color);font-family:'Zhi Mang Xing','Noto Serif SC',serif;font-size:25px;line-height:1.5;font-weight:400}
 .journal-index-heading>div>span{font-size:12px;color:var(--card-meta);white-space:nowrap}
 .journal-filters{display:flex;gap:3px}
-.journal-filters a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:3px 14px;border-radius:8px;color:var(--font-color);font-size:13px;white-space:nowrap;transition:background .2s,color .2s}
+.journal-filters a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:3px 14px;border-radius:8px;color:var(--font-color);font:400 13px/1.9 'Noto Sans SC',sans-serif;white-space:nowrap;transition:background .2s,color .2s}
 .journal-filters a:hover{background:rgba(56,112,141,.08)}
 .journal-filters a[aria-current='page']{background:#28637b;color:#fff;box-shadow:0 2px 8px rgba(27,77,103,.14)}
 [data-theme='dark'] .journal-index-heading{border-color:rgba(180,208,225,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
@@ -109,8 +110,15 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 #loading-box .spinner-box .loading-word{position:static;letter-spacing:.18em;font-size:12px}
 #loading-box.loaded{pointer-events:none}
 .ocean-motion{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;border-radius:inherit}
-.ocean-motion canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .65s ease}
-.ocean-motion[data-ready='true'] canvas{opacity:1}
+.ocean-waves{position:absolute;bottom:-1px;left:0;width:100%;height:100px;overflow:visible}
+.ocean-wave{animation:ocean-wave-drift var(--wave-duration) linear infinite;animation-delay:var(--wave-delay);will-change:transform}
+.ocean-wave-back{--wave-period:720px;--wave-duration:18s;--wave-delay:-6s;fill:rgba(184,230,241,.17)}
+.ocean-wave-middle{--wave-period:960px;--wave-duration:25s;--wave-delay:-16s;fill:rgba(217,245,249,.2);animation-direction:reverse}
+.ocean-wave-near{--wave-period:480px;--wave-duration:16s;--wave-delay:-9s;fill:rgba(235,251,252,.22)}
+.ocean-wave-front{--wave-period:1440px;--wave-duration:34s;--wave-delay:-25s;fill:rgba(242,251,253,.34);animation-direction:reverse}
+.ocean-motion[data-paused='true'] .ocean-wave,.ocean-motion[data-offscreen='true'] .ocean-wave{animation-play-state:paused}
+@keyframes ocean-wave-drift{from{transform:translateX(0)}to{transform:translateX(var(--wave-period))}}
+@media(max-width:600px){.ocean-waves{height:78px}}
 #page-header.full_page #site-info,#page-header.full_page #scroll-down{z-index:2}
 #ocean-click-layer{position:fixed;inset:0;z-index:1000;pointer-events:none;overflow:hidden}
 .sea-click{position:absolute;left:var(--drop-x);top:var(--drop-y);width:88px;height:88px;margin:-44px 0 0 -44px;pointer-events:none}

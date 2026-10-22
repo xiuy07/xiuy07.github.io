@@ -13,8 +13,6 @@
   const prefetched=new Set();
   const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
   let seaObserver;
-  let disposeSea;
-  let currentSea;
   function refreshSeaState(){
     const sea=document.querySelector('.ocean-motion');
     if(sea)sea.dataset.paused=String(document.hidden||motionPreference.matches);
@@ -77,12 +75,6 @@
     }
     seaObserver?.disconnect();
     const sea=document.querySelector('.ocean-motion');
-    if(sea!==currentSea){
-      disposeSea?.();disposeSea=null;currentSea=sea;
-      if(sea&&!motionPreference.matches)import(sea.dataset.renderer).then(({mountOcean})=>{
-        if(currentSea===sea&&sea.isConnected)disposeSea=mountOcean(sea);
-      }).catch(()=>{});
-    }
     if(sea&&'IntersectionObserver' in window){seaObserver=new IntersectionObserver(entries=>{sea.dataset.offscreen=String(!entries[0].isIntersecting);},{threshold:0});seaObserver.observe(sea);}
     refreshSeaState();
     document.querySelectorAll('[data-bgm-player]').forEach(player=>{
