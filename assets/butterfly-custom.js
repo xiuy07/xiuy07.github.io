@@ -13,13 +13,9 @@
   const prefetched=new Set();
   const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
   let seaObserver;
-  let seaPaused=false;
-  try{seaPaused=localStorage.getItem('xiu-ocean-paused')==='true';}catch{}
   function refreshSeaState(){
     const sea=document.querySelector('.ocean-motion');
-    if(sea)sea.dataset.paused=String(seaPaused||document.hidden||motionPreference.matches);
-    const button=document.querySelector('.ocean-motion-toggle');
-    if(button){button.setAttribute('aria-pressed',String(seaPaused));button.querySelector('span').textContent=seaPaused?'继续海浪':'暂停海浪';button.querySelector('i').className=seaPaused?'fas fa-play':'fas fa-pause';}
+    if(sea)sea.dataset.paused=String(document.hidden||motionPreference.matches);
   }
 
   function enhance() {
@@ -77,8 +73,6 @@
     if(!document.getElementById('ocean-click-layer')){
       const layer=document.createElement('div');layer.id='ocean-click-layer';layer.setAttribute('aria-hidden','true');document.body.append(layer);
     }
-    const seaButton=document.querySelector('.ocean-motion-toggle');
-    if(seaButton&&!seaButton.dataset.ready){seaButton.dataset.ready='true';seaButton.addEventListener('click',()=>{seaPaused=!seaPaused;try{localStorage.setItem('xiu-ocean-paused',String(seaPaused));}catch{}refreshSeaState();});}
     seaObserver?.disconnect();
     const sea=document.querySelector('.ocean-motion');
     if(sea&&'IntersectionObserver' in window){seaObserver=new IntersectionObserver(entries=>{sea.dataset.offscreen=String(!entries[0].isIntersecting);},{threshold:0});seaObserver.observe(sea);}
