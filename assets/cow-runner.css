@@ -1,0 +1,25 @@
+.error-main{max-width:980px;padding-top:135px;padding-bottom:65px}
+.error-heading{text-align:center;margin-bottom:36px}
+.error-code{font:500 clamp(64px,10vw,108px)/1.05 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.07em;color:var(--accent);display:block;margin-bottom:18px}
+.error-heading h1{font-size:30px;margin:0 0 14px;letter-spacing:.04em}
+.error-heading>p{font-size:14px;color:var(--muted);margin:0}
+.cow-game{border-block:1px solid var(--line);padding:22px 0 18px;touch-action:pan-y}
+.cow-score{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted);padding-inline:6px}
+.cow-score>span{color:var(--text);letter-spacing:.08em}
+.cow-score>div{display:flex;gap:24px;font-size:10px}
+.cow-score b{font:400 14px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--text);margin-left:6px}
+#cow-runner{display:block;width:100%;height:auto;image-rendering:pixelated;touch-action:pan-y;cursor:pointer;margin-block:6px;border-radius:0}
+.cow-game-controls{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-inline:6px}
+.cow-game-controls>p{margin:0;font-size:13px;color:var(--text)}
+.cow-game-controls>div{display:flex;gap:8px}
+.cow-game-controls button{min-height:44px;padding:8px 18px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--text);font:400 12px var(--font)}
+.cow-game-controls [data-runner-action]{background:var(--accent);border-color:var(--accent);color:var(--accent-on);min-width:92px}
+.cow-game-controls button:disabled{opacity:.4;cursor:default}
+#cow-game-help{font-size:10px;color:var(--muted);margin:14px 6px 0;line-height:1.9}
+.error-links{display:flex;justify-content:center;gap:38px;margin-top:24px;font-size:13px}
+.error-links a{min-height:44px;display:flex;align-items:center;color:var(--accent);border-bottom:1px solid var(--line)}
+.cow-game-credit{text-align:center;margin:24px 0 0;font-size:10px;color:var(--muted);line-height:1.9}
+.cow-game-credit a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:600px){.error-main{padding-top:115px;padding-bottom:40px}.error-heading{margin-bottom:26px}.error-heading h1{font-size:25px}.error-heading>p{font-size:12px}.cow-score{padding:0}.cow-score>div{gap:13px}.cow-score b{font-size:11px}.cow-score>span{font-size:11px}.cow-game-controls{align-items:start;flex-direction:column;gap:15px;padding:0}.cow-game-controls>div{width:100%}.cow-game-controls button{flex:1}.cow-game-controls>p{font-size:12px}#cow-game-help{margin-left:0;font-size:9px}.cow-game-credit{font-size:9px}}
+
+#cow-runner:focus-visible{outline:2px solid var(--focus);outline-offset:5px}

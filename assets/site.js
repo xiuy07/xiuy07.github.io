@@ -5,7 +5,10 @@ function applyTheme(theme, persist=false) {
   root.dataset.theme = theme;
   const dark = theme === 'dark';
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#13232c' : '#f1f6f8');
-  themeButton.textContent = english ? (dark ? 'Light' : 'Dark') : (dark ? '浅色' : '深色');
+  themeButton.innerHTML = dark
+    ? '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>'
+    : '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.4A8.6 8.6 0 0 1 10.6 3.5 8.6 8.6 0 1 0 20.5 13.4Z"/></svg>';
+  themeButton.title = english ? (dark ? 'Use light theme' : 'Use dark theme') : (dark ? '切换浅色主题' : '切换深色主题');
   themeButton.setAttribute('aria-label', english ? (dark ? 'Use light theme' : 'Use dark theme') : (dark ? '切换浅色主题' : '切换深色主题'));
   themeButton.setAttribute('aria-pressed', String(dark));
   if(persist) try{localStorage.setItem('xiu-site-theme',theme);}catch{}
@@ -74,7 +77,7 @@ function moveHighlight(link) {
   indicatedLink = link;
   nav.style.setProperty('--indicator-x', `${link.offsetLeft}px`);
   nav.style.setProperty('--indicator-y', `${link.offsetTop}px`);
-  nav.style.setProperty('--indicator-scale', String(link.offsetWidth / 44));
+  nav.style.setProperty('--indicator-width', `${link.offsetWidth}px`);
   nav.style.setProperty('--indicator-height', `${link.offsetHeight}px`);
   nav.classList.add('has-indicator');
 }
@@ -152,7 +155,8 @@ document.addEventListener('focusin', event => prefetchPage(event.target.closest(
 const quickDialog = document.querySelector('.quick-dialog');
 if (quickDialog && typeof quickDialog.showModal === 'function') {
   const quickButton = document.createElement('button');
-  quickButton.type = 'button'; quickButton.className = 'quick-toggle'; quickButton.textContent = '⌘ K';
+  quickButton.type = 'button'; quickButton.className = 'quick-toggle';
+  quickButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><kbd>K</kbd>';
   quickButton.setAttribute('aria-label', english ? 'Quick navigation (Control or Command K)' : '快速跳转（Ctrl 或 Command K）');
   quickButton.setAttribute('aria-haspopup', 'dialog');
   quickButton.title = english ? 'Quick navigation' : '快速跳转';
@@ -227,7 +231,7 @@ if (coverStage && 'IntersectionObserver' in window) {
 
 // A rounded-rectangle displacement map refracts the background only along the rim.
 // Text is never filtered. Unsupported SVG backdrop filters retain the CSS material.
-const glassElements = [...document.querySelectorAll('.site-nav,.header-tools button,.header-tools .language-link,.hero-link,.hero-card,.career-lens')];
+const glassElements = [...document.querySelectorAll('.site-nav,.header-tools,.hero-link,.hero-card,.career-lens')];
 glassElements.forEach(element => element.classList.add('liquid-surface'));
 const reducedTransparency = matchMedia('(prefers-reduced-transparency: reduce)');
 if (CSS.supports('backdrop-filter', 'url("#liquid-lens")') && 'ResizeObserver' in window) {
@@ -237,7 +241,7 @@ if (CSS.supports('backdrop-filter', 'url("#liquid-lens")') && 'ResizeObserver' i
   const defs = document.createElementNS(svgNS, 'defs'); svg.append(defs); document.body.append(svg);
   const maps = new WeakMap();
   function updateLens(element, index) {
-    if (reducedTransparency.matches) { element.style.removeProperty('backdrop-filter'); return; }
+    if (reducedTransparency.matches || element.closest('.site-header')) { element.style.removeProperty('backdrop-filter'); return; }
     const box = element.getBoundingClientRect();
     const width = Math.round(box.width), height = Math.round(box.height);
     if (width < 5 || height < 5 || width > 850 || height > 400 || (innerWidth < 768 && element === nav)) return;

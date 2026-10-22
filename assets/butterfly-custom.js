@@ -83,6 +83,16 @@
     const sea=document.querySelector('.ocean-motion');
     if(sea&&'IntersectionObserver' in window){seaObserver=new IntersectionObserver(entries=>{sea.dataset.offscreen=String(!entries[0].isIntersecting);},{threshold:0});seaObserver.observe(sea);}
     refreshSeaState();
+    document.querySelectorAll('.music-secret').forEach(secret=>{
+      if(secret.dataset.ready)return;
+      secret.dataset.ready='true';
+      const frame=secret.querySelector('iframe[data-music-src]');
+      secret.addEventListener('toggle',()=>{
+        if(secret.open){if(frame&&!frame.getAttribute('src'))frame.src=frame.dataset.musicSrc;}
+        else frame?.removeAttribute('src');
+      });
+      secret.querySelector('[data-close-music]')?.addEventListener('click',()=>{secret.open=false;secret.querySelector('summary').focus();});
+    });
   }
   document.addEventListener('DOMContentLoaded',()=>{
     enhance();
@@ -98,6 +108,7 @@
   });
   document.addEventListener('pjax:complete',enhance);
   document.addEventListener('pjax:send',()=>{
+    document.querySelectorAll('.music-secret[open]').forEach(secret=>{secret.open=false;secret.querySelector('iframe')?.removeAttribute('src');});
     clearTimeout(settleTimer);document.documentElement.dataset.navigating='pending';
     document.getElementById('page-transition-progress')?.setAttribute('aria-hidden','false');
   });

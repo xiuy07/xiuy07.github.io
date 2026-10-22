@@ -1,7 +1,7 @@
 /* Site-level adaptations for the unmodified official Butterfly theme. */
-@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=3c12fb84cc8c') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=3c12fb84cc8c') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=3c12fb84cc8c') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=762de66ecbc0') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=762de66ecbc0') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=762de66ecbc0') format('woff2');font-weight:400;font-display:swap}
 :root{--card-bg:rgba(255,255,255,.94);--card-meta:#657984;--font-color:#2b414d;--text-highlight-color:#1b3748;--card-box-shadow:0 8px 32px rgba(29,64,83,.06);--card-hover-box-shadow:0 12px 36px rgba(29,64,83,.1);--preloader-bg:#edf3f6;--preloader-color:#28637b;--xiu-glass:rgba(245,251,255,.78)}
 [data-theme='dark']{--card-bg:rgba(28,45,57,.96);--card-meta:#b0c2cd;--font-color:#d8e5ed;--text-highlight-color:#edf5fa;--card-box-shadow:0 8px 32px rgba(0,0,0,.12);--preloader-bg:#14232d;--preloader-color:#b9dbe8;--xiu-glass:rgba(28,45,57,.82)}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -136,3 +136,33 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 @media(prefers-reduced-transparency:reduce){:root{--card-bg:#fff;--xiu-glass:#f5fbff}[data-theme='dark']{--card-bg:#1c2d39;--xiu-glass:#1c2d39}}
 
 #page-header #post-info .post-title{font-family:'Zhi Mang Xing','Noto Serif SC',serif;font-weight:400;font-size:clamp(2.2rem,4vw,3.8rem)}
+
+@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=762de66ecbc0') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+#page-header #site-subtitle,.journal-index-heading h2,#article-container h2,#article-container h3,#article-container .music-intro{font-family:'Journal WenKai','Noto Serif SC',serif;font-weight:400}
+#page-header #site-subtitle{font-size:1.2rem;letter-spacing:.035em}
+.journal-index-heading h2{font-size:1.45rem}
+#article-container .music-intro{font-size:1.25rem;line-height:1.9;margin:0 0 20px;color:var(--font-color)}
+.music-secret{margin:0 0 36px;border-block:1px solid var(--light-grey);padding:5px 0}
+.music-secret summary{display:flex;align-items:center;gap:13px;min-height:58px;cursor:pointer;list-style:none;color:var(--font-color);font-size:14px}
+.music-secret summary::-webkit-details-marker{display:none}
+.music-secret summary>i{margin-left:auto;font-size:11px;transition:transform .2s}
+.music-secret[open] summary>i{transform:rotate(45deg)}
+.music-disc{width:30px;height:30px;border-radius:50%;flex:none;background:repeating-radial-gradient(circle,#283f4b 0 1px,#4e6872 2px 3px);position:relative;box-shadow:inset 0 0 0 1px #ffffff40}
+.music-disc:after{content:'';position:absolute;inset:11px;border-radius:50%;background:#d8e9ed;border:2px solid #7fa7b5}
+.music-secret-hint{margin-left:8px;color:var(--card-meta);font-size:11px}
+.music-secret-content{padding:6px 0 12px}
+.music-video-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:12px;background:#172d3c}
+#article-container .music-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;margin:0}
+#article-container .music-player-links{display:flex;align-items:center;flex-wrap:wrap;gap:6px 22px;margin:8px 0 0;font-size:11px}
+.music-player-links a,.music-player-links button{display:inline-flex;align-items:center;min-height:44px}
+.music-player-links button{margin-left:auto;background:none;border:0;color:var(--font-color);font-size:11px;cursor:pointer;padding:0}
+.music-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 22px;margin-top:24px;align-items:start}
+#article-container .music-photo{margin:0;min-width:0}
+.music-photo-wide{grid-column:1/-1}
+#article-container .music-photo>a{display:block;border:0;line-height:0}
+#article-container .music-photo img{width:100%;height:auto;margin:0;border-radius:12px;box-shadow:none}
+#article-container .music-photo figcaption{padding:13px 0 0;color:var(--font-color);line-height:1.65;text-align:left}
+.music-photo figcaption>span{display:block;font:400 20px/1.4 Georgia,'Noto Serif SC',serif;margin-bottom:5px}
+.music-photo figcaption small{display:block;font-size:10px;color:var(--card-meta)}
+#article-container .music-photo figcaption a{color:inherit;border-bottom:1px solid var(--light-grey)}
+@media(max-width:600px){#page-header #site-subtitle{font-size:.98rem}.music-secret-hint{display:none}#article-container .music-intro{font-size:1.12rem}.music-gallery{gap:22px 14px}.music-photo figcaption>span{font-size:17px}.music-photo figcaption small{font-size:9px}.music-player-links button{margin-left:0}}
