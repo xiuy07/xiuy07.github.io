@@ -1,0 +1,310 @@
+{
+  "chapters": [
+    {
+      "id": "01-start",
+      "number": 1,
+      "title": "编译、输入输出与类型",
+      "summary": "先独立编译一个程序，再判断数据应该用什么类型。",
+      "group": "起步与基础",
+      "minutes": 25,
+      "file": "content/01-start.md",
+      "demo": "d01",
+      "problems": [
+        "p01",
+        "p02"
+      ],
+      "reading": "C++ Primer 第 1–4 章；PPP3 的对象、类型与计算主题。"
+    },
+    {
+      "id": "02-functions",
+      "number": 2,
+      "title": "控制流程、函数与程序组织",
+      "summary": "把边界条件写清楚，用函数表达一件可以单独验证的事。",
+      "group": "起步与基础",
+      "minutes": 30,
+      "file": "content/02-functions.md",
+      "demo": "d02",
+      "problems": [
+        "p03",
+        "p04"
+      ],
+      "reading": "C++ Primer 第 6 章；课程 0506-Pointer-Function。"
+    },
+    {
+      "id": "03-containers",
+      "number": 3,
+      "title": "数组、string 与 vector",
+      "summary": "区分 size 和 capacity，理解连续存储与原地修改。",
+      "group": "起步与基础",
+      "minutes": 35,
+      "file": "content/03-containers.md",
+      "demo": "d03",
+      "problems": [
+        "p05",
+        "p06"
+      ],
+      "reading": "C++ Primer 第 3、9 章；课程 0304-DataType 的数组主题。"
+    },
+    {
+      "id": "04-pointers",
+      "number": 4,
+      "title": "指针、引用、const 与二维数组",
+      "summary": "先读类型，再画出对象与地址之间的关系。",
+      "group": "内存与对象",
+      "minutes": 40,
+      "file": "content/04-pointers.md",
+      "demo": "d04",
+      "problems": [
+        "p07",
+        "p08"
+      ],
+      "reading": "C++ Primer 第 2、3、6 章；课程 0506-Pointer-Function。"
+    },
+    {
+      "id": "05-memory",
+      "number": 5,
+      "title": "动态内存、所有权与链表",
+      "summary": "给每个动态对象指定释放责任，再练习改变链表连接。",
+      "group": "内存与对象",
+      "minutes": 45,
+      "file": "content/05-memory.md",
+      "demo": "d05",
+      "problems": [
+        "p09",
+        "p10"
+      ],
+      "reading": "C++ Primer 第 12 章；Effective Modern C++ 的智能指针主题。"
+    },
+    {
+      "id": "06-classes",
+      "number": 6,
+      "title": "类、初始化与析构",
+      "summary": "用类维护不变式，按构造顺序理解对象的出生和销毁。",
+      "group": "内存与对象",
+      "minutes": 40,
+      "file": "content/06-classes.md",
+      "demo": "d06",
+      "problems": [
+        "p11",
+        "p12"
+      ],
+      "reading": "C++ Primer 第 7、13 章；课程 0708-OOP。"
+    },
+    {
+      "id": "07-copy-move",
+      "number": 7,
+      "title": "拷贝、移动与值语义",
+      "summary": "区分创建与赋值，掌握深拷贝和所有权转移。",
+      "group": "内存与对象",
+      "minutes": 50,
+      "file": "content/07-copy-move.md",
+      "demo": "d07",
+      "problems": [
+        "p13",
+        "p14"
+      ],
+      "reading": "C++ Primer 第 13 章；Effective Modern C++ 的特殊成员、move/forward 主题。"
+    },
+    {
+      "id": "08-const-static",
+      "number": 8,
+      "title": "const 成员、静态成员与友元",
+      "summary": "把只读接口、对象计数和协作函数各自放在合适的位置。",
+      "group": "内存与对象",
+      "minutes": 35,
+      "file": "content/08-const-static.md",
+      "demo": "d08",
+      "problems": [
+        "p15",
+        "p16"
+      ],
+      "reading": "C++ Primer 第 7 章；课程 0708-OOP 的 const/static/friend。"
+    },
+    {
+      "id": "09-polymorphism",
+      "number": 9,
+      "title": "继承、虚函数与对象切片",
+      "summary": "分别判断静态类型和动态类型，再确定实际调用。",
+      "group": "抽象与泛型",
+      "minutes": 45,
+      "file": "content/09-polymorphism.md",
+      "demo": "d09",
+      "problems": [
+        "p17",
+        "p18"
+      ],
+      "reading": "C++ Primer 第 15 章；课程 09-Virtual-Inheritance。"
+    },
+    {
+      "id": "10-inheritance",
+      "number": 10,
+      "title": "多继承、虚基类与 NVI",
+      "summary": "画清基类子对象，理解如何让非成员输出参与多态。",
+      "group": "抽象与泛型",
+      "minutes": 40,
+      "file": "content/10-inheritance.md",
+      "demo": "d10",
+      "problems": [
+        "p19",
+        "p20"
+      ],
+      "reading": "课程 09-Virtual-Inheritance、11-Template-Exception 的流输出；C++ Primer 第 15 章。"
+    },
+    {
+      "id": "11-operators",
+      "number": 11,
+      "title": "运算符重载与转换",
+      "summary": "让自定义类型遵守熟悉的代数规则与返回值约定。",
+      "group": "抽象与泛型",
+      "minutes": 45,
+      "file": "content/11-operators.md",
+      "demo": "d11",
+      "problems": [
+        "p21",
+        "p22"
+      ],
+      "reading": "C++ Primer 第 14 章；课程 10-Overloading。"
+    },
+    {
+      "id": "12-templates",
+      "number": 12,
+      "title": "函数模板、类模板与转发",
+      "summary": "把相同算法应用到不同类型，明确编译期需要哪些操作。",
+      "group": "抽象与泛型",
+      "minutes": 45,
+      "file": "content/12-templates.md",
+      "demo": "d12",
+      "problems": [
+        "p23",
+        "p24"
+      ],
+      "reading": "C++ Primer 第 16 章；Effective Modern C++ 的推导与完美转发主题。"
+    },
+    {
+      "id": "13-stl",
+      "number": 13,
+      "title": "STL、迭代器、算法与 Lambda",
+      "summary": "先选择数据结构，再让算法表达遍历、排序和查找。",
+      "group": "抽象与泛型",
+      "minutes": 40,
+      "file": "content/13-stl.md",
+      "demo": "d13",
+      "problems": [
+        "p25",
+        "p26"
+      ],
+      "reading": "C++ Primer 第 9–11 章；课程 11-Template-Exception 的 auto 与 Lambda。"
+    },
+    {
+      "id": "14-exceptions",
+      "number": 14,
+      "title": "异常、RAII 与 C++17 值类型",
+      "summary": "区分无结果、类型分支和异常失败，保持清理路径一致。",
+      "group": "抽象与泛型",
+      "minutes": 40,
+      "file": "content/14-exceptions.md",
+      "demo": "d14",
+      "problems": [
+        "p27",
+        "p28"
+      ],
+      "reading": "C++ Primer 第 12、18 章；A Tour of C++ 的错误处理与值类型主题。"
+    },
+    {
+      "id": "15-monotonic",
+      "number": 15,
+      "title": "单调栈与最大空白矩形",
+      "summary": "从共同底边建立 height，再逐次解释弹栈和边界。",
+      "group": "算法与综合",
+      "minutes": 50,
+      "file": "content/15-monotonic.md",
+      "demo": "d15",
+      "problems": [
+        "p29",
+        "p30"
+      ],
+      "reading": "LeetCode 84/85 的题目思想改编；本章从边界推导重新讲解。"
+    },
+    {
+      "id": "16-project",
+      "number": 16,
+      "title": "综合练习与可维护的小工程",
+      "summary": "用不变式设计状态，用测试数据追踪边界和回归。",
+      "group": "算法与综合",
+      "minutes": 45,
+      "file": "content/16-project.md",
+      "demo": "d16",
+      "problems": [
+        "p31",
+        "p32"
+      ],
+      "reading": "LeetCode 155/146 改编；C++ Core Guidelines 的资源管理与接口设计主题。"
+    }
+  ],
+  "demos": [
+    {
+      "id": "d01",
+      "title": "编译、输入输出与类型：最小实验"
+    },
+    {
+      "id": "d02",
+      "title": "控制流程、函数与程序组织：最小实验"
+    },
+    {
+      "id": "d03",
+      "title": "数组、string 与 vector：最小实验"
+    },
+    {
+      "id": "d04",
+      "title": "指针、引用、const 与二维数组：最小实验"
+    },
+    {
+      "id": "d05",
+      "title": "动态内存、所有权与链表：最小实验"
+    },
+    {
+      "id": "d06",
+      "title": "类、初始化与析构：最小实验"
+    },
+    {
+      "id": "d07",
+      "title": "拷贝、移动与值语义：最小实验"
+    },
+    {
+      "id": "d08",
+      "title": "const 成员、静态成员与友元：最小实验"
+    },
+    {
+      "id": "d09",
+      "title": "继承、虚函数与对象切片：最小实验"
+    },
+    {
+      "id": "d10",
+      "title": "多继承、虚基类与 NVI：最小实验"
+    },
+    {
+      "id": "d11",
+      "title": "运算符重载与转换：最小实验"
+    },
+    {
+      "id": "d12",
+      "title": "函数模板、类模板与转发：最小实验"
+    },
+    {
+      "id": "d13",
+      "title": "STL、迭代器、算法与 Lambda：最小实验"
+    },
+    {
+      "id": "d14",
+      "title": "异常、RAII 与 C++17 值类型：最小实验"
+    },
+    {
+      "id": "d15",
+      "title": "单调栈与最大空白矩形：最小实验"
+    },
+    {
+      "id": "d16",
+      "title": "综合练习与可维护的小工程：最小实验"
+    }
+  ]
+}

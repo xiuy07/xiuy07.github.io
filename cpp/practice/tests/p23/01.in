@@ -1,0 +1,9 @@
+I 8
+push 3
+push -2
+top
+size
+pop
+top
+pop
+pop

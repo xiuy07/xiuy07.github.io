@@ -1,0 +1,678 @@
+{
+  "problems": [
+    {
+      "id": "p01",
+      "title": "大整数累计",
+      "difficulty": "入门",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 1,
+      "hints": [
+        "答案可能达到 10¹⁴。",
+        "读取的值和累计变量都考虑 long long。"
+      ],
+      "analysis": "从 0 开始累加，每次读一个数。不需要保存整段序列；空序列的和自然是 0。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p02",
+      "title": "最小值、最大值与总和",
+      "difficulty": "入门",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 1,
+      "hints": [
+        "先读入第一个数初始化极值。",
+        "总和使用 long long。"
+      ],
+      "analysis": "以第一个元素初始化极值，之后维护已经扫描部分的最小值、最大值与和。全正数和全负数能发现错误的 0 初始化。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p03",
+      "title": "函数练习：最大公因数",
+      "difficulty": "入门",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 2,
+      "hints": [
+        "负数先取绝对值，本题不会出现 long long 最小值。",
+        "用 (a,b) ← (b,a%b) 不断缩小问题。"
+      ],
+      "analysis": "先把输入变为非负数。b 非零时保存 a%b，再推进 a=b、b=余数。循环结束的 a 即结果。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p04",
+      "title": "前缀计数与整行读取",
+      "difficulty": "入门",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 2,
+      "hints": [
+        "用 getline 读取第一行，否则空前缀会被跳过。",
+        "读完 n 后，只丢弃该行剩余内容。"
+      ],
+      "analysis": "逐行读取并检查长度，之后比较开头 prefix.size() 个字符。空前缀长度为零，所有行都匹配。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p05",
+      "title": "有序序列原地去重",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 3,
+      "hints": [
+        "维护读位置和写位置 k。",
+        "只有与最后保留值不同时才写入。"
+      ],
+      "analysis": "用 k 表示已经保留的长度。读取每个 x，若 k=0 或 x!=a[k-1]，就写 a[k++]=x。写位置不超过读位置，因此不会覆盖未来输入。",
+      "source": {
+        "label": "LeetCode 26 · Remove Duplicates from Sorted Array",
+        "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+        "adaptation": "改为标准输入输出，并加入空序列和更大整数范围。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p06",
+      "title": "区间标记：保留的位置",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 3,
+      "hints": [
+        "共有 L+1 个位置。",
+        "差分在 l 加一、r+1 减一，再求覆盖次数。"
+      ],
+      "analysis": "创建长度 L+2 的差分数组，区间 [l,r] 对应 diff[l]++、diff[r+1]--。前缀和为零的位置没有被覆盖。r=L 时仍有合法的 L+1 哨兵位置。",
+      "source": {
+        "label": "洛谷 P1047 · 校门外的树",
+        "url": "https://www.luogu.com.cn/problem/P1047",
+        "adaptation": "改为通用整数位置标记，允许 L=0 和 m=0；使用自编数据与差分解法。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p07",
+      "title": "指针接口：反转半开区间",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 4,
+      "hints": [
+        "last 指向尾后位置，不能直接解引用。",
+        "先判断区间非空，再把 last 向前移动。"
+      ],
+      "analysis": "在同一数组范围内移动两个指针。先 --last，再判断两个位置是否相遇，交换后 ++first。空区间直接退出。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p08",
+      "title": "二维数组：保留行类型",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 4,
+      "hints": [
+        "函数参数是对整个数组的引用，R、C 可推导。",
+        "结果用 long long，防止四个大整数相加溢出。"
+      ],
+      "analysis": "通过数组引用保留两维尺寸。用嵌套循环按 a[i][j] 求和，不做不必要的类型转换。额外的 1×2 编译/运行检查用于发现硬编码。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p09",
+      "title": "单链表原地反转",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 5,
+      "hints": [
+        "维护 prev、cur、next 三个指针。",
+        "先保存 next，再覆盖 cur->next。"
+      ],
+      "analysis": "用 prev 指向已反转部分，cur 指向未处理部分。每轮保存 next、反转一条边、推进。输出后循环 delete，避免递归释放长链。",
+      "source": {
+        "label": "LeetCode 206 · Reverse Linked List",
+        "url": "https://leetcode.com/problems/reverse-linked-list/",
+        "adaptation": "改为标准输入输出、允许更长链表，额外要求释放全部结点。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p10",
+      "title": "合并两条有序链表",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 5,
+      "hints": [
+        "用一个栈上的哨兵结点简化头结点处理。",
+        "接入较小的头结点，再推进相应链表。"
+      ],
+      "analysis": "维护结果尾指针。每次从两个非空头中选择较小结点重连，某条链表耗尽后接上剩余部分。哨兵不参与最终 delete 链。",
+      "source": {
+        "label": "LeetCode 21 · Merge Two Sorted Lists",
+        "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
+        "adaptation": "改为序列输入和整行输出，扩大长度并要求释放内存。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p11",
+      "title": "账户类与不变式",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 6,
+      "hints": [
+        "先检查再修改，不要先扣钱再尝试恢复。",
+        "查询成员应声明为 const。"
+      ],
+      "analysis": "Account 构造时取得合法初值，deposit/withdraw 先验证参数和余额，失败不修改对象。命令解析与账户状态分离。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p12",
+      "title": "构造析构顺序追踪",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 6,
+      "hints": [
+        "先构造外层，再递归进入内层。",
+        "析构时按相反顺序退出作用域。"
+      ],
+      "analysis": "每个对象保存自己的 id，构造打印加号，析构打印减号。固定入口的作用域决定输出顺序。n=0 时完全不创建对象。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p13",
+      "title": "Buffer：深拷贝与自赋值",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 7,
+      "hints": [
+        "unique_ptr 默认禁止拷贝，需要分配新数组。",
+        "拷贝赋值可先创建副本再交换；移动后将源长度置零。"
+      ],
+      "analysis": "数组资源由 unique_ptr 自动释放。拷贝时分配 n 个元素再逐项复制；赋值使用临时副本保障自赋值和异常安全。移动转交指针并 exchange 源长度为零。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p14",
+      "title": "MoveBox：独占资源转移",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 7,
+      "hints": [
+        "可以用 std::move 转移 unique_ptr。",
+        "移动赋值先检查 this 是否等于 &other，以满足本题自移动约定。"
+      ],
+      "analysis": "删除复制成员，移动构造转交 unique_ptr；移动赋值先排除自身，再移动成员。unique_ptr 的移动会让源指针为空。本题明确要求的自移动语义不应泛化到所有标准库类型。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p15",
+      "title": "const 查询与 mutable 统计",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 8,
+      "hints": [
+        "值和查询次数是两个成员。",
+        "get 为 const，要修改的统计成员用 mutable。"
+      ],
+      "analysis": "n 表示逻辑值，查询计数可标记 mutable。const get 只更新统计，inc 修改 n。reads 只返回计数，不能再次增加。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p16",
+      "title": "static：活跃对象数量",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 8,
+      "hints": [
+        "计数按对象的创建与销毁变化，不按赋值变化。",
+        "构造一个副本也会新建一个对象。"
+      ],
+      "analysis": "每个创建路径加一，每个析构减一，赋值只返回 *this。用 inline static 让计数属于类且可在头文件定义。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p17",
+      "title": "虚函数：图形面积",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 9,
+      "hints": [
+        "基类接口应加 const，派生实现加 override。",
+        "面积乘法先转换成 long long。"
+      ],
+      "analysis": "Shape 定义共同的只读 area 接口和虚析构。派生类保存边长并覆盖 area，入口不需要知道具体类型即可查询。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p18",
+      "title": "多态对象的独立克隆",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 9,
+      "hints": [
+        "clone 可以返回 make_unique<ValueRecord>(*this)。",
+        "bump 只改变当前对象的成员。"
+      ],
+      "analysis": "虚 clone 保留动态类型；拷贝构造得到独立的整数状态。返回 unique_ptr 把新对象所有权交给调用者。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p19",
+      "title": "虚继承：共享身份",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 10,
+      "hints": [
+        "两个中间类的继承声明都要使用 virtual。",
+        "Assistant 初始化列表必须显式初始化最派生对象的 Person。"
+      ],
+      "analysis": "两条虚继承路径共享同一 Person 子对象。最派生的 Assistant 用 initial 初始化 Person，中间类自己的 Person 初始化在这里不负责最终值。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p20",
+      "title": "NVI 与多态流输出",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 10,
+      "hints": [
+        "operator<< 不是虚函数，但它可以调用成员 render。",
+        "render 再调用虚 write，派生类决定具体内容。"
+      ],
+      "analysis": "在基类统一输出括号，派生钩子只写实际内容。流操作返回同一个 ostream&，因此可链式操作且支持字符串流。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p21",
+      "title": "有理数运算符",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 11,
+      "hints": [
+        "构造时先统一符号，再按 gcd 约分。",
+        "比较用交叉乘法，本题范围下 long long 足够。"
+      ],
+      "analysis": "保持规范形式，二元运算创建新 Rational，由构造器统一约分。分母统一为正后，可用 n1*d2<n2*d1 比较。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p22",
+      "title": "前置与后置自增",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 11,
+      "hints": [
+        "后置参数列表多一个 int，占位区分签名。",
+        "后置先保存副本，再调用前置。"
+      ],
+      "analysis": "前置先增加 n，再 return *this；后置保存 old，增加自身，按值返回 old。固定入口的引用检查验证前置返回的是原对象。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p23",
+      "title": "模板栈：整数与字符串",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 12,
+      "hints": [
+        "用 vector<T> 保存元素，避免固定长度数组要求 T 默认构造。",
+        "top 的 const 限定与返回 const 引用不能省。"
+      ],
+      "analysis": "push 调用 push_back；pop 先保存尾元素再 pop_back；top 返回 back 的只读引用。空状态先抛 out_of_range，让调用端统一处理。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p24",
+      "title": "函数模板：通用区间截取",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 12,
+      "hints": [
+        "x<lo 返回 lo，hi<x 返回 hi，否则返回 x。",
+        "同一模板既实例化整数，也实例化 string。"
+      ],
+      "analysis": "只用 < 比较，函数就能应用到满足同一比较契约的不同类型。返回 T 值使调用者不依赖参数的后续生命期。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p25",
+      "title": "哈希查找：确定顺序的两数之和",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 13,
+      "hints": [
+        "从左到右枚举 j，先查询补数再插入当前值。",
+        "哈希表只保存每个值第一次出现的下标。"
+      ],
+      "analysis": "枚举右端点 j 的顺序保证最小 j。map 中保留最早位置，保证相同 j 下最小 i。先查后插，避免一个位置使用两次。",
+      "source": {
+        "label": "LeetCode 1 · Two Sum",
+        "url": "https://leetcode.com/problems/two-sum/",
+        "adaptation": "不再保证唯一解，允许无解和空输入，并规定确定的下标选择顺序。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p26",
+      "title": "词频统计与 Lambda 排序",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 13,
+      "hints": [
+        "哈希表遍历顺序不能直接当作输出顺序。",
+        "比较器的相等情况必须返回 false，不能用 >=。"
+      ],
+      "analysis": "先计数，再将键值对放入 vector。比较器先比较频次，不同时按大到小；相同再比较字符串。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p27",
+      "title": "异常边界：受检整数除法",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 14,
+      "hints": [
+        "异常处理放在每组输入内部，才能处理完后续请求。",
+        "throw 之前不要做除法。"
+      ],
+      "analysis": "divide 先检查零除，main 在每次调用周围设置 try/catch。使用 long long 避免不必要的窄化。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p28",
+      "title": "optional 与 variant 状态盒",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 14,
+      "hints": [
+        "先判断 optional 是否有值，再检查 variant 激活类型。",
+        "类型不匹配时不要意外覆盖原文本。"
+      ],
+      "analysis": "optional 管理“有/无”，variant 管理“整数/文本”。ADD 通过 get_if<long long> 取得可修改指针，PRINT 则按类型输出。",
+      "source": {
+        "label": "原创课程机制练习",
+        "url": "",
+        "adaptation": "按本指南课程主题重新设计。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p29",
+      "title": "柱状图最大矩形",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 15,
+      "hints": [
+        "遇到当前高度≤栈顶时弹栈。",
+        "弹出后左边界是新栈顶，宽度为 j-left-1。"
+      ],
+      "analysis": "每根柱子在被较矮或等高柱子截断时计算一次。使用 >= 让栈高严格递增，等高由后出现的柱子继承更宽的边界。每个下标只进出一次。",
+      "source": {
+        "label": "LeetCode 84 · Largest Rectangle in Histogram",
+        "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
+        "adaptation": "增加空输入和大高度，统一为标准输入输出。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 12
+    },
+    {
+      "id": "p30",
+      "title": "最大空白矩形",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 15,
+      "hints": [
+        "height 表示以当前行为共同底边向上连续可用的长度。",
+        "逐行调用柱状图算法；任意矩形都有某一行作为底边。"
+      ],
+      "analysis": "遇到点则 height[j]++，遇到障碍置零。每行用单调栈计算最大矩形并更新全局答案。共同底边和最小高度保证每段矩形上下对齐。",
+      "source": {
+        "label": "LeetCode 85 · Maximal Rectangle",
+        "url": "https://leetcode.com/problems/maximal-rectangle/",
+        "adaptation": "改用 ./ * 网格与多数据集 0 0 结束格式，使用自编测试。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 13
+    },
+    {
+      "id": "p31",
+      "title": "综合：最小值栈",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 16,
+      "hints": [
+        "每个结点同时保存当前值和到这一层为止的最小值。",
+        "弹出结点时，最小值状态随结点一同恢复。"
+      ],
+      "analysis": "用 vector<pair<int,int>> 同步保存值与前缀最小值，避免单独删除最小值时丢失重复信息。空栈先判断，不调用 back。",
+      "source": {
+        "label": "LeetCode 155 · Min Stack",
+        "url": "https://leetcode.com/problems/min-stack/",
+        "adaptation": "改成命令式输入，pop 输出被删除值，增加空栈行为；min 对应原 getMin。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 8
+    },
+    {
+      "id": "p32",
+      "title": "综合：LRU 缓存",
+      "difficulty": "挑战",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 16,
+      "hints": [
+        "list 前端存最近使用，尾端存最久未使用。",
+        "哈希表记录 key 到 list 结点迭代器；移动用 splice。"
+      ],
+      "analysis": "命中时将结点 splice 到链表前端，迭代器仍有效；插入时登记新迭代器，超容量时同时删除尾结点及其哈希索引。容量零提前处理。",
+      "source": {
+        "label": "LeetCode 146 · LRU Cache",
+        "url": "https://leetcode.com/problems/lru-cache/",
+        "adaptation": "改为命令式输入，增加容量 0，值非负以使 -1 无歧义。题面、代码与测试数据重新编写，未搬运平台题解。"
+      },
+      "test_count": 9
+    }
+  ],
+  "demos": [
+    {
+      "id": "d01",
+      "title": "编译、输入输出与类型：最小实验"
+    },
+    {
+      "id": "d02",
+      "title": "控制流程、函数与程序组织：最小实验"
+    },
+    {
+      "id": "d03",
+      "title": "数组、string 与 vector：最小实验"
+    },
+    {
+      "id": "d04",
+      "title": "指针、引用、const 与二维数组：最小实验"
+    },
+    {
+      "id": "d05",
+      "title": "动态内存、所有权与链表：最小实验"
+    },
+    {
+      "id": "d06",
+      "title": "类、初始化与析构：最小实验"
+    },
+    {
+      "id": "d07",
+      "title": "拷贝、移动与值语义：最小实验"
+    },
+    {
+      "id": "d08",
+      "title": "const 成员、静态成员与友元：最小实验"
+    },
+    {
+      "id": "d09",
+      "title": "继承、虚函数与对象切片：最小实验"
+    },
+    {
+      "id": "d10",
+      "title": "多继承、虚基类与 NVI：最小实验"
+    },
+    {
+      "id": "d11",
+      "title": "运算符重载与转换：最小实验"
+    },
+    {
+      "id": "d12",
+      "title": "函数模板、类模板与转发：最小实验"
+    },
+    {
+      "id": "d13",
+      "title": "STL、迭代器、算法与 Lambda：最小实验"
+    },
+    {
+      "id": "d14",
+      "title": "异常、RAII 与 C++17 值类型：最小实验"
+    },
+    {
+      "id": "d15",
+      "title": "单调栈与最大空白矩形：最小实验"
+    },
+    {
+      "id": "d16",
+      "title": "综合练习与可维护的小工程：最小实验"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+S 5
+push cpp
+push hello
+pop
+top
+size

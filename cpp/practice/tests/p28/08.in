@@ -1,0 +1,7 @@
+6
+TEXT x
+ADD 0
+PRINT
+INT 1
+ADD -2
+PRINT
