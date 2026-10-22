@@ -83,15 +83,28 @@
     const sea=document.querySelector('.ocean-motion');
     if(sea&&'IntersectionObserver' in window){seaObserver=new IntersectionObserver(entries=>{sea.dataset.offscreen=String(!entries[0].isIntersecting);},{threshold:0});seaObserver.observe(sea);}
     refreshSeaState();
-    document.querySelectorAll('.music-secret').forEach(secret=>{
-      if(secret.dataset.ready)return;
-      secret.dataset.ready='true';
-      const frame=secret.querySelector('iframe[data-music-src]');
-      secret.addEventListener('toggle',()=>{
-        if(secret.open){if(frame&&!frame.getAttribute('src'))frame.src=frame.dataset.musicSrc;}
-        else frame?.removeAttribute('src');
+    document.querySelectorAll('[data-bgm-player]').forEach(player=>{
+      if(player.dataset.ready)return;
+      player.dataset.ready='true';
+      const audio=player.querySelector('[data-bgm-audio]');
+      const toggle=player.querySelector('[data-bgm-toggle]');
+      const label=player.querySelector('[data-bgm-label]');
+      const status=player.querySelector('[data-bgm-status]');
+      const title=toggle.dataset.bgmTitle;
+      audio.volume=.35;
+      const update=()=>{
+        const playing=!audio.paused;
+        toggle.setAttribute('aria-pressed',String(playing));
+        toggle.setAttribute('aria-label',`${playing?'暂停':'播放'}背景音乐：${title}`);
+        label.textContent=playing?'暂停音乐':'听一会儿';
+        player.classList.toggle('is-playing',playing);
+      };
+      audio.addEventListener('play',update);audio.addEventListener('pause',update);
+      audio.addEventListener('error',()=>{status.textContent='音乐暂时无法播放。';update();});
+      toggle.addEventListener('click',async()=>{
+        if(!audio.paused){audio.pause();return;}
+        try{status.textContent='';await audio.play();}catch{status.textContent='音乐暂时无法播放。';update();}
       });
-      secret.querySelector('[data-close-music]')?.addEventListener('click',()=>{secret.open=false;secret.querySelector('summary').focus();});
     });
   }
   document.addEventListener('DOMContentLoaded',()=>{
@@ -108,7 +121,7 @@
   });
   document.addEventListener('pjax:complete',enhance);
   document.addEventListener('pjax:send',()=>{
-    document.querySelectorAll('.music-secret[open]').forEach(secret=>{secret.open=false;secret.querySelector('iframe')?.removeAttribute('src');});
+    document.querySelectorAll('[data-bgm-audio]').forEach(audio=>{audio.pause();audio.currentTime=0;});
     clearTimeout(settleTimer);document.documentElement.dataset.navigating='pending';
     document.getElementById('page-transition-progress')?.setAttribute('aria-hidden','false');
   });
