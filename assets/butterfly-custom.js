@@ -12,6 +12,7 @@
   let settleTimer;
   const prefetched=new Set();
   const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+  const musicGraphs=new Map();
   let seaObserver;
   function refreshSeaState(){
     const sea=document.querySelector('.ocean-motion');
@@ -19,6 +20,7 @@
   }
 
   function enhance() {
+    for(const [player,graph] of musicGraphs){if(!player.isConnected){graph.context.close().catch(()=>{});musicGraphs.delete(player);}}
     if(!document.querySelector('.skip-link')){
       const skip=document.createElement('a');skip.href='#content-inner';skip.textContent='跳到正文';skip.className='skip-link';document.body.prepend(skip);
     }
@@ -89,23 +91,47 @@
       const mute=player.querySelector('[data-bgm-mute]');
       const level=player.querySelector('[data-bgm-level]');
       const settings=player.querySelector('[data-bgm-settings]');
-      let lastAudible=.15;
+      let lastAudible=.15,volumeLevel=.15,isMuted=false;
       audio.volume=.15;
+      const nativeVolume=Math.abs(audio.volume-.15)<.001;
       const updateVolume=()=>{
-        const percent=Math.round(audio.volume*100),muted=audio.muted||percent===0;
+        const percent=Math.round(volumeLevel*100),muted=isMuted||percent===0;
         volume.value=String(percent);volume.setAttribute('aria-valuetext',`${percent}%`);level.textContent=`${percent}%`;
         player.dataset.muted=String(muted);mute.setAttribute('aria-pressed',String(muted));
         mute.setAttribute('aria-label',muted?'取消静音':'静音');mute.title=muted?'取消静音':'静音';
       };
+      const applyVolume=()=>{
+        audio.muted=isMuted;
+        const graph=musicGraphs.get(player);
+        if(graph)graph.gain.gain.setTargetAtTime(isMuted?0:volumeLevel,graph.context.currentTime,.015);
+        else if(nativeVolume)audio.volume=volumeLevel;
+        updateVolume();
+      };
+      const prepareAudio=()=>{
+        // iOS may ignore HTMLMediaElement.volume. Route through GainNode when needed.
+        if(nativeVolume)return Promise.resolve();
+        let graph=musicGraphs.get(player);
+        if(!graph){
+          const AudioContext=window.AudioContext||window.webkitAudioContext;
+          if(!AudioContext)throw new Error('Audio gain unavailable');
+          const context=new AudioContext(),gain=context.createGain();
+          gain.gain.value=isMuted?0:volumeLevel;
+          try{const source=context.createMediaElementSource(audio);source.connect(gain);gain.connect(context.destination);}
+          catch(error){context.close().catch(()=>{});throw error;}
+          graph={context,gain};musicGraphs.set(player,graph);
+        }
+        applyVolume();
+        return graph.context.state!=='running'?graph.context.resume():Promise.resolve();
+      };
       audio.addEventListener('volumechange',updateVolume);
       volume.addEventListener('input',()=>{
-        audio.volume=Math.max(0,Math.min(1,Number(volume.value)/100));
-        audio.muted=audio.volume===0;if(audio.volume>0)lastAudible=audio.volume;updateVolume();
+        volumeLevel=Math.max(0,Math.min(1,Number(volume.value)/100));
+        isMuted=volumeLevel===0;if(volumeLevel>0)lastAudible=volumeLevel;applyVolume();
       });
       mute.addEventListener('click',()=>{
-        if(audio.muted||audio.volume===0){if(audio.volume===0)audio.volume=lastAudible;audio.muted=false;}
-        else audio.muted=true;
-        updateVolume();
+        if(isMuted||volumeLevel===0){if(volumeLevel===0)volumeLevel=lastAudible;isMuted=false;}
+        else isMuted=true;
+        applyVolume();
       });
       settings.addEventListener('keydown',event=>{if(event.key==='Escape'){settings.open=false;settings.querySelector('summary').focus();}});
       updateVolume();
@@ -120,7 +146,7 @@
       audio.addEventListener('error',()=>{status.textContent='音乐暂时无法播放。';update();});
       toggle.addEventListener('click',async()=>{
         if(!audio.paused){audio.pause();return;}
-        try{status.textContent='';await audio.play();}catch{status.textContent='音乐暂时无法播放。';update();}
+        try{status.textContent='';await Promise.all([prepareAudio(),audio.play()]);}catch{audio.pause();status.textContent='音乐暂时无法播放。';update();}
       });
     });
   }
