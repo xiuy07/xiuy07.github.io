@@ -1,2 +1,9 @@
 .DS_Store
 Thumbs.db
+
+# Generated Python / local judge artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.build/
+local-results.json

@@ -2,6 +2,8 @@
 from pathlib import Path
 import importlib.util
 import tempfile
+import subprocess
+import sys
 
 ROOT=Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('local_judge',ROOT/'practice/judge.py')
@@ -20,6 +22,11 @@ def main():
     expect(not judge.equal(1,True))
     expect(judge.equal(1.0000000001,1.0))
     expect(not judge.equal(float('nan'),1.0))
+    expect(not judge.equal(10**400,1.0))
+    expect(not judge.equal(-10**400,-1.0))
+    expect(judge.equal(10**400,10**400))
+    expect(not judge.equal([10**400],[1.0]))
+    expect(not judge.equal({'value':10**400},{'value':1.0}))
     expect(not judge.equal([1,2],[2,1]))
     expect(judge.equal({'b':2,'a':1},{'a':1,'b':2}))
     expect(not judge.equal({'a':1,'b':2},{'a':1}))
@@ -42,6 +49,9 @@ def main():
             if actual=='OK':expect(judge.equal(detail,[1,2]))
         actual,_=judge.execute(Path(temp)/'missing.py','null')
         expect(actual=='FE')
+    for invalid in ['nan','inf','0','-1']:
+        result=subprocess.run([sys.executable,str(ROOT/'practice/judge.py'),'list','--timeout='+invalid],capture_output=True,timeout=5)
+        expect(result.returncode==2)
     print(f'{checks} judge regression checks passed')
 
 if __name__=='__main__':main()

@@ -3,6 +3,7 @@
 import argparse
 import difflib
 import json
+import math
 import os
 from pathlib import Path
 import shutil
@@ -30,7 +31,7 @@ def terminate(process):
 
 def run_limited(command, input_path, cwd, timeout, output_limit=1024 * 1024):
     # 输出写入临时文件；监控大小，避免错误循环把终端/内存塞满。
-    with input_path.open('rb') as inp, tempfile.TemporaryFile() as out, tempfile.TemporaryFile() as err:
+    with input_path.open('rb') as inp, tempfile.TemporaryFile(dir=cwd) as out, tempfile.TemporaryFile(dir=cwd) as err:
         options = {'start_new_session': True} if os.name != 'nt' else {}
         p = subprocess.Popen(command, stdin=inp, stdout=out, stderr=err, cwd=cwd, **options)
         start = time.monotonic()
@@ -73,7 +74,12 @@ def evaluate(problem, args, compiler):
     build_parent = ROOT / '.build' / pid
     build_parent.mkdir(parents=True, exist_ok=True)
     # 每次运行独立目录，避免两个终端同时评测时争用同一可执行文件。
-    build = Path(tempfile.mkdtemp(prefix='run-', dir=build_parent))
+    with tempfile.TemporaryDirectory(prefix='run-', dir=build_parent) as temp:
+        return evaluate_in_build(problem, args, compiler, source, Path(temp))
+
+
+def evaluate_in_build(problem, args, compiler, source, build):
+    pid = problem['id']
     exe = build / ('submission.exe' if os.name == 'nt' else 'submission')
     command = [compiler, '-std=c++17', '-O2', '-Wall', '-Wextra', '-pedantic', '-I', str(source.parent)]
     if args.sanitize:
@@ -145,8 +151,8 @@ def main():
     parser.add_argument('--keep-going', action='store_true', help='某用例失败后继续检查本题其余用例')
     parser.add_argument('--verbose', action='store_true')
     args = parser.parse_args()
-    if args.timeout <= 0:
-        parser.error('--timeout 必须大于 0')
+    if not math.isfinite(args.timeout) or args.timeout <= 0:
+        parser.error('--timeout 必须为有限正数')
     manifest = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))
     problems = [p for p in manifest['problems'] if not args.track or p.get('track') == args.track]
     if args.target == 'list':

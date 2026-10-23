@@ -22,7 +22,13 @@ def equal(actual, expected):
     if type(expected) is int:
         return type(actual) in (int, float) and actual == expected
     if isinstance(expected, float):
-        return type(actual) in (int, float) and math.isfinite(actual) and math.isclose(actual, expected, rel_tol=1e-9, abs_tol=1e-9)
+        if type(actual) not in (int, float):
+            return False
+        try:
+            return math.isfinite(actual) and math.isclose(actual, expected, rel_tol=1e-9, abs_tol=1e-9)
+        except OverflowError:
+            # JSON 允许任意精度整数；超出 float 范围的答案应判错，而非中断整轮评测。
+            return False
     if isinstance(expected, str):
         return type(actual) is str and actual == expected
     if isinstance(expected, list):
@@ -87,8 +93,8 @@ def main():
     parser.add_argument('--timeout', type=float, default=5.0)
     parser.add_argument('--report', type=Path, help='保存评测JSON，可在网页练习页导入')
     args = parser.parse_args()
-    if args.timeout <= 0:
-        parser.error('--timeout 必须为正数')
+    if not math.isfinite(args.timeout) or args.timeout <= 0:
+        parser.error('--timeout 必须为有限正数')
     tasks = json.loads((ROOT/'problems.json').read_text(encoding='utf-8'))
     if args.target == 'doctor':
         print('Python:', sys.version.split()[0], '\n解释器:', sys.executable)
