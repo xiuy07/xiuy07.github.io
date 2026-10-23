@@ -44,3 +44,15 @@ python tools/build.py
 python tests/check_content.py
 python tests/check_ui.py
 ```
+
+## 字体与排版增量验证
+
+本次使用独立的 cpp-ui-typography 输出目录，上一版输出、原始讲义和课程目录未修改。与 cpp-ui-tabler 逐文件比较课程正文、算法、示例、练习、个人笔记框架，以及 curriculum.json、app.js、results.js 和 data.js 的字节；本次只更新字体、CSS、资源构建与相关开发说明。
+
+- Noto Sans SC 只读源字体生成 1465 个 Unicode 字符的 WOFF2 子集，重命名内部字体族为 Study Sans SC，保留上游版权和 OFL。子集约 332 KiB，覆盖当前课程的 943 个汉字；400、500、600、700 实例化校验通过。
+- JetBrains Mono 随项目分发；可打印 ASCII 字符均存在，字宽一致；CSS 关闭代码连字。中文注释回退到本地课程中文字体。
+- 字体 URL 带内容摘要版本，同时更新预加载引用与 CSS 摘要，避免旧缓存延续。静态检查核对字体摘要、WOFF2 文件头、本地引用及学习包内字体和许可字节一致。
+- 重新构建并通过 check_content.py、check_ui.py、check_fonts.py、成绩解析测试及 JS 语法检查。C++ 内容未改，本次未重复运行全部 C++ 编译测试。
+- 上一节的浏览器交互与多尺寸验证属于 Tabler 前端版记录；本次字体调整的程序检查不替代实际浏览器截图验收。
+
+字体开发检查单独执行 `python tests/check_fonts.py`，需要安装 `fonttools[woff]`。课程构建与本地评测无需安装该依赖。

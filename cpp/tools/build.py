@@ -61,6 +61,14 @@ def main():
 
     # 资源随内容变化版本，避免发布更新后浏览器沿用旧代码或样式。
     entry=(ROOT/'index.html').read_text(encoding='utf-8')
+    workspace=(ROOT/'assets/workspace.css').read_text(encoding='utf-8')
+    for font in ['vendor/inter/inter-latin-wght-normal.woff2',
+                 'vendor/study-sans-sc/study-sans-sc-wght.woff2',
+                 'vendor/jetbrains-mono/jetbrains-mono-latin-wght-normal.woff2']:
+        version=hashlib.sha256((ROOT/'assets'/font).read_bytes()).hexdigest()[:10]
+        workspace=re.sub(re.escape(font)+r'(?:\?v=[a-f0-9]+)?', font+'?v='+version, workspace)
+        entry=re.sub('assets/'+re.escape(font)+r'(?:\?v=[a-f0-9]+)?', 'assets/'+font+'?v='+version, entry)
+    write_utf8(ROOT/'assets/workspace.css', workspace)
     for asset in ['vendor/tabler/tabler.min.css','workspace.css','highlight.css','data.js','results.js','app.js']:
         version=hashlib.sha256((ROOT/'assets'/asset).read_bytes()).hexdigest()[:10]
         entry=re.sub(r'assets/'+re.escape(asset)+r'(?:\?v=[a-f0-9]+)?', 'assets/'+asset+'?v='+version, entry)

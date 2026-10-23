@@ -72,3 +72,11 @@ python tools/build.py
 ## 新版界面
 
 前端基于 MIT 授权的 Tabler 1.7.0，入口为 index.html，定制样式为 assets/workspace.css。配备课程卡片、分组目录、练习筛选、阅读设置和移动抽屉导航；Ctrl+K 聚焦全书搜索。已有阅读与完成进度沿用原本机存储键。所有模板、字体与图标随包分发，详情见 THIRD_PARTY.md。
+
+## 字体与阅读排版
+
+中文采用 Noto Sans SC 的课程字符子集（内部名 Study Sans SC），拉丁文字为 Inter，代码为 JetBrains Mono。字体全部随网页与学习包保存，不需要访问字体 CDN。代码关闭连字，便于辨认 `!=`、`<=`、`->` 等运算符；中文注释与正文使用相同字形。字号仍可在右上角的阅读设置中调整。
+
+目录与辅助文字的字号调大，正文默认 18px，手机为 17px；中文标题使用 600 字重和正常字距。完整字体来源与许可见 THIRD_PARTY.md。
+
+增加课程内容后，超出字体子集的字会自动使用系统字体。若要更新子集，单独安装 `fonttools[woff]`，从 dependencies.json 的 source_file 下载原始 Noto Sans SC，再运行 `python tools/build_fonts.py 原始字体路径`，最后运行 `python tools/build.py`。仅重新生成网页内容不需要安装字体工具。
