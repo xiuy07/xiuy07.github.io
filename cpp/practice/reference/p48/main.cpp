@@ -1,5 +1,6 @@
 #include "../../../algorithms/dsa.hpp"
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 using namespace study;
 template <class T> void output(const vector<T> &a) {
