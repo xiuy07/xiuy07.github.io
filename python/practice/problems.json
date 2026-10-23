@@ -3263,5 +3263,711 @@
     ],
     "html": "<h1>p40 直方图数据准备</h1>\n<p>所属第20章 · 进阶</p>\n<h2>任务与接口</h2>\n<p>输入 {\"values\":[数值,...],\"edges\":[严格递增边界,...]}，数值≤10000个，边界2..100个。使用NumPy返回各箱计数。各箱左闭右开，最后一箱包含最右边界；区间外数据忽略。</p>\n<p>在 <code>practice/solutions/p40/main.py</code> 中实现 <code>solve(data)</code> 并返回结果；驱动器负责读取和输出JSON。不要在 solve 中 input 或 print。</p>\n<h2>示例</h2>\n<p>示例1输入</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"p\">{</span><span class=\"nt\">&quot;values&quot;</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"p\">[],</span><span class=\"w\"> </span><span class=\"nt\">&quot;edges&quot;</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">1</span><span class=\"p\">]}</span>\n</code></pre></div>\n\n<p>返回值</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n</code></pre></div>\n\n<p>示例2输入</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"p\">{</span><span class=\"nt\">&quot;values&quot;</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">1</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">3</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">-1</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">4</span><span class=\"p\">],</span><span class=\"w\"> </span><span class=\"nt\">&quot;edges&quot;</span><span class=\"p\">:</span><span class=\"w\"> </span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">1</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">3</span><span class=\"p\">]}</span>\n</code></pre></div>\n\n<p>返回值</p>\n<div class=\"highlight\"><pre><span></span><code><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">1</span><span class=\"p\">,</span><span class=\"w\"> </span><span class=\"mi\">2</span><span class=\"p\">]</span>\n</code></pre></div>\n\n<h2>提示</h2>\n<p>np.histogram 的最后一个区间右端也包含。</p>\n<h2>复杂度目标</h2>\n<p>时间 O(n log b)，空间 O(n+b)</p>\n<h2>本地测试</h2>\n<div class=\"highlight\"><pre><span></span><code>python practice/judge.py p40\n</code></pre></div>\n\n<p>测试仅验证可观察结果；类、生成器、并发、NumPy/pandas 的使用与复杂度需要对照题面自查。</p>\n<p>来源：原创教学练习</p>",
     "reference": "import numpy as np\ndef solve(data):\n    counts, _ = np.histogram(data['values'], bins=data['edges'])\n    return counts.tolist()\n"
+  },
+  {
+    "id": "p41",
+    "chapter": "21",
+    "title": "把运算组合成函数",
+    "contract": "输入 {\"value\":整数,\"ops\":[[\"add\"或\"mul\",整数参数],...]}，按ops从左到右作用于value，返回最终整数。操作数与参数绝对值≤100，操作数≤20个。编写compose与闭包，把每个运算封装成函数；空ops返回原值。",
+    "hint": "compose(outer,inner)返回x→outer(inner(x))；按执行顺序累计时，新操作应包在外层。",
+    "complexity": "O(k)次算术与O(k)个函数对象；大整数算术成本另计。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "基础",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p41/01.in",
+        "out": "tests/p41/01.out"
+      },
+      {
+        "in": "tests/p41/02.in",
+        "out": "tests/p41/02.out"
+      },
+      {
+        "in": "tests/p41/03.in",
+        "out": "tests/p41/03.out"
+      },
+      {
+        "in": "tests/p41/04.in",
+        "out": "tests/p41/04.out"
+      },
+      {
+        "in": "tests/p41/05.in",
+        "out": "tests/p41/05.out"
+      },
+      {
+        "in": "tests/p41/06.in",
+        "out": "tests/p41/06.out"
+      },
+      {
+        "in": "tests/p41/07.in",
+        "out": "tests/p41/07.out"
+      },
+      {
+        "in": "tests/p41/08.in",
+        "out": "tests/p41/08.out"
+      },
+      {
+        "in": "tests/p41/09.in",
+        "out": "tests/p41/09.out"
+      },
+      {
+        "in": "tests/p41/10.in",
+        "out": "tests/p41/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": {
+          "value": 4,
+          "ops": [
+            [
+              "add",
+              2
+            ],
+            [
+              "mul",
+              3
+            ]
+          ]
+        },
+        "output": 18
+      },
+      {
+        "input": {
+          "value": 4,
+          "ops": [
+            [
+              "mul",
+              3
+            ],
+            [
+              "add",
+              2
+            ]
+          ]
+        },
+        "output": 14
+      }
+    ],
+    "html": "",
+    "reference": "def compose(outer, inner):\n    def combined(x):\n        return outer(inner(x))\n    return combined\n\ndef make_op(name, amount):\n    if name == 'add':\n        return lambda x: x + amount\n    return lambda x: x * amount\n\ndef solve(data):\n    fn = lambda x: x\n    for name, amount in data['ops']:\n        fn = compose(make_op(name, amount), fn)\n    return fn(data['value'])\n"
+  },
+  {
+    "id": "p42",
+    "chapter": "21",
+    "title": "彼此独立的计数器",
+    "contract": "输入 {\"starts\":[整数初值,...],\"calls\":[[计数器下标,增量],...]}。最多100个计数器、1000次调用，初值和增量绝对值≤10000，下标合法。用闭包工厂为各初值建立计数器，返回 {\"results\":每次调用的返回值数组,\"final\":各计数器最终值数组}。允许没有计数器（此时calls为空）。",
+    "hint": "工厂每次调用建立独立total；内部add用nonlocal更新。读取最终值可调用add(0)。",
+    "complexity": "时间O(n+m)，空间O(n+m)。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "进阶",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p42/01.in",
+        "out": "tests/p42/01.out"
+      },
+      {
+        "in": "tests/p42/02.in",
+        "out": "tests/p42/02.out"
+      },
+      {
+        "in": "tests/p42/03.in",
+        "out": "tests/p42/03.out"
+      },
+      {
+        "in": "tests/p42/04.in",
+        "out": "tests/p42/04.out"
+      },
+      {
+        "in": "tests/p42/05.in",
+        "out": "tests/p42/05.out"
+      },
+      {
+        "in": "tests/p42/06.in",
+        "out": "tests/p42/06.out"
+      },
+      {
+        "in": "tests/p42/07.in",
+        "out": "tests/p42/07.out"
+      },
+      {
+        "in": "tests/p42/08.in",
+        "out": "tests/p42/08.out"
+      },
+      {
+        "in": "tests/p42/09.in",
+        "out": "tests/p42/09.out"
+      },
+      {
+        "in": "tests/p42/10.in",
+        "out": "tests/p42/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": {
+          "starts": [
+            10,
+            100
+          ],
+          "calls": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        "output": {
+          "results": [
+            12,
+            15,
+            101
+          ],
+          "final": [
+            15,
+            101
+          ]
+        }
+      },
+      {
+        "input": {
+          "starts": [],
+          "calls": []
+        },
+        "output": {
+          "results": [],
+          "final": []
+        }
+      }
+    ],
+    "html": "",
+    "reference": "def make_counter(start):\n    total = start\n    def add(delta):\n        nonlocal total\n        total += delta\n        return total\n    return add\n\ndef solve(data):\n    counters = [make_counter(x) for x in data['starts']]\n    result = [counters[i](delta) for i, delta in data['calls']]\n    return {'results': result, 'final': [counter(0) for counter in counters]}\n"
+  },
+  {
+    "id": "p43",
+    "chapter": "22",
+    "title": "嵌套结构的三种摘要",
+    "contract": "输入由整数和列表组成的嵌套结构，根可以是整数或列表；整数绝对值≤10000，节点≤1000，嵌套列表深度≤30。递归返回 {\"sum\":所有整数之和,\"leaves\":整数个数,\"depth\":列表最大嵌套层数}。整数的depth为0，空列表为1；例如[1,[2],[]]深度为2。",
+    "hint": "整数直接返回(sum=x,leaves=1,depth=0)；列表合并子结果，depth取1+子项最大深度，空列表用默认0。",
+    "complexity": "时间O(节点数)，除返回值外空间O(最大深度)。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "基础",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p43/01.in",
+        "out": "tests/p43/01.out"
+      },
+      {
+        "in": "tests/p43/02.in",
+        "out": "tests/p43/02.out"
+      },
+      {
+        "in": "tests/p43/03.in",
+        "out": "tests/p43/03.out"
+      },
+      {
+        "in": "tests/p43/04.in",
+        "out": "tests/p43/04.out"
+      },
+      {
+        "in": "tests/p43/05.in",
+        "out": "tests/p43/05.out"
+      },
+      {
+        "in": "tests/p43/06.in",
+        "out": "tests/p43/06.out"
+      },
+      {
+        "in": "tests/p43/07.in",
+        "out": "tests/p43/07.out"
+      },
+      {
+        "in": "tests/p43/08.in",
+        "out": "tests/p43/08.out"
+      },
+      {
+        "in": "tests/p43/09.in",
+        "out": "tests/p43/09.out"
+      },
+      {
+        "in": "tests/p43/10.in",
+        "out": "tests/p43/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": 0,
+        "output": {
+          "sum": 0,
+          "leaves": 1,
+          "depth": 0
+        }
+      },
+      {
+        "input": [],
+        "output": {
+          "sum": 0,
+          "leaves": 0,
+          "depth": 1
+        }
+      }
+    ],
+    "html": "",
+    "reference": "def summarize(value):\n    if not isinstance(value, list):\n        return (value, 1, 0)\n    total, leaves, depth = 0, 0, 0\n    for child in value:\n        s, count, child_depth = summarize(child)\n        total += s\n        leaves += count\n        depth = max(depth, child_depth)\n    return total, leaves, depth + 1\n\ndef solve(data):\n    total, leaves, depth = summarize(data)\n    return {'sum': total, 'leaves': leaves, 'depth': depth}\n"
+  },
+  {
+    "id": "p44",
+    "chapter": "22",
+    "title": "有封闭台阶的路线",
+    "contract": "输入 {\"n\":目标层数,\"blocked\":[禁止落脚层数,...]}。0≤n≤60，每次跨1层或3层，从0层出发，禁止层数在1..n且允许重复。返回到n层的不同步长序列数。到0层有一条空路线；目标被封闭则返回0。使用递归与记忆化。",
+    "hint": "负层数或被封闭层数返回0；0返回1；最后一步从n-1或n-3来。缓存放在solve内部，避免不同题目实例共享规则。",
+    "complexity": "O(n)个状态、O(n)调用栈；大整数算术成本另计。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "进阶",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p44/01.in",
+        "out": "tests/p44/01.out"
+      },
+      {
+        "in": "tests/p44/02.in",
+        "out": "tests/p44/02.out"
+      },
+      {
+        "in": "tests/p44/03.in",
+        "out": "tests/p44/03.out"
+      },
+      {
+        "in": "tests/p44/04.in",
+        "out": "tests/p44/04.out"
+      },
+      {
+        "in": "tests/p44/05.in",
+        "out": "tests/p44/05.out"
+      },
+      {
+        "in": "tests/p44/06.in",
+        "out": "tests/p44/06.out"
+      },
+      {
+        "in": "tests/p44/07.in",
+        "out": "tests/p44/07.out"
+      },
+      {
+        "in": "tests/p44/08.in",
+        "out": "tests/p44/08.out"
+      },
+      {
+        "in": "tests/p44/09.in",
+        "out": "tests/p44/09.out"
+      },
+      {
+        "in": "tests/p44/10.in",
+        "out": "tests/p44/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": {
+          "n": 0,
+          "blocked": []
+        },
+        "output": 1
+      },
+      {
+        "input": {
+          "n": 4,
+          "blocked": []
+        },
+        "output": 3
+      }
+    ],
+    "html": "",
+    "reference": "from functools import cache\n\ndef solve(data):\n    blocked = set(data['blocked'])\n    @cache\n    def count(n):\n        if n < 0 or n in blocked:\n            return 0\n        if n == 0:\n            return 1\n        return count(n - 1) + count(n - 3)\n    return count(data['n'])\n"
+  },
+  {
+    "id": "p45",
+    "chapter": "23",
+    "title": "解包两端与中段",
+    "contract": "输入长度2..10000的整数数组，元素绝对值≤10000。用星号目标解包第一个、中间若干个、最后一个元素，返回 {\"ends\":[首元素,尾元素],\"middle_sum\":中间元素和}。恰好两项时中段为空，和为0。",
+    "hint": "first,*middle,last = data；middle始终是列表。",
+    "complexity": "时间O(n)，星号解包中段空间O(n)。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "基础",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p45/01.in",
+        "out": "tests/p45/01.out"
+      },
+      {
+        "in": "tests/p45/02.in",
+        "out": "tests/p45/02.out"
+      },
+      {
+        "in": "tests/p45/03.in",
+        "out": "tests/p45/03.out"
+      },
+      {
+        "in": "tests/p45/04.in",
+        "out": "tests/p45/04.out"
+      },
+      {
+        "in": "tests/p45/05.in",
+        "out": "tests/p45/05.out"
+      },
+      {
+        "in": "tests/p45/06.in",
+        "out": "tests/p45/06.out"
+      },
+      {
+        "in": "tests/p45/07.in",
+        "out": "tests/p45/07.out"
+      },
+      {
+        "in": "tests/p45/08.in",
+        "out": "tests/p45/08.out"
+      },
+      {
+        "in": "tests/p45/09.in",
+        "out": "tests/p45/09.out"
+      },
+      {
+        "in": "tests/p45/10.in",
+        "out": "tests/p45/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": [
+          2,
+          4,
+          6,
+          8
+        ],
+        "output": {
+          "ends": [
+            2,
+            8
+          ],
+          "middle_sum": 10
+        }
+      },
+      {
+        "input": [
+          2,
+          8
+        ],
+        "output": {
+          "ends": [
+            2,
+            8
+          ],
+          "middle_sum": 0
+        }
+      }
+    ],
+    "html": "",
+    "reference": "def solve(data):\n    first, *middle, last = data\n    return {'ends': [first, last], 'middle_sum': sum(middle)}\n"
+  },
+  {
+    "id": "p46",
+    "chapter": "23",
+    "title": "用match解释小命令",
+    "contract": "输入字符串数组，≤1000项，每项长度≤100。支持add x y、neg x、sum（后跟零个或多个数）；操作数格式为可选正负号加ASCII十进制数字，值绝对值≤10000。分别返回计算结果，未知指令、项数不符或数字非法返回null。空sum返回0。用split与match拆分结构，不用eval。",
+    "hint": "序列模式约束操作名和长度，sum分支用星号收集；再逐项验证数值格式。",
+    "complexity": "时间O(输入文本总长)，空间O(输入文本总长)。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "进阶",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p46/01.in",
+        "out": "tests/p46/01.out"
+      },
+      {
+        "in": "tests/p46/02.in",
+        "out": "tests/p46/02.out"
+      },
+      {
+        "in": "tests/p46/03.in",
+        "out": "tests/p46/03.out"
+      },
+      {
+        "in": "tests/p46/04.in",
+        "out": "tests/p46/04.out"
+      },
+      {
+        "in": "tests/p46/05.in",
+        "out": "tests/p46/05.out"
+      },
+      {
+        "in": "tests/p46/06.in",
+        "out": "tests/p46/06.out"
+      },
+      {
+        "in": "tests/p46/07.in",
+        "out": "tests/p46/07.out"
+      },
+      {
+        "in": "tests/p46/08.in",
+        "out": "tests/p46/08.out"
+      },
+      {
+        "in": "tests/p46/09.in",
+        "out": "tests/p46/09.out"
+      },
+      {
+        "in": "tests/p46/10.in",
+        "out": "tests/p46/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": [
+          "add 2 3",
+          "neg -4",
+          "sum 1 2 3"
+        ],
+        "output": [
+          5,
+          4,
+          6
+        ]
+      },
+      {
+        "input": [
+          "sum",
+          "add 1",
+          "unknown 2",
+          ""
+        ],
+        "output": [
+          0,
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "html": "",
+    "reference": "import re\n\ndef parse_numbers(parts):\n    if any(re.fullmatch(r'[+-]?[0-9]+', p) is None for p in parts):\n        return None\n    return [int(p) for p in parts]\n\ndef evaluate(line):\n    match line.split():\n        case ['add', x, y]:\n            values = parse_numbers([x, y])\n            return None if values is None else sum(values)\n        case ['neg', x]:\n            values = parse_numbers([x])\n            return None if values is None else -values[0]\n        case ['sum', *parts]:\n            values = parse_numbers(parts)\n            return None if values is None else sum(values)\n        case _:\n            return None\n\ndef solve(data):\n    return [evaluate(line) for line in data]\n"
+  },
+  {
+    "id": "p47",
+    "chapter": "24",
+    "title": "规范化的分数对象",
+    "contract": "输入 {\"fractions\":[[分子,分母],...]}，≤100项，分子绝对值≤1000，分母非零且绝对值≤1000。定义不可变Rational类：构造时约分，分母保持正数，支持+。返回全部分数之和的[分子,分母]；空输入返回[0,1]。参考实现不使用fractions.Fraction。",
+    "hint": "构造器统一符号并用gcd约分；加法返回新的合法对象，让调用者不重复维护表示约束。",
+    "complexity": "k次分数加法与gcd约分；整数位数随输入增长，成本不视为固定O(1)。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "基础",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p47/01.in",
+        "out": "tests/p47/01.out"
+      },
+      {
+        "in": "tests/p47/02.in",
+        "out": "tests/p47/02.out"
+      },
+      {
+        "in": "tests/p47/03.in",
+        "out": "tests/p47/03.out"
+      },
+      {
+        "in": "tests/p47/04.in",
+        "out": "tests/p47/04.out"
+      },
+      {
+        "in": "tests/p47/05.in",
+        "out": "tests/p47/05.out"
+      },
+      {
+        "in": "tests/p47/06.in",
+        "out": "tests/p47/06.out"
+      },
+      {
+        "in": "tests/p47/07.in",
+        "out": "tests/p47/07.out"
+      },
+      {
+        "in": "tests/p47/08.in",
+        "out": "tests/p47/08.out"
+      },
+      {
+        "in": "tests/p47/09.in",
+        "out": "tests/p47/09.out"
+      },
+      {
+        "in": "tests/p47/10.in",
+        "out": "tests/p47/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": {
+          "fractions": [
+            [
+              1,
+              6
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "output": [
+          1,
+          2
+        ]
+      },
+      {
+        "input": {
+          "fractions": []
+        },
+        "output": [
+          0,
+          1
+        ]
+      }
+    ],
+    "html": "",
+    "reference": "from dataclasses import dataclass\nfrom math import gcd\n\n@dataclass(frozen=True)\nclass Rational:\n    numerator: int\n    denominator: int\n    def __post_init__(self):\n        n, d = self.numerator, self.denominator\n        if d == 0:\n            raise ValueError('zero denominator')\n        if d < 0:\n            n, d = -n, -d\n        g = gcd(n, d)\n        object.__setattr__(self, 'numerator', n // g)\n        object.__setattr__(self, 'denominator', d // g)\n    def __add__(self, other):\n        if not isinstance(other, Rational):\n            return NotImplemented\n        return Rational(self.numerator * other.denominator + other.numerator * self.denominator, self.denominator * other.denominator)\n\ndef solve(data):\n    total = Rational(0, 1)\n    for n, d in data['fractions']:\n        total = total + Rational(n, d)\n    return [total.numerator, total.denominator]\n"
+  },
+  {
+    "id": "p48",
+    "chapter": "24",
+    "title": "接入len、for与in的整数区间",
+    "contract": "输入 {\"start\":整数,\"stop\":整数,\"step\":非零整数,\"queries\":整数数组}。端点绝对值≤100，step绝对值≤20，queries≤100项。定义IntSpan类，支持__iter__、__len__与__contains__。从start按step前进，不越过stop；恰好到达stop时包含它。方向不合则为空。返回 {\"values\":遍历值,\"length\":长度,\"contains\":每次成员判断结果数组}。",
+    "hint": "底层可包装range；正步长用stop+1，负步长用stop-1。不能把stop无条件加1。",
+    "complexity": "生成输出O(n+q)；可用range使整数成员判断不遍历整个区间。",
+    "source": "原创教学练习",
+    "deps": [],
+    "level": "进阶",
+    "track": "features",
+    "tests": [
+      {
+        "in": "tests/p48/01.in",
+        "out": "tests/p48/01.out"
+      },
+      {
+        "in": "tests/p48/02.in",
+        "out": "tests/p48/02.out"
+      },
+      {
+        "in": "tests/p48/03.in",
+        "out": "tests/p48/03.out"
+      },
+      {
+        "in": "tests/p48/04.in",
+        "out": "tests/p48/04.out"
+      },
+      {
+        "in": "tests/p48/05.in",
+        "out": "tests/p48/05.out"
+      },
+      {
+        "in": "tests/p48/06.in",
+        "out": "tests/p48/06.out"
+      },
+      {
+        "in": "tests/p48/07.in",
+        "out": "tests/p48/07.out"
+      },
+      {
+        "in": "tests/p48/08.in",
+        "out": "tests/p48/08.out"
+      },
+      {
+        "in": "tests/p48/09.in",
+        "out": "tests/p48/09.out"
+      },
+      {
+        "in": "tests/p48/10.in",
+        "out": "tests/p48/10.out"
+      }
+    ],
+    "examples": [
+      {
+        "input": {
+          "start": 1,
+          "stop": 5,
+          "step": 2,
+          "queries": [
+            0,
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        "output": {
+          "values": [
+            1,
+            3,
+            5
+          ],
+          "length": 3,
+          "contains": [
+            false,
+            true,
+            true,
+            false,
+            true
+          ]
+        }
+      },
+      {
+        "input": {
+          "start": 5,
+          "stop": 1,
+          "step": -2,
+          "queries": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        "output": {
+          "values": [
+            5,
+            3,
+            1
+          ],
+          "length": 3,
+          "contains": [
+            true,
+            false,
+            true,
+            true
+          ]
+        }
+      }
+    ],
+    "html": "",
+    "reference": "class IntSpan:\n    def __init__(self, start, stop, step):\n        if step == 0:\n            raise ValueError('zero step')\n        self._range = range(start, stop + (1 if step > 0 else -1), step)\n    def __iter__(self):\n        return iter(self._range)\n    def __len__(self):\n        return len(self._range)\n    def __contains__(self, value):\n        return value in self._range\n\ndef solve(data):\n    values = IntSpan(data['start'], data['stop'], data['step'])\n    return {'values': list(values), 'length': len(values), 'contains': [q in values for q in data['queries']]}\n"
   }
 ]

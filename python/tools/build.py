@@ -6,7 +6,7 @@ import re
 
 ROOT=Path(__file__).resolve().parents[1]
 def render(text):
-    return markdown.markdown(text,extensions=['fenced_code','tables','sane_lists','codehilite'],extension_configs={'codehilite':{'guess_lang':False,'css_class':'highlight'}})
+    return markdown.markdown(text,extensions=['fenced_code','tables','sane_lists','codehilite','md_in_html'],extension_configs={'codehilite':{'guess_lang':False,'css_class':'highlight'}})
 def main():
     data=json.loads((ROOT/'curriculum.json').read_text(encoding='utf-8'))
     for c in data['chapters']:
@@ -17,6 +17,8 @@ def main():
         for p in c['problems']:
             c['html']=c['html'].replace(f'../practice/statements/{p}.md',f'#problem/{p}')
         c['html']=c['html'].replace('../SOURCES.md','#sources')
+        c['html']=re.sub(r'\.\./content/(\d{2})\.md',r'#chapter/\1',c['html'])
+        c['html']=c['html'].replace('../index.html#lab','#lab')
     for p in data['problems']:
         p['html']=render((ROOT/'practice/statements'/f'{p["id"]}.md').read_text(encoding='utf-8'))
         p['reference']=(ROOT/'practice/reference'/p['id']/'main.py').read_text(encoding='utf-8')

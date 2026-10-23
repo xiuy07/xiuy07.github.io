@@ -1,6 +1,6 @@
 # Python 学习讲义：从代码到数据
 
-20章精简讲解、20个可运行示例、40道练习、400组固定测试，以及一个完整数据分析项目。
+24章讲解、46个可运行示例、48道练习、480组固定测试，以及一个完整数据分析项目。
 
 在线入口：https://xiuy07.github.io/python/
 
@@ -8,13 +8,14 @@
 
 解压完整学习包，直接打开 `index.html`。讲义、字体、搜索、演示均在本地，无需安装网页框架。也可以运行 `python -m http.server 8000`，浏览器访问 `http://localhost:8000/`。
 
-Python 目标版本为3.12+。基础题 p01—p24 只需标准库；数据题 p25—p40 按题面使用NumPy/pandas。完整项目另需Matplotlib。
+Python 目标版本为3.12+。基础题 p01—p24、特性专题 p41—p48 只需标准库；数据题 p25—p40 按题面使用NumPy/pandas。完整项目另需Matplotlib。
 
 ```text
 python --version
 python practice/judge.py doctor
 python practice/judge.py list
 python practice/judge.py list --track data
+python practice/judge.py list --track features
 ```
 
 打开 `practice/solutions/p01/main.py`，实现 `solve(data)`，然后：
@@ -51,7 +52,7 @@ python practice/judge.py demo all
 python demos/project.py
 ```
 
-`demos/01.py`—`20.py` 对应每章示例，`.out` 为预期输出。`project.py` 从学习包 `data/orders.csv` 读取教学数据，将输出写入**当前工作目录**的 `project-output/`：
+`demos/01.py`—`24.py` 对应每章完整示例；`demos/features/` 为22个拆解特性的短例子，`.out` 为预期输出。`project.py` 从学习包 `data/orders.csv` 读取教学数据，将输出写入**当前工作目录**的 `project-output/`：
 
 - `cleaned.csv`：清洗后明细。
 - `summary.csv`：按城市汇总收入。
@@ -63,7 +64,7 @@ python demos/project.py
 ## 目录
 
 ```text
-content/                    20章Markdown讲义
+content/                    24章Markdown讲义
 assets/                     页面、课程数据、离线字体
 demos/                      示例、预期输出、完整项目
 data/                       原创教学数据
@@ -87,11 +88,15 @@ AC通过；WA输出错误（含多余print）；CE语法错误；RE运行异常�
 
 默认每例5秒，可通过 `--timeout 10` 调整；stdout与stderr合计约1MiB上限。程序在 `practice/.build/` 下的临时目录运行，结束后清理本次目录。它是运行自己练习代码的教学工具，不是隔离不可信代码的安全沙箱，没有严格内存限制；不用于执行未知来源代码。
 
-测试验证结果，无法代替对生成器、类、并发、指定库和复杂度的人工检查。空输入、重复值、边界、缺失与非法数据均有代表性用例，400例不构成数学正确性证明。
+测试验证结果，无法代替对生成器、类、并发、指定库和复杂度的人工检查。空输入、重复值、边界、缺失与非法数据均有代表性用例，480例不构成数学正确性证明。
 
 ## 学习安排
 
-每章按“读说明→手推→运行示例→独立做题→记录错因”推进。会C++/Java可先精读02、04、06，再从13进入数据分析。正文阅读合计约13小时，练习、项目与复习另计。
+每章按“先猜输出→展开逐步解释→只改一个条件→运行例子→独立做题”推进。不要为了快速读完而一次展开所有小测答案。
+
+建议把每章分成两次：第一遍读核心概念与短例子，第二遍完成推演和练习。会C++/Java可先精读02、04、06；再按21（环境与闭包）→22（递归）→23（表达式）→24（数据抽象）补特性，或从13进入数据分析。每章阅读约35—45分钟，练习、复习和项目另计。
+
+交互实验新增“闭包保存环境”和“递归怎样交回结果”。图表的“定义外层”描述名字查找方向，步骤说明另行解释返回方向。它们是固定程序的状态推演，不执行任意输入。
 
 本版覆盖已提供的课程模块1、2。机器学习与文本挖掘仅提供后续路线，未把导论中的目录当成已有专题资料。所有参考原文件保持只读；本文件夹为独立输出。
 
@@ -106,3 +111,6 @@ python tools/package.py
 ```
 
 页面内容源为 `content/*.md` 和 `practice/statements/*.md`。重建网页需要 `python -m pip install -r requirements-dev.txt`。字体已打包，重建内容不依赖原始课件或桌面初稿。新增字符如超出字体子集，浏览器自动使用系统中文字体。
+
+
+第二版新增内容与参考入口见 [CHANGES.md](CHANGES.md) 和 [SOURCES.md](SOURCES.md)。已有网页进度继续保留，不需要清空浏览器数据。

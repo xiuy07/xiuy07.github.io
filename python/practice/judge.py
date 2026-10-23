@@ -84,11 +84,11 @@ def execute(path, input_text, timeout=5.0):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('target', help='list / doctor / demo / all / p01..p40')
+    parser.add_argument('target', help='list / doctor / demo / all / p01..p48')
     parser.add_argument('demo_id', nargs='?', default='all')
     parser.add_argument('--reference', action='store_true', help='验证参考实现')
     parser.add_argument('--file', type=Path, help='指定自己的main.py（仅单题）')
-    parser.add_argument('--track', choices=['base','data'])
+    parser.add_argument('--track', choices=['base','data','features'])
     parser.add_argument('--keep-going', action='store_true')
     parser.add_argument('--timeout', type=float, default=5.0)
     parser.add_argument('--report', type=Path, help='保存评测JSON，可在网页练习页导入')
@@ -102,7 +102,7 @@ def main():
             print(name, 'OK' if importlib.util.find_spec(name) else '未安装；基础题仍可运行')
         return 0
     if args.target == 'demo':
-        files = sorted((PACKAGE/'demos').glob('??.py')) if args.demo_id == 'all' else [PACKAGE/'demos'/f'{args.demo_id.zfill(2)}.py']
+        files = sorted((PACKAGE/'demos').glob('??.py')) + sorted((PACKAGE/'demos/features').glob('*.py')) if args.demo_id == 'all' else [PACKAGE/'demos'/f'{args.demo_id.zfill(2)}.py']
         failed = False
         for path in files:
             if not path.exists():
