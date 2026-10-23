@@ -1,0 +1,47 @@
+{
+  "tabler": {
+    "version": "1.7.0",
+    "source": "https://github.com/tabler/tabler",
+    "license": "MIT",
+    "tarball": "https://registry.npmjs.org/@tabler/core/-/core-1.7.0.tgz",
+    "integrity": "sha512-f3a18Binkl4soRdzjaf7DhJFCuJXRJ45H1mJxmCFeHvqI2QIAZ6Djq2dVtYc1jJJgYYeIyVc+Rws8dK1yQp+Uw==",
+    "sha256": "4045aa8c79442c44bbba2f0843f350cd492b5f5376b0e38dc05ddba766fb2c1b"
+  },
+  "inter": {
+    "version": "5.3.0",
+    "source": "https://github.com/rsms/inter",
+    "license": "OFL-1.1"
+  },
+  "icons": {
+    "source": "https://github.com/tabler/tabler-icons",
+    "license": "MIT",
+    "icons": [
+      "book-2",
+      "code",
+      "layout-dashboard",
+      "pencil",
+      "search",
+      "moon",
+      "sun",
+      "download",
+      "chevron-right",
+      "chevron-left",
+      "menu-2",
+      "x",
+      "check",
+      "terminal-2",
+      "player-play",
+      "route",
+      "settings-2",
+      "arrow-up-right",
+      "sitemap",
+      "braces",
+      "bookmark",
+      "brand-github",
+      "stack-2",
+      "circle-check",
+      "file-code",
+      "external-link"
+    ]
+  }
+}

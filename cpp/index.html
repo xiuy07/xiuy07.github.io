@@ -3,42 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="C++ 与数据结构算法学习讲义：32章、32个可运行示例、64道练习，附手写实现与本地评测。">
-  <meta name="theme-color" content="#f3f6f9">
-  <title>C++ 与数据结构 · 学习讲义</title>
+  <meta name="description" content="C++ 与数据结构学习空间：32 章讲义、64 道练习、可运行的代码和本地测试。">
+  <meta name="theme-color" content="#f4f6fa">
+  <title>C++ 与数据结构 · 学习空间</title>
+  <script>
+    try {
+      const saved = JSON.parse(localStorage.getItem('cpp-guide-progress-v1') || 'null');
+      const dark = typeof saved?.dark === 'boolean' ? saved.dark : matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.bsTheme = dark ? 'dark' : 'light';
+    } catch { /* 无法读取设置时仍可正常使用。 */ }
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css?v=d1f26a945c">
+  <link rel="preload" href="assets/vendor/inter/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/vendor/tabler/tabler.min.css?v=4045aa8c79">
+  <link rel="stylesheet" href="assets/workspace.css?v=45cbb02ad9">
   <link rel="stylesheet" href="assets/highlight.css?v=c676afe1a1">
-  <script src="assets/data.js?v=d9efa27c7c" defer></script>
-  <script src="assets/app.js?v=649b6d55e8" defer></script>
+  <script src="assets/data.js?v=9e64c1e09a" defer></script>
+  <script src="assets/results.js?v=415cafe6ed" defer></script>
+  <script src="assets/app.js?v=e1b7e02373" defer></script>
 </head>
-<body>
+<body class="study-app">
   <a class="skip" href="#main">跳到正文</a>
-  <header class="topbar">
-    <a href="#start" class="brand" aria-label="C++ 与数据结构首页"><span class="brand-mark" aria-hidden="true">C++</span><span>C++ 与数据结构<small>COURSE NOTES / 实现与练习</small></span></a>
-    <div class="search-wrap">
-      <label for="search" class="sr-only">搜索章节、知识点或题号</label>
-      <input id="search" type="search" placeholder="搜索知识点或题号…" autocomplete="off" aria-controls="search-results">
-      <div id="search-results" class="search-results" hidden></div>
-    </div>
-    <nav class="top-actions" aria-label="常用入口">
-      <a href="#practice">练习</a>
-      <a class="download-link" href="downloads/cpp-study-kit.zip" download>下载学习包</a>
-      <button id="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">目录</button>
+  <aside id="sidebar" class="app-sidebar" aria-label="课程导航">
+    <div class="sidebar-brand"><a href="#start" class="brand" aria-label="C++ 与数据结构首页"><span class="brand-mark" data-icon="braces" aria-hidden="true"></span><span>C++ 学习空间<small>语言 · 结构 · 算法</small></span></a><button id="menu-close" type="button" class="btn btn-icon mobile-close" aria-label="关闭目录"><span data-icon="x"></span></button></div>
+    <nav id="global-nav" class="nav nav-pills flex-column" aria-label="主要入口">
+      <a class="nav-link" href="#start"><span data-icon="layout-dashboard"></span>学习总览</a>
+      <a class="nav-link" href="#practice"><span data-icon="pencil"></span>练习题库<span class="nav-counter">64</span></a>
+      <a class="nav-link" href="#implementations"><span data-icon="file-code"></span>算法实现索引</a>
+      <a class="nav-link" href="#sources"><span data-icon="book-2"></span>课程与参考</a>
     </nav>
-  </header>
-  <aside id="sidebar" class="sidebar" aria-label="课程导航">
-    <div class="side-top"><a href="../handbooks/">返回学习讲义</a><span class="version">C++17</span></div>
-    <div class="track-switch" role="group" aria-label="选择学习路线"><button type="button" data-track="cpp" aria-pressed="true">C++ 语言</button><button type="button" data-track="dsa" aria-pressed="false">数据结构与算法</button></div>
-    <div class="reader-tools" role="group" aria-label="阅读设置"><button id="font-down" type="button" aria-label="缩小字号">A−</button><span id="font-value">18</span><button id="font-up" type="button" aria-label="增大字号">A＋</button><button id="theme-toggle" type="button" aria-pressed="false">暗色阅读</button></div>
-    <nav id="course-nav" aria-label="章节目录"></nav>
-    <div class="side-bottom"><div class="progress-label"><span>全书阅读进度</span><span id="progress-text">0 / 32</span></div><progress id="progress" max="32" value="0" aria-label="已读章节数量"></progress><p>进度与阅读设置保存在当前浏览器。</p><a href="#sources">课程映射与参考来源</a></div>
+    <div class="sidebar-section"><p class="sidebar-label">课程目录</p><div class="course-switches" role="group" aria-label="选择学习路线"><button type="button" class="course-switch" data-track="cpp" aria-pressed="true"><span class="track-dot cpp"></span>C++ 语言<span class="course-count">16</span></button><button type="button" class="course-switch" data-track="dsa" aria-pressed="false"><span class="track-dot dsa"></span>数据结构与算法<span class="course-count">16</span></button></div><nav id="course-nav" aria-label="章节目录"></nav></div>
+    <div class="sidebar-bottom"><div class="progress-label"><span>阅读进度</span><strong id="progress-text">0 / 32</strong></div><progress id="progress" max="32" value="0" aria-label="已读章节数量"></progress><div class="download-panel"><span class="download-panel-icon" data-icon="terminal-2"></span><div><strong>把练习带到本地</strong><p>代码框架、测试与参考实现</p></div><a class="btn btn-sm w-100" href="downloads/cpp-study-kit.zip" download><span data-icon="download"></span>下载学习包</a></div></div>
   </aside>
-  <div class="layout">
-    <main id="main" tabindex="-1"></main>
-    <aside id="toc" class="toc" aria-label="当前页面目录"></aside>
-  </div>
+  <button id="menu-backdrop" class="menu-backdrop" type="button" aria-label="关闭目录遮罩" hidden></button>
+  <header class="app-topbar">
+    <button id="menu-toggle" type="button" class="btn btn-icon" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar"><span data-icon="menu-2"></span></button>
+    <div class="header-location"><span>我的学习空间</span><strong id="header-title">学习总览</strong></div>
+    <div class="search-wrap"><span data-icon="search" class="search-icon"></span><label for="search" class="visually-hidden">搜索章节、知识点或题号</label><input id="search" class="form-control" type="search" placeholder="搜索章节、算法、题号…" autocomplete="off" aria-controls="search-results"><kbd class="search-shortcut">Ctrl K</kbd><div id="search-results" class="search-results" hidden></div></div>
+    <div class="header-tools"><button id="theme-toggle" type="button" class="btn btn-icon btn-ghost-secondary" aria-label="切换到暗色模式" title="切换到暗色模式"><span data-icon="moon"></span></button><details id="reader-settings" class="reader-settings"><summary role="button" class="btn btn-icon btn-ghost-secondary" aria-label="阅读设置" title="阅读设置"><span data-icon="settings-2"></span></summary><div class="reader-popover"><strong>阅读设置</strong><label>正文字号</label><div class="font-controls"><button id="font-down" type="button" class="btn" aria-label="缩小字号">A−</button><span id="font-value">18</span><button id="font-up" type="button" class="btn" aria-label="增大字号">A＋</button></div><button id="print-page" class="btn w-100" type="button">打印当前页面</button><p>设置与进度仅保存在本机。</p></div></details><a class="btn btn-icon btn-ghost-secondary github-link" href="https://github.com/xiuy07/xiuy07.github.io/tree/main/cpp" target="_blank" rel="noopener noreferrer" aria-label="GitHub 源码（新窗口）" title="GitHub 源码"><span data-icon="brand-github"></span></a></div>
+  </header>
+  <div class="layout" id="page-shell"><main id="main" tabindex="-1"></main><aside id="toc" class="toc" aria-label="当前页面目录"></aside></div>
   <div id="status" class="status" role="status" aria-live="polite"></div>
-  <noscript><p class="noscript">网页阅读需要 JavaScript。你仍可下载 <a href="downloads/cpp-study-kit.zip">离线学习包</a>，其中包含完整 Markdown 讲解与本地评测器。</p></noscript>
+  <noscript><p class="noscript">网页阅读需要 JavaScript。可以直接下载 <a href="downloads/cpp-study-kit.zip">离线学习包</a>，其中包含 Markdown 讲义、代码与评测器。</p></noscript>
 </body>
 </html>

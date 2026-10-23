@@ -95,3 +95,9 @@ GitHub Pages 提供静态讲解、搜索、代码展示和下载；不在服务�
 2026-10-23：完成独立精简版，统一 C++17，增加本地评测、接口题、示例输出核对与课程映射。
 
 2026-10-23：新增数据结构与算法下篇 16 章、32 道练习及独立测试，更新阅读界面与算法演示。
+
+<h2 id="ui-template">界面模板与授权</h2>
+
+本版前端采用 [Tabler](https://github.com/tabler/tabler) 1.7.0 的官方开源 CSS，并基于卡片、表单、按钮、表格和进度组件改造成课程学习空间。图标来自 [Tabler Icons](https://github.com/tabler/tabler-icons)，英文字体使用 [Inter](https://github.com/rsms/inter)。模板与图标为 MIT 授权；Inter 为 SIL OFL 1.1。完整版权与许可保存在本地 `assets/vendor/` 和下载包中，详见 [第三方资源说明](THIRD_PARTY.md)。
+
+课程首页、阅读页、练习区与移动导航经过重新编排。保留全部原讲义、练习、代码、测试和浏览器进度键；模板资源全部本地部署，不依赖 CDN。Tabler 官方仓库与本文档中的任何外部说明均只作为参考资料，不影响用户自己的学习文件。

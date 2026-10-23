@@ -61,7 +61,7 @@ def main():
 
     # 资源随内容变化版本，避免发布更新后浏览器沿用旧代码或样式。
     entry=(ROOT/'index.html').read_text(encoding='utf-8')
-    for asset in ['style.css','highlight.css','data.js','app.js']:
+    for asset in ['vendor/tabler/tabler.min.css','workspace.css','highlight.css','data.js','results.js','app.js']:
         version=hashlib.sha256((ROOT/'assets'/asset).read_bytes()).hexdigest()[:10]
         entry=re.sub(r'assets/'+re.escape(asset)+r'(?:\?v=[a-f0-9]+)?', 'assets/'+asset+'?v='+version, entry)
     write_utf8(ROOT/'index.html', entry)

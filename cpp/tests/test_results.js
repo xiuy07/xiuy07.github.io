@@ -1,0 +1,16 @@
+'use strict';
+const assert = require('node:assert/strict');
+const { parse } = require('../assets/results.js');
+const allowed = new Set(['p33', 'p34', 'p64']);
+const input = { version: 1, reference: false, results: [{ id: 'p64', status: 'AC', passed: 8, total: 8 }] };
+const original = JSON.stringify(input);
+assert.deepEqual(parse(input, allowed), [{ id: 'p64', status: 'AC' }]);
+assert.equal(JSON.stringify(input), original);
+assert.throws(() => parse({ ...input, reference: true }, allowed), /参考解/);
+assert.throws(() => parse({ ...input, reference: undefined }, allowed), /个人评测标记/);
+assert.throws(() => parse({ ...input, version: 2 }, allowed), /格式/);
+assert.throws(() => parse(null, allowed), /格式/);
+assert.throws(() => parse({ ...input, results: {} }, allowed), /格式/);
+assert.deepEqual(parse({ ...input, results: [null, { id: 'unknown', status: 'AC' }, { id: 'p33', status: 'NOT_A_STATUS' }] }, allowed), []);
+assert.deepEqual(parse({ ...input, results: [{ id: 'p33', status: 'AC' }, { id: 'p33', status: 'WA' }, { id: 'p34', status: 'CE' }] }, allowed), [{ id: 'p33', status: 'WA' }, { id: 'p34', status: 'CE' }]);
+console.log('Result import: valid file, reference exclusion, invalid formats, unknown entries, duplicate resolution and immutability verified.');
