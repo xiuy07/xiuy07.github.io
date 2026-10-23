@@ -1,0 +1,102 @@
+[
+  {
+    "name": "0",
+    "math": 66,
+    "python": 23
+  },
+  {
+    "name": "1",
+    "math": 3,
+    "python": 40
+  },
+  {
+    "name": "2",
+    "math": 72,
+    "python": 71
+  },
+  {
+    "name": "3",
+    "math": 86,
+    "python": 1
+  },
+  {
+    "name": "4",
+    "math": 52,
+    "python": 8
+  },
+  {
+    "name": "5",
+    "math": 71,
+    "python": 4
+  },
+  {
+    "name": "6",
+    "math": 7,
+    "python": 86
+  },
+  {
+    "name": "7",
+    "math": 59,
+    "python": 27
+  },
+  {
+    "name": "8",
+    "math": 27,
+    "python": 23
+  },
+  {
+    "name": "9",
+    "math": 46,
+    "python": 71
+  },
+  {
+    "name": "10",
+    "math": 56,
+    "python": 42
+  },
+  {
+    "name": "11",
+    "math": 85,
+    "python": 46
+  },
+  {
+    "name": "12",
+    "math": 61,
+    "python": 84
+  },
+  {
+    "name": "13",
+    "math": 14,
+    "python": 36
+  },
+  {
+    "name": "14",
+    "math": 63,
+    "python": 35
+  },
+  {
+    "name": "15",
+    "math": 32,
+    "python": 29
+  },
+  {
+    "name": "16",
+    "math": 40,
+    "python": 53
+  },
+  {
+    "name": "17",
+    "math": 53,
+    "python": 65
+  },
+  {
+    "name": "18",
+    "math": 26,
+    "python": 28
+  },
+  {
+    "name": "19",
+    "math": 32,
+    "python": 7
+  }
+]

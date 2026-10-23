@@ -1,0 +1,9 @@
+{
+  "orders": [
+    {
+      "user": 1,
+      "amount": 0
+    }
+  ],
+  "users": []
+}

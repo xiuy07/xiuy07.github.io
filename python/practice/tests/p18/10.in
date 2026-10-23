@@ -1,0 +1,22 @@
+[
+  {
+    "name": null,
+    "age": true
+  },
+  {
+    "name": null,
+    "age": -1
+  },
+  {
+    "name": null,
+    "age": true
+  },
+  {
+    "name": null,
+    "age": 10
+  },
+  {
+    "name": " ",
+    "age": 0
+  }
+]

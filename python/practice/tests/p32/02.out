@@ -1,0 +1,12 @@
+[
+  {
+    "name": "A",
+    "subject": "math",
+    "score": 80
+  },
+  {
+    "name": "A",
+    "subject": "python",
+    "score": 90
+  }
+]

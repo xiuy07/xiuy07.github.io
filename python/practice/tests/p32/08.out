@@ -1,0 +1,102 @@
+[
+  {
+    "name": "0",
+    "subject": "math",
+    "score": 27
+  },
+  {
+    "name": "1",
+    "subject": "math",
+    "score": 50
+  },
+  {
+    "name": "2",
+    "subject": "math",
+    "score": 37
+  },
+  {
+    "name": "3",
+    "subject": "math",
+    "score": 86
+  },
+  {
+    "name": "4",
+    "subject": "math",
+    "score": 4
+  },
+  {
+    "name": "5",
+    "subject": "math",
+    "score": 14
+  },
+  {
+    "name": "6",
+    "subject": "math",
+    "score": 10
+  },
+  {
+    "name": "7",
+    "subject": "math",
+    "score": 60
+  },
+  {
+    "name": "8",
+    "subject": "math",
+    "score": 39
+  },
+  {
+    "name": "9",
+    "subject": "math",
+    "score": 46
+  },
+  {
+    "name": "0",
+    "subject": "python",
+    "score": 45
+  },
+  {
+    "name": "1",
+    "subject": "python",
+    "score": 39
+  },
+  {
+    "name": "2",
+    "subject": "python",
+    "score": 59
+  },
+  {
+    "name": "3",
+    "subject": "python",
+    "score": 96
+  },
+  {
+    "name": "4",
+    "subject": "python",
+    "score": 46
+  },
+  {
+    "name": "5",
+    "subject": "python",
+    "score": 89
+  },
+  {
+    "name": "6",
+    "subject": "python",
+    "score": 12
+  },
+  {
+    "name": "7",
+    "subject": "python",
+    "score": 3
+  },
+  {
+    "name": "8",
+    "subject": "python",
+    "score": 60
+  },
+  {
+    "name": "9",
+    "subject": "python",
+    "score": 31
+  }
+]

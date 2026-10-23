@@ -1,0 +1,38 @@
+{
+  "rows": [
+    {
+      "name": "0",
+      "score": 59
+    },
+    {
+      "name": "1",
+      "score": null
+    },
+    {
+      "name": "2",
+      "score": 59
+    },
+    {
+      "name": "3",
+      "score": 100
+    },
+    {
+      "name": "4",
+      "score": 59
+    },
+    {
+      "name": "5",
+      "score": 0
+    },
+    {
+      "name": "6",
+      "score": 59
+    },
+    {
+      "name": "7",
+      "score": 0
+    }
+  ],
+  "low": 60,
+  "high": 100
+}

@@ -1,0 +1,218 @@
+{
+  "orders": [
+    {
+      "user": 2,
+      "amount": 2
+    },
+    {
+      "user": 2,
+      "amount": 95
+    },
+    {
+      "user": 1,
+      "amount": 72
+    },
+    {
+      "user": 3,
+      "amount": 64
+    },
+    {
+      "user": 0,
+      "amount": 0
+    },
+    {
+      "user": 2,
+      "amount": 48
+    },
+    {
+      "user": 4,
+      "amount": 46
+    },
+    {
+      "user": 4,
+      "amount": 67
+    },
+    {
+      "user": 0,
+      "amount": 65
+    },
+    {
+      "user": 0,
+      "amount": 37
+    },
+    {
+      "user": 1,
+      "amount": 89
+    },
+    {
+      "user": 4,
+      "amount": 21
+    },
+    {
+      "user": 0,
+      "amount": 22
+    },
+    {
+      "user": 1,
+      "amount": 2
+    },
+    {
+      "user": 1,
+      "amount": 34
+    },
+    {
+      "user": 0,
+      "amount": 20
+    },
+    {
+      "user": 3,
+      "amount": 10
+    },
+    {
+      "user": 4,
+      "amount": 29
+    },
+    {
+      "user": 0,
+      "amount": 5
+    },
+    {
+      "user": 4,
+      "amount": 77
+    },
+    {
+      "user": 2,
+      "amount": 55
+    },
+    {
+      "user": 1,
+      "amount": 47
+    },
+    {
+      "user": 4,
+      "amount": 63
+    },
+    {
+      "user": 0,
+      "amount": 69
+    },
+    {
+      "user": 1,
+      "amount": 52
+    },
+    {
+      "user": 4,
+      "amount": 49
+    },
+    {
+      "user": 3,
+      "amount": 78
+    },
+    {
+      "user": 0,
+      "amount": 3
+    },
+    {
+      "user": 4,
+      "amount": 35
+    },
+    {
+      "user": 0,
+      "amount": 19
+    },
+    {
+      "user": 0,
+      "amount": 5
+    },
+    {
+      "user": 0,
+      "amount": 80
+    },
+    {
+      "user": 4,
+      "amount": 88
+    },
+    {
+      "user": 4,
+      "amount": 6
+    },
+    {
+      "user": 1,
+      "amount": 62
+    },
+    {
+      "user": 1,
+      "amount": 79
+    },
+    {
+      "user": 1,
+      "amount": 28
+    },
+    {
+      "user": 0,
+      "amount": 63
+    },
+    {
+      "user": 4,
+      "amount": 60
+    },
+    {
+      "user": 4,
+      "amount": 33
+    },
+    {
+      "user": 2,
+      "amount": 61
+    },
+    {
+      "user": 4,
+      "amount": 70
+    },
+    {
+      "user": 2,
+      "amount": 96
+    },
+    {
+      "user": 1,
+      "amount": 78
+    },
+    {
+      "user": 2,
+      "amount": 85
+    },
+    {
+      "user": 4,
+      "amount": 93
+    },
+    {
+      "user": 2,
+      "amount": 29
+    },
+    {
+      "user": 3,
+      "amount": 63
+    },
+    {
+      "user": 2,
+      "amount": 64
+    },
+    {
+      "user": 3,
+      "amount": 22
+    }
+  ],
+  "users": [
+    {
+      "user": 0,
+      "city": "A"
+    },
+    {
+      "user": 1,
+      "city": "B"
+    },
+    {
+      "user": 2,
+      "city": "C"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "city": "A",
+    "rows": 1,
+    "valid": 0,
+    "mean": null
+  },
+  {
+    "city": "B",
+    "rows": 1,
+    "valid": 1,
+    "mean": 80
+  }
+]

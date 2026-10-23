@@ -1,0 +1,14 @@
+[
+  {
+    "city": "A",
+    "rows": 2,
+    "valid": 1,
+    "mean": 60
+  },
+  {
+    "city": "中",
+    "rows": 2,
+    "valid": 0,
+    "mean": null
+  }
+]

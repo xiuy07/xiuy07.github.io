@@ -1,0 +1,62 @@
+[
+  {
+    "name": "0",
+    "subject": "math",
+    "score": 63
+  },
+  {
+    "name": "1",
+    "subject": "math",
+    "score": 95
+  },
+  {
+    "name": "2",
+    "subject": "math",
+    "score": 48
+  },
+  {
+    "name": "3",
+    "subject": "math",
+    "score": 68
+  },
+  {
+    "name": "4",
+    "subject": "math",
+    "score": 59
+  },
+  {
+    "name": "5",
+    "subject": "math",
+    "score": 80
+  },
+  {
+    "name": "0",
+    "subject": "python",
+    "score": 30
+  },
+  {
+    "name": "1",
+    "subject": "python",
+    "score": 37
+  },
+  {
+    "name": "2",
+    "subject": "python",
+    "score": 32
+  },
+  {
+    "name": "3",
+    "subject": "python",
+    "score": 22
+  },
+  {
+    "name": "4",
+    "subject": "python",
+    "score": 65
+  },
+  {
+    "name": "5",
+    "subject": "python",
+    "score": 26
+  }
+]

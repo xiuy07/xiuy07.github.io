@@ -1,0 +1,62 @@
+[
+  {
+    "id": 5,
+    "city": "A",
+    "price": 0,
+    "qty": 0
+  },
+  {
+    "id": 5,
+    "city": "B",
+    "price": "bad",
+    "qty": "3"
+  },
+  {
+    "id": 3,
+    "city": "B",
+    "price": null,
+    "qty": "3"
+  },
+  {
+    "id": 4,
+    "city": "C",
+    "price": 0,
+    "qty": null
+  },
+  {
+    "id": 5,
+    "city": "A",
+    "price": "9",
+    "qty": 1
+  },
+  {
+    "id": 3,
+    "city": "A",
+    "price": null,
+    "qty": null
+  },
+  {
+    "id": 6,
+    "city": "B",
+    "price": "bad",
+    "qty": 1
+  },
+  {
+    "id": 7,
+    "city": "A",
+    "price": -1,
+    "qty": null
+  },
+  {
+    "id": 6,
+    "city": "C",
+    "price": null,
+    "qty": 2
+  },
+  {
+    "id": 5,
+    "city": "C",
+    "price": -1,
+    "qty": 2
+  }
+]

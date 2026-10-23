@@ -1,0 +1,252 @@
+[
+  {
+    "user": 2,
+    "amount": 2,
+    "city": "C"
+  },
+  {
+    "user": 2,
+    "amount": 95,
+    "city": "C"
+  },
+  {
+    "user": 1,
+    "amount": 72,
+    "city": "B"
+  },
+  {
+    "user": 3,
+    "amount": 64,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 0,
+    "city": "A"
+  },
+  {
+    "user": 2,
+    "amount": 48,
+    "city": "C"
+  },
+  {
+    "user": 4,
+    "amount": 46,
+    "city": null
+  },
+  {
+    "user": 4,
+    "amount": 67,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 65,
+    "city": "A"
+  },
+  {
+    "user": 0,
+    "amount": 37,
+    "city": "A"
+  },
+  {
+    "user": 1,
+    "amount": 89,
+    "city": "B"
+  },
+  {
+    "user": 4,
+    "amount": 21,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 22,
+    "city": "A"
+  },
+  {
+    "user": 1,
+    "amount": 2,
+    "city": "B"
+  },
+  {
+    "user": 1,
+    "amount": 34,
+    "city": "B"
+  },
+  {
+    "user": 0,
+    "amount": 20,
+    "city": "A"
+  },
+  {
+    "user": 3,
+    "amount": 10,
+    "city": null
+  },
+  {
+    "user": 4,
+    "amount": 29,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 5,
+    "city": "A"
+  },
+  {
+    "user": 4,
+    "amount": 77,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 55,
+    "city": "C"
+  },
+  {
+    "user": 1,
+    "amount": 47,
+    "city": "B"
+  },
+  {
+    "user": 4,
+    "amount": 63,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 69,
+    "city": "A"
+  },
+  {
+    "user": 1,
+    "amount": 52,
+    "city": "B"
+  },
+  {
+    "user": 4,
+    "amount": 49,
+    "city": null
+  },
+  {
+    "user": 3,
+    "amount": 78,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 3,
+    "city": "A"
+  },
+  {
+    "user": 4,
+    "amount": 35,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 19,
+    "city": "A"
+  },
+  {
+    "user": 0,
+    "amount": 5,
+    "city": "A"
+  },
+  {
+    "user": 0,
+    "amount": 80,
+    "city": "A"
+  },
+  {
+    "user": 4,
+    "amount": 88,
+    "city": null
+  },
+  {
+    "user": 4,
+    "amount": 6,
+    "city": null
+  },
+  {
+    "user": 1,
+    "amount": 62,
+    "city": "B"
+  },
+  {
+    "user": 1,
+    "amount": 79,
+    "city": "B"
+  },
+  {
+    "user": 1,
+    "amount": 28,
+    "city": "B"
+  },
+  {
+    "user": 0,
+    "amount": 63,
+    "city": "A"
+  },
+  {
+    "user": 4,
+    "amount": 60,
+    "city": null
+  },
+  {
+    "user": 4,
+    "amount": 33,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 61,
+    "city": "C"
+  },
+  {
+    "user": 4,
+    "amount": 70,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 96,
+    "city": "C"
+  },
+  {
+    "user": 1,
+    "amount": 78,
+    "city": "B"
+  },
+  {
+    "user": 2,
+    "amount": 85,
+    "city": "C"
+  },
+  {
+    "user": 4,
+    "amount": 93,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 29,
+    "city": "C"
+  },
+  {
+    "user": 3,
+    "amount": 63,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 64,
+    "city": "C"
+  },
+  {
+    "user": 3,
+    "amount": 22,
+    "city": null
+  }
+]

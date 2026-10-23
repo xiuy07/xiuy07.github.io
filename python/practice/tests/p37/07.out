@@ -1,0 +1,42 @@
+[
+  {
+    "user": 4,
+    "amount": 9,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 79,
+    "city": "C"
+  },
+  {
+    "user": 1,
+    "amount": 24,
+    "city": "B"
+  },
+  {
+    "user": 4,
+    "amount": 15,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 92,
+    "city": "A"
+  },
+  {
+    "user": 2,
+    "amount": 3,
+    "city": "C"
+  },
+  {
+    "user": 2,
+    "amount": 65,
+    "city": "C"
+  },
+  {
+    "user": 1,
+    "amount": 92,
+    "city": "B"
+  }
+]

@@ -1,0 +1,50 @@
+{
+  "orders": [
+    {
+      "user": 4,
+      "amount": 9
+    },
+    {
+      "user": 2,
+      "amount": 79
+    },
+    {
+      "user": 1,
+      "amount": 24
+    },
+    {
+      "user": 4,
+      "amount": 15
+    },
+    {
+      "user": 0,
+      "amount": 92
+    },
+    {
+      "user": 2,
+      "amount": 3
+    },
+    {
+      "user": 2,
+      "amount": 65
+    },
+    {
+      "user": 1,
+      "amount": 92
+    }
+  ],
+  "users": [
+    {
+      "user": 0,
+      "city": "A"
+    },
+    {
+      "user": 1,
+      "city": "B"
+    },
+    {
+      "user": 2,
+      "city": "C"
+    }
+  ]
+}

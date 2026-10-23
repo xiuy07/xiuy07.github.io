@@ -1,0 +1,11 @@
+id,city,item,price,qty
+001,Nanjing,tea,10,2
+002,Suzhou,milk,8,3
+003,Nanjing,coffee,bad,1
+004,Suzhou,tea,10,
+005,Wuxi,juice,6,4
+002,Suzhou,milk,8,4
+006,Nanjing,coffee,15,2
+007,Wuxi,tea,10,-1
+008,Nanjing,water,0,5
+009,Suzhou,juice,6,2

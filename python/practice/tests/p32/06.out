@@ -1,0 +1,42 @@
+[
+  {
+    "name": "0",
+    "subject": "math",
+    "score": 66
+  },
+  {
+    "name": "1",
+    "subject": "math",
+    "score": 29
+  },
+  {
+    "name": "2",
+    "subject": "math",
+    "score": 4
+  },
+  {
+    "name": "3",
+    "subject": "math",
+    "score": 59
+  },
+  {
+    "name": "0",
+    "subject": "python",
+    "score": 97
+  },
+  {
+    "name": "1",
+    "subject": "python",
+    "score": 52
+  },
+  {
+    "name": "2",
+    "subject": "python",
+    "score": 50
+  },
+  {
+    "name": "3",
+    "subject": "python",
+    "score": 19
+  }
+]

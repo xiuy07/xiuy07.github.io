@@ -1,0 +1,58 @@
+{
+  "orders": [
+    {
+      "user": 3,
+      "amount": 45
+    },
+    {
+      "user": 0,
+      "amount": 49
+    },
+    {
+      "user": 2,
+      "amount": 21
+    },
+    {
+      "user": 4,
+      "amount": 47
+    },
+    {
+      "user": 3,
+      "amount": 94
+    },
+    {
+      "user": 0,
+      "amount": 93
+    },
+    {
+      "user": 4,
+      "amount": 60
+    },
+    {
+      "user": 0,
+      "amount": 45
+    },
+    {
+      "user": 3,
+      "amount": 89
+    },
+    {
+      "user": 4,
+      "amount": 68
+    }
+  ],
+  "users": [
+    {
+      "user": 0,
+      "city": "A"
+    },
+    {
+      "user": 1,
+      "city": "B"
+    },
+    {
+      "user": 2,
+      "city": "C"
+    }
+  ]
+}

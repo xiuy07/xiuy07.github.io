@@ -1,0 +1,82 @@
+[
+  {
+    "city": "B",
+    "score": null
+  },
+  {
+    "city": "中",
+    "score": 80
+  },
+  {
+    "city": "中",
+    "score": null
+  },
+  {
+    "city": "B",
+    "score": 80
+  },
+  {
+    "city": "A",
+    "score": 60
+  },
+  {
+    "city": "A",
+    "score": 80
+  },
+  {
+    "city": "B",
+    "score": 0
+  },
+  {
+    "city": "B",
+    "score": 80
+  },
+  {
+    "city": "中",
+    "score": 100
+  },
+  {
+    "city": "中",
+    "score": 0
+  },
+  {
+    "city": "A",
+    "score": 60
+  },
+  {
+    "city": "中",
+    "score": null
+  },
+  {
+    "city": "中",
+    "score": 100
+  },
+  {
+    "city": "A",
+    "score": 0
+  },
+  {
+    "city": "B",
+    "score": 0
+  },
+  {
+    "city": "B",
+    "score": 60
+  },
+  {
+    "city": "A",
+    "score": 60
+  },
+  {
+    "city": "B",
+    "score": 100
+  },
+  {
+    "city": "B",
+    "score": 60
+  },
+  {
+    "city": "A",
+    "score": null
+  }
+]

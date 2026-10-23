@@ -1,0 +1,82 @@
+[
+  {
+    "item": "TEA",
+    "revenue": 64
+  },
+  {
+    "item": "A",
+    "revenue": 6
+  },
+  {
+    "item": "B",
+    "revenue": 7
+  },
+  {
+    "item": "A",
+    "revenue": 0
+  },
+  {
+    "item": "A",
+    "revenue": 0
+  },
+  {
+    "item": "B",
+    "revenue": 0
+  },
+  {
+    "item": "A",
+    "revenue": 8
+  },
+  {
+    "item": "B",
+    "revenue": 5
+  },
+  {
+    "item": "TEA",
+    "revenue": 42
+  },
+  {
+    "item": "A",
+    "revenue": 48
+  },
+  {
+    "item": "TEA",
+    "revenue": 20
+  },
+  {
+    "item": "A",
+    "revenue": 0
+  },
+  {
+    "item": "TEA",
+    "revenue": 17
+  },
+  {
+    "item": "TEA",
+    "revenue": 2
+  },
+  {
+    "item": "TEA",
+    "revenue": 0
+  },
+  {
+    "item": "B",
+    "revenue": 0
+  },
+  {
+    "item": "TEA",
+    "revenue": 0
+  },
+  {
+    "item": "B",
+    "revenue": 8
+  },
+  {
+    "item": "A",
+    "revenue": 0
+  },
+  {
+    "item": "A",
+    "revenue": 42
+  }
+]

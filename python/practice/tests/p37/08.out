@@ -1,0 +1,52 @@
+[
+  {
+    "user": 3,
+    "amount": 45,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 49,
+    "city": "A"
+  },
+  {
+    "user": 2,
+    "amount": 21,
+    "city": "C"
+  },
+  {
+    "user": 4,
+    "amount": 47,
+    "city": null
+  },
+  {
+    "user": 3,
+    "amount": 94,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 93,
+    "city": "A"
+  },
+  {
+    "user": 4,
+    "amount": 60,
+    "city": null
+  },
+  {
+    "user": 0,
+    "amount": 45,
+    "city": "A"
+  },
+  {
+    "user": 3,
+    "amount": 89,
+    "city": null
+  },
+  {
+    "user": 4,
+    "amount": 68,
+    "city": null
+  }
+]

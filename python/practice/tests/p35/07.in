@@ -1,0 +1,34 @@
+[
+  {
+    "city": "A",
+    "score": 100
+  },
+  {
+    "city": "中",
+    "score": 100
+  },
+  {
+    "city": "中",
+    "score": null
+  },
+  {
+    "city": "B",
+    "score": null
+  },
+  {
+    "city": "A",
+    "score": 100
+  },
+  {
+    "city": "A",
+    "score": null
+  },
+  {
+    "city": "A",
+    "score": 0
+  },
+  {
+    "city": "B",
+    "score": 80
+  }
+]

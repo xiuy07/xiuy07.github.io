@@ -1,0 +1,22 @@
+[
+  {
+    "id": 0,
+    "value": 8,
+    "month": 2
+  },
+  {
+    "id": 0,
+    "value": 8,
+    "month": 3
+  },
+  {
+    "id": 1,
+    "value": 19,
+    "month": 3
+  },
+  {
+    "id": 0,
+    "value": 1,
+    "month": 5
+  }
+]

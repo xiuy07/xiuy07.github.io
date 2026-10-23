@@ -1,0 +1,34 @@
+{
+  "orders": [
+    {
+      "user": 3,
+      "amount": 58
+    },
+    {
+      "user": 3,
+      "amount": 40
+    },
+    {
+      "user": 4,
+      "amount": 19
+    },
+    {
+      "user": 2,
+      "amount": 61
+    }
+  ],
+  "users": [
+    {
+      "user": 0,
+      "city": "A"
+    },
+    {
+      "user": 1,
+      "city": "B"
+    },
+    {
+      "user": 2,
+      "city": "C"
+    }
+  ]
+}

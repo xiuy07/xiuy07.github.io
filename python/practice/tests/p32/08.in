@@ -1,0 +1,52 @@
+[
+  {
+    "name": "0",
+    "math": 27,
+    "python": 45
+  },
+  {
+    "name": "1",
+    "math": 50,
+    "python": 39
+  },
+  {
+    "name": "2",
+    "math": 37,
+    "python": 59
+  },
+  {
+    "name": "3",
+    "math": 86,
+    "python": 96
+  },
+  {
+    "name": "4",
+    "math": 4,
+    "python": 46
+  },
+  {
+    "name": "5",
+    "math": 14,
+    "python": 89
+  },
+  {
+    "name": "6",
+    "math": 10,
+    "python": 12
+  },
+  {
+    "name": "7",
+    "math": 60,
+    "python": 3
+  },
+  {
+    "name": "8",
+    "math": 39,
+    "python": 60
+  },
+  {
+    "name": "9",
+    "math": 46,
+    "python": 31
+  }
+]

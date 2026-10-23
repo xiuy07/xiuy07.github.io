@@ -1,0 +1,21 @@
+{
+  "input_rows": 10,
+  "duplicate_rows_removed": 1,
+  "invalid_rows_removed": 3,
+  "valid_rows": 6,
+  "total_revenue": 118.0,
+  "city_revenue": [
+    {
+      "city": "Nanjing",
+      "revenue": 50.0
+    },
+    {
+      "city": "Suzhou",
+      "revenue": 44.0
+    },
+    {
+      "city": "Wuxi",
+      "revenue": 24.0
+    }
+  ]
+}

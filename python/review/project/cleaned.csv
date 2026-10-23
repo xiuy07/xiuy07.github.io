@@ -1,0 +1,7 @@
+﻿id,city,item,price,qty,revenue
+001,Nanjing,tea,10.0,2.0,20.0
+005,Wuxi,juice,6.0,4.0,24.0
+002,Suzhou,milk,8.0,4.0,32.0
+006,Nanjing,coffee,15.0,2.0,30.0
+008,Nanjing,water,0.0,5.0,0.0
+009,Suzhou,juice,6.0,2.0,12.0

@@ -1,0 +1,22 @@
+{
+  "orders": [
+    {
+      "user": 4,
+      "amount": 19
+    }
+  ],
+  "users": [
+    {
+      "user": 0,
+      "city": "A"
+    },
+    {
+      "user": 1,
+      "city": "B"
+    },
+    {
+      "user": 2,
+      "city": "C"
+    }
+  ]
+}

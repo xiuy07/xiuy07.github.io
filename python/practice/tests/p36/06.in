@@ -1,0 +1,18 @@
+[
+  {
+    "city": "A",
+    "score": 60
+  },
+  {
+    "city": "B",
+    "score": 80
+  },
+  {
+    "city": "B",
+    "score": 100
+  },
+  {
+    "city": "B",
+    "score": 100
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "orders": [
+    {
+      "user": 4,
+      "amount": 83
+    },
+    {
+      "user": 2,
+      "amount": 79
+    },
+    {
+      "user": 1,
+      "amount": 29
+    },
+    {
+      "user": 3,
+      "amount": 72
+    },
+    {
+      "user": 3,
+      "amount": 25
+    },
+    {
+      "user": 0,
+      "amount": 49
+    },
+    {
+      "user": 2,
+      "amount": 12
+    },
+    {
+      "user": 0,
+      "amount": 37
+    },
+    {
+      "user": 0,
+      "amount": 84
+    },
+    {
+      "user": 4,
+      "amount": 62
+    },
+    {
+      "user": 0,
+      "amount": 36
+    },
+    {
+      "user": 1,
+      "amount": 0
+    },
+    {
+      "user": 1,
+      "amount": 58
+    },
+    {
+      "user": 0,
+      "amount": 93
+    },
+    {
+      "user": 1,
+      "amount": 89
+    },
+    {
+      "user": 1,
+      "amount": 96
+    },
+    {
+      "user": 0,
+      "amount": 11
+    },
+    {
+      "user": 4,
+      "amount": 99
+    },
+    {
+      "user": 0,
+      "amount": 0
+    },
+    {
+      "user": 4,
+      "amount": 86
+    }
+  ],
+  "users": [
+    {
+      "user": 0,
+      "city": "A"
+    },
+    {
+      "user": 1,
+      "city": "B"
+    },
+    {
+      "user": 2,
+      "city": "C"
+    }
+  ]
+}

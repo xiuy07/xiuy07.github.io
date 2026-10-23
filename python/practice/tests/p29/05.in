@@ -1,0 +1,18 @@
+{
+  "rows": [
+    {
+      "name": "0",
+      "score": 0
+    },
+    {
+      "name": "1",
+      "score": null
+    },
+    {
+      "name": "2",
+      "score": 80
+    }
+  ],
+  "low": 60,
+  "high": 100
+}

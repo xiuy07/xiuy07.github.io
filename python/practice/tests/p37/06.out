@@ -1,0 +1,22 @@
+[
+  {
+    "user": 3,
+    "amount": 58,
+    "city": null
+  },
+  {
+    "user": 3,
+    "amount": 40,
+    "city": null
+  },
+  {
+    "user": 4,
+    "amount": 19,
+    "city": null
+  },
+  {
+    "user": 2,
+    "amount": 61,
+    "city": "C"
+  }
+]

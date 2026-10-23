@@ -1,0 +1,34 @@
+[
+  {
+    "item": "B",
+    "revenue": 10
+  },
+  {
+    "item": "TEA",
+    "revenue": 72
+  },
+  {
+    "item": "TEA",
+    "revenue": 14
+  },
+  {
+    "item": "A",
+    "revenue": 34
+  },
+  {
+    "item": "B",
+    "revenue": 64
+  },
+  {
+    "item": "A",
+    "revenue": 12
+  },
+  {
+    "item": "TEA",
+    "revenue": 45
+  },
+  {
+    "item": "B",
+    "revenue": 0
+  }
+]

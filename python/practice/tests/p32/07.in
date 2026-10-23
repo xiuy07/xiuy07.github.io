@@ -1,0 +1,32 @@
+[
+  {
+    "name": "0",
+    "math": 63,
+    "python": 30
+  },
+  {
+    "name": "1",
+    "math": 95,
+    "python": 37
+  },
+  {
+    "name": "2",
+    "math": 48,
+    "python": 32
+  },
+  {
+    "name": "3",
+    "math": 68,
+    "python": 22
+  },
+  {
+    "name": "4",
+    "math": 59,
+    "python": 65
+  },
+  {
+    "name": "5",
+    "math": 80,
+    "python": 26
+  }
+]

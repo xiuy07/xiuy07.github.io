@@ -1,0 +1,42 @@
+[
+  {
+    "item": "b",
+    "price": 10,
+    "qty": 1
+  },
+  {
+    "item": "Tea",
+    "price": 18,
+    "qty": 4
+  },
+  {
+    "item": "Tea",
+    "price": 7,
+    "qty": 2
+  },
+  {
+    "item": " a ",
+    "price": 17,
+    "qty": 2
+  },
+  {
+    "item": "b",
+    "price": 16,
+    "qty": 4
+  },
+  {
+    "item": " a ",
+    "price": 3,
+    "qty": 4
+  },
+  {
+    "item": "Tea",
+    "price": 15,
+    "qty": 3
+  },
+  {
+    "item": "b",
+    "price": 0,
+    "qty": 3
+  }
+]
