@@ -1,7 +1,7 @@
 /* Site-level adaptations for the unmodified official Butterfly theme. */
-@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=9cb613174ef2') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=9cb613174ef2') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=9cb613174ef2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=1b4896256375') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=1b4896256375') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=1b4896256375') format('woff2');font-weight:400;font-display:swap}
 :root{--card-bg:rgba(255,255,255,.94);--card-meta:#657984;--font-color:#2b414d;--text-highlight-color:#1b3748;--card-box-shadow:0 8px 32px rgba(29,64,83,.06);--card-hover-box-shadow:0 12px 36px rgba(29,64,83,.1);--preloader-bg:#edf3f6;--preloader-color:#28637b;--xiu-glass:rgba(245,251,255,.78)}
 [data-theme='dark']{--card-bg:rgba(28,45,57,.96);--card-meta:#b0c2cd;--font-color:#d8e5ed;--text-highlight-color:#edf5fa;--card-box-shadow:0 8px 32px rgba(0,0,0,.12);--preloader-bg:#14232d;--preloader-color:#b9dbe8;--xiu-glass:rgba(28,45,57,.82)}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
@@ -11,7 +11,7 @@ button,input{font:inherit}
 #page-header.full_page #site-info{top:42%;transform:translateY(-30%)}
 #page-header #site-title{font-family:'Journal WenKai','Noto Serif SC',serif;font-weight:400;letter-spacing:.06em;font-size:clamp(2.7rem,5.6vw,4.4rem);line-height:1.4;padding:.08em 0 .14em;text-shadow:0 3px 24px rgba(0,29,41,.35)}
 #page-header.full_page #site-title{font-family:'Zhi Mang Xing','Journal WenKai',serif;font-size:clamp(2.7rem,5.6vw,5.2rem)}
-#page-header #site-title.journal-category-title{font-family:'Noto Serif SC',Georgia,serif;font-size:clamp(2.5rem,5.2vw,4rem);font-weight:400;letter-spacing:.055em}
+#page-header #site-title.journal-category-title{font-family:'Zhi Mang Xing','Journal WenKai',serif;font-size:clamp(2.7rem,5.6vw,4.6rem);font-weight:400;letter-spacing:.055em}
 #page-header #site-subtitle{margin-top:18px;font-family:'Noto Sans SC',sans-serif;font-size:clamp(.95rem,1.4vw,1.15rem);font-weight:400;letter-spacing:.1em}
 #page-header:not(.not-top-img):before{background:rgba(6,34,50,.28)}
 #nav{padding:0 clamp(20px,4vw,64px);height:70px;font-size:14px;background:rgba(14,45,64,.12);backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);border-bottom:1px solid rgba(255,255,255,.16)}
@@ -58,7 +58,7 @@ button,input{font:inherit}
 .journal-index-heading h2{margin:0;color:var(--font-color);font-family:'Zhi Mang Xing','Noto Serif SC',serif;font-size:25px;line-height:1.5;font-weight:400}
 .journal-index-heading>div>span{font-size:12px;color:var(--card-meta);white-space:nowrap}
 .journal-filters{display:flex;gap:3px}
-.journal-filters a{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:3px 14px;border-radius:8px;color:var(--font-color);font:400 13px/1.9 'Noto Sans SC',sans-serif;white-space:nowrap;transition:background .2s,color .2s}
+.journal-filters a{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:3px 14px;border-radius:8px;color:var(--font-color);font:400 21px/1.45 'Zhi Mang Xing','Journal WenKai',serif;white-space:nowrap;transition:background .2s,color .2s}
 .journal-filters a:hover{background:rgba(56,112,141,.08)}
 .journal-filters a[aria-current='page']{background:#28637b;color:#fff;box-shadow:0 2px 8px rgba(27,77,103,.14)}
 [data-theme='dark'] .journal-index-heading{border-color:rgba(180,208,225,.2);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
@@ -138,7 +138,7 @@ a:focus-visible,button:focus-visible,[role='button']:focus-visible,input:focus-v
 
 #page-header #post-info .post-title{font-family:'Zhi Mang Xing','Noto Serif SC',serif;font-weight:400;font-size:clamp(2.2rem,4vw,3.8rem)}
 
-@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=9cb613174ef2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=1b4896256375') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 #page-header #site-subtitle,.journal-index-heading h2,#article-container h2,#article-container h3,#article-container .music-intro{font-family:'Journal WenKai','Noto Serif SC',serif;font-weight:400}
 #page-header #site-subtitle{font-size:1.2rem;letter-spacing:.035em}
 .journal-index-heading h2{font-size:1.45rem}
