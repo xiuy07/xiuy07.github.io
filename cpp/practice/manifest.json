@@ -17,7 +17,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p02",
@@ -36,7 +37,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p03",
@@ -55,7 +57,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p04",
@@ -74,7 +77,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p05",
@@ -93,7 +97,8 @@
         "url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
         "adaptation": "改为标准输入输出，并加入空序列和更大整数范围。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p06",
@@ -112,7 +117,8 @@
         "url": "https://www.luogu.com.cn/problem/P1047",
         "adaptation": "改为通用整数位置标记，允许 L=0 和 m=0；使用自编数据与差分解法。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p07",
@@ -131,7 +137,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p08",
@@ -150,7 +157,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p09",
@@ -169,7 +177,8 @@
         "url": "https://leetcode.com/problems/reverse-linked-list/",
         "adaptation": "改为标准输入输出、允许更长链表，额外要求释放全部结点。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p10",
@@ -188,7 +197,8 @@
         "url": "https://leetcode.com/problems/merge-two-sorted-lists/",
         "adaptation": "改为序列输入和整行输出，扩大长度并要求释放内存。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p11",
@@ -207,7 +217,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p12",
@@ -226,7 +237,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p13",
@@ -245,7 +257,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p14",
@@ -264,7 +277,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p15",
@@ -283,7 +297,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p16",
@@ -302,7 +317,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p17",
@@ -321,7 +337,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p18",
@@ -340,7 +357,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p19",
@@ -359,7 +377,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p20",
@@ -378,7 +397,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p21",
@@ -397,7 +417,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p22",
@@ -416,7 +437,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p23",
@@ -435,7 +457,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p24",
@@ -454,7 +477,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p25",
@@ -473,7 +497,8 @@
         "url": "https://leetcode.com/problems/two-sum/",
         "adaptation": "不再保证唯一解，允许无解和空输入，并规定确定的下标选择顺序。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p26",
@@ -492,7 +517,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p27",
@@ -511,7 +537,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p28",
@@ -530,7 +557,8 @@
         "url": "",
         "adaptation": "按本指南课程主题重新设计。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p29",
@@ -549,7 +577,8 @@
         "url": "https://leetcode.com/problems/largest-rectangle-in-histogram/",
         "adaptation": "增加空输入和大高度，统一为标准输入输出。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 12
+      "test_count": 12,
+      "track": "cpp"
     },
     {
       "id": "p30",
@@ -568,7 +597,8 @@
         "url": "https://leetcode.com/problems/maximal-rectangle/",
         "adaptation": "改用 ./ * 网格与多数据集 0 0 结束格式，使用自编测试。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 13
+      "test_count": 13,
+      "track": "cpp"
     },
     {
       "id": "p31",
@@ -587,7 +617,8 @@
         "url": "https://leetcode.com/problems/min-stack/",
         "adaptation": "改成命令式输入，pop 输出被删除值，增加空栈行为；min 对应原 getMin。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 8
+      "test_count": 8,
+      "track": "cpp"
     },
     {
       "id": "p32",
@@ -606,73 +637,810 @@
         "url": "https://leetcode.com/problems/lru-cache/",
         "adaptation": "改为命令式输入，增加容量 0，值非负以使 -1 无歧义。题面、代码与测试数据重新编写，未搬运平台题解。"
       },
-      "test_count": 9
+      "test_count": 9,
+      "track": "cpp"
+    },
+    {
+      "id": "p33",
+      "title": "二分查找的第一个边界",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 17,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "维护答案位于 [l,r]、待检查元素为 [l,r)；a[mid]<x 时排除左段，否则保留 mid。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p34",
+      "title": "允许空段的最大子段和",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 17,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "维护以当前位置结尾的最佳非负和，以及已经出现过的全局最佳和。不要枚举左右端点。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p35",
+      "title": "手写动态顺序表",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 18,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "先确保容量，再从后往前移动插入区间；删除先保存元素，再左移后缀。unique_ptr 管理数组所有权。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p36",
+      "title": "循环链表与约瑟夫顺序",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 18,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "当前指针始终指向下一次开始报数的人，前驱负责断链；移动 (k−1)%剩余人数 次后删除当前结点。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p37",
+      "title": "括号匹配与栈不变式",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 19,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "栈中只保存尚未匹配的左括号。右括号只能与栈顶配对；扫描结束还必须检查栈空。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p38",
+      "title": "手写循环队列",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 19,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "维护 head 与元素个数 size，写入位置为 (head+size)%capacity；避免把 head==tail 同时用于空和满。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p39",
+      "title": "KMP：包括重叠的所有匹配",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 20,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "失配时 j=pi[j−1]，文本下标不回退。完整匹配后记录 i−m+1，再退到 pi[m−1] 以保留重叠。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p40",
+      "title": "Trie：单词计数与前缀计数",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 20,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "结点分别维护终止计数与经过计数。访问新结点后再取下标，不持有可能被 vector 扩容失效的引用。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p41",
+      "title": "二叉树的三种遍历",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 21,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "栈内记录结点与访问阶段：首次处理输出先序，左子树返回后输出中序，右子树返回后输出后序。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p42",
+      "title": "从先序、中序重建二叉树",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 21,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "先序决定创建顺序，中序决定何时从左子树返回。可用栈同步推进两段序列，或用位置表与显式区间栈。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p43",
+      "title": "BST：插入、查找与删除",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 22,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "删除分别处理无孩子、单孩子与双孩子；双孩子可用右子树最小结点替换，再删除该后继。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 9,
+      "track": "dsa"
+    },
+    {
+      "id": "p44",
+      "title": "B 树：最小度数与分裂",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 22,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "满结点的中位键上移；其左右各 t−1 个键成为两个孩子。根满时先创建新根再分裂。与课程 m 阶定义比较时，m=2t 仅对应这一组参数。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p45",
+      "title": "手写二叉最小堆",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 23,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "插入从末尾上浮；弹出用末元素覆盖根，再与较小孩子交换下沉。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p46",
+      "title": "Huffman：最小合并代价",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 23,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "每次合并最小的两项，堆维护当前候选。总代价等于 Huffman 树的带权外部路径长度。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p47",
+      "title": "线性探测：删除与墓碑",
+      "difficulty": "基础",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 24,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "never-used 可终止查找，tombstone 不能。插入记录首个墓碑并继续找重复项；找不到重复后才复用。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p48",
+      "title": "哈希计数：首个只出现一次的值",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 24,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "先计数，再按原数组顺序扫描。哈希表遍历顺序不代表第一次出现顺序。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p49",
+      "title": "并查集：连通与集合大小",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 25,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "只有根保存有效大小；合并前先找根，已同根时不重复累计。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p50",
+      "title": "冗余边的数量",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 25,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "unite 返回 false 代表两个根相同，此边不会改变连通分量，累计一次。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p51",
+      "title": "BFS：无权最短距离",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 26,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "第一次入队就标记距离，防止重复入队。BFS 的队列保证按距离层次处理。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p52",
+      "title": "DFS：连通分量计数",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 26,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "从每个尚未访问的顶点启动一次遍历，启动次数即分量数；不能只从结点 0 搜索。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p53",
+      "title": "拓扑排序：字典序最小",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 27,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "所有零入度点放入最小堆。每次选最小可用点，删除其所有出边；输出数量不足 n 则有环。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 10,
+      "track": "dsa"
+    },
+    {
+      "id": "p54",
+      "title": "AOE：工期与关键活动",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 27,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "拓扑正向计算事件最早时间，最大值为工期；所有最迟时间初始化为工期，逆拓扑取最小。活动 earliest[u]==latest[v]−w 时关键。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 9,
+      "track": "dsa"
+    },
+    {
+      "id": "p55",
+      "title": "Dijkstra：非负边单源最短路",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 28,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "堆中可有旧距离；弹出后发现不等于 dist[u] 就跳过。所有边必须非负。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 9,
+      "track": "dsa"
+    },
+    {
+      "id": "p56",
+      "title": "Bellman–Ford：可达负环",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 28,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "最多 n−1 轮松弛，提前无变化可以停止；额外一轮仍能改善且起点可达的边说明有可达负环。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 10,
+      "track": "dsa"
+    },
+    {
+      "id": "p57",
+      "title": "Prim：从连通块扩张",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 29,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "维护每个未进入生成树的点到当前树的最小连接代价；弹出旧条目或已经访问点时跳过。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 9,
+      "track": "dsa"
+    },
+    {
+      "id": "p58",
+      "title": "Kruskal：排序与并查集",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 29,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "按边权升序检查边，只有连接不同分量才选；必须选到 n−1 条才成功。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 9,
+      "track": "dsa"
+    },
+    {
+      "id": "p59",
+      "title": "稳定归并排序",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 30,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "归并时相等选左边的记录；不要直接比较 pair，否则 id 会成为第二排序键。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p60",
+      "title": "归并与逆序对",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 30,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "归并时右项严格小于左项，才累计左半剩余数量；相等时取左边可以避免误计重复值。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p61",
+      "title": "活动选择的交换论证",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 31,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "按结束时间升序。当前可选活动中最早结束的一个不会比任何其他选择更挤占后续空间，可用交换论证证明。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p62",
+      "title": "0/1 背包：为什么倒序更新",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 31,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "dp[c] 代表已经处理的物品在容量 c 内的最大价值；倒序容量让 dp[c−w] 仍来自上一轮，避免一件物品被重复使用。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p63",
+      "title": "树状数组：点加与区间和",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 32,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "外部下标从 0 开始，内部从 1 开始。prefix(end) 表示 [0,end)，区间和为 prefix(r)−prefix(l)。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
+    },
+    {
+      "id": "p64",
+      "title": "懒标记线段树：区间加与区间和",
+      "difficulty": "进阶",
+      "mode": "header",
+      "filename": "solution.hpp",
+      "chapter": 32,
+      "hints": [
+        "先写清楚本章的不变式，再决定更新顺序。",
+        "检查空结构、重复值、边界下标和 64 位累计。"
+      ],
+      "analysis": "完全覆盖时 sum += delta×区间长度，lazy += delta；向孩子递归前先下推，返回时再合并孩子之和。",
+      "source": {
+        "label": "课程主题原创练习",
+        "url": "",
+        "adaptation": "依据数据结构与算法课程主题重新设计；题面、参考实现与测试独立编写。"
+      },
+      "test_count": 8,
+      "track": "dsa"
     }
   ],
   "demos": [
     {
       "id": "d01",
-      "title": "编译、输入输出与类型：最小实验"
+      "title": "编译、输入输出与类型：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d02",
-      "title": "控制流程、函数与程序组织：最小实验"
+      "title": "控制流程、函数与程序组织：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d03",
-      "title": "数组、string 与 vector：最小实验"
+      "title": "数组、string 与 vector：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d04",
-      "title": "指针、引用、const 与二维数组：最小实验"
+      "title": "指针、引用、const 与二维数组：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d05",
-      "title": "动态内存、所有权与链表：最小实验"
+      "title": "动态内存、所有权与链表：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d06",
-      "title": "类、初始化与析构：最小实验"
+      "title": "类、初始化与析构：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d07",
-      "title": "拷贝、移动与值语义：最小实验"
+      "title": "拷贝、移动与值语义：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d08",
-      "title": "const 成员、静态成员与友元：最小实验"
+      "title": "const 成员、静态成员与友元：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d09",
-      "title": "继承、虚函数与对象切片：最小实验"
+      "title": "继承、虚函数与对象切片：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d10",
-      "title": "多继承、虚基类与 NVI：最小实验"
+      "title": "多继承、虚基类与 NVI：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d11",
-      "title": "运算符重载与转换：最小实验"
+      "title": "运算符重载与转换：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d12",
-      "title": "函数模板、类模板与转发：最小实验"
+      "title": "函数模板、类模板与转发：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d13",
-      "title": "STL、迭代器、算法与 Lambda：最小实验"
+      "title": "STL、迭代器、算法与 Lambda：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d14",
-      "title": "异常、RAII 与 C++17 值类型：最小实验"
+      "title": "异常、RAII 与 C++17 值类型：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d15",
-      "title": "单调栈与最大空白矩形：最小实验"
+      "title": "单调栈与最大空白矩形：最小实验",
+      "track": "cpp"
     },
     {
       "id": "d16",
-      "title": "综合练习与可维护的小工程：最小实验"
+      "title": "综合练习与可维护的小工程：最小实验",
+      "track": "cpp"
+    },
+    {
+      "id": "d17",
+      "title": "算法分析与二分边界：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d18",
+      "title": "顺序表、链表与约瑟夫环：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d19",
+      "title": "栈、循环队列与表达式：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d20",
+      "title": "字符串匹配：KMP 与 Trie：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d21",
+      "title": "二叉树、遍历与重建：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d22",
+      "title": "BST、AVL 与 B 树：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d23",
+      "title": "二叉堆、优先队列与 Huffman：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d24",
+      "title": "哈希表、线性探测与墓碑：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d25",
+      "title": "并查集与动态连通性：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d26",
+      "title": "图的表示、BFS 与 DFS：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d27",
+      "title": "拓扑排序、AOE 与关键路径：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d28",
+      "title": "最短路：Dijkstra、Bellman–Ford 与 Floyd：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d29",
+      "title": "最小生成树：Prim 与 Kruskal：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d30",
+      "title": "排序、稳定性与逆序对：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d31",
+      "title": "贪心、分治与动态规划：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d32",
+      "title": "前缀和、树状数组与懒标记线段树：实现实验",
+      "track": "dsa"
     }
   ]
 }

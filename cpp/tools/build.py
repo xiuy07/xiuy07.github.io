@@ -74,7 +74,7 @@ def main():
         for f in sorted(ROOT.rglob('*')):
             if not f.is_file():continue
             rel=f.relative_to(ROOT)
-            if any(x in {'.build','downloads','__pycache__','.git'} for x in rel.parts):continue
+            if any(x in {'.build','downloads','__pycache__','.git','review'} for x in rel.parts):continue
             if f.name in {'local-results.json','.DS_Store'} or f.suffix in {'.exe','.pyc'}:continue
             z.write(f,'cpp-guide/'+rel.as_posix())
     digest=hashlib.sha256(pack.read_bytes()).hexdigest()

@@ -8,13 +8,16 @@ import zipfile
 ROOT=Path(__file__).resolve().parents[1]
 curriculum=json.loads((ROOT/'curriculum.json').read_text(encoding='utf-8'))
 manifest=json.loads((ROOT/'practice/manifest.json').read_text(encoding='utf-8'))
-assert len(curriculum['chapters'])==16
-assert len(manifest['problems'])==32
-assert len(manifest['demos'])==16
+assert len(curriculum['chapters'])==32
+assert len(manifest['problems'])==64
+assert len(manifest['demos'])==32
+assert {c['track'] for c in curriculum['chapters']} == {'cpp','dsa'}
+assert len({p['id'] for p in manifest['problems']}) == 64
 total=0
 for chapter in curriculum['chapters']:
     assert (ROOT/chapter['file']).is_file()
     assert len(chapter['problems'])==2
+    assert all(next(p for p in manifest['problems'] if p['id']==pid)['chapter']==chapter['number'] for pid in chapter['problems'])
     assert (ROOT/'demos'/f'{chapter["demo"]}.cpp').is_file()
     assert '{{demo}}' not in (ROOT/chapter['file']).read_text(encoding='utf-8')
 for p in manifest['problems']:
@@ -31,13 +34,13 @@ with zipfile.ZipFile(pack) as z:
     assert 'cpp-guide/practice/judge.py' in names
     assert not any('/.build/' in x or x.endswith('.exe') or 'local-results.json' in x for x in names)
     assert all(not x.startswith('/') and '..' not in Path(x).parts for x in names)
-    for name in ['practice/judge.py','assets/app.js','content/07-copy-move.md']:
+    for name in ['practice/judge.py','assets/app.js','content/07-copy-move.md','algorithms/dsa.hpp','content/22-search-trees.md']:
         assert z.read('cpp-guide/'+name)==(ROOT/name).read_bytes()
 expected=(ROOT/'downloads/SHA256SUMS.txt').read_text(encoding='utf-8').split()[0]
 assert hashlib.sha256(pack.read_bytes()).hexdigest()==expected
 payload=(ROOT/'assets/data.js').read_text(encoding='utf-8')
 data=json.loads(payload[len('window.CPP_GUIDE='):-2])
-assert len(data['chapters'])==16 and len(data['problems'])==32
+assert len(data['chapters'])==32 and len(data['problems'])==64
 assert all('<h2' in c['html'] and '<pre>' in c['html'] for c in data['chapters'])
 assert all('<int[]>' not in p['html'].replace('&lt;int[]&gt;','') for p in data['problems'])
-print(f'Content consistency: 16 chapters, 16 demos, 32 exercises, {total} test pairs, package checksum verified.')
+print(f'Content consistency: 32 chapters, 32 demos, 64 exercises, {total} test pairs, package checksum verified.')

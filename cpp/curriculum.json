@@ -13,7 +13,8 @@
         "p01",
         "p02"
       ],
-      "reading": "C++ Primer 第 1–4 章；PPP3 的对象、类型与计算主题。"
+      "reading": "C++ Primer 第 1–4 章；PPP3 的对象、类型与计算主题。",
+      "track": "cpp"
     },
     {
       "id": "02-functions",
@@ -28,7 +29,8 @@
         "p03",
         "p04"
       ],
-      "reading": "C++ Primer 第 6 章；课程 0506-Pointer-Function。"
+      "reading": "C++ Primer 第 6 章；课程 0506-Pointer-Function。",
+      "track": "cpp"
     },
     {
       "id": "03-containers",
@@ -43,7 +45,8 @@
         "p05",
         "p06"
       ],
-      "reading": "C++ Primer 第 3、9 章；课程 0304-DataType 的数组主题。"
+      "reading": "C++ Primer 第 3、9 章；课程 0304-DataType 的数组主题。",
+      "track": "cpp"
     },
     {
       "id": "04-pointers",
@@ -58,7 +61,8 @@
         "p07",
         "p08"
       ],
-      "reading": "C++ Primer 第 2、3、6 章；课程 0506-Pointer-Function。"
+      "reading": "C++ Primer 第 2、3、6 章；课程 0506-Pointer-Function。",
+      "track": "cpp"
     },
     {
       "id": "05-memory",
@@ -73,7 +77,8 @@
         "p09",
         "p10"
       ],
-      "reading": "C++ Primer 第 12 章；Effective Modern C++ 的智能指针主题。"
+      "reading": "C++ Primer 第 12 章；Effective Modern C++ 的智能指针主题。",
+      "track": "cpp"
     },
     {
       "id": "06-classes",
@@ -88,7 +93,8 @@
         "p11",
         "p12"
       ],
-      "reading": "C++ Primer 第 7、13 章；课程 0708-OOP。"
+      "reading": "C++ Primer 第 7、13 章；课程 0708-OOP。",
+      "track": "cpp"
     },
     {
       "id": "07-copy-move",
@@ -103,7 +109,8 @@
         "p13",
         "p14"
       ],
-      "reading": "C++ Primer 第 13 章；Effective Modern C++ 的特殊成员、move/forward 主题。"
+      "reading": "C++ Primer 第 13 章；Effective Modern C++ 的特殊成员、move/forward 主题。",
+      "track": "cpp"
     },
     {
       "id": "08-const-static",
@@ -118,7 +125,8 @@
         "p15",
         "p16"
       ],
-      "reading": "C++ Primer 第 7 章；课程 0708-OOP 的 const/static/friend。"
+      "reading": "C++ Primer 第 7 章；课程 0708-OOP 的 const/static/friend。",
+      "track": "cpp"
     },
     {
       "id": "09-polymorphism",
@@ -133,7 +141,8 @@
         "p17",
         "p18"
       ],
-      "reading": "C++ Primer 第 15 章；课程 09-Virtual-Inheritance。"
+      "reading": "C++ Primer 第 15 章；课程 09-Virtual-Inheritance。",
+      "track": "cpp"
     },
     {
       "id": "10-inheritance",
@@ -148,7 +157,8 @@
         "p19",
         "p20"
       ],
-      "reading": "课程 09-Virtual-Inheritance、11-Template-Exception 的流输出；C++ Primer 第 15 章。"
+      "reading": "课程 09-Virtual-Inheritance、11-Template-Exception 的流输出；C++ Primer 第 15 章。",
+      "track": "cpp"
     },
     {
       "id": "11-operators",
@@ -163,7 +173,8 @@
         "p21",
         "p22"
       ],
-      "reading": "C++ Primer 第 14 章；课程 10-Overloading。"
+      "reading": "C++ Primer 第 14 章；课程 10-Overloading。",
+      "track": "cpp"
     },
     {
       "id": "12-templates",
@@ -178,7 +189,8 @@
         "p23",
         "p24"
       ],
-      "reading": "C++ Primer 第 16 章；Effective Modern C++ 的推导与完美转发主题。"
+      "reading": "C++ Primer 第 16 章；Effective Modern C++ 的推导与完美转发主题。",
+      "track": "cpp"
     },
     {
       "id": "13-stl",
@@ -193,7 +205,8 @@
         "p25",
         "p26"
       ],
-      "reading": "C++ Primer 第 9–11 章；课程 11-Template-Exception 的 auto 与 Lambda。"
+      "reading": "C++ Primer 第 9–11 章；课程 11-Template-Exception 的 auto 与 Lambda。",
+      "track": "cpp"
     },
     {
       "id": "14-exceptions",
@@ -208,7 +221,8 @@
         "p27",
         "p28"
       ],
-      "reading": "C++ Primer 第 12、18 章；A Tour of C++ 的错误处理与值类型主题。"
+      "reading": "C++ Primer 第 12、18 章；A Tour of C++ 的错误处理与值类型主题。",
+      "track": "cpp"
     },
     {
       "id": "15-monotonic",
@@ -223,7 +237,8 @@
         "p29",
         "p30"
       ],
-      "reading": "LeetCode 84/85 的题目思想改编；本章从边界推导重新讲解。"
+      "reading": "LeetCode 84/85 的题目思想改编；本章从边界推导重新讲解。",
+      "track": "cpp"
     },
     {
       "id": "16-project",
@@ -238,7 +253,317 @@
         "p31",
         "p32"
       ],
-      "reading": "LeetCode 155/146 改编；C++ Core Guidelines 的资源管理与接口设计主题。"
+      "reading": "LeetCode 155/146 改编；C++ Core Guidelines 的资源管理与接口设计主题。",
+      "track": "cpp"
+    },
+    {
+      "id": "17-analysis",
+      "number": 17,
+      "title": "算法分析与二分边界",
+      "summary": "从循环不变式出发，区分复杂度、正确性和边界。",
+      "group": "算法基础",
+      "minutes": 40,
+      "file": "content/17-analysis.md",
+      "demo": "d17",
+      "problems": [
+        "p33",
+        "p34"
+      ],
+      "reading": "Slides chapter2；slides26 chapter2；先读原 C++ 第 02–03 章。",
+      "track": "dsa",
+      "implementations": [
+        "search"
+      ],
+      "widget": "binary"
+    },
+    {
+      "id": "18-lists",
+      "number": 18,
+      "title": "顺序表、链表与约瑟夫环",
+      "summary": "比较元素搬移和连接修改，亲手实现扩容与删除。",
+      "group": "线性结构",
+      "minutes": 40,
+      "file": "content/18-lists.md",
+      "demo": "d18",
+      "problems": [
+        "p35",
+        "p36"
+      ],
+      "reading": "Slides chapter3.0 List；复习稿线性表主题。",
+      "track": "dsa",
+      "implementations": [
+        "list"
+      ]
+    },
+    {
+      "id": "19-stack-queue",
+      "number": 19,
+      "title": "栈、循环队列与表达式",
+      "summary": "用受限的访问顺序，维护括号配对和环形存储。",
+      "group": "线性结构",
+      "minutes": 40,
+      "file": "content/19-stack-queue.md",
+      "demo": "d19",
+      "problems": [
+        "p37",
+        "p38"
+      ],
+      "reading": "Slides chapter3.1 StackQueue。",
+      "track": "dsa",
+      "implementations": [
+        "stack_queue"
+      ]
+    },
+    {
+      "id": "20-strings",
+      "number": 20,
+      "title": "字符串匹配：KMP 与 Trie",
+      "summary": "复用已匹配的信息，用不同结构处理子串与前缀。",
+      "group": "线性结构",
+      "minutes": 40,
+      "file": "content/20-strings.md",
+      "demo": "d20",
+      "problems": [
+        "p39",
+        "p40"
+      ],
+      "reading": "复习稿字符串主题；作为课程线性结构的扩展。",
+      "track": "dsa",
+      "implementations": [
+        "strings"
+      ]
+    },
+    {
+      "id": "21-trees",
+      "number": 21,
+      "title": "二叉树、遍历与重建",
+      "summary": "明确访问发生在哪个时刻，把递归调用转换成显式栈。",
+      "group": "树与查找",
+      "minutes": 40,
+      "file": "content/21-trees.md",
+      "demo": "d21",
+      "problems": [
+        "p41",
+        "p42"
+      ],
+      "reading": "Slides chapter4.0 Tree：基本树、遍历与表示。",
+      "track": "dsa",
+      "implementations": [
+        "tree"
+      ]
+    },
+    {
+      "id": "22-search-trees",
+      "number": 22,
+      "title": "BST、AVL 与 B 树",
+      "summary": "先维护搜索顺序，再用旋转或分裂控制高度。",
+      "group": "树与查找",
+      "minutes": 40,
+      "file": "content/22-search-trees.md",
+      "demo": "d22",
+      "problems": [
+        "p43",
+        "p44"
+      ],
+      "reading": "Slides chapter4.1 SpecificTrees；2025 复习题中的 AVL 判断与变形。",
+      "track": "dsa",
+      "implementations": [
+        "bst",
+        "avl",
+        "btree"
+      ]
+    },
+    {
+      "id": "23-heaps",
+      "number": 23,
+      "title": "二叉堆、优先队列与 Huffman",
+      "summary": "区分堆序和全局有序，用局部修复支持取最小值。",
+      "group": "树与查找",
+      "minutes": 40,
+      "file": "content/23-heaps.md",
+      "demo": "d23",
+      "problems": [
+        "p45",
+        "p46"
+      ],
+      "reading": "Slides chapter6 PriorityQueue；chapter4.0 Tree 的 Huffman。",
+      "track": "dsa",
+      "implementations": [
+        "heap"
+      ],
+      "widget": "heap"
+    },
+    {
+      "id": "24-hashing",
+      "number": 24,
+      "title": "哈希表、线性探测与墓碑",
+      "summary": "碰撞之后仍要保持查找路径连通，删除不能简单变空。",
+      "group": "树与查找",
+      "minutes": 40,
+      "file": "content/24-hashing.md",
+      "demo": "d24",
+      "problems": [
+        "p47",
+        "p48"
+      ],
+      "reading": "Slides chapter5 Hashing；2025 题目中的懒惰删除与查找次数。",
+      "track": "dsa",
+      "implementations": [
+        "hashing"
+      ]
+    },
+    {
+      "id": "25-dsu",
+      "number": 25,
+      "title": "并查集与动态连通性",
+      "summary": "用代表元维护等价类，只回答合并与是否同组。",
+      "group": "图与连通性",
+      "minutes": 40,
+      "file": "content/25-dsu.md",
+      "demo": "d25",
+      "problems": [
+        "p49",
+        "p50"
+      ],
+      "reading": "Slides chapter7 DisjointSet。",
+      "track": "dsa",
+      "implementations": [
+        "dsu"
+      ]
+    },
+    {
+      "id": "26-graphs",
+      "number": 26,
+      "title": "图的表示、BFS 与 DFS",
+      "summary": "先确定边是否有向，再把访问状态与待处理结构分开。",
+      "group": "图与连通性",
+      "minutes": 40,
+      "file": "content/26-graphs.md",
+      "demo": "d26",
+      "problems": [
+        "p51",
+        "p52"
+      ],
+      "reading": "Slides chapter8 Graph：邻接表示、广度与深度遍历。",
+      "track": "dsa",
+      "implementations": [
+        "graph"
+      ],
+      "widget": "bfs"
+    },
+    {
+      "id": "27-dag",
+      "number": 27,
+      "title": "拓扑排序、AOE 与关键路径",
+      "summary": "用依赖方向组织计算，再比较最早和最迟开始时间。",
+      "group": "图与连通性",
+      "minutes": 40,
+      "file": "content/27-dag.md",
+      "demo": "d27",
+      "problems": [
+        "p53",
+        "p54"
+      ],
+      "reading": "Slides chapter8 Graph：AOV/AOE、拓扑排序、关键路径。",
+      "track": "dsa",
+      "implementations": [
+        "dag"
+      ]
+    },
+    {
+      "id": "28-shortest",
+      "number": 28,
+      "title": "最短路：Dijkstra、Bellman–Ford 与 Floyd",
+      "summary": "按边权条件选算法，区分不可达和受负环影响。",
+      "group": "图与连通性",
+      "minutes": 40,
+      "file": "content/28-shortest.md",
+      "demo": "d28",
+      "problems": [
+        "p55",
+        "p56"
+      ],
+      "reading": "Slides chapter8 Graph：三种最短路径算法。",
+      "track": "dsa",
+      "implementations": [
+        "shortest"
+      ]
+    },
+    {
+      "id": "29-mst",
+      "number": 29,
+      "title": "最小生成树：Prim 与 Kruskal",
+      "summary": "最小化连接所有点的总权，而不是源点到各点的距离。",
+      "group": "图与连通性",
+      "minutes": 40,
+      "file": "content/29-mst.md",
+      "demo": "d29",
+      "problems": [
+        "p57",
+        "p58"
+      ],
+      "reading": "Slides chapter8 Graph；2025 练习中的 Prim 建树。",
+      "track": "dsa",
+      "implementations": [
+        "mst"
+      ]
+    },
+    {
+      "id": "30-sorting",
+      "number": 30,
+      "title": "排序、稳定性与逆序对",
+      "summary": "从插入、分治和分配的不同方式理解排序成本。",
+      "group": "算法设计与区间",
+      "minutes": 40,
+      "file": "content/30-sorting.md",
+      "demo": "d30",
+      "problems": [
+        "p59",
+        "p60"
+      ],
+      "reading": "Slides chapter9 Sorting；chapter2 算法分析。",
+      "track": "dsa",
+      "implementations": [
+        "sorting"
+      ]
+    },
+    {
+      "id": "31-design",
+      "number": 31,
+      "title": "贪心、分治与动态规划",
+      "summary": "从状态、选择和证明出发，不按题目外观猜算法。",
+      "group": "算法设计与区间",
+      "minutes": 40,
+      "file": "content/31-design.md",
+      "demo": "d31",
+      "problems": [
+        "p61",
+        "p62"
+      ],
+      "reading": "复习稿基本算法思想；结合课程排序、图算法与背包扩展。",
+      "track": "dsa",
+      "implementations": [
+        "dp_greedy"
+      ]
+    },
+    {
+      "id": "32-ranges",
+      "number": 32,
+      "title": "前缀和、树状数组与懒标记线段树",
+      "summary": "按查询和修改类型选择结构，统一使用半开区间。",
+      "group": "算法设计与区间",
+      "minutes": 40,
+      "file": "content/32-ranges.md",
+      "demo": "d32",
+      "problems": [
+        "p63",
+        "p64"
+      ],
+      "reading": "复习稿线段树主题；在课程基础上的实现扩展。",
+      "track": "dsa",
+      "implementations": [
+        "ranges"
+      ]
     }
   ],
   "demos": [
@@ -305,6 +630,70 @@
     {
       "id": "d16",
       "title": "综合练习与可维护的小工程：最小实验"
+    },
+    {
+      "id": "d17",
+      "title": "算法分析与二分边界：实现实验"
+    },
+    {
+      "id": "d18",
+      "title": "顺序表、链表与约瑟夫环：实现实验"
+    },
+    {
+      "id": "d19",
+      "title": "栈、循环队列与表达式：实现实验"
+    },
+    {
+      "id": "d20",
+      "title": "字符串匹配：KMP 与 Trie：实现实验"
+    },
+    {
+      "id": "d21",
+      "title": "二叉树、遍历与重建：实现实验"
+    },
+    {
+      "id": "d22",
+      "title": "BST、AVL 与 B 树：实现实验"
+    },
+    {
+      "id": "d23",
+      "title": "二叉堆、优先队列与 Huffman：实现实验"
+    },
+    {
+      "id": "d24",
+      "title": "哈希表、线性探测与墓碑：实现实验"
+    },
+    {
+      "id": "d25",
+      "title": "并查集与动态连通性：实现实验"
+    },
+    {
+      "id": "d26",
+      "title": "图的表示、BFS 与 DFS：实现实验"
+    },
+    {
+      "id": "d27",
+      "title": "拓扑排序、AOE 与关键路径：实现实验"
+    },
+    {
+      "id": "d28",
+      "title": "最短路：Dijkstra、Bellman–Ford 与 Floyd：实现实验"
+    },
+    {
+      "id": "d29",
+      "title": "最小生成树：Prim 与 Kruskal：实现实验"
+    },
+    {
+      "id": "d30",
+      "title": "排序、稳定性与逆序对：实现实验"
+    },
+    {
+      "id": "d31",
+      "title": "贪心、分治与动态规划：实现实验"
+    },
+    {
+      "id": "d32",
+      "title": "前缀和、树状数组与懒标记线段树：实现实验"
     }
   ]
 }

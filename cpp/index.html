@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="精简的 C++17 中文学习指南：16章讲解、可运行示例、32道练习和可离线运行的本地评测器。">
-  <meta name="theme-color" content="#f6f8fc">
-  <title>C++ 学习指南 · 讲解与本地练习</title>
+  <meta name="description" content="C++ 与数据结构算法学习讲义：32章、32个可运行示例、64道练习，附手写实现与本地评测。">
+  <meta name="theme-color" content="#f3f6f9">
+  <title>C++ 与数据结构 · 学习讲义</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/style.css?v=62b65aa958">
+  <link rel="stylesheet" href="assets/style.css?v=d1f26a945c">
   <link rel="stylesheet" href="assets/highlight.css?v=c676afe1a1">
-  <script src="assets/data.js?v=5789b4f8e5" defer></script>
-  <script src="assets/app.js?v=c04f19d4b4" defer></script>
+  <script src="assets/data.js?v=5815040c90" defer></script>
+  <script src="assets/app.js?v=649b6d55e8" defer></script>
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
   <header class="topbar">
-    <a href="#start" class="brand" aria-label="C++ 学习指南首页"><span class="brand-mark" aria-hidden="true">C++</span><span>C++ 学习指南</span></a>
+    <a href="#start" class="brand" aria-label="C++ 与数据结构首页"><span class="brand-mark" aria-hidden="true">C++</span><span>C++ 与数据结构<small>COURSE NOTES / 实现与练习</small></span></a>
     <div class="search-wrap">
       <label for="search" class="sr-only">搜索章节、知识点或题号</label>
       <input id="search" type="search" placeholder="搜索知识点或题号…" autocomplete="off" aria-controls="search-results">
@@ -29,8 +29,10 @@
   </header>
   <aside id="sidebar" class="sidebar" aria-label="课程导航">
     <div class="side-top"><a href="../handbooks/">返回学习讲义</a><span class="version">C++17</span></div>
+    <div class="track-switch" role="group" aria-label="选择学习路线"><button type="button" data-track="cpp" aria-pressed="true">C++ 语言</button><button type="button" data-track="dsa" aria-pressed="false">数据结构与算法</button></div>
+    <div class="reader-tools" role="group" aria-label="阅读设置"><button id="font-down" type="button" aria-label="缩小字号">A−</button><span id="font-value">18</span><button id="font-up" type="button" aria-label="增大字号">A＋</button><button id="theme-toggle" type="button" aria-pressed="false">暗色阅读</button></div>
     <nav id="course-nav" aria-label="章节目录"></nav>
-    <div class="side-bottom"><div class="progress-label"><span>已读章节</span><span id="progress-text">0 / 16</span></div><progress id="progress" max="16" value="0" aria-label="已读章节数量"></progress><p>进度仅保存在当前浏览器。</p><a href="#sources">课程映射与参考来源</a></div>
+    <div class="side-bottom"><div class="progress-label"><span>全书阅读进度</span><span id="progress-text">0 / 32</span></div><progress id="progress" max="32" value="0" aria-label="已读章节数量"></progress><p>进度与阅读设置保存在当前浏览器。</p><a href="#sources">课程映射与参考来源</a></div>
   </aside>
   <div class="layout">
     <main id="main" tabindex="-1"></main>

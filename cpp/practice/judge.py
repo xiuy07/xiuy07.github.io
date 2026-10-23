@@ -137,6 +137,7 @@ def main():
     parser.add_argument('target', nargs='?', default='list', help='list / all / p01 / demo')
     parser.add_argument('demo_id', nargs='?', default='all')
     parser.add_argument('--reference', action='store_true', help='仅用于核对参考实现，不修改自己的文件')
+    parser.add_argument('--track', choices=['cpp', 'dsa'], help='仅列出或评测指定学习路线')
     parser.add_argument('--file', help='指定自己的 .cpp 或 .hpp 文件；仅允许单题')
     parser.add_argument('--cxx', default=os.environ.get('CXX', 'g++'))
     parser.add_argument('--timeout', type=float, default=2.0, help='每个用例的运行时间，默认 2 秒')
@@ -147,7 +148,7 @@ def main():
     if args.timeout <= 0:
         parser.error('--timeout 必须大于 0')
     manifest = json.loads((ROOT / 'manifest.json').read_text(encoding='utf-8'))
-    problems = manifest['problems']
+    problems = [p for p in manifest['problems'] if not args.track or p.get('track') == args.track]
     if args.target == 'list':
         for p in problems:
             print(f'{p["id"]:4} {p["title"]:16} {p["difficulty"]}  solutions/{p["id"]}/{p["filename"]}')
@@ -159,7 +160,7 @@ def main():
         print(f'找不到编译器 {args.cxx}。请安装 GCC/Clang 并加入 PATH，或用 --cxx 指定可执行文件路径。')
         return 2
     if args.target == 'demo':
-        selected = [p for p in manifest['demos'] if args.demo_id == 'all' or p['id'] == args.demo_id]
+        selected = [p for p in manifest['demos'] if (args.demo_id == 'all' or p['id'] == args.demo_id) and (not args.track or p.get('track') == args.track)]
         if not selected:
             parser.error('不存在该示例编号')
         results = []

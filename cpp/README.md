@@ -1,6 +1,6 @@
-# C++ 学习指南
+# C++ 与数据结构学习讲义
 
-面向学过基础 C、正在学习高级程序设计的中文学习者。以 C++17 为统一运行基线，按“讲解 → 运行示例 → 自己实现 → 本地测试”学习。C++20/23 只在延伸阅读中注明，不混入基础练习。
+面向学过基础 C、正在学习高级程序设计与数据结构算法的中文学习者。以 C++17 为统一运行基线，按“讲解 → 手推 → 运行示例 → 自己实现 → 本地测试”学习。全书 32 章、32 个运行示例、64 道编程练习；上篇 01–16 为 C++，下篇 17–32 为数据结构与算法。算法章节各附手推题与核对说明。
 
 在线阅读：<https://xiuy07.github.io/cpp/>
 
@@ -13,6 +13,9 @@
 
 ```text
 python practice/judge.py list
+python practice/judge.py list --track dsa
+python practice/judge.py p33
+python practice/judge.py all --track dsa --keep-going
 python practice/judge.py p01
 python practice/judge.py p13
 python practice/judge.py all --keep-going
@@ -28,6 +31,8 @@ python practice/judge.py p09 --sanitize
 
 ```text
 content/                    精简后的章节 Markdown，适合继续维护
+algorithms/dsa.hpp          数据结构与算法的完整 C++17 教学实现
+algorithms/README.md        实现索引、复杂度与前置条件
 demos/                      完整可运行示例及预期输出
 practice/solutions/pXX/      留给你写的 main.cpp 或 solution.hpp
 practice/drivers/            类、模板题的固定测试入口，不需要修改
