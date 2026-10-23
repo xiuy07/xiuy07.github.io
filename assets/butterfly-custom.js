@@ -85,7 +85,30 @@
       const label=player.querySelector('[data-bgm-label]');
       const status=player.querySelector('[data-bgm-status]');
       const title=toggle.dataset.bgmTitle;
-      audio.volume=.35;
+      const volume=player.querySelector('[data-bgm-volume]');
+      const mute=player.querySelector('[data-bgm-mute]');
+      const level=player.querySelector('[data-bgm-level]');
+      const settings=player.querySelector('[data-bgm-settings]');
+      let lastAudible=.15;
+      audio.volume=.15;
+      const updateVolume=()=>{
+        const percent=Math.round(audio.volume*100),muted=audio.muted||percent===0;
+        volume.value=String(percent);volume.setAttribute('aria-valuetext',`${percent}%`);level.textContent=`${percent}%`;
+        player.dataset.muted=String(muted);mute.setAttribute('aria-pressed',String(muted));
+        mute.setAttribute('aria-label',muted?'取消静音':'静音');mute.title=muted?'取消静音':'静音';
+      };
+      audio.addEventListener('volumechange',updateVolume);
+      volume.addEventListener('input',()=>{
+        audio.volume=Math.max(0,Math.min(1,Number(volume.value)/100));
+        audio.muted=audio.volume===0;if(audio.volume>0)lastAudible=audio.volume;updateVolume();
+      });
+      mute.addEventListener('click',()=>{
+        if(audio.muted||audio.volume===0){if(audio.volume===0)audio.volume=lastAudible;audio.muted=false;}
+        else audio.muted=true;
+        updateVolume();
+      });
+      settings.addEventListener('keydown',event=>{if(event.key==='Escape'){settings.open=false;settings.querySelector('summary').focus();}});
+      updateVolume();
       const update=()=>{
         const playing=!audio.paused;
         toggle.setAttribute('aria-pressed',String(playing));
@@ -139,6 +162,7 @@
   document.addEventListener('visibilitychange',refreshSeaState);
   motionPreference.addEventListener('change',refreshSeaState);
   document.addEventListener('click',event=>{
+    document.querySelectorAll('[data-bgm-settings][open]').forEach(settings=>{if(!settings.contains(event.target))settings.open=false;});
     if(motionPreference.matches||event.detail===0||event.button!==0||event.target.closest('input,textarea,select,[contenteditable="true"]'))return;
     const layer=document.getElementById('ocean-click-layer');if(!layer)return;
     while(layer.children.length>=6)layer.firstElementChild.remove();
