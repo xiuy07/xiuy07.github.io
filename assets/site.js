@@ -22,7 +22,7 @@ media.addEventListener('change',()=>{if(!savedTheme)applyTheme(media.matches?'da
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 function closeMenu(){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent=english?'Menu':'菜单';}
-menuButton.addEventListener('click',()=>{const opened=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(opened));menuButton.textContent=opened?(english?'Close':'收起'):(english?'Menu':'菜单');});
+menuButton.addEventListener('click',event=>{const opened=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',String(opened));menuButton.textContent=opened?(english?'Close':'收起'):(english?'Menu':'菜单');if(opened&&event.detail===0)nav.querySelector('a')?.focus({preventScroll:true});});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('is-open')){closeMenu();menuButton.focus();}});
 const anchors = [...nav.querySelectorAll('a[href^="#"]')];

@@ -13,13 +13,105 @@
   const prefetched=new Set();
   const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
   const musicGraphs=new Map();
+  const musicControls=new Map();
   let seaObserver;
   function refreshSeaState(){
     const sea=document.querySelector('.ocean-motion');
     if(sea)sea.dataset.paused=String(document.hidden||motionPreference.matches);
   }
 
+  function enhanceMusic(player) {
+    if(musicControls.has(player))return;
+    player.dataset.ready='true';
+    const audio=player.querySelector('[data-bgm-audio]');
+    const toggle=player.querySelector('[data-bgm-toggle]');
+    const label=player.querySelector('[data-bgm-label]');
+    const status=player.querySelector('[data-bgm-status]');
+    const title=toggle.dataset.bgmTitle;
+    let playRequest=0,wantsPlay=false,loading=false;
+    const volume=player.querySelector('[data-bgm-volume]');
+    const mute=player.querySelector('[data-bgm-mute]');
+    const level=player.querySelector('[data-bgm-level]');
+    const settings=player.querySelector('[data-bgm-settings]');
+    let lastAudible=.15,volumeLevel=.15,isMuted=false;
+    audio.volume=.15;
+    const nativeVolume=Math.abs(audio.volume-.15)<.001;
+    const updateVolume=()=>{
+      const percent=Math.round(volumeLevel*100),muted=isMuted||percent===0;
+      volume.value=String(percent);volume.setAttribute('aria-valuetext',`${percent}%`);level.textContent=`${percent}%`;
+      player.dataset.muted=String(muted);mute.setAttribute('aria-pressed',String(muted));
+      mute.setAttribute('aria-label',muted?'取消静音':'静音');mute.title=muted?'取消静音':'静音';
+    };
+    const applyVolume=()=>{
+      audio.muted=isMuted;
+      const graph=musicGraphs.get(player);
+      if(graph)graph.gain.gain.setTargetAtTime(isMuted?0:volumeLevel,graph.context.currentTime,.015);
+      else if(nativeVolume)audio.volume=volumeLevel;
+      updateVolume();
+    };
+    const prepareAudio=()=>{
+      // iOS may ignore HTMLMediaElement.volume. Route through GainNode when needed.
+      if(nativeVolume)return Promise.resolve();
+      let graph=musicGraphs.get(player);
+      if(!graph){
+        const AudioContext=window.AudioContext||window.webkitAudioContext;
+        if(!AudioContext)throw new Error('Audio gain unavailable');
+        const context=new AudioContext(),gain=context.createGain();
+        gain.gain.value=isMuted?0:volumeLevel;
+        try{const source=context.createMediaElementSource(audio);source.connect(gain);gain.connect(context.destination);}
+        catch(error){context.close().catch(()=>{});throw error;}
+        graph={context,gain};musicGraphs.set(player,graph);
+      }
+      applyVolume();
+      return graph.context.state!=='running'?graph.context.resume():Promise.resolve();
+    };
+    audio.addEventListener('volumechange',updateVolume);
+    volume.addEventListener('input',()=>{
+      volumeLevel=Math.max(0,Math.min(1,Number(volume.value)/100));
+      isMuted=volumeLevel===0;if(volumeLevel>0)lastAudible=volumeLevel;applyVolume();
+    });
+    mute.addEventListener('click',()=>{
+      if(isMuted||volumeLevel===0){if(volumeLevel===0)volumeLevel=lastAudible;isMuted=false;}
+      else isMuted=true;
+      applyVolume();
+    });
+    settings.addEventListener('keydown',event=>{if(event.key==='Escape'){settings.open=false;settings.querySelector('summary').focus();}});
+    updateVolume();
+    const update=()=>{
+      const playing=wantsPlay&&!audio.paused&&!loading;
+      toggle.setAttribute('aria-pressed',String(wantsPlay));toggle.setAttribute('aria-busy',String(loading));
+      toggle.setAttribute('aria-label',`${loading?'取消加载':playing?'暂停':'播放'}背景音乐：${title}`);
+      label.textContent=loading?'正在打开…':playing?'暂停音乐':'听一会儿';
+      player.dataset.loading=String(loading);
+      player.classList.toggle('is-playing',playing);
+    };
+    const stop=(reset=false)=>{
+      ++playRequest;wantsPlay=false;loading=false;audio.pause();status.textContent='';
+      if(reset){try{audio.currentTime=0;}catch{}settings.open=false;}
+      update();
+    };
+    musicControls.set(player,{stop});
+    audio.addEventListener('play',()=>{if(!wantsPlay||!player.isConnected){stop();return;}update();});
+    audio.addEventListener('playing',()=>{if(!wantsPlay||!player.isConnected){stop();return;}loading=false;status.textContent='';update();});
+    audio.addEventListener('waiting',()=>{if(wantsPlay){loading=true;update();}});
+    audio.addEventListener('pause',()=>{if(!loading)wantsPlay=false;update();});
+    audio.addEventListener('error',()=>{stop();status.textContent='音乐暂时无法播放。';});
+    toggle.addEventListener('click',async()=>{
+      if(wantsPlay||!audio.paused){stop();return;}
+      const request=++playRequest;wantsPlay=true;loading=true;status.textContent='正在打开背景音乐…';update();
+      try{
+        await Promise.all([prepareAudio(),audio.play()]);
+        if(request!==playRequest||!player.isConnected){if(!wantsPlay||!player.isConnected)audio.pause();return;}
+        loading=false;status.textContent='';update();
+      }catch{
+        if(request!==playRequest)return;
+        stop();status.textContent='音乐暂时无法播放。';
+      }
+    });
+  }
+
   function enhance() {
+    for(const [player,control] of musicControls){if(!player.isConnected){control.stop();musicControls.delete(player);}}
     for(const [player,graph] of musicGraphs){if(!player.isConnected){graph.context.close().catch(()=>{});musicGraphs.delete(player);}}
     if(!document.querySelector('.skip-link')){
       const skip=document.createElement('a');skip.href='#content-inner';skip.textContent='跳到正文';skip.className='skip-link';document.body.prepend(skip);
@@ -79,76 +171,7 @@
     const sea=document.querySelector('.ocean-motion');
     if(sea&&'IntersectionObserver' in window){seaObserver=new IntersectionObserver(entries=>{sea.dataset.offscreen=String(!entries[0].isIntersecting);},{threshold:0});seaObserver.observe(sea);}
     refreshSeaState();
-    document.querySelectorAll('[data-bgm-player]').forEach(player=>{
-      if(player.dataset.ready)return;
-      player.dataset.ready='true';
-      const audio=player.querySelector('[data-bgm-audio]');
-      const toggle=player.querySelector('[data-bgm-toggle]');
-      const label=player.querySelector('[data-bgm-label]');
-      const status=player.querySelector('[data-bgm-status]');
-      const title=toggle.dataset.bgmTitle;
-      const volume=player.querySelector('[data-bgm-volume]');
-      const mute=player.querySelector('[data-bgm-mute]');
-      const level=player.querySelector('[data-bgm-level]');
-      const settings=player.querySelector('[data-bgm-settings]');
-      let lastAudible=.15,volumeLevel=.15,isMuted=false;
-      audio.volume=.15;
-      const nativeVolume=Math.abs(audio.volume-.15)<.001;
-      const updateVolume=()=>{
-        const percent=Math.round(volumeLevel*100),muted=isMuted||percent===0;
-        volume.value=String(percent);volume.setAttribute('aria-valuetext',`${percent}%`);level.textContent=`${percent}%`;
-        player.dataset.muted=String(muted);mute.setAttribute('aria-pressed',String(muted));
-        mute.setAttribute('aria-label',muted?'取消静音':'静音');mute.title=muted?'取消静音':'静音';
-      };
-      const applyVolume=()=>{
-        audio.muted=isMuted;
-        const graph=musicGraphs.get(player);
-        if(graph)graph.gain.gain.setTargetAtTime(isMuted?0:volumeLevel,graph.context.currentTime,.015);
-        else if(nativeVolume)audio.volume=volumeLevel;
-        updateVolume();
-      };
-      const prepareAudio=()=>{
-        // iOS may ignore HTMLMediaElement.volume. Route through GainNode when needed.
-        if(nativeVolume)return Promise.resolve();
-        let graph=musicGraphs.get(player);
-        if(!graph){
-          const AudioContext=window.AudioContext||window.webkitAudioContext;
-          if(!AudioContext)throw new Error('Audio gain unavailable');
-          const context=new AudioContext(),gain=context.createGain();
-          gain.gain.value=isMuted?0:volumeLevel;
-          try{const source=context.createMediaElementSource(audio);source.connect(gain);gain.connect(context.destination);}
-          catch(error){context.close().catch(()=>{});throw error;}
-          graph={context,gain};musicGraphs.set(player,graph);
-        }
-        applyVolume();
-        return graph.context.state!=='running'?graph.context.resume():Promise.resolve();
-      };
-      audio.addEventListener('volumechange',updateVolume);
-      volume.addEventListener('input',()=>{
-        volumeLevel=Math.max(0,Math.min(1,Number(volume.value)/100));
-        isMuted=volumeLevel===0;if(volumeLevel>0)lastAudible=volumeLevel;applyVolume();
-      });
-      mute.addEventListener('click',()=>{
-        if(isMuted||volumeLevel===0){if(volumeLevel===0)volumeLevel=lastAudible;isMuted=false;}
-        else isMuted=true;
-        applyVolume();
-      });
-      settings.addEventListener('keydown',event=>{if(event.key==='Escape'){settings.open=false;settings.querySelector('summary').focus();}});
-      updateVolume();
-      const update=()=>{
-        const playing=!audio.paused;
-        toggle.setAttribute('aria-pressed',String(playing));
-        toggle.setAttribute('aria-label',`${playing?'暂停':'播放'}背景音乐：${title}`);
-        label.textContent=playing?'暂停音乐':'听一会儿';
-        player.classList.toggle('is-playing',playing);
-      };
-      audio.addEventListener('play',update);audio.addEventListener('pause',update);
-      audio.addEventListener('error',()=>{status.textContent='音乐暂时无法播放。';update();});
-      toggle.addEventListener('click',async()=>{
-        if(!audio.paused){audio.pause();return;}
-        try{status.textContent='';await Promise.all([prepareAudio(),audio.play()]);}catch{audio.pause();status.textContent='音乐暂时无法播放。';update();}
-      });
-    });
+    document.querySelectorAll('[data-bgm-player]').forEach(enhanceMusic);
   }
   document.addEventListener('DOMContentLoaded',()=>{
     enhance();
@@ -164,7 +187,7 @@
   });
   document.addEventListener('pjax:complete',enhance);
   document.addEventListener('pjax:send',()=>{
-    document.querySelectorAll('[data-bgm-audio]').forEach(audio=>{audio.pause();audio.currentTime=0;});
+    musicControls.forEach(control=>control.stop(true));
     clearTimeout(settleTimer);document.documentElement.dataset.navigating='pending';
     document.getElementById('page-transition-progress')?.setAttribute('aria-hidden','false');
   });
@@ -175,6 +198,7 @@
   };
   document.addEventListener('pjax:complete',finishNavigation);
   document.addEventListener('pjax:error',finishNavigation);
+  window.addEventListener('pagehide',()=>musicControls.forEach(control=>control.stop()));
   function prefetch(event){
     const link=event.target.closest('a[href]');
     if(!link||link.target==='_blank'||navigator.connection?.saveData)return;

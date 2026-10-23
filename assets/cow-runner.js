@@ -24,7 +24,7 @@ const pixel=sprite.getContext('2d');
 const colors=()=>document.documentElement.dataset.theme==='dark'?{ink:'#b7cdd0',faint:'#36565d',grass:'#73988b',hay:'#b09f72',cloud:'#335059'}:{ink:'#48676d',faint:'#cddcdd',grass:'#88a99b',hay:'#c3ae7c',cloud:'#e0e9e8'};
 function rect(x,y,w,h,color){pixel.fillStyle=color;pixel.fillRect(x,y,w,h);}
 function isDucking(){return duckHeld&&cow.y>=ground-cow.h-.1;}
-function setDuck(held){duckHeld=held&&state==='playing';duckButton.setAttribute('aria-pressed',String(duckHeld));if(state==='playing')draw();}
+function setDuck(held){duckHeld=held&&state==='playing';if(duckHeld)jumpBuffer=0;duckButton.setAttribute('aria-pressed',String(duckHeld));if(state==='playing')draw();}
 function paintCow(){
   pixel.clearRect(0,0,30,26);
   const ink='#35454d',white='#fffdf1',pink='#efb4b6',hoof='#62717a';
