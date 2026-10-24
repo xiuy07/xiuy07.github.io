@@ -46,9 +46,11 @@ with zipfile.ZipFile(ROOT / 'downloads/cpp-study-kit.zip') as archive:
                      'assets/vendor/study-sans-sc/LICENSE', 'assets/vendor/study-sans-sc/study-sans-sc-wght.woff2',
                      'assets/vendor/study-sans-sc/coverage.json',
                      'assets/vendor/jetbrains-mono/LICENSE', 'assets/vendor/jetbrains-mono/jetbrains-mono-latin-wght-normal.woff2',
-                     'assets/vendor/tabler/tabler.min.css', 'assets/workspace.css', 'THIRD_PARTY.md']:
+                     'assets/vendor/tabler/tabler.min.css', 'assets/workspace.css', 'assets/oj.js', 'assets/oj.css',
+                     'assets/vendor/codemirror/LICENSE', 'assets/vendor/codemirror/codemirror.js', 'assets/vendor/codemirror/codemirror.css',
+                     'assets/vendor/codemirror/clike.js', 'assets/vendor/codemirror/matchbrackets.js', 'THIRD_PARTY.md']:
         assert archive.read('cpp-guide/' + relative) == (ROOT / relative).read_bytes(), relative
-for css in [core, ROOT / 'assets/workspace.css']:
+for css in [core, ROOT / 'assets/workspace.css', ROOT / 'assets/oj.css', ROOT / 'assets/vendor/codemirror/codemirror.css']:
     for url in re.findall(r'url\(([^)]+)\)', css.read_text(encoding='utf-8')):
         url = url.strip('\"\' ')
         if url.startswith('data:'):
@@ -60,4 +62,7 @@ for key, relative in [('study-sans-sc', 'study-sans-sc/study-sans-sc-wght.woff2'
     font = ROOT / 'assets/vendor' / relative
     assert font.read_bytes()[:4] == b'wOF2', font
     assert hashlib.sha256(font.read_bytes()).hexdigest() == record[key]['sha256'], font
+for name,digest in record['codemirror']['files'].items():
+    assert hashlib.sha256((ROOT/'assets/vendor/codemirror'/name).read_bytes()).hexdigest()==digest,name
+assert record['codemirror']['version']=='5.65.21'
 print('UI integrity OK: local template/font/icons, unique shell controls, pinned CSS digest and packaged licenses.')

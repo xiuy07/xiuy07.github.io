@@ -62,11 +62,25 @@
     "license": "OFL-1.1",
     "modification": "Course character subset, renamed internal family, converted to WOFF2; variable weight preserved.",
     "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
-    "sha256": "8356e362c8c9316cc233541a432369bf313260087973113b87e823da18fafef9",
-    "unicode_count": 1465,
+    "sha256": "e2ef15373c1c1dd9fe9907dd857371b14a492fa4e0e197a0aaef0000fd650a58",
+    "unicode_count": 1538,
     "weight_range": [
       100.0,
       900.0
     ]
+  },
+  "codemirror": {
+    "version": "5.65.21",
+    "source": "https://github.com/codemirror/codemirror5",
+    "license": "MIT",
+    "tarball": "https://registry.npmjs.org/codemirror/-/codemirror-5.65.21.tgz",
+    "integrity": "sha512-6teYk0bA0nR3QP0ihGMoxuKzpl5W80FpnHpBJpgy66NK3cZv5b/d/HY8PnRvfSsCG1MTfr92u2WUl+wT0E40mQ==",
+    "files": {
+      "codemirror.js": "e98aac5ffa07bae58acd4ff07c4293059f8921c0ae0eba506929d8c6f41c9288",
+      "codemirror.css": "eb494ea972d2661ef86f7f6ac656dd6786d721e49c9c1b46e1eb967e4b6f9bf3",
+      "clike.js": "058a0a64a206b1e4dbcc19a6ffa4015a84bb6bfe13d0ba85768be11def5b4ed2",
+      "matchbrackets.js": "9d23a177f1e4d07e3acc37c210ffbe4c1c2eb4d55bbe54c16d3e7ad3d04d0401",
+      "LICENSE": "168a4becc968f5001e2ee2e0291b6e4daabafc1894a11ade1e11d56e96096e07"
+    }
   }
 }

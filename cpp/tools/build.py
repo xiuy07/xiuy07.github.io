@@ -37,7 +37,8 @@ def outline(rendered):
 def main():
     curriculum=json.loads((ROOT/'curriculum.json').read_text(encoding='utf-8'))
     manifest=json.loads((ROOT/'practice/manifest.json').read_text(encoding='utf-8'))
-    data={'version':'2026-10-23','chapters':[],'problems':[]}
+    data={'version':'2026-10-24','chapters':[],'problems':[]}
+    data['training_paths']=json.loads((ROOT/'training-paths.json').read_text(encoding='utf-8'))
     for ch in curriculum['chapters']:
         text=(ROOT/ch['file']).read_text(encoding='utf-8')
         rendered=render(body(text))
@@ -48,7 +49,11 @@ def main():
         source=(ROOT/'practice/reference'/pid/p['filename']).read_text(encoding='utf-8')
         stub=(ROOT/'practice/solutions'/pid/p['filename']).read_text(encoding='utf-8')
         driver=(ROOT/'practice/drivers'/f'{pid}.cpp').read_text(encoding='utf-8') if p['mode']=='header' else ''
-        data['problems'].append({**p,'html':render(body(text)), 'search':text,
+        first=sorted((ROOT/'practice/tests'/pid).glob('*.in'))[0]
+        samples=p.get('samples') or [{'input':first.read_text(encoding='utf-8'), 'output':first.with_suffix('.out').read_text(encoding='utf-8')}]
+        editorial=ROOT/'practice/editorials'/f'{pid}.md'
+        extra={'starter_source':stub, 'samples':samples, 'topic':p.get('topic') or next(c['group'] for c in curriculum['chapters'] if c['number']==p['chapter']), 'editorial_html':render(body(editorial.read_text(encoding='utf-8'))) if editorial.exists() else ''}
+        data['problems'].append({**p,**extra,'html':render(body(text)), 'search':text,
                                  'reference_html':render('```cpp\n'+source+'\n```'),
                                  'starter_html':render('```cpp\n'+stub+'\n```'),
                                  'driver_html':render('```cpp\n'+driver+'\n```') if driver else ''})
@@ -69,7 +74,7 @@ def main():
         workspace=re.sub(re.escape(font)+r'(?:\?v=[a-f0-9]+)?', font+'?v='+version, workspace)
         entry=re.sub('assets/'+re.escape(font)+r'(?:\?v=[a-f0-9]+)?', 'assets/'+font+'?v='+version, entry)
     write_utf8(ROOT/'assets/workspace.css', workspace)
-    for asset in ['vendor/tabler/tabler.min.css','workspace.css','highlight.css','data.js','results.js','app.js']:
+    for asset in ['vendor/tabler/tabler.min.css','workspace.css','highlight.css','data.js','results.js','app.js','oj.js','oj.css','vendor/codemirror/codemirror.js','vendor/codemirror/codemirror.css','vendor/codemirror/clike.js','vendor/codemirror/matchbrackets.js']:
         version=hashlib.sha256((ROOT/'assets'/asset).read_bytes()).hexdigest()[:10]
         entry=re.sub(r'assets/'+re.escape(asset)+r'(?:\?v=[a-f0-9]+)?', 'assets/'+asset+'?v='+version, entry)
     write_utf8(ROOT/'index.html', entry)
@@ -82,7 +87,7 @@ def main():
         for f in sorted(ROOT.rglob('*')):
             if not f.is_file():continue
             rel=f.relative_to(ROOT)
-            if any(x in {'.build','downloads','__pycache__','.git','review'} for x in rel.parts):continue
+            if any(x in {'.build','.local-oj','downloads','__pycache__','.git','review'} for x in rel.parts):continue
             if f.name in {'local-results.json','.DS_Store'} or f.suffix in {'.exe','.pyc'}:continue
             z.write(f,'cpp-guide/'+rel.as_posix())
     digest=hashlib.sha256(pack.read_bytes()).hexdigest()

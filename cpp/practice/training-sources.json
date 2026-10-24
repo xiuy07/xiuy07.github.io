@@ -1,0 +1,201 @@
+{
+  "checked": "2026-10-24",
+  "selection": [
+    "https://leetcode.com/studyplan/top-interview-150/",
+    "https://cses.fi/problemset/"
+  ],
+  "problems": [
+    {
+      "id": "p65",
+      "label": "LeetCode 1",
+      "url": "https://leetcode.com/problems/two-sum/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p66",
+      "label": "LeetCode 3",
+      "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p67",
+      "label": "LeetCode 15",
+      "url": "https://leetcode.com/problems/3sum/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p68",
+      "label": "LeetCode 560",
+      "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p69",
+      "label": "CSES 1652 · Forest Queries",
+      "url": "https://cses.fi/problemset/task/1652/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p70",
+      "label": "洛谷 P2367",
+      "url": "https://www.luogu.com.cn/problem/P2367",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p71",
+      "label": "LeetCode 1011",
+      "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p72",
+      "label": "洛谷 P2440",
+      "url": "https://www.luogu.com.cn/problem/P2440",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p73",
+      "label": "LeetCode 239",
+      "url": "https://leetcode.com/problems/sliding-window-maximum/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p74",
+      "label": "LeetCode 347",
+      "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p75",
+      "label": "LeetCode 295",
+      "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p76",
+      "label": "CSES 1628 · Meet in the Middle",
+      "url": "https://cses.fi/problemset/task/1628/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p77",
+      "label": "LeetCode 52",
+      "url": "https://leetcode.com/problems/n-queens-ii/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p78",
+      "label": "LeetCode 79",
+      "url": "https://leetcode.com/problems/word-search/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p79",
+      "label": "LeetCode 300",
+      "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p80",
+      "label": "LeetCode 72",
+      "url": "https://leetcode.com/problems/edit-distance/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p81",
+      "label": "LeetCode 198",
+      "url": "https://leetcode.com/problems/house-robber/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p82",
+      "label": "洛谷 P1048",
+      "url": "https://www.luogu.com.cn/problem/P1048",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p83",
+      "label": "LeetCode 322",
+      "url": "https://leetcode.com/problems/coin-change/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p84",
+      "label": "LeetCode 494",
+      "url": "https://leetcode.com/problems/target-sum/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p85",
+      "label": "LeetCode 63",
+      "url": "https://leetcode.com/problems/unique-paths-ii/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p86",
+      "label": "LeetCode 1143",
+      "url": "https://leetcode.com/problems/longest-common-subsequence/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p87",
+      "label": "CSES 1131 · Tree Diameter",
+      "url": "https://cses.fi/problemset/task/1131/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p88",
+      "label": "洛谷 P3379",
+      "url": "https://www.luogu.com.cn/problem/P3379",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p89",
+      "label": "LeetCode 124",
+      "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p90",
+      "label": "LeetCode 2290",
+      "url": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p91",
+      "label": "LeetCode 785",
+      "url": "https://leetcode.com/problems/is-graph-bipartite/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p92",
+      "label": "CSES 1683 · Planets and Kingdoms",
+      "url": "https://cses.fi/problemset/task/1683/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p93",
+      "label": "CSES 1629 · Movie Festival",
+      "url": "https://cses.fi/problemset/task/1629/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p94",
+      "label": "CSES 1619 · Restaurant Customers",
+      "url": "https://cses.fi/problemset/task/1619/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p95",
+      "label": "CSES 1095 · Exponentiation",
+      "url": "https://cses.fi/problemset/task/1095/",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    },
+    {
+      "id": "p96",
+      "label": "原创综合题：Held–Karp 状态压缩模型",
+      "url": "",
+      "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+    }
+  ]
+}

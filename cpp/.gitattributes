@@ -1,3 +1,5 @@
 * text=auto eol=lf
 *.zip binary
 practice/tests/** -whitespace
+
+assets/vendor/codemirror/** -whitespace

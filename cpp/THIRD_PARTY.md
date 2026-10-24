@@ -9,8 +9,11 @@
 | Tabler Icons | 本地 SVG 子集；图标也内联到 app.js | https://github.com/tabler/tabler-icons ，MIT |
 | Study Sans SC | Noto Sans SC 课程字符子集；变量字重 100–900；内部字体名重命名，保留上游版权与 OFL | https://github.com/google/fonts/tree/main/ofl/notosanssc ，SIL Open Font License 1.1 |
 | JetBrains Mono Variable | @fontsource-variable/jetbrains-mono 5.3.0；Latin wght normal；代码字体 | https://github.com/JetBrains/JetBrainsMono ，SIL Open Font License 1.1 |
+| CodeMirror 5 | 5.65.21；本地编辑器、C-like/C++ 模式及括号匹配插件 | https://github.com/codemirror/codemirror5 ，MIT |
 | Inter Variable | @fontsource-variable/inter 5.3.0；Latin wght normal | https://github.com/rsms/inter ，SIL Open Font License 1.1 |
 
 完整许可与版权声明保存在 assets/vendor/tabler/LICENSE、assets/vendor/bootstrap/LICENSE、assets/vendor/tabler-icons/LICENSE 、assets/vendor/inter/LICENSE、assets/vendor/study-sans-sc/LICENSE 和 assets/vendor/jetbrains-mono/LICENSE。版本与资源信息见 assets/vendor/dependencies.json。许可必须随重新分发的学习包保留。
 
 中文使用从 Noto Sans SC 生成的课程子集 Study Sans SC，超出子集的字符使用系统字体回退。原始字体只读；修改包括字符裁剪、内部字体族重命名和 WOFF2 转换，字体仍按 OFL 1.1 分发。字体、CSS 与图标全部在本项目内；离线使用不依赖第三方网络。
+
+CodeMirror 的完整 MIT 许可证保存在 assets/vendor/codemirror/LICENSE；源文件摘要及 npm 包完整性记录在 dependencies.json。本地 OJ 服务使用 Python 标准库与用户自行安装的 C++ 编译器，不捆绑编译器，不将代码上传到云端。

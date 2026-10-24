@@ -101,3 +101,11 @@ GitHub Pages 提供静态讲解、搜索、代码展示和下载；不在服务�
 本版前端采用 [Tabler](https://github.com/tabler/tabler) 1.7.0 的官方开源 CSS，并基于卡片、表单、按钮、表格和进度组件改造成课程学习空间。图标来自 [Tabler Icons](https://github.com/tabler/tabler-icons)，英文字体使用 [Inter](https://github.com/rsms/inter)。模板与图标为 MIT 授权；Inter 为 SIL OFL 1.1。完整版权与许可保存在本地 `assets/vendor/` 和下载包中，详见 [第三方资源说明](THIRD_PARTY.md)。
 
 课程首页、阅读页、练习区与移动导航经过重新编排。保留全部原讲义、练习、代码、测试和浏览器进度键；模板资源全部本地部署，不依赖 CDN。Tabler 官方仓库与本文档中的任何外部说明均只作为参考资料，不影响用户自己的学习文件。
+
+## 升学与求职训练扩充（2026-10-24）
+
+新增第 33–44 章，将课程数据结构基础与刷题建模连接。选题参考 [LeetCode Top Interview 150](https://leetcode.com/studyplan/top-interview-150/)、[CSES 官方分类题库](https://cses.fi/problemset/) 及洛谷模板题；逐题来源与改编说明见各题和 practice/training-sources.json。两条训练路线是本指南按知识依赖重新编排，不是官方题单或录取、求职保证。
+
+题面、讲解、代码、自编样例与测试均重新制作。保留原课件中链表、树、哈希、堆、并查集、图和排序基础，补充窗口、二分答案、回溯、背包、二维与状态压缩 DP、LCA、0–1 BFS、二分图、SCC、扫描线等。课程资料只读，新增专题属于训练扩展，不宣称是原讲义完整涵盖的内容。
+
+p65 改为下标配对数量，p67 只输出不同数值三元组数量；p75 偶数长度使用下中位数；p84 包含空数组与零的符号；p85 对路径数取模；p88 根固定为 1；p89 用结点编号输入并扩大到深链；p92 只输出 SCC 数量。所有改编以本指南题面为准。

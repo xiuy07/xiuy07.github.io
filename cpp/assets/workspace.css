@@ -1,6 +1,6 @@
 /* Course workspace, built on Tabler 1.7.0. See assets/vendor/ for licenses. */
 @font-face{font-family:Inter;src:url('vendor/inter/inter-latin-wght-normal.woff2?v=3100e775e8') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
-@font-face{font-family:'Study Sans SC';src:url('vendor/study-sans-sc/study-sans-sc-wght.woff2?v=8356e362c8') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+@font-face{font-family:'Study Sans SC';src:url('vendor/study-sans-sc/study-sans-sc-wght.woff2?v=e2ef15373c') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
 @font-face{font-family:'JetBrains Mono';src:url('vendor/jetbrains-mono/jetbrains-mono-latin-wght-normal.woff2?v=18be452724') format('woff2');font-style:normal;font-weight:100 800;font-display:swap}
 :root{
   --tblr-font-sans-serif:Inter,'Study Sans SC','PingFang SC','Microsoft YaHei',system-ui,sans-serif;

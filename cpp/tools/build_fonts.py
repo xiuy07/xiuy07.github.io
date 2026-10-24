@@ -17,7 +17,7 @@ FONT_DIR = ROOT / 'assets/vendor/study-sans-sc'
 
 def course_characters():
     paths = [ROOT / 'index.html', ROOT / 'curriculum.json', ROOT / 'practice/manifest.json',
-             ROOT / 'assets/app.js']
+             ROOT / 'assets/app.js', ROOT / 'assets/oj.js', ROOT / 'training-paths.json']
     for folder, suffixes in [('content', {'.md'}), ('practice', {'.md', '.cpp', '.hpp'}),
                              ('demos', {'.cpp', '.out'}), ('algorithms', {'.md', '.hpp'})]:
         paths += [p for p in (ROOT / folder).rglob('*') if p.is_file() and p.suffix in suffixes]

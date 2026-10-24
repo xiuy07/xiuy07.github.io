@@ -564,6 +564,218 @@
       "implementations": [
         "ranges"
       ]
+    },
+    {
+      "id": "33-windows",
+      "number": 33,
+      "title": "哈希、双指针与滑动窗口",
+      "summary": "把“连续”“有序”和“去重”拆成不同约束，判断何时能移动边界。",
+      "group": "高频数组与字符串",
+      "minutes": 55,
+      "file": "content/33-windows.md",
+      "demo": "d33",
+      "problems": [
+        "p65",
+        "p66",
+        "p67"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "34-prefix",
+      "number": 34,
+      "title": "前缀和、差分与离线处理",
+      "summary": "用“区间和等于前缀差”和“区间修改等于端点变化”降低复杂度。",
+      "group": "高频数组与字符串",
+      "minutes": 55,
+      "file": "content/34-prefix.md",
+      "demo": "d34",
+      "problems": [
+        "p68",
+        "p69",
+        "p70"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "35-answer-search",
+      "number": 35,
+      "title": "二分答案与可行性证明",
+      "summary": "先写判定函数并证明单调性，再决定找第一个真还是最后一个真。",
+      "group": "高频数组与字符串",
+      "minutes": 55,
+      "file": "content/35-answer-search.md",
+      "demo": "d35",
+      "problems": [
+        "p71",
+        "p72"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "36-monotonic-heap",
+      "number": 36,
+      "title": "单调队列、Top K 与双堆",
+      "summary": "区分“顺序淘汰过期候选”和“任意顺序取极值”，选择队列或堆。",
+      "group": "高频数组与字符串",
+      "minutes": 55,
+      "file": "content/36-monotonic-heap.md",
+      "demo": "d36",
+      "problems": [
+        "p73",
+        "p74",
+        "p75"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "37-backtracking",
+      "number": 37,
+      "title": "回溯、剪枝与折半搜索",
+      "summary": "画出搜索树，写清选择、恢复、结束条件，并根据规模决定是否折半。",
+      "group": "搜索与动态规划",
+      "minutes": 55,
+      "file": "content/37-backtracking.md",
+      "demo": "d37",
+      "problems": [
+        "p76",
+        "p77",
+        "p78"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "38-sequence-dp",
+      "number": 38,
+      "title": "线性与序列 DP：状态、转移和优化",
+      "summary": "从“最后一步是什么”定义状态，再判断能否滚动或二分优化。",
+      "group": "搜索与动态规划",
+      "minutes": 55,
+      "file": "content/38-sequence-dp.md",
+      "demo": "d38",
+      "problems": [
+        "p79",
+        "p80",
+        "p81"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "39-knapsack",
+      "number": 39,
+      "title": "背包、可达性与方案计数",
+      "summary": "按物品使用次数、目标含义、是否恰好装满区分背包变体。",
+      "group": "搜索与动态规划",
+      "minutes": 55,
+      "file": "content/39-knapsack.md",
+      "demo": "d39",
+      "problems": [
+        "p82",
+        "p83",
+        "p84"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "40-grid-dp",
+      "number": 40,
+      "title": "二维 DP：网格与公共子序列",
+      "summary": "通过网格依赖方向理解二维状态，区分连续与保持相对顺序。",
+      "group": "搜索与动态规划",
+      "minutes": 55,
+      "file": "content/40-grid-dp.md",
+      "demo": "d40",
+      "problems": [
+        "p85",
+        "p86"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "41-tree-training",
+      "number": 41,
+      "title": "树的综合题：直径、LCA 与路径贡献",
+      "summary": "理解树的唯一路径，把“向父返回什么”和“在哪里更新答案”分开。",
+      "group": "树图与综合训练",
+      "minutes": 55,
+      "file": "content/41-tree-training.md",
+      "demo": "d41",
+      "problems": [
+        "p87",
+        "p88",
+        "p89"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "42-graph-training",
+      "number": 42,
+      "title": "图论进阶：0–1 BFS、二分图与 SCC",
+      "summary": "根据边权、方向和连通性定义选算法，避免不同“可达”概念混淆。",
+      "group": "树图与综合训练",
+      "minutes": 55,
+      "file": "content/42-graph-training.md",
+      "demo": "d42",
+      "problems": [
+        "p90",
+        "p91",
+        "p92"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "43-interval-training",
+      "number": 43,
+      "title": "区间贪心、扫描线与交换论证",
+      "summary": "同样是区间，区分最多选择、最多重叠和最少资源。",
+      "group": "树图与综合训练",
+      "minutes": 55,
+      "file": "content/43-interval-training.md",
+      "demo": "d43",
+      "problems": [
+        "p93",
+        "p94"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
+    },
+    {
+      "id": "44-bitmask-training",
+      "number": 44,
+      "title": "位运算、快速幂与状态压缩",
+      "summary": "把集合编码为位掩码，先估算 2^n 状态，再决定是否可做。",
+      "group": "树图与综合训练",
+      "minutes": 55,
+      "file": "content/44-bitmask-training.md",
+      "demo": "d44",
+      "problems": [
+        "p95",
+        "p96"
+      ],
+      "reading": "先复习课程原有结构与算法章节，再对照本章题目列出的力扣、洛谷或 CSES 官方来源。",
+      "track": "dsa",
+      "implementations": []
     }
   ],
   "demos": [

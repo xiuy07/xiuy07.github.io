@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="C++ 与数据结构学习空间：32 章讲义、64 道练习、可运行的代码和本地测试。">
+  <meta name="description" content="C++ 与数据结构学习空间：44 章讲义、96 道练习、本地 OJ、可运行的代码和本地测试。">
   <meta name="theme-color" content="#f4f6fa">
   <title>C++ 与数据结构 · 学习空间</title>
   <script>
@@ -15,13 +15,19 @@
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/vendor/inter/inter-latin-wght-normal.woff2?v=3100e775e8" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/vendor/study-sans-sc/study-sans-sc-wght.woff2?v=8356e362c8" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/vendor/study-sans-sc/study-sans-sc-wght.woff2?v=e2ef15373c" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/vendor/tabler/tabler.min.css?v=4045aa8c79">
-  <link rel="stylesheet" href="assets/workspace.css?v=ed1ca148b6">
+  <link rel="stylesheet" href="assets/vendor/codemirror/codemirror.css?v=eb494ea972">
+  <link rel="stylesheet" href="assets/workspace.css?v=537c72ff2a">
   <link rel="stylesheet" href="assets/highlight.css?v=c676afe1a1">
-  <script src="assets/data.js?v=9e64c1e09a" defer></script>
+  <link rel="stylesheet" href="assets/oj.css?v=532b3a9def">
+  <script src="assets/data.js?v=6370388e08" defer></script>
   <script src="assets/results.js?v=415cafe6ed" defer></script>
-  <script src="assets/app.js?v=e1b7e02373" defer></script>
+  <script src="assets/vendor/codemirror/codemirror.js?v=e98aac5ffa" defer></script>
+  <script src="assets/vendor/codemirror/clike.js?v=058a0a64a2" defer></script>
+  <script src="assets/vendor/codemirror/matchbrackets.js?v=9d23a177f1" defer></script>
+  <script src="assets/oj.js?v=77b273f8a1" defer></script>
+  <script src="assets/app.js?v=fb3782479a" defer></script>
 </head>
 <body class="study-app">
   <a class="skip" href="#main">跳到正文</a>
@@ -29,12 +35,14 @@
     <div class="sidebar-brand"><a href="#start" class="brand" aria-label="C++ 与数据结构首页"><span class="brand-mark" data-icon="braces" aria-hidden="true"></span><span>C++ 学习空间<small>语言 · 结构 · 算法</small></span></a><button id="menu-close" type="button" class="btn btn-icon mobile-close" aria-label="关闭目录"><span data-icon="x"></span></button></div>
     <nav id="global-nav" class="nav nav-pills flex-column" aria-label="主要入口">
       <a class="nav-link" href="#start"><span data-icon="layout-dashboard"></span>学习总览</a>
-      <a class="nav-link" href="#practice"><span data-icon="pencil"></span>练习题库<span class="nav-counter">64</span></a>
+      <a class="nav-link" href="#practice"><span data-icon="pencil"></span>练习题库<span class="nav-counter">96</span></a>
+      <a class="nav-link" href="#training"><span data-icon="route"></span>升学与求职训练</a>
+      <a class="nav-link" href="#oj/p65"><span data-icon="terminal-2"></span>本地 OJ</a>
       <a class="nav-link" href="#implementations"><span data-icon="file-code"></span>算法实现索引</a>
       <a class="nav-link" href="#sources"><span data-icon="book-2"></span>课程与参考</a>
     </nav>
-    <div class="sidebar-section"><p class="sidebar-label">课程目录</p><div class="course-switches" role="group" aria-label="选择学习路线"><button type="button" class="course-switch" data-track="cpp" aria-pressed="true"><span class="track-dot cpp"></span>C++ 语言<span class="course-count">16</span></button><button type="button" class="course-switch" data-track="dsa" aria-pressed="false"><span class="track-dot dsa"></span>数据结构与算法<span class="course-count">16</span></button></div><nav id="course-nav" aria-label="章节目录"></nav></div>
-    <div class="sidebar-bottom"><div class="progress-label"><span>阅读进度</span><strong id="progress-text">0 / 32</strong></div><progress id="progress" max="32" value="0" aria-label="已读章节数量"></progress><div class="download-panel"><span class="download-panel-icon" data-icon="terminal-2"></span><div><strong>把练习带到本地</strong><p>代码框架、测试与参考实现</p></div><a class="btn btn-sm w-100" href="downloads/cpp-study-kit.zip" download><span data-icon="download"></span>下载学习包</a></div></div>
+    <div class="sidebar-section"><p class="sidebar-label">课程目录</p><div class="course-switches" role="group" aria-label="选择学习路线"><button type="button" class="course-switch" data-track="cpp" aria-pressed="true"><span class="track-dot cpp"></span>C++ 语言<span class="course-count">16</span></button><button type="button" class="course-switch" data-track="dsa" aria-pressed="false"><span class="track-dot dsa"></span>数据结构与算法<span class="course-count">28</span></button></div><nav id="course-nav" aria-label="章节目录"></nav></div>
+    <div class="sidebar-bottom"><div class="progress-label"><span>阅读进度</span><strong id="progress-text">0 / 44</strong></div><progress id="progress" max="44" value="0" aria-label="已读章节数量"></progress><div class="download-panel"><span class="download-panel-icon" data-icon="terminal-2"></span><div><strong>把练习带到本地</strong><p>代码框架、测试与参考实现</p></div><a class="btn btn-sm w-100" href="downloads/cpp-study-kit.zip" download><span data-icon="download"></span>下载学习包</a></div></div>
   </aside>
   <button id="menu-backdrop" class="menu-backdrop" type="button" aria-label="关闭目录遮罩" hidden></button>
   <header class="app-topbar">

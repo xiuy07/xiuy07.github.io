@@ -1279,6 +1279,1062 @@
       },
       "test_count": 8,
       "track": "dsa"
+    },
+    {
+      "id": "p65",
+      "title": "和为目标的配对数量",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 33,
+      "track": "dsa",
+      "topic": "哈希与双指针",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "枚举两层循环需要 O(n²)。",
+        "处理 x 前，表中恰好是左侧元素。",
+        "先插入再查询会把自己配给自己；答案必须用 long long。"
+      ],
+      "analysis": "枚举两层循环需要 O(n²)。从左向右扫描，用哈希表记录已经出现的数及次数，先查询 K-x，再把 x 加入表。\n\n正确性：处理 x 前，表中恰好是左侧元素。因此新增计数恰好对应右端点为当前位置的合法对，每一对只计算一次。\n\n复杂度：期望 O(n) 时间、O(n) 空间。\n\n易错点：先插入再查询会把自己配给自己；答案必须用 long long。",
+      "source": {
+        "label": "LeetCode 1",
+        "url": "https://leetcode.com/problems/two-sum/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "期望 O(n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "5 4\n1 3 2 2 4\n",
+          "output": "2\n"
+        }
+      ]
+    },
+    {
+      "id": "p66",
+      "title": "最长无重复窗口",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 33,
+      "track": "dsa",
+      "topic": "哈希与双指针",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "对每个字符记录最后出现位置。",
+        "窗口原本无重复，新加入字符只可能与上次的同字符冲突。",
+        "abba 能发现左边界回退错误；数组下标应转 unsigned char。"
+      ],
+      "analysis": "对每个字符记录最后出现位置。右端点右移时，把左端点提升到 max(原左端点,上次位置+1)，然后统计长度。\n\n正确性：窗口原本无重复，新加入字符只可能与上次的同字符冲突。移过该位置即可恢复性质，且左端点不能回退。\n\n复杂度：O(n) 时间、O(字符集大小) 空间。\n\n易错点：abba 能发现左边界回退错误；数组下标应转 unsigned char。",
+      "source": {
+        "label": "LeetCode 3",
+        "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 25,
+      "complexity": "O(n) 时间、O(字符集大小) 空间",
+      "samples": [
+        {
+          "input": "abcaacbb\n",
+          "output": "3\n"
+        }
+      ]
+    },
+    {
+      "id": "p67",
+      "title": "不同的零和三元组",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 33,
+      "track": "dsa",
+      "topic": "哈希与双指针",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "排序后固定第一个数，双指针搜索另外两个。",
+        "固定首值后，有序性保证可以排除当前左值或右值；跳过相同首值和左右值让每个数值三元组只被统计一次。",
+        "不是统计下标三元组；求和用 long long；固定首值也要去重。"
+      ],
+      "analysis": "排序后固定第一个数，双指针搜索另外两个。和太小时左端右移，和太大时右端左移；命中后跳过重复值。\n\n正确性：固定首值后，有序性保证可以排除当前左值或右值；跳过相同首值和左右值让每个数值三元组只被统计一次。\n\n复杂度：O(n²) 时间、排序 O(log n) 辅助栈空间。\n\n易错点：不是统计下标三元组；求和用 long long；固定首值也要去重。",
+      "source": {
+        "label": "LeetCode 15",
+        "url": "https://leetcode.com/problems/3sum/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 19,
+      "complexity": "O(n²) 时间、排序 O(log n) 辅助栈空间",
+      "samples": [
+        {
+          "input": "6\n-1 0 1 2 -1 -4\n",
+          "output": "2\n"
+        }
+      ]
+    },
+    {
+      "id": "p68",
+      "title": "目标和连续子数组",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 34,
+      "track": "dsa",
+      "topic": "前缀和与差分",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "设前缀和为 s，查找此前有多少前缀和等于 s-K。",
+        "子数组和是两个前缀和之差；每个右端点只配对更早的前缀位置，既不漏计从开头开始的子数组，也不计空子数组。",
+        "负数使普通同向窗口失效；先查询后更新；前缀和及计数均用 long long。"
+      ],
+      "analysis": "设前缀和为 s，查找此前有多少前缀和等于 s-K。初始把空前缀 0 记为出现一次。\n\n正确性：子数组和是两个前缀和之差；每个右端点只配对更早的前缀位置，既不漏计从开头开始的子数组，也不计空子数组。\n\n复杂度：期望 O(n) 时间、O(n) 空间。\n\n易错点：负数使普通同向窗口失效；先查询后更新；前缀和及计数均用 long long。",
+      "source": {
+        "label": "LeetCode 560",
+        "url": "https://leetcode.com/problems/subarray-sum-equals-k/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "期望 O(n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "4 2\n1 -1 1 1\n",
+          "output": "2\n"
+        }
+      ]
+    },
+    {
+      "id": "p69",
+      "title": "二维区域标记计数",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 34,
+      "track": "dsa",
+      "topic": "前缀和与差分",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "构造带零行零列的二维前缀和。",
+        "每个目标格子被保留一次；区域外的上下/左右条带抵消，左上重叠被减两次因此加回。",
+        "输入坐标从 1 开始且闭区间；r1-1 和 c1-1 可为 0，不要访问负下标。"
+      ],
+      "analysis": "构造带零行零列的二维前缀和。矩形查询用右下前缀，减去上方和左方，再补回左上重叠部分。\n\n正确性：每个目标格子被保留一次；区域外的上下/左右条带抵消，左上重叠被减两次因此加回。\n\n复杂度：O(HW+Q) 时间、O(HW) 空间。\n\n易错点：输入坐标从 1 开始且闭区间；r1-1 和 c1-1 可为 0，不要访问负下标。",
+      "source": {
+        "label": "CSES 1652 · Forest Queries",
+        "url": "https://cses.fi/problemset/task/1652/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 19,
+      "complexity": "O(HW+Q) 时间、O(HW) 空间",
+      "samples": [
+        {
+          "input": "3 4 14\n.**.\n*.**\n.*..\n1 1 3 4\n1 1 1 1\n1 1 2 2\n2 1 2 3\n1 2 1 2\n3 2 3 4\n2 1 2 4\n1 1 2 2\n3 1 3 2\n2 1 3 4\n1 2 2 2\n1 1 3 4\n1 2 2 3\n1 1 2 4\n",
+          "output": "6\n0\n2\n2\n1\n1\n3\n2\n1\n4\n1\n6\n3\n5\n"
+        }
+      ]
+    },
+    {
+      "id": "p70",
+      "title": "批量区间加后的最小值",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 34,
+      "track": "dsa",
+      "topic": "前缀和与差分",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "操作全部结束后才询问，使用差分。",
+        "对任一位置，覆盖它的修改在到达 l 时生效，在经过 r 时结束；累计差分恰是所有覆盖增量之和。",
+        "r=n 时需要 n+1 哨兵；修改量累计可能超过 int；不必使用线段树。"
+      ],
+      "analysis": "操作全部结束后才询问，使用差分。每次修改只在 l 加 delta，在 r+1 减 delta，最后求前缀和还原增量。\n\n正确性：对任一位置，覆盖它的修改在到达 l 时生效，在经过 r 时结束；累计差分恰是所有覆盖增量之和。\n\n复杂度：O(n+q) 时间、O(n) 空间。\n\n易错点：r=n 时需要 n+1 哨兵；修改量累计可能超过 int；不必使用线段树。",
+      "source": {
+        "label": "洛谷 P2367",
+        "url": "https://www.luogu.com.cn/problem/P2367",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 20,
+      "complexity": "O(n+q) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "5 3\n-18 15 19 20 20\n1 2 -8\n3 5 -9\n1 5 0\n",
+          "output": "-26\n"
+        }
+      ]
+    },
+    {
+      "id": "p71",
+      "title": "顺序装运的最小容量",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 35,
+      "track": "dsa",
+      "topic": "二分答案",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "容量固定时，每天尽量多装可最小化天数。",
+        "固定容量的贪心每天结束位置不会比任何可行装法更早。",
+        "不能重排货物；D 可以大于 n；二分上界与当前载荷用 long long。"
+      ],
+      "analysis": "容量固定时，每天尽量多装可最小化天数。容量越大越容易可行；在最大单件重量与总重量之间找第一个可行容量。\n\n正确性：固定容量的贪心每天结束位置不会比任何可行装法更早。可行性对容量单调，所以二分保留第一个可行答案。\n\n复杂度：O(n log(sum(a))) 时间、O(n) 空间。\n\n易错点：不能重排货物；D 可以大于 n；二分上界与当前载荷用 long long。",
+      "source": {
+        "label": "LeetCode 1011",
+        "url": "https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n log(sum(a))) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "6 3\n3 2 2 4 1 4\n",
+          "output": "6\n"
+        }
+      ]
+    },
+    {
+      "id": "p72",
+      "title": "等长切割的最大长度",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 35,
+      "track": "dsa",
+      "topic": "二分答案",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "判断长度 x 是否可行，累计 floor(a[i]/x)。",
+        "每根材料最多提供 floor(a[i]/x) 段，且能实际切出。",
+        "不要对 0 求除法；段数使用 long long；中点取偏右防止死循环。"
+      ],
+      "analysis": "判断长度 x 是否可行，累计 floor(a[i]/x)。长度越大，段数不增；二分找最后一个可行长度。\n\n正确性：每根材料最多提供 floor(a[i]/x) 段，且能实际切出。因此计数充要；单调性允许用偏右中点，避免区间停滞。\n\n复杂度：O(n log(max(a)+1)) 时间、O(n) 空间。\n\n易错点：不要对 0 求除法；段数使用 long long；中点取偏右防止死循环。",
+      "source": {
+        "label": "洛谷 P2440",
+        "url": "https://www.luogu.com.cn/problem/P2440",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n log(max(a)+1)) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "3 5\n9 7 5\n",
+          "output": "3\n"
+        }
+      ]
+    },
+    {
+      "id": "p73",
+      "title": "滑动窗口最大值",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 36,
+      "track": "dsa",
+      "topic": "单调队列与堆",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "双端队列存下标，值从队首到队尾递减。",
+        "更晚且不小的元素会比旧元素更晚过期，所以旧元素不再可能成为唯一最优。",
+        "队列存下标才能判断过期；过期条件为下标≤i-K；重复值需要一致处理。"
+      ],
+      "analysis": "双端队列存下标，值从队首到队尾递减。队首移除过期位置，队尾移除不优于新值的位置。\n\n正确性：更晚且不小的元素会比旧元素更晚过期，所以旧元素不再可能成为唯一最优。每个下标只进出队一次。\n\n复杂度：O(n) 时间、O(K) 空间。\n\n易错点：队列存下标才能判断过期；过期条件为下标≤i-K；重复值需要一致处理。",
+      "source": {
+        "label": "LeetCode 239",
+        "url": "https://leetcode.com/problems/sliding-window-maximum/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n) 时间、O(K) 空间",
+      "samples": [
+        {
+          "input": "8 3\n1 3 -1 -3 5 3 6 7\n",
+          "output": "3 3 5 5 6 7\n"
+        }
+      ]
+    },
+    {
+      "id": "p74",
+      "title": "频率最高的 K 个数",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 36,
+      "track": "dsa",
+      "topic": "单调队列与堆",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "先哈希计数，再用容量 K 的堆保留最佳项。",
+        "扫描每个候选后，若超过 K 就移除最差项，所以归纳保持当前最优 K 项。",
+        "必须明确频率相同的次序；负号在 long long 中计算，避免最小 int 取反问题。"
+      ],
+      "analysis": "先哈希计数，再用容量 K 的堆保留最佳项。把候选写为 (频率,-数值)，最小堆的堆顶就是已保留的最差项。\n\n正确性：扫描每个候选后，若超过 K 就移除最差项，所以归纳保持当前最优 K 项。最后按候选键降序输出。\n\n复杂度：O(n+U log K+K log K) 期望时间、O(U+K) 空间，U 为不同值数。\n\n易错点：必须明确频率相同的次序；负号在 long long 中计算，避免最小 int 取反问题。",
+      "source": {
+        "label": "LeetCode 347",
+        "url": "https://leetcode.com/problems/top-k-frequent-elements/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n+U log K+K log K) 期望时间、O(U+K) 空间，U 为不同值数",
+      "samples": [
+        {
+          "input": "6 2\n1 1 1 2 2 3\n",
+          "output": "1 2\n"
+        }
+      ]
+    },
+    {
+      "id": "p75",
+      "title": "数据流的下中位数",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 36,
+      "track": "dsa",
+      "topic": "单调队列与堆",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "用最大堆存较小一半，最小堆存较大一半。",
+        "插入时按左堆顶分流，再把多余堆顶移动到另一边，两个不变式都保持。",
+        "偶数长度不是平均值；每次插入后都要重新平衡；重复值是独立元素。"
+      ],
+      "analysis": "用最大堆存较小一半，最小堆存较大一半。保持左堆数量等于右堆或多 1，且左侧任意值不大于右侧。\n\n正确性：插入时按左堆顶分流，再把多余堆顶移动到另一边，两个不变式都保持。左堆顶因此正是下中位数。\n\n复杂度：O(n log n) 时间、O(n) 空间。\n\n易错点：偶数长度不是平均值；每次插入后都要重新平衡；重复值是独立元素。",
+      "source": {
+        "label": "LeetCode 295",
+        "url": "https://leetcode.com/problems/find-median-from-data-stream/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n log n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "5\n5 2 9 1 8\n",
+          "output": "5\n2\n5\n2\n5\n"
+        }
+      ]
+    },
+    {
+      "id": "p76",
+      "title": "折半搜索：子集目标和",
+      "difficulty": "挑战",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 37,
+      "track": "dsa",
+      "topic": "回溯与剪枝",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "直接枚举 2^n 太大。",
+        "任一完整子集唯一分解为左子集与右子集，配对计数一一对应。",
+        "空集必须包含；不能把和集合去重；36 个零有 2^36 种方案。"
+      ],
+      "analysis": "直接枚举 2^n 太大。把数组分两半，各自枚举子集和；排序一半，对另一半的 s 二分统计 K-s 出现次数。\n\n正确性：任一完整子集唯一分解为左子集与右子集，配对计数一一对应。相同子集和值仍保留多次，避免丢掉不同下标方案。\n\n复杂度：O(n·2^(n/2)) 时间、O(2^(n/2)) 空间。\n\n易错点：空集必须包含；不能把和集合去重；36 个零有 2^36 种方案。",
+      "source": {
+        "label": "CSES 1628 · Meet in the Middle",
+        "url": "https://cses.fi/problemset/task/1628/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n·2^(n/2)) 时间、O(2^(n/2)) 空间",
+      "samples": [
+        {
+          "input": "4 2\n2 -1 3 0\n",
+          "output": "4\n"
+        }
+      ]
+    },
+    {
+      "id": "p77",
+      "title": "N 皇后方案计数",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 37,
+      "track": "dsa",
+      "topic": "回溯与剪枝",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "每行只放一个皇后，用列、主对角线、次对角线标记占用。",
+        "递归深度决定当前行，每层遍历所有合法列，不会漏掉合法棋盘；冲突分支无法完成合法解，立即剪去安全。",
+        "回溯必须恢复三种标记；对角线 r-c 需要偏移；镜像方案仍分开计数。"
+      ],
+      "analysis": "每行只放一个皇后，用列、主对角线、次对角线标记占用。尝试一列前检查，递归后恢复标记。\n\n正确性：递归深度决定当前行，每层遍历所有合法列，不会漏掉合法棋盘；冲突分支无法完成合法解，立即剪去安全。\n\n复杂度：O(N·N!) 上界时间、O(N) 空间。\n\n易错点：回溯必须恢复三种标记；对角线 r-c 需要偏移；镜像方案仍分开计数。",
+      "source": {
+        "label": "LeetCode 52",
+        "url": "https://leetcode.com/problems/n-queens-ii/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 12,
+      "complexity": "O(N·N!) 上界时间、O(N) 空间",
+      "samples": [
+        {
+          "input": "4\n",
+          "output": "2\n"
+        }
+      ]
+    },
+    {
+      "id": "p78",
+      "title": "网格中的单词路径",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 37,
+      "track": "dsa",
+      "topic": "回溯与剪枝",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "从每个起点回溯，状态含位置、已匹配长度和当前路径访问集。",
+        "对合法路径的每一步都枚举四邻居，确保完备；同一路径标记保证不重用，回退恢复让不同路径互不干扰。",
+        "不能只维护全局 visited 一次不恢复；单词比格子数长时可以直接拒绝。"
+      ],
+      "analysis": "从每个起点回溯，状态含位置、已匹配长度和当前路径访问集。字母不匹配或访问过立即返回。\n\n正确性：对合法路径的每一步都枚举四邻居，确保完备；同一路径标记保证不重用，回退恢复让不同路径互不干扰。\n\n复杂度：O(HW·4^L) 上界时间、O(HW+L) 空间。\n\n易错点：不能只维护全局 visited 一次不恢复；单词比格子数长时可以直接拒绝。",
+      "source": {
+        "label": "LeetCode 79",
+        "url": "https://leetcode.com/problems/word-search/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(HW·4^L) 上界时间、O(HW+L) 空间",
+      "samples": [
+        {
+          "input": "3 4\nABCE\nSFCS\nADEE\nABCCED\n",
+          "output": "YES\n"
+        }
+      ]
+    },
+    {
+      "id": "p79",
+      "title": "最长严格递增子序列",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 38,
+      "track": "dsa",
+      "topic": "序列动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "先写 O(n²) 的结尾 DP。",
+        "同长度下更小尾值保留更多扩展可能；替换不改变已存在的最大长度。",
+        "严格递增用 lower_bound；upper_bound 会把相等值当作可扩展；tails 本身不保证是原序列的一条子序列。"
+      ],
+      "analysis": "先写 O(n²) 的结尾 DP。优化为 tails[len-1] 记录长度为 len 的子序列能有的最小尾值，用 lower_bound 替换第一个不小于 x 的位置。\n\n正确性：同长度下更小尾值保留更多扩展可能；替换不改变已存在的最大长度。只有 x 大于所有尾值时才能扩展长度。\n\n复杂度：O(n log n) 时间、O(n) 空间。\n\n易错点：严格递增用 lower_bound；upper_bound 会把相等值当作可扩展；tails 本身不保证是原序列的一条子序列。",
+      "source": {
+        "label": "LeetCode 300",
+        "url": "https://leetcode.com/problems/longest-increasing-subsequence/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 23,
+      "complexity": "O(n log n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "8\n10 9 2 5 3 7 101 18\n",
+          "output": "4\n"
+        }
+      ]
+    },
+    {
+      "id": "p80",
+      "title": "编辑距离",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 38,
+      "track": "dsa",
+      "topic": "序列动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "设 dp[i][j] 是两个前缀的编辑距离，最后一步分插入、删除、替换或匹配。",
+        "任一最优编辑序列按最后一步划分，转到更短前缀；反过来每个候选前缀最优解都能补一次合法操作。",
+        "用 getline 读取空字符串；dp[i][0]=i、dp[0][j]=j；替换代价相同字符为 0。"
+      ],
+      "analysis": "设 dp[i][j] 是两个前缀的编辑距离，最后一步分插入、删除、替换或匹配。保存上一行和当前行即可压缩空间。\n\n正确性：任一最优编辑序列按最后一步划分，转到更短前缀；反过来每个候选前缀最优解都能补一次合法操作。取最小值即最优。\n\n复杂度：O(nm) 时间、O(m) 空间。\n\n易错点：用 getline 读取空字符串；dp[i][0]=i、dp[0][j]=j；替换代价相同字符为 0。",
+      "source": {
+        "label": "LeetCode 72",
+        "url": "https://leetcode.com/problems/edit-distance/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 24,
+      "complexity": "O(nm) 时间、O(m) 空间",
+      "samples": [
+        {
+          "input": "horse\nros\n",
+          "output": "3\n"
+        }
+      ]
+    },
+    {
+      "id": "p81",
+      "title": "不取相邻元素的最大和",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 38,
+      "track": "dsa",
+      "topic": "序列动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "考虑最后一项：不选它继承前一前缀最优，选它则加上前两个位置之前的最优。",
+        "所有可行方案按是否选最后一项互斥划分，两个分支都由更短前缀的最优方案构成，所以转移最优。",
+        "更新变量时不要先覆盖旧状态；答案可能超过 int；空数组为 0。"
+      ],
+      "analysis": "考虑最后一项：不选它继承前一前缀最优，选它则加上前两个位置之前的最优。仅保留前两个状态。\n\n正确性：所有可行方案按是否选最后一项互斥划分，两个分支都由更短前缀的最优方案构成，所以转移最优。\n\n复杂度：O(n) 时间、O(1) 额外空间。\n\n易错点：更新变量时不要先覆盖旧状态；答案可能超过 int；空数组为 0。",
+      "source": {
+        "label": "LeetCode 198",
+        "url": "https://leetcode.com/problems/house-robber/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n) 时间、O(1) 额外空间",
+      "samples": [
+        {
+          "input": "5\n2 7 9 3 1\n",
+          "output": "12\n"
+        }
+      ]
+    },
+    {
+      "id": "p82",
+      "title": "每件最多一次的背包",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 39,
+      "track": "dsa",
+      "topic": "背包动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "以容量为状态，一维压缩后每件物品倒序枚举容量。",
+        "倒序让 dp[c-weight] 仍属于上一物品层，确保当前物品不重复使用；不选与选择覆盖全部方案。",
+        "正序会变成完全背包；本题不要求恰好装满，所以初值可以全 0。"
+      ],
+      "analysis": "以容量为状态，一维压缩后每件物品倒序枚举容量。价值用 long long。\n\n正确性：倒序让 dp[c-weight] 仍属于上一物品层，确保当前物品不重复使用；不选与选择覆盖全部方案。\n\n复杂度：O(nC) 时间、O(C) 空间。\n\n易错点：正序会变成完全背包；本题不要求恰好装满，所以初值可以全 0。",
+      "source": {
+        "label": "洛谷 P1048",
+        "url": "https://www.luogu.com.cn/problem/P1048",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(nC) 时间、O(C) 空间",
+      "samples": [
+        {
+          "input": "3 5\n8 15\n4 29\n3 5\n",
+          "output": "29\n"
+        }
+      ]
+    },
+    {
+      "id": "p83",
+      "title": "无限硬币的最少枚数",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 39,
+      "track": "dsa",
+      "topic": "背包动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "dp[x] 表示凑出金额 x 的最少枚数，dp[0]=0，其余不可达。",
+        "任何非空最优方案都有最后一枚硬币；枚举其面值后，前面的金额必须使用最优解，否则可替换得到更优方案。",
+        "不可达不能初始化为 0；不要贪心选最大面值，1、3、4 凑 6 就是反例。"
+      ],
+      "analysis": "dp[x] 表示凑出金额 x 的最少枚数，dp[0]=0，其余不可达。按金额递增，从 dp[x-coin]+1 转移。\n\n正确性：任何非空最优方案都有最后一枚硬币；枚举其面值后，前面的金额必须使用最优解，否则可替换得到更优方案。\n\n复杂度：O(nX) 时间、O(X) 空间。\n\n易错点：不可达不能初始化为 0；不要贪心选最大面值，1、3、4 凑 6 就是反例。",
+      "source": {
+        "label": "LeetCode 322",
+        "url": "https://leetcode.com/problems/coin-change/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(nX) 时间、O(X) 空间",
+      "samples": [
+        {
+          "input": "3 6\n1 3 4\n",
+          "output": "2\n"
+        }
+      ]
+    },
+    {
+      "id": "p84",
+      "title": "正负号表达式计数",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 39,
+      "track": "dsa",
+      "topic": "背包动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "把正号元素的和记为 P，总和为 S，则 2P=S+K。",
+        "每个符号分配唯一对应正号下标集合，且满足 P-(S-P)=K。",
+        "零使每个计数翻倍；空集合且 K=0 有一种方案；S+K 为负或奇数时无解。"
+      ],
+      "analysis": "把正号元素的和记为 P，总和为 S，则 2P=S+K。检查范围与奇偶性后，转化为子集和计数的 0/1 背包。\n\n正确性：每个符号分配唯一对应正号下标集合，且满足 P-(S-P)=K。倒序计数让每个下标使用一次。\n\n复杂度：O(n·sum(a)) 时间、O(sum(a)) 空间。\n\n易错点：零使每个计数翻倍；空集合且 K=0 有一种方案；S+K 为负或奇数时无解。",
+      "source": {
+        "label": "LeetCode 494",
+        "url": "https://leetcode.com/problems/target-sum/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n·sum(a)) 时间、O(sum(a)) 空间",
+      "samples": [
+        {
+          "input": "5 3\n1 1 1 1 1\n",
+          "output": "5\n"
+        }
+      ]
+    },
+    {
+      "id": "p85",
+      "title": "有障碍网格的路径计数",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 40,
+      "track": "dsa",
+      "topic": "二维动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "当前格路径数等于上方与左方之和。",
+        "每条到达当前格的路径最后一步只能来自上方或左方，两类不相交；障碍无合法到达路径。",
+        "dp[j] 仍是上方而 dp[j-1] 已是当前行左方；障碍必须清零；单格可通行时有一条空移动路径。"
+      ],
+      "analysis": "当前格路径数等于上方与左方之和。用一维数组保留上一行，遇到障碍把当前列清零。\n\n正确性：每条到达当前格的路径最后一步只能来自上方或左方，两类不相交；障碍无合法到达路径。\n\n复杂度：O(HW) 时间、O(W) 空间。\n\n易错点：dp[j] 仍是上方而 dp[j-1] 已是当前行左方；障碍必须清零；单格可通行时有一条空移动路径。",
+      "source": {
+        "label": "LeetCode 63",
+        "url": "https://leetcode.com/problems/unique-paths-ii/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 23,
+      "complexity": "O(HW) 时间、O(W) 空间",
+      "samples": [
+        {
+          "input": "3 3\n...\n*..\n...\n",
+          "output": "3\n"
+        }
+      ]
+    },
+    {
+      "id": "p86",
+      "title": "最长公共子序列",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 40,
+      "track": "dsa",
+      "topic": "二维动态规划",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "状态为两个前缀的 LCS 长度。",
+        "公共子序列若使用两个相等末字符，去掉它们得到更短前缀公共子序列；末字符不同不能同时使用，取舍弃任一端的最优。",
+        "子序列不同于子串；使用 getline 支持空行；滚动数组每行第 0 列应为 0。"
+      ],
+      "analysis": "状态为两个前缀的 LCS 长度。末字符相等时可在更短前缀答案后追加；不等时至少舍弃一边末字符。\n\n正确性：公共子序列若使用两个相等末字符，去掉它们得到更短前缀公共子序列；末字符不同不能同时使用，取舍弃任一端的最优。\n\n复杂度：O(nm) 时间、O(m) 空间。\n\n易错点：子序列不同于子串；使用 getline 支持空行；滚动数组每行第 0 列应为 0。",
+      "source": {
+        "label": "LeetCode 1143",
+        "url": "https://leetcode.com/problems/longest-common-subsequence/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 23,
+      "complexity": "O(nm) 时间、O(m) 空间",
+      "samples": [
+        {
+          "input": "abcde\nace\n",
+          "output": "3\n"
+        }
+      ]
+    },
+    {
+      "id": "p87",
+      "title": "树上最长距离",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 41,
+      "track": "dsa",
+      "topic": "树与倍增",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "从任意点 BFS 找最远点 A，再从 A BFS 找最远点 B。",
+        "在无权树中，从任意起点找到的最远结点可作为某条直径的端点；再求该端点最大距离得到直径。",
+        "单结点答案为 0；距离是边数，不是结点数；20 万链不能依赖默认递归栈。"
+      ],
+      "analysis": "从任意点 BFS 找最远点 A，再从 A BFS 找最远点 B。两次 BFS 都用队列，避免深链递归栈溢出。\n\n正确性：在无权树中，从任意起点找到的最远结点可作为某条直径的端点；再求该端点最大距离得到直径。这依赖树的唯一路径性质，不能直接推广到一般图。\n\n复杂度：O(n) 时间、O(n) 空间。\n\n易错点：单结点答案为 0；距离是边数，不是结点数；20 万链不能依赖默认递归栈。",
+      "source": {
+        "label": "CSES 1131 · Tree Diameter",
+        "url": "https://cses.fi/problemset/task/1131/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "5\n2 1\n3 1\n4 2\n5 4\n",
+          "output": "4\n"
+        }
+      ]
+    },
+    {
+      "id": "p88",
+      "title": "倍增最近公共祖先",
+      "difficulty": "挑战",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 41,
+      "track": "dsa",
+      "topic": "树与倍增",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "预处理 up[k][v] 为向上 2^k 步祖先。",
+        "拉齐保留共同祖先；祖先相同的高跳会越过答案，祖先不同的跳仍在 LCA 下方。",
+        "先处理相同结点；根父亲设为根；构建深度使用迭代遍历；不要把 2^k 和 k 混淆。"
+      ],
+      "analysis": "预处理 up[k][v] 为向上 2^k 步祖先。先把两点深度拉齐，再从高位往低位同时跳到祖先不同的位置，最后返回父亲。\n\n正确性：拉齐保留共同祖先；祖先相同的高跳会越过答案，祖先不同的跳仍在 LCA 下方。处理所有位后两点父亲恰好是 LCA。\n\n复杂度：O((n+q) log n) 时间、O(n log n) 空间。\n\n易错点：先处理相同结点；根父亲设为根；构建深度使用迭代遍历；不要把 2^k 和 k 混淆。",
+      "source": {
+        "label": "洛谷 P3379",
+        "url": "https://www.luogu.com.cn/problem/P3379",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O((n+q) log n) 时间、O(n log n) 空间",
+      "samples": [
+        {
+          "input": "7 17\n2 1\n3 2\n4 2\n5 1\n6 2\n7 6\n1 7\n7 7\n2 4\n3 4\n1 5\n3 1\n7 5\n5 2\n7 5\n3 3\n1 5\n7 5\n6 4\n7 3\n4 2\n7 5\n1 1\n",
+          "output": "1\n7\n2\n2\n1\n1\n1\n1\n1\n3\n1\n1\n2\n2\n2\n1\n1\n"
+        }
+      ]
+    },
+    {
+      "id": "p89",
+      "title": "二叉树最大路径和",
+      "difficulty": "挑战",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 41,
+      "track": "dsa",
+      "topic": "树与倍增",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "按后序处理：向父亲返回的贡献只能选一条向下分支；在当前结点更新全局答案时可以同时连接左右正贡献。",
+        "任何非空路径都有深度最小的拐点，分成左分支、拐点、右分支。",
+        "全部为负时答案是最大单个权值而非 0；返回值不能同时携带两条分支；总和用 long long。"
+      ],
+      "analysis": "按后序处理：向父亲返回的贡献只能选一条向下分支；在当前结点更新全局答案时可以同时连接左右正贡献。用遍历序的逆序替代递归。\n\n正确性：任何非空路径都有深度最小的拐点，分成左分支、拐点、右分支。枚举每个拐点覆盖所有路径；向父返回单分支保证不分叉。\n\n复杂度：O(n) 时间、O(n) 空间。\n\n易错点：全部为负时答案是最大单个权值而非 0；返回值不能同时携带两条分支；总和用 long long。",
+      "source": {
+        "label": "LeetCode 124",
+        "url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "5\n9 5 2\n-6 3 4\n9 0 0\n9 0 0\n-8 0 0\n",
+          "output": "12\n"
+        }
+      ]
+    },
+    {
+      "id": "p90",
+      "title": "最少移除障碍：0–1 BFS",
+      "difficulty": "进阶",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 42,
+      "track": "dsa",
+      "topic": "图论进阶",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "把进入格子的代价看作 0/1 边权。",
+        "队列按待处理距离分为当前层与下一层，0 边不会推迟更小距离。",
+        "不能像无权 BFS 一样首次入队就永久锁定距离；更新进入格子的代价，不是离开格子代价。"
+      ],
+      "analysis": "把进入格子的代价看作 0/1 边权。双端队列中，0 权更新放队首，1 权更新放队尾，并忽略已过期距离项。\n\n正确性：队列按待处理距离分为当前层与下一层，0 边不会推迟更小距离。该顺序等价于对 0/1 权的 Dijkstra 优先处理最小距离。\n\n复杂度：O(HW) 时间、O(HW) 空间。\n\n易错点：不能像无权 BFS 一样首次入队就永久锁定距离；更新进入格子的代价，不是离开格子代价。",
+      "source": {
+        "label": "LeetCode 2290",
+        "url": "https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(HW) 时间、O(HW) 空间",
+      "samples": [
+        {
+          "input": "3 3\n010\n111\n000\n",
+          "output": "1\n"
+        }
+      ]
+    },
+    {
+      "id": "p91",
+      "title": "无向图二分染色",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 42,
+      "track": "dsa",
+      "topic": "图论进阶",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "对每个未染色连通块做 BFS，相邻结点染相反颜色。",
+        "每条边要求颜色异或为 1，BFS 传播所有必要约束；出现冲突说明沿两种路径得出矛盾。",
+        "只从 1 号出发会漏掉其他分量；自环必然不可行；重复边不影响结论。"
+      ],
+      "analysis": "对每个未染色连通块做 BFS，相邻结点染相反颜色。若发现同色邻接则拒绝。\n\n正确性：每条边要求颜色异或为 1，BFS 传播所有必要约束；出现冲突说明沿两种路径得出矛盾。没有冲突时最终颜色直接给出合法划分。\n\n复杂度：O(n+m) 时间、O(n+m) 空间。\n\n易错点：只从 1 号出发会漏掉其他分量；自环必然不可行；重复边不影响结论。",
+      "source": {
+        "label": "LeetCode 785",
+        "url": "https://leetcode.com/problems/is-graph-bipartite/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n+m) 时间、O(n+m) 空间",
+      "samples": [
+        {
+          "input": "3 1\n3 3\n",
+          "output": "NO\n"
+        }
+      ]
+    },
+    {
+      "id": "p92",
+      "title": "有向图强连通分量数量",
+      "difficulty": "挑战",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 42,
+      "track": "dsa",
+      "topic": "图论进阶",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "使用 Kosaraju：第一遍在原图记录真正的 DFS 退出顺序，第二遍按逆退出序在反图中遍历，每次新起点形成一个分量。",
+        "把强连通分量缩成 DAG 后，第一遍的最大退出顺序落在尚未处理缩点图的源分量；反图遍历不能跨向其他尚未处理分量，因此恰好收集一个 SCC。",
+        "普通入栈顺序不等于退出顺序；第二遍必须反图；无向连通性不能替代相互可达。"
+      ],
+      "analysis": "使用 Kosaraju：第一遍在原图记录真正的 DFS 退出顺序，第二遍按逆退出序在反图中遍历，每次新起点形成一个分量。用显式栈保存下一条待处理边。\n\n正确性：把强连通分量缩成 DAG 后，第一遍的最大退出顺序落在尚未处理缩点图的源分量；反图遍历不能跨向其他尚未处理分量，因此恰好收集一个 SCC。\n\n复杂度：O(n+m) 时间、O(n+m) 空间。\n\n易错点：普通入栈顺序不等于退出顺序；第二遍必须反图；无向连通性不能替代相互可达。",
+      "source": {
+        "label": "CSES 1683 · Planets and Kingdoms",
+        "url": "https://cses.fi/problemset/task/1683/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 22,
+      "complexity": "O(n+m) 时间、O(n+m) 空间",
+      "samples": [
+        {
+          "input": "5 10\n5 4\n4 5\n2 4\n2 2\n3 3\n2 5\n3 3\n2 2\n4 5\n3 1\n",
+          "output": "4\n"
+        }
+      ]
+    },
+    {
+      "id": "p93",
+      "title": "最多不冲突活动",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 43,
+      "track": "dsa",
+      "topic": "区间贪心与扫描线",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "按结束时刻排序，扫描时选取开始不早于上次结束的活动。",
+        "任一最优方案第一项可换成全局最早结束项，不会挤占后续空间。",
+        "相邻区间允许端点相等；初始结束不能设为 0，因为活动可以在负时间开始。"
+      ],
+      "analysis": "按结束时刻排序，扫描时选取开始不早于上次结束的活动。不要按开始时间或活动持续时间贪心。\n\n正确性：任一最优方案第一项可换成全局最早结束项，不会挤占后续空间。对剩余活动重复这个交换论证。\n\n复杂度：O(n log n) 时间、O(n) 存储空间。\n\n易错点：相邻区间允许端点相等；初始结束不能设为 0，因为活动可以在负时间开始。",
+      "source": {
+        "label": "CSES 1629 · Movie Festival",
+        "url": "https://cses.fi/problemset/task/1629/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n log n) 时间、O(n) 存储空间",
+      "samples": [
+        {
+          "input": "5\n7 9\n-10 -6\n-2 0\n0 2\n-2 -1\n",
+          "output": "4\n"
+        }
+      ]
+    },
+    {
+      "id": "p94",
+      "title": "最高同时在线人数",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 43,
+      "track": "dsa",
+      "topic": "区间贪心与扫描线",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "进入记 +1，离开记 -1，按时间排序扫描。",
+        "两个事件之间人数不变，所有变化只在端点发生；按半开区间规则处理同时间事件后，扫描覆盖每个可能的最大人数区间。",
+        "同时间若先进入，会制造不存在的瞬时峰值；可把同时间增量合并，避免顺序歧义。"
+      ],
+      "analysis": "进入记 +1，离开记 -1，按时间排序扫描。相同时间必须先处理离开，再处理进入。\n\n正确性：两个事件之间人数不变，所有变化只在端点发生；按半开区间规则处理同时间事件后，扫描覆盖每个可能的最大人数区间。\n\n复杂度：O(n log n) 时间、O(n) 空间。\n\n易错点：同时间若先进入，会制造不存在的瞬时峰值；可把同时间增量合并，避免顺序歧义。",
+      "source": {
+        "label": "CSES 1619 · Restaurant Customers",
+        "url": "https://cses.fi/problemset/task/1619/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 21,
+      "complexity": "O(n log n) 时间、O(n) 空间",
+      "samples": [
+        {
+          "input": "5\n5 10\n-7 -6\n5 9\n-8 -1\n6 9\n",
+          "output": "3\n"
+        }
+      ]
+    },
+    {
+      "id": "p95",
+      "title": "快速幂与大指数",
+      "difficulty": "基础",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 44,
+      "track": "dsa",
+      "topic": "位运算与状态压缩",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "按指数二进制位处理：当前位为 1 就乘入结果，每轮底数平方、指数右移一位。",
+        "循环保持 result·base^remaining 与原始幂同余；处理最低位并平方后不变式保持，剩余指数为 0 时 result 即答案。",
+        "指数用 long long；初始结果为 1；模数约 10^9 时两个模内数乘积仍在有符号 64 位范围内。"
+      ],
+      "analysis": "按指数二进制位处理：当前位为 1 就乘入结果，每轮底数平方、指数右移一位。所有乘法立刻取模。\n\n正确性：循环保持 result·base^remaining 与原始幂同余；处理最低位并平方后不变式保持，剩余指数为 0 时 result 即答案。\n\n复杂度：O(q log(b+1)) 时间、O(1) 额外空间。\n\n易错点：指数用 long long；初始结果为 1；模数约 10^9 时两个模内数乘积仍在有符号 64 位范围内。",
+      "source": {
+        "label": "CSES 1095 · Exponentiation",
+        "url": "https://cses.fi/problemset/task/1095/",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 20,
+      "complexity": "O(q log(b+1)) 时间、O(1) 额外空间",
+      "samples": [
+        {
+          "input": "17\n2 10\n0 0\n0 5\n1000000000 1000000000000000000\n998240202 236868257127327312\n577362609 654879291327893869\n334782808 989623375143088433\n476026805 798808220585809303\n419939588 843444512422208621\n145745997 342520525072702331\n892181715 116694913917414894\n910993837 281957176838700244\n451898155 346909191393618461\n712593807 349262356004577439\n3447008 808034476966735489\n780708219 305721098720988461\n686992612 114213061185241482\n",
+          "output": "1024\n1\n0\n259616729\n262920873\n594261464\n325068897\n911668380\n471861660\n111768034\n90139244\n831931449\n604946903\n887954077\n392930673\n224233296\n878748988\n"
+        }
+      ]
+    },
+    {
+      "id": "p96",
+      "title": "状态压缩：访问全部站点",
+      "difficulty": "挑战",
+      "mode": "program",
+      "filename": "main.cpp",
+      "chapter": 44,
+      "track": "dsa",
+      "topic": "位运算与状态压缩",
+      "goals": [
+        "升学机试",
+        "实习校招"
+      ],
+      "hints": [
+        "dp[mask][u] 表示已访问集合为 mask、终点为 u 的最小费用。",
+        "路径按访问集合与终点划分；从最后一次移动移除终点得到更小集合的最优子问题，所有合法前驱都会被枚举。",
+        "不要只做普通最短路，那会重复站点或漏站；必须补回起点费用；不对称矩阵不能当无向图。"
+      ],
+      "analysis": "dp[mask][u] 表示已访问集合为 mask、终点为 u 的最小费用。初始只含站点 1，向未访问站点转移，最后补回站点 1 的费用。\n\n正确性：路径按访问集合与终点划分；从最后一次移动移除终点得到更小集合的最优子问题，所有合法前驱都会被枚举。\n\n复杂度：O(2^n·n²) 时间、O(2^n·n) 空间。\n\n易错点：不要只做普通最短路，那会重复站点或漏站；必须补回起点费用；不对称矩阵不能当无向图。",
+      "source": {
+        "label": "原创综合题：Held–Karp 状态压缩模型",
+        "url": "",
+        "adaptation": "重新编写题面和输入输出，自编样例与测试，独立实现参考解。"
+      },
+      "test_count": 19,
+      "complexity": "O(2^n·n²) 时间、O(2^n·n) 空间",
+      "samples": [
+        {
+          "input": "4\n0 6 22 12\n24 0 12 24\n17 10 0 1\n30 21 6 0\n",
+          "output": "49\n"
+        }
+      ]
     }
   ],
   "demos": [
@@ -1440,6 +2496,66 @@
     {
       "id": "d32",
       "title": "前缀和、树状数组与懒标记线段树：实现实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d33",
+      "title": "哈希、双指针与滑动窗口：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d34",
+      "title": "前缀和、差分与离线处理：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d35",
+      "title": "二分答案与可行性证明：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d36",
+      "title": "单调队列、Top K 与双堆：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d37",
+      "title": "回溯、剪枝与折半搜索：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d38",
+      "title": "线性与序列 DP：状态、转移和优化：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d39",
+      "title": "背包、可达性与方案计数：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d40",
+      "title": "二维 DP：网格与公共子序列：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d41",
+      "title": "树的综合题：直径、LCA 与路径贡献：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d42",
+      "title": "图论进阶：0–1 BFS、二分图与 SCC：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d43",
+      "title": "区间贪心、扫描线与交换论证：固定样例实验",
+      "track": "dsa"
+    },
+    {
+      "id": "d44",
+      "title": "位运算、快速幂与状态压缩：固定样例实验",
       "track": "dsa"
     }
   ]
