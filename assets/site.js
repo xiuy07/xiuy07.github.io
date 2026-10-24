@@ -2,7 +2,7 @@ const root = document.documentElement;
 const themeButton = document.querySelector('.theme-toggle');
 const english = document.documentElement.lang === 'en';
 function applyTheme(theme, persist=false) {
-  root.dataset.theme = theme;
+  if(root.dataset.theme!==theme)root.dataset.theme = theme;
   const dark = theme === 'dark';
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#13232c' : '#f1f6f8');
   themeButton.innerHTML = dark
@@ -11,14 +11,16 @@ function applyTheme(theme, persist=false) {
   themeButton.title = english ? (dark ? 'Use light theme' : 'Use dark theme') : (dark ? '切换浅色主题' : '切换深色主题');
   themeButton.setAttribute('aria-label', english ? (dark ? 'Use light theme' : 'Use dark theme') : (dark ? '切换浅色主题' : '切换深色主题'));
   themeButton.setAttribute('aria-pressed', String(dark));
-  if(persist) try{localStorage.setItem('xiu-site-theme',theme);}catch{}
+  if(persist){if(window.xiuTheme)window.xiuTheme.setPreference(theme);else try{localStorage.setItem('xiu-site-theme',theme);}catch{}}
 }
 let savedTheme = null;
-try { savedTheme=localStorage.getItem('xiu-site-theme'); } catch {}
+try { savedTheme=window.xiuTheme?.getPreference()??localStorage.getItem('xiu-site-theme'); } catch {}
+if(!['dark','light'].includes(savedTheme))savedTheme=null;
 const media = matchMedia('(prefers-color-scheme: dark)');
 applyTheme(['dark','light'].includes(savedTheme) ? savedTheme : media.matches ? 'dark' : 'light');
 themeButton.addEventListener('click',()=>{savedTheme=root.dataset.theme==='dark'?'light':'dark';applyTheme(savedTheme,true);});
-media.addEventListener('change',()=>{if(!savedTheme)applyTheme(media.matches?'dark':'light');});
+if(!window.xiuTheme)media.addEventListener('change',()=>{if(!savedTheme)applyTheme(media.matches?'dark':'light');});
+new MutationObserver(()=>applyTheme(root.dataset.theme)).observe(root,{attributes:true,attributeFilter:['data-theme']});
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.site-nav');
 function closeMenu(){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent=english?'Menu':'菜单';}

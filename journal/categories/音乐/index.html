@@ -206,7 +206,39 @@
   isHighlightShrink: false,
   isToc: false,
   pageType: 'category'
-}</script><link rel="stylesheet" href="/assets/butterfly-custom.css?v=e2c4e10e6d10"><link rel="preload" href="/assets/zhi-mang-xing.woff2?v=1b4896256375" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/lxgw-wenkai.woff2?v=1b4896256375" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/noto-sans-sc.woff2?v=1b4896256375" as="font" type="font/woff2" crossorigin><script src="/assets/butterfly-custom.js?v=e2c4e10e6d10" defer></script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+}</script><script>(function installThemePreference(colors={light:'#f1f6f8',dark:'#13232c'}){
+  const root=document.documentElement;
+  const system=window.matchMedia('(prefers-color-scheme: dark)');
+  const valid=value=>value==='dark'||value==='light';
+  function read(){
+    try{
+      const stored=window.localStorage.getItem('xiu-site-theme');
+      if(valid(stored))return stored;
+      const legacy=JSON.parse(window.localStorage.getItem('theme')||'null');
+      if(legacy&&valid(legacy.value)&&(!legacy.expiry||legacy.expiry>Date.now()))return legacy.value;
+    }catch{}
+    return null;
+  }
+  function save(theme){
+    if(!valid(theme))return;
+    // Butterfly uses a JSON record, while the profile uses a plain string.
+    try{window.localStorage.setItem('xiu-site-theme',theme);}catch{}
+    try{window.localStorage.setItem('theme',JSON.stringify({value:theme}));}catch{}
+  }
+  function apply(theme){
+    if(!valid(theme))return;
+    if(root.dataset.theme!==theme)root.dataset.theme=theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content',colors[theme]);
+  }
+  const refresh=()=>apply(read()||(system.matches?'dark':'light'));
+  const preference=read();
+  if(preference)save(preference);
+  window.xiuTheme={getPreference:read,setPreference:save,apply};
+  refresh();
+  system.addEventListener('change',()=>{if(!read())refresh();});
+  window.addEventListener('storage',event=>{if(event.key===null||event.key==='xiu-site-theme'||event.key==='theme')refresh();});
+  window.addEventListener('pageshow',refresh);
+})({"light":"#edf3f6","dark":"#14232d"});</script><link rel="stylesheet" href="/assets/butterfly-custom.css?v=726ad745cbcc"><link rel="preload" href="/assets/zhi-mang-xing.woff2?v=1b4896256375" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/lxgw-wenkai.woff2?v=1b4896256375" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/noto-sans-sc.woff2?v=1b4896256375" as="font" type="font/woff2" crossorigin><script src="/assets/butterfly-custom.js?v=726ad745cbcc" defer></script><meta name="generator" content="Hexo 8.1.2"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
   const $loadingBox = document.getElementById('loading-box')
   const $body = document.body
   const preloader = {

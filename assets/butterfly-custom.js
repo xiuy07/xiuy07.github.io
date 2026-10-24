@@ -1,12 +1,5 @@
 /* Accessibility and shared preferences around official Butterfly interactions. */
 (() => {
-  try {
-    const theme=localStorage.getItem('xiu-site-theme');
-    if(['dark','light'].includes(theme))document.documentElement.dataset.theme=theme;
-  } catch {}
-  new MutationObserver(() => {
-    try {localStorage.setItem('xiu-site-theme',document.documentElement.dataset.theme);} catch {}
-  }).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   const visible=element=>element&&getComputedStyle(element).display!=='none'&&getComputedStyle(element).visibility!=='hidden';
   const focusables=container=>[...container.querySelectorAll('a[href],button,input,[tabindex="0"]')].filter(element=>visible(element)&&element.getClientRects().length&&!element.disabled);
   let settleTimer;
@@ -94,7 +87,7 @@
     audio.addEventListener('play',()=>{if(!wantsPlay||!player.isConnected){stop();return;}update();});
     audio.addEventListener('playing',()=>{if(!wantsPlay||!player.isConnected){stop();return;}loading=false;status.textContent='';update();});
     audio.addEventListener('waiting',()=>{if(wantsPlay){loading=true;update();}});
-    audio.addEventListener('pause',()=>{if(!loading)wantsPlay=false;update();});
+    audio.addEventListener('pause',()=>{if(audio.paused&&(wantsPlay||loading))stop();else update();});
     audio.addEventListener('error',()=>{stop();status.textContent='音乐暂时无法播放。';});
     toggle.addEventListener('click',async()=>{
       if(wantsPlay||!audio.paused){stop();return;}
@@ -212,6 +205,7 @@
   document.addEventListener('visibilitychange',refreshSeaState);
   motionPreference.addEventListener('change',refreshSeaState);
   document.addEventListener('click',event=>{
+    if(event.target.closest('#darkmode'))window.xiuTheme?.setPreference(document.documentElement.dataset.theme);
     document.querySelectorAll('[data-bgm-settings][open]').forEach(settings=>{if(!settings.contains(event.target))settings.open=false;});
     if(motionPreference.matches||event.detail===0||event.button!==0||event.target.closest('input,textarea,select,[contenteditable="true"]'))return;
     const layer=document.getElementById('ocean-click-layer');if(!layer)return;
