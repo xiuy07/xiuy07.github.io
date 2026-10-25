@@ -1,7 +1,7 @@
 /* Editorial layout and a clear, edge-refracting Web glass material.
    Layers: content 0, header 10, reading tools 15, skip link 30, loader 40. */
-@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=1b6d72696d3b') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
-@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=1b6d72696d3b') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=ed03a838ac66') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=ed03a838ac66') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
 :root{
  --font:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;
  --serif:Georgia,'Noto Serif SC','Songti SC',serif;
