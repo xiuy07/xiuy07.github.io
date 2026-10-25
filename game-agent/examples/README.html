@@ -1,0 +1,70 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>配套示例怎么使用 · Game Agent</title><link rel="stylesheet" href="../study.css"><style>body{margin:0}.document-header,.document-reading{max-width:808px;margin:auto;padding:22px 44px}.document-header{font-size:14px;border-bottom:1px solid var(--line)}.document-reading{padding-top:42px}.document-reading h1{margin-bottom:28px}@media(max-width:760px){.document-header,.document-reading{padding:22px 24px}}</style></head><body><nav class="document-header"><a href="../index.html">Game Agent 讲义</a></nav><main class="document-reading"><article class="lesson reading-body"><header class="lesson-heading"><h1>配套示例怎么使用</h1></header>
+<p>先读讲义中的例子并预测输出，再运行单份脚本；参数和关键代码都可以修改。以下命令在项目根目录执行。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>脚本</th>
+<th>依赖</th>
+<th>内容</th>
+<th>当前状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01_trajectory.py</td>
+<td>Python标准库</td>
+<td>输入验证、成功率、步数和边界</td>
+<td>已运行</td>
+</tr>
+<tr>
+<td>02_linear_numpy.py</td>
+<td>NumPy</td>
+<td>广播、梯度差分、教学回归训练</td>
+<td>已运行</td>
+</tr>
+<tr>
+<td>03_probability.py</td>
+<td>Python标准库</td>
+<td>softmax、采样和Wilson区间</td>
+<td>已运行</td>
+</tr>
+<tr>
+<td>04_torch_mlp.py</td>
+<td>PyTorch CPU</td>
+<td>自动微分、XOR训练、保存加载</td>
+<td>已运行</td>
+</tr>
+<tr>
+<td>05_decision.py</td>
+<td>Python标准库</td>
+<td>价值迭代、表格Q-learning</td>
+<td>已运行</td>
+</tr>
+<tr>
+<td>06_attention.py</td>
+<td>PyTorch CPU</td>
+<td>注意力手算与因果性</td>
+<td>已运行</td>
+</tr>
+<tr>
+<td>07_tiny_lm.py</td>
+<td>PyTorch CPU</td>
+<td>字符级因果小模型教学训练</td>
+<td>已运行，没有独立测试集</td>
+</tr>
+<tr>
+<td>08_minigrid_random.py</td>
+<td>gymnasium、minigrid</td>
+<td>DoorKey随机动作与合法观察记录</td>
+<td>依赖缺失，未实际运行</td>
+</tr>
+</tbody>
+</table></div>
+<div class="code-shell"><div class="code-heading"><span>powershell</span><button type="button" data-copy>复制代码</button></div><pre><code><span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">01_trajectory</span><span class="p">.</span><span class="n">py</span>
+<span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">02_linear_numpy</span><span class="p">.</span><span class="n">py</span>
+<span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">04_torch_mlp</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-save-dir</span> <span class="n">runs</span><span class="p">/</span><span class="n">my-mlp-v1</span>
+<span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">run_all</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-output</span> <span class="n">runs</span><span class="p">/</span><span class="n">my-check-v2</span>
+</code></pre></div><p>04使用新目录保存checkpoint；批量runner也要求新输出目录。单个脚本默认只打印结果，runner保存每份stdout、stderr、命令、耗时、源码哈希与summary.json。使用虚拟环境时将python替换为对应解释器路径。</p>
+<p>08在依赖就绪后可单独运行：<code>python examples/08_minigrid_random.py --output runs/my-doorkey.json</code>。父目录需已存在，输出文件不能已存在。其成功判断明确限定为DoorKey的终止与正目标奖励约定，不是通用的“奖励大于0等于成功”。它不读取隐藏地图，也不调用LLM。</p>
+<p>本次真实运行结果见根目录<a href="../%E9%AA%8C%E8%AF%81%E8%AE%B0%E5%BD%95.html">验证记录</a>和runs/lecture-check-v1。不要将自检通过、教学数据效果或程序打印的预期值当作真实智能体研究结果。</p>
+</article></main></body></html>

@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>讲义与示例验证记录 · Game Agent</title><link rel="stylesheet" href="study.css"><style>body{margin:0}.document-header,.document-reading{max-width:808px;margin:auto;padding:22px 44px}.document-header{font-size:14px;border-bottom:1px solid var(--line)}.document-reading{padding-top:42px}.document-reading h1{margin-bottom:28px}@media(max-width:760px){.document-header,.document-reading{padding:22px 24px}}</style></head><body><nav class="document-header"><a href="index.html">Game Agent 讲义</a></nav><main class="document-reading"><article class="lesson reading-body"><header class="lesson-heading"><h1>讲义与示例验证记录</h1></header>
+<p>日期：2026-10-25。代码运行目录为本项目根目录，原始运行日志与机器可读摘要保留在本地，网站只发布教学结果摘要。这些是讲义自检和教学模型记录，不能当作论文结果或用户掌握情况。</p>
+<h2>已实际运行</h2>
+<p>命令：<code>python examples/run_all.py --output runs/lecture-check-v1</code>，退出码 0，7 个示例均通过各自检查。每个脚本的命令、源码 SHA-256、stdout、stderr 和耗时已保存；runner 拒绝覆盖已有运行目录。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>检查与实际结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 轨迹统计</td>
+<td>3 条教学记录，成功2条，全部平均40/3步、成功平均10步；检查空集、全失败、缺失字段和非法类型</td>
+</tr>
+<tr>
+<td>02 NumPy</td>
+<td>循环与矩阵预测一致；故意广播得到(3,3)；梯度差分最大绝对误差约9.35e-11；训练损失约2.45524→0.005363，验证损失约0.004262</td>
+</tr>
+<tr>
+<td>03 概率</td>
+<td>理论第二类概率2/3；种子7抽1000次观察到630次；负对数损失约0.405465；Wilson区间约[0.59963,0.65937]</td>
+</tr>
+<tr>
+<td>04 PyTorch</td>
+<td>手算梯度[-2,-1]匹配自动微分；82参数小MLP在自建XOR数据训练；验证准确率约98.5%；保存并重载logits最大差为0</td>
+</tr>
+<tr>
+<td>05 决策</td>
+<td>价值迭代得到[0.7019,0.791,0.89,1,0]；表格Q-learning在教学走廊贪心4步到目标；与手算约定一致</td>
+</tr>
+<tr>
+<td>06 注意力</td>
+<td>无mask第一位置约12.689414，因果mask时为10；修改未来输入后前缀输出差为0</td>
+</tr>
+<tr>
+<td>07 极小语言模型</td>
+<td>6379参数，160步教学训练；固定训练批次损失约3.17222→0.16024；因果性检查通过；没有独立测试集</td>
+</tr>
+</tbody>
+</table></div>
+<p>概率练习这次区间没有覆盖理论2/3，保留原样。95%区间并不保证每一次都覆盖真参数；本例有助于理解重复抽样覆盖率。不能为了区间“看起来正确”换种子重跑后只报告好的一次。</p>
+<p>tiny LM 的实际生成包含不完整或不自然动作片段，原始输出保留。训练损失降低不保证生成是合法动作序列，更不保证环境任务成功。这正是语言目标与控制评测需要分开的例子。</p>
+<h2>环境和限制</h2>
+<ul>
+<li>实际教学解释器：python，Python版本详见summary.json；NumPy 2.4.6，PyTorch 2.13.0+cpu。</li>
+<li>Python 启动打印 <code>Failed to find real location of python</code>；本批脚本均退出0。该提示保存在stderr，本轮没有修改系统解释器。</li>
+<li>gymnasium、minigrid 未安装。08随机策略示例仅完成语法检查，未进行环境运行；没有MiniGrid成功率结果。</li>
+<li>未下载模型、未调用付费接口、未进行真实LLM Agent评测。教学分类器与极小语言模型已实际训练，不能再笼统说“完全没有模型训练”。</li>
+</ul>
+<h2>怎样复跑</h2>
+<div class="code-shell"><div class="code-heading"><span>powershell</span><button type="button" data-copy>复制代码</button></div><pre><code><span class="nb">Set-Location</span> <span class="s1">&#39;./&#39;</span>
+<span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">run_all</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-output</span> <span class="n">runs</span><span class="p">/</span><span class="n">my-lecture-check-v2</span>
+</code></pre></div><p>重跑换新目录。根据本机依赖配置使用项目虚拟环境解释器；它不会自动继承系统包。若某项失败，先看对应stderr，不把缺依赖当作课程代码已经验证。</p>
+<p>PDF/网页构建与版面检查记录由本次完成后的构建摘要另存 <code>output/build-summary.json</code> 和 <code>output/pdf/qa.json</code>。</p>
+</article></main></body></html>

@@ -1,0 +1,308 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Game Agent 基础路线：16 周建议安排 · Game Agent</title><link rel="stylesheet" href="study.css"><style>body{margin:0}.document-header,.document-reading{max-width:808px;margin:auto;padding:22px 44px}.document-header{font-size:14px;border-bottom:1px solid var(--line)}.document-reading{padding-top:42px}.document-reading h1{margin-bottom:28px}@media(max-width:760px){.document-header,.document-reading{padding:22px 24px}}</style></head><body><nav class="document-header"><a href="index.html">Game Agent 讲义</a></nav><main class="document-reading"><article class="lesson reading-body"><header class="lesson-heading"><h1>Game Agent 基础路线：16 周建议安排</h1></header>
+<p>制定：2026-10-25。用户已确认 Game Agent 主线、每周 8–10 小时、有编程基础，但 Python 和机器学习需要系统补齐。当前暂无本地 GPU 的资源背景沿用前次信息。本路线替代此前六周快速实践节奏；具体研究创新点仍待阅读与实验确定。</p>
+<h2>学到什么程度</h2>
+<p>目标是具备进入一个 Game Agent 入门研究项目的基础：读懂关键公式和接口，独立实现小模型与决策算法，能检查对照实验并讲清局限。16 周约 128–160 小时是工作量估计，达标可以提前，知识缺口明显就延长；不以此承诺精通整个机器学习或完成论文。</p>
+<p>每个核心知识点都留下三种证据：用自己的话解释；完成一个推导或手算；不照抄教程实现最小例子。看完视频、抄完 notebook、AI 写出的程序运行成功，都不能单独算掌握。</p>
+<p>主线依赖：Python 与数学 → 线性模型与评估 → PyTorch 与神经网络 → 序列决策与规划 → 注意力与语言模型 → 代码式游戏智能体。小任务贯穿其中，避免把基础学习变成无限延后的准备期。</p>
+<h2>每周怎么分配</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>用途</th>
+<th style="text-align:right">每周时间</th>
+<th>做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概念与主教材</td>
+<td style="text-align:right">2 小时</td>
+<td>每周只围绕一个主要问题阅读；写下不懂的术语</td>
+</tr>
+<tr>
+<td>手算与推导</td>
+<td style="text-align:right">1.5 小时</td>
+<td>从小数字和张量形状开始，再写一般公式</td>
+</tr>
+<tr>
+<td>编程与调试</td>
+<td style="text-align:right">3.5 小时</td>
+<td>先预测输出，再运行；保留至少一个失败和修复过程</td>
+</tr>
+<tr>
+<td>闭卷复述、复习与记录</td>
+<td style="text-align:right">1 小时</td>
+<td>讲解本周内容，重做上周一题，填写学习记录</td>
+</tr>
+<tr>
+<td>弹性补缺</td>
+<td style="text-align:right">0–2 小时</td>
+<td>补最薄弱的内容；有余力再做选做题</td>
+</tr>
+</tbody>
+</table></div>
+<p>每周核心为 8 小时，最多加 2 小时。课程忙时减少选做，不用压缩睡眠补进度。每周至少休息两天；首两周的具体时段见 <a href="%E5%89%8D%E4%B8%A4%E5%91%A8%E4%BB%BB%E5%8A%A1%E5%8D%95.html">前两周任务单</a>。</p>
+<h2>第 1–4 周：Python、数学与机器学习入口</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>周</th>
+<th>必学内容</th>
+<th>核心练习与产物</th>
+<th>本周验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Python 列表/字典、循环、函数、可变对象、文件与异常；解释器和工作目录</td>
+<td>从零写教学游戏轨迹统计器：读取小型 JSON，计算成功率、步数和终止原因；保存运行说明</td>
+<td>能解释引用与复制；能按 traceback 找到出错行；修改字段后独立修好统计器</td>
+</tr>
+<tr>
+<td>2</td>
+<td>模块、最小类、虚拟环境概念；NumPy 的 shape、axis、索引、广播、矩阵乘法；向量/内积/范数</td>
+<td>用循环和 NumPy 各实现批量线性预测，检查两版结果；画每个张量的形状</td>
+<td>对 X 为 N×d、w 为 d，写出 Xw+b；能解释逐元素乘法与矩阵乘法差别</td>
+</tr>
+<tr>
+<td>3</td>
+<td>导数、偏导、链式法则、梯度、学习率；最小二乘；有限差分</td>
+<td>手推线性回归梯度，NumPy 实现梯度下降；用有限差分核对一个参数</td>
+<td>从损失推导梯度；解释学习率过大为何可能发散；说清梯度检查的误差来源</td>
+</tr>
+<tr>
+<td>4</td>
+<td>条件概率、期望、方差、采样；训练/验证/测试；分类与回归、过拟合；逻辑回归概念</td>
+<td>在生成数据上做线性回归训练/验证；预处理只拟合训练集；比较多个种子并记录差异</td>
+<td>通过 G1；能算条件概率和均值，解释数据泄漏；不能看着测试结果选模型</td>
+</tr>
+</tbody>
+</table></div>
+<p>数学按任务补齐。先掌握矩阵形状、求导、概率和均值方差；特征值、SVD、凸优化证明在相关问题出现时深化。数学课已有内容可以凭闭卷验收压缩，不能仅凭“上过这门课”跳过。</p>
+<h2>第 5–7 周：PyTorch 与神经网络</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>周</th>
+<th>必学内容</th>
+<th>核心练习与产物</th>
+<th>本周验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td>tensor、dtype、autograd、nn.Module、optimizer；梯度累积与清零</td>
+<td>将第 3 周线性回归迁到 PyTorch；比较手算、有限差分、自动微分</td>
+<td>逐行解释 forward/loss/backward/step；解释为何清零梯度，梯度并非参数更新本身</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Dataset/DataLoader、小批量 SGD、MLP、ReLU、交叉熵、train/eval、no_grad、保存加载</td>
+<td>CPU 训练小型分类模型；先拟合极小训练子集排查实现，再看独立验证；和线性分类器比较</td>
+<td>通过 G2；能解释损失和准确率的区别；保存/加载后预测一致；解释过拟合与模型容量</td>
+</tr>
+<tr>
+<td>7</td>
+<td>卷积/共享参数、CNN、残差连接；RNN 的序列状态；初始化、正则化与优化器直觉</td>
+<td>手算一个小卷积并检查形状；写小残差块和 RNN 状态更新演示；MLP 只改变一个训练因素做对照</td>
+<td>解释残差为何要匹配形状，RNN 怎样保留历史；能区分结构、损失、优化器的职责</td>
+</tr>
+</tbody>
+</table></div>
+<p>第 7 周达到结构理解和小实现即可，不要求训练 ResNet 或逐一复现经典网络。SVM、树模型、聚类等先形成方法地图，不占用当前核心实现时间，后续课程与研究按需扩展。</p>
+<h2>第 8–10 周：序列决策、学习与规划</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>周</th>
+<th>必学内容</th>
+<th>核心练习与产物</th>
+<th>本周验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>MDP、状态、动作、转移、奖励、策略、回报、V/Q、Bellman 关系；动态规划</td>
+<td>对已知转移的极小网格做价值迭代，手算一轮，再与代码对照</td>
+<td>解释即时奖励与长期回报，策略与价值的区别；知道规划为何需要模型</td>
+</tr>
+<tr>
+<td>9</td>
+<td>多臂老虎机与探索；MC/TD；Q-learning、epsilon-greedy；on/off-policy 概念</td>
+<td>小老虎机或表格环境学习；在同一评测种子上比较随机策略与学习策略</td>
+<td>独立算一次 TD 更新；能说明训练探索和评测探索设置；不要求深度 RL 训练</td>
+</tr>
+<tr>
+<td>10</td>
+<td>部分可观察、历史与记忆；BFS/搜索与学习的区别；Gymnasium、MiniGrid；结束与截断</td>
+<td>MiniGrid 中记录随机策略轨迹；对已探索信息构建简单地图；完整地图 BFS 只作明确标记的上界演示</td>
+<td>通过 G3；检查观察边界；区分任务真正结束和外部截断，解释自举处理</td>
+</tr>
+</tbody>
+</table></div>
+<p>先在表格任务上理解 RL，之后再读策略梯度的直觉。DQN、PPO 训练为后续选做，不是代码式 Agent 的前置条件。规则策略可以帮助调试环境，但必须标明没有模型学习。</p>
+<h2>第 11–12 周：注意力、大模型与多模态入口</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>周</th>
+<th>必学内容</th>
+<th>核心练习与产物</th>
+<th>本周验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>embedding、Q/K/V、缩放点积注意力、softmax、因果 mask、位置编码、残差与归一化</td>
+<td>手算 2–3 token 的单头注意力；用 PyTorch 实现；检查未来 token 被遮蔽</td>
+<td>写出 QKᵀ 和输出的形状，解释权重归一化方向及信息泄漏</td>
+</tr>
+<tr>
+<td>12</td>
+<td>decoder-only 与 encoder-decoder；下一 token 目标、teacher forcing、训练与生成；ViT/VLM/VLA；SFT 与偏好/RL 后训练地图</td>
+<td>生成小型动作字符串语料，构建字符级下一 token 数据；跑通极小模型训练与生成；画多模态模块图</td>
+<td>通过 G4；解释输入/标签错位、训练/推理差别；说清 SFT、DPO、PPO、GRPO 的数据和信号差异</td>
+</tr>
+</tbody>
+</table></div>
+<p>小语言模型仅用于理解训练机制，学习数据明确标为自建教学数据；不能把重复训练集上的生成效果当作泛化。模型大小和训练步数按本机 CPU 实测调整，不保证固定耗时，也不需要预训练大模型。</p>
+<p>ViT/VLM/VLA 在此阶段先建立输入、编码器、表示与输出的关系；视觉编码器、机器人动作预测的深入训练放到进入相应分支后。</p>
+<h2>第 13–16 周：接入 Game Agent 实践</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>周</th>
+<th>必学内容</th>
+<th>核心练习与产物</th>
+<th>本周验收</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+<td>Agent 观察—决策—执行循环、工具、Memory、Skill、Harness；Code as Policies</td>
+<td>阅读经典论文相应正文，画系统图；写一个只依赖允许观察与动作的策略接口</td>
+<td>能说明控制逻辑、技能、环境分别做什么；区分 AI 帮你写代码与被评测 Agent 自主行动</td>
+</tr>
+<tr>
+<td>14</td>
+<td>MiniGrid DoorKey；动作程序、执行反馈、模型响应与轨迹记录</td>
+<td>建立逐步动作和固定技能两类基线；先规则/回放检查，再小规模真实模型试跑</td>
+<td>真实模型前固定渠道、模型、提示与预算；规则/回放不能替代真实基线</td>
+</tr>
+<tr>
+<td>15</td>
+<td>CaP-X、ASPIRE 相关正文；公平对照、消融、配对实验、成本和失败分类</td>
+<td>整理近似工作矩阵；比较基线并寻找一个反复出现的问题</td>
+<td>区分种子泛化和任务组合迁移；说明抽象层级或额外调用带来的混杂因素</td>
+</tr>
+<tr>
+<td>16</td>
+<td>研究叙述、统计不确定性、复现记录与局限</td>
+<td>汇报背景、代表方法、实验分析和下一步问题；复查至少一个失败轨迹</td>
+<td>通过 G5；每个结果对应配置与原始记录，能解释未解决的问题</td>
+</tr>
+</tbody>
+</table></div>
+<p>第 13 周前以基础教学实验为主，不产生付费 API 支出。第 14–16 周真实模型实验是否能执行取决于推理渠道与具体预算授权；如果尚未具备，继续完成接口、规则与回放检查，并如实保留“真实基线未完成”，不强行勾选 G5。</p>
+<h2>五个阶段验收</h2>
+<p>各关都做“闭卷讲 5 分钟＋从空文件写核心部分＋改变一个条件后解释结果”。允许查询 API 签名，不直接照搬完整实现。以下为学习用验收标准，不是导师的入组考核。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>关卡</th>
+<th>必须独立完成</th>
+<th>未通过时怎么补</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1／第 4 周后</td>
+<td>NumPy 批量预测；线性回归梯度；训练/验证分离；概率手算；解释最少一个失败</td>
+<td>只补对应缺口，增加 1–2 周；已掌握部分不重学</td>
+</tr>
+<tr>
+<td>G2／第 6–7 周后</td>
+<td>PyTorch 完整小训练循环；形状与梯度诊断；验证与模型保存加载</td>
+<td>回到三种梯度对照和极小子集拟合；确认流程后再扩大数据</td>
+</tr>
+<tr>
+<td>G3／第 10 周后</td>
+<td>小 MDP 价值更新和 Q 更新；解释观察与状态；运行并复查游戏轨迹</td>
+<td>先手算极小环境，再检查终止、自举与观察接口</td>
+</tr>
+<tr>
+<td>G4／第 12 周后</td>
+<td>单头注意力与 mask；下一 token 标签；解释训练与生成；画 Agent 基础图</td>
+<td>缩小到两个 token 和一层模型，复查轴、标签和信息来源</td>
+</tr>
+<tr>
+<td>G5／实践完成后</td>
+<td>可核查的真实模型基线、相关工作对照、失败分析与一次完整汇报</td>
+<td>暂以入门实践报告记录，补缺后再决定长期研究问题</td>
+</tr>
+</tbody>
+</table></div>
+<p>不要按总分掩盖核心缺口。例如会背 Transformer 术语却无法检查训练/验证泄漏，仍需补实验基础。阶段自测见 <a href="%E5%9F%BA%E7%A1%80%E8%AF%8A%E6%96%AD%E9%A2%98.html">基础诊断题</a>，答案另放以便先独立作答。</p>
+<h2>资源：固定少量主线</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>用途</th>
+<th>主资料与范围</th>
+<th>使用方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td><a href="https://docs.python.org/zh-cn/3/tutorial/index.html">官方中文教程</a>：数据结构、函数、模块、I/O、异常、类、虚拟环境</td>
+<td>面向已有编程基础，按练习查缺；不要求通读每个语言特性</td>
+</tr>
+<tr>
+<td>数学与 DL</td>
+<td><a href="https://zh.d2l.ai/chapter_preliminaries/index.html">动手学深度学习</a>：预备知识、线性模型、MLP、计算、卷积、RNN；<a href="https://zh.d2l.ai/chapter_attention-mechanisms/index.html">注意力部分</a></td>
+<td>选 PyTorch 实现；数学配手算，代码配独立重写</td>
+</tr>
+<tr>
+<td>PyTorch</td>
+<td><a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html">Learn the Basics</a></td>
+<td>按 tensor、data、model、autograd、optimization、save/load 顺序，独立写一份小实现</td>
+</tr>
+<tr>
+<td>RL</td>
+<td>Sutton &amp; Barto《Reinforcement Learning: An Introduction》第二版，<a href="https://mitpress.mit.edu/9780262039246/reinforcement-learning/">出版社页面</a></td>
+<td>以 MDP、动态规划、MC/TD 为本阶段阅读范围；后读规划与策略梯度，不要求全书通读</td>
+</tr>
+<tr>
+<td>环境接口</td>
+<td><a href="https://minigrid.farama.org/content/basic_usage/">MiniGrid Basic Usage</a>、<a href="https://gymnasium.farama.org/tutorials/gymnasium_basics/handling_time_limits/">Gymnasium 时间限制说明</a></td>
+<td>先读接口和观察，再写策略，不靠环境内部变量取巧</td>
+</tr>
+<tr>
+<td>实验习惯</td>
+<td><a href="https://scikit-learn.org/stable/common_pitfalls.html">scikit-learn Common Pitfalls</a></td>
+<td>重点理解数据划分、预处理和泄漏；迁移到自己实验</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>指南已有的 <a href="https://github.com/datawhalechina/hello-agents">hello-agents</a> 与经典论文</td>
+<td>选择架构、工具与记忆内容，避免扩展成完整框架工程</td>
+</tr>
+<tr>
+<td>LLM 深入</td>
+<td><a href="https://cs336.stanford.edu/">CS336</a></td>
+<td>第 11 周后按需读基础部分；完整课程已有 Python、DL、数学前提，不作为当前零基础主教材</td>
+</tr>
+</tbody>
+</table></div>
+<p>链接于 2026-10-25 核对。Sutton 作者站本轮访问超时，书籍信息通过出版社检索结果核对；具体章节页后续阅读时再核验。未要求购买教材；不因官网文档版本号更新而升级本机解释器。环境安装前单独核查依赖兼容性，使用项目虚拟环境。</p>
+<h2>用 AI 学习的具体方法</h2>
+<p>默认先自己尝试 20–30 分钟，然后请 AI 定位卡点、给一条提示或一组小数字。拿到解答后合上答案，在另一个输入或地图上重做，最后解释“为什么这样写”。AI 可承担资源查找、练习设计、审阅、环境检查和重复实验；核心推导、关键代码和结果解释要亲自练习。这是建议的学习方式，随时可按你的要求提供完整讲解。</p>
+<p>每次学习记录：日期、主题、实际时间、资料范围、自己的解释、手算或代码证据、最重要的错误、下一次复测题。模板见 <a href="%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%E6%A8%A1%E6%9D%BF.html">学习记录模板</a>。周末复测本周和上一周；每完成一个关卡，再抽查前一关，防止短期记住后遗忘。</p>
+<p>本轮交付为路线、任务与诊断题，没有替你完成练习，也没有安装依赖或训练模型。下一次学习从前两周任务单的第一次学习开始。</p>
+</article></main></body></html>

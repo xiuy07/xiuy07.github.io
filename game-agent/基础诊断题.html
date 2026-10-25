@@ -1,0 +1,74 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>基础诊断题 · Game Agent</title><link rel="stylesheet" href="study.css"><style>body{margin:0}.document-header,.document-reading{max-width:808px;margin:auto;padding:22px 44px}.document-header{font-size:14px;border-bottom:1px solid var(--line)}.document-reading{padding-top:42px}.document-reading h1{margin-bottom:28px}@media(max-width:760px){.document-header,.document-reading{padding:22px 24px}}</style></head><body><nav class="document-header"><a href="index.html">Game Agent 讲义</a></nav><main class="document-reading"><article class="lesson reading-body"><header class="lesson-heading"><h1>基础诊断题</h1></header>
+<p>2026-10-25；用途是决定学习起点与复测，不是入组考试。先独立作答，再读 <a href="%E5%9F%BA%E7%A1%80%E8%AF%8A%E6%96%AD%E9%A2%98_%E5%8F%82%E8%80%83%E7%AD%94%E6%A1%88.html">参考答案</a>。首次只集中做 1–12 题；不会 RL、PyTorch 或注意力属于正常待学内容。</p>
+<p>每题记 0／1／2：0 为不会；1 为提示后可解释；2 为独立回答并能举例或改条件。每组 8 分分别记录，不能靠总分跳过明显薄弱项。分数只辅助判断，编程和解释证据优先。</p>
+<h2>A. Python（第 1–2 周）</h2>
+<ol>
+<li><code>a=[[0],[1]]; b=a; c=a.copy(); c[0][0]=9</code> 后 a、b、c 分别是什么？三者哪里共享对象？</li>
+<li><code>def add(x, buf=[]): buf.append(x); return buf</code> 连续调用 <code>add(1)</code>、<code>add(2)</code> 会得到什么？如何避免意外共享？</li>
+<li>3 条记录中 2 条成功，步数为 8、20、12，成功的是第一和第三条。写成功率、全部平均步数和成功平均步数；空记录或无成功时怎么办？</li>
+<li>为什么命令行运行时读取相对路径的结果可能与 IDE 中不同？文件不存在和 JSON 格式错误应如何区分？</li>
+</ol>
+<h2>B. 向量与梯度（第 2–4 周）</h2>
+<ol start="5">
+<li>X 是 (5,3)，w 是 (3,)，b 是标量。X@w+b 的形状是什么？若 w 是 (3,1)，再减 (5,) 的 y，结果形状会怎样？</li>
+<li>X=[[1,2],[3,4]]，w=[2,-1]，b=0.5，求预测值，并说明 <code>*</code> 与 <code>@</code> 的区别。</li>
+<li>只有一个样本 x=2、y=3，预测 wx+b，损失 L=(wx+b-y)²/2，当前 w=1、b=0。求 L、两个梯度，并用学习率 0.1 做一步更新。</li>
+<li>对 L(w)=w²，如何用中心差分检查 w=3 时的梯度？为何差分步长并非越小越好？</li>
+</ol>
+<h2>C. 概率与机器学习（第 3–6 周）</h2>
+<ol start="9">
+<li>100 个任务中 40 个有门；这 40 个中 10 个失败。P(失败且有门) 和 P(失败|有门) 各是多少？</li>
+<li>回报样本是 0、0、1、1，求均值和以 n 为分母的方差。为什么 4 次成功率不足以支持方法稳定有效？</li>
+<li>对全部数据先算标准化参数，再划分训练/测试，有什么问题？分别在哪些数据上拟合预处理、选超参数、做最终报告？</li>
+<li>100 个样本只有 5 个正类，总预测负类也有很高准确率。它说明了什么？至少补充哪些观察？</li>
+</ol>
+<h2>D. PyTorch 与神经网络（第 5–7 周）</h2>
+<ol start="13">
+<li><code>loss.backward()</code> 与 <code>optimizer.step()</code> 分别做什么？为什么通常需要清零梯度？</li>
+<li><code>model.eval()</code> 和 <code>torch.no_grad()</code> 分别影响什么？为何评估时常同时使用？</li>
+<li>训练损失下降、验证损失上升，至少提出两类可能原因及排查方法。为什么只看训练准确率不够？</li>
+<li>残差连接 y=x+f(x) 对形状有什么要求？若一个分支从 (B,8) 变成 (B,16)，可以怎样处理？</li>
+</ol>
+<h2>E. 序列决策（第 8–10 周）</h2>
+<ol start="17">
+<li>给定奖励序列 0、1、2，折扣率 0.5，从第一个奖励起的折扣回报是多少？即时奖励与回报有什么不同？</li>
+<li>当前 Q(s,a)=2，r=1，gamma=0.9，下一状态最大 Q 为 4，alpha=0.1。算一次非终止转移的 Q-learning 更新。若真正终止又如何？</li>
+<li>环境完整状态与智能体局部观察有什么不同？给一个必须依靠历史而不能只看当前画面的例子。</li>
+<li>真实终止和外部时间截断有什么区别？为什么不能一概把自举项设为 0？已知转移模型的规划与从交互中学习又有什么区别？</li>
+</ol>
+<h2>F. 注意力与 Agent（第 11–16 周）</h2>
+<ol start="21">
+<li>Q 是 (B,T,d_k)，K 是 (B,T,d_k)，V 是 (B,T,d_v)。单头注意力的分数与输出形状分别是什么？softmax 沿哪个轴？</li>
+<li>用 token 序列 a,b,c,d 构造下一 token 预测输入和标签。为何训练时要防止当前位置看到未来 token？</li>
+<li>大模型输出一段开门程序后，谁执行、谁返回反馈、谁判断任务成功？Memory、Skill、Harness 各起什么作用？</li>
+<li>技能 Agent 成功率更高，但拿到了完整地图且使用两倍模型调用，可以直接说明技能机制更好吗？怎样补对照？</li>
+</ol>
+<h2>使用记录</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>复测日期</th>
+<th>A／8</th>
+<th>B／8</th>
+<th>C／8</th>
+<th>D／8</th>
+<th>E／8</th>
+<th>F／8</th>
+<th>独立编程证据与下一步</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>待填写</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>A 未掌握则从第 1 周开始；B/C 是前四周重点。某组达到 6/8 仍须检查其中是否有关键缺口；压缩阶段还需通过该阶段的独立实现验收。不要把这套题当作完整知识范围。</p>
+</article></main></body></html>
