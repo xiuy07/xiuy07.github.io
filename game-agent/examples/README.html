@@ -58,13 +58,21 @@
 <td>DoorKey随机动作与合法观察记录</td>
 <td>依赖缺失，未实际运行</td>
 </tr>
+<tr>
+<td>09_foundations_lab.py</td>
+<td>按章节使用NumPy，第5课另需PyTorch CPU</td>
+<td>重算11课补充算例，可逐课运行</td>
+<td>运行结果见验证记录</td>
+</tr>
 </tbody>
 </table></div>
 <div class="code-shell"><div class="code-heading"><span>powershell</span><button type="button" data-copy>复制代码</button></div><pre><code><span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">01_trajectory</span><span class="p">.</span><span class="n">py</span>
 <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">02_linear_numpy</span><span class="p">.</span><span class="n">py</span>
 <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">04_torch_mlp</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-save-dir</span> <span class="n">runs</span><span class="p">/</span><span class="n">my-mlp-v1</span>
 <span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">run_all</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-output</span> <span class="n">runs</span><span class="p">/</span><span class="n">my-check-v2</span>
-</code></pre></div><p>04使用新目录保存checkpoint；批量runner也要求新输出目录。单个脚本默认只打印结果，runner保存每份stdout、stderr、命令、耗时、源码哈希与summary.json。使用虚拟环境时将python替换为对应解释器路径。</p>
+<span class="n">python</span> <span class="n">examples</span><span class="p">/</span><span class="n">09_foundations_lab</span><span class="p">.</span><span class="n">py</span> <span class="p">-</span><span class="n">-lesson</span> <span class="n">03</span>
+</code></pre></div><p>09脚本可按01至11选择一课；不带--lesson则核对全部11课算例。先在纸上算，再运行核对输出；随后改一个输入，重新预测。它检查教学数值与机制，不运行MiniGrid或真实模型API。原run_all.py仍只覆盖01至07，不要把新脚本的核对混入旧批次结果。</p>
+<p>04使用新目录保存checkpoint；批量runner也要求新输出目录。单个脚本默认只打印结果，runner保存每份stdout、stderr、命令、耗时、源码哈希与summary.json。使用虚拟环境时将python替换为对应解释器路径。</p>
 <p>08在依赖就绪后可单独运行：<code>python examples/08_minigrid_random.py --output runs/my-doorkey.json</code>。父目录需已存在，输出文件不能已存在。其成功判断明确限定为DoorKey的终止与正目标奖励约定，不是通用的“奖励大于0等于成功”。它不读取隐藏地图，也不调用LLM。</p>
 <p>本次真实运行结果见根目录<a href="../%E9%AA%8C%E8%AF%81%E8%AE%B0%E5%BD%95.html">验证记录</a>和runs/lecture-check-v1。不要将自检通过、教学数据效果或程序打印的预期值当作真实智能体研究结果。</p>
 </article></main></body></html>

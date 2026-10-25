@@ -37,5 +37,7 @@
 <p>本轮额外核对了 Python 控制流/函数、NumPy 广播、PyTorch 自动微分与交叉熵入口、Gymnasium Env，以及 D2L 卷积/ResNet/RNN 页面。Attention、PPO、DPO、DeepSeekMath 核对摘要页，未声称逐节审查原文或完整实现。其余既有来源的前轮核验范围见根目录指南核对记录与基础路线。</p>
 <p>可运行示例的本机依赖、命令与真实输出见根目录验证记录及 runs。某个程序的自检通过，仅表示所列输入和性质得到检查；不代表你已掌握知识，也不代表论文性能复现。</p>
 <h2>建议逐步补充的内容</h2>
+<p>本轮内容细化补充了对象变化、形状与广播、梯度贡献、学习率、概率与分母等逐步算例。配套<code>examples/09_foundations_lab.py</code>可按章节重算数值；这是教学检查，不是新的Agent实验。</p>
+<p>接口表述另核对了<a href="https://docs.python.org/3/tutorial/datastructures.html">Python列表方法</a>、<a href="https://numpy.org/doc/stable/user/basics.broadcasting.html">NumPy广播</a>、<a href="https://docs.pytorch.org/tutorials/recipes/recipes/zeroing_out_gradients.html">PyTorch梯度清零</a>与<a href="https://scikit-learn.org/stable/common_pitfalls.html">scikit-learn数据泄漏说明</a>。数值例子独立构造；网站引用在线文档，而实际运行依赖仍以本机记录为准，不假定在线文档版本与本机版本相同。</p>
 <p>读完本讲义后，依据错误记录补充线性代数、概率与统计证明，再选择深度RL、世界模型或视觉控制的专题。首先完成Game Agent小闭环，避免同时启动多个无关框架。参考书的完整深度与本讲义的入门目标不同，遇到推导和实现不一致时回到具体版本核查。</p>
 </article></main></body></html>
