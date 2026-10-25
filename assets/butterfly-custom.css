@@ -1,8 +1,8 @@
 /* Site-level adaptations for the unmodified official Butterfly theme. */
-@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=6313e7da3372') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=6313e7da3372') format('woff2');font-weight:100 900;font-display:swap}
-@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=6313e7da3372') format('woff2');font-weight:400;font-display:swap}
-@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=6313e7da3372') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Noto Sans SC';src:url('/assets/noto-sans-sc.woff2?v=425b03053191') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Noto Serif SC';src:url('/assets/noto-serif-sc.woff2?v=425b03053191') format('woff2');font-weight:100 900;font-display:swap}
+@font-face{font-family:'Zhi Mang Xing';src:url('/assets/zhi-mang-xing.woff2?v=425b03053191') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:'Journal WenKai';src:url('/assets/lxgw-wenkai.woff2?v=425b03053191') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 :root{--card-bg:rgba(255,255,255,.94);--card-meta:#657984;--font-color:#2b414d;--text-highlight-color:#1b3748;--card-box-shadow:0 8px 32px rgba(29,64,83,.06);--card-hover-box-shadow:0 12px 36px rgba(29,64,83,.1);--preloader-bg:#edf3f6;--preloader-color:#28637b;--xiu-glass:rgba(245,251,255,.78)}
 [data-theme='dark']{--card-bg:rgba(28,45,57,.96);--card-meta:#b0c2cd;--font-color:#d8e5ed;--text-highlight-color:#edf5fa;--card-box-shadow:0 8px 32px rgba(0,0,0,.12);--preloader-bg:#14232d;--preloader-color:#b9dbe8;--xiu-glass:rgba(28,45,57,.82)}
 html{scroll-behavior:smooth;scroll-padding-top:88px}

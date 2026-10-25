@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN"><id>https://xiuy07.github.io/journal/</id><title>修源的日常</title><subtitle>音乐、日常与小作品</subtitle><updated>2026-10-11T04:00:00.000Z</updated><author><name>修源</name></author><link href="https://xiuy07.github.io/journal/" rel="alternate" type="text/html"/><link href="https://xiuy07.github.io/journal/atom.xml" rel="self" type="application/atom+xml"/>
+<entry><id>https://xiuy07.github.io/journal/crazy-cow/</id><title>Crazy Cow：一个奶牛小游戏</title><link href="https://xiuy07.github.io/journal/crazy-cow/" rel="alternate" type="text/html"/><published>2026-10-11T04:00:00.000Z</published><updated>2026-10-11T04:00:00.000Z</updated><category term="小作品"/><summary type="text">在牧场里跑动、吃草、躲开饲养员。可以直接玩，也可以看看源码。</summary></entry>
+<entry><id>https://xiuy07.github.io/journal/music/</id><title>耳机里的片刻</title><link href="https://xiuy07.github.io/journal/music/" rel="alternate" type="text/html"/><published>2026-10-11T04:00:00.000Z</published><updated>2026-10-11T04:00:00.000Z</updated><category term="音乐"/><summary type="text">有些喜欢，不必急着写成清单。留一点位置给音乐。</summary></entry>
+</feed>
