@@ -1,4 +1,4 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="从零学习软件工程的中文讲义，以法律论证标注系统贯穿需求、用例、UML、架构、数据、编码、测试、交付与维护。"><link rel="canonical" href="https://xiuy07.github.io/se/"><meta property="og:title" content="软件工程与计算 II 从需求到交付"><meta property="og:description" content="把理论、案例和作业接成同一条开发流程。"><meta property="og:type" content="article"><title>软件工程与计算 II 从需求到交付 | Finn 的学习讲义</title><style>
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="软件工程理论知识讲义 按完整开发流程学习"><link rel="canonical" href="https://xiuy07.github.io/se/"><title>软件工程理论知识讲义 | Finn 的学习讲义</title><style>
 :root{--bg:#f3f6f9;--paper:#fff;--ink:#162434;--muted:#536376;--accent:#185a8d;--soft:#edf4fa;--line:#d4dfe9;--reader:18px;color-scheme:light}
 *{box-sizing:border-box}html{scroll-behavior:auto;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-size:var(--reader);line-height:1.95}body.practice{--accent:#24634f;--soft:#edf6f1}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:4px}a:hover{text-decoration-thickness:2px}button,input,summary{font:inherit}button,summary{cursor:pointer}button{border:1px solid var(--line);background:white;color:var(--ink);padding:8px 13px;min-height:44px;border-radius:5px}button:hover{background:var(--soft)}:focus-visible{outline:3px solid #277aa9;outline-offset:3px}::selection{background:#cce4f8;color:#102e48}.skip{position:fixed;left:12px;top:-100px;background:#fff;padding:12px;z-index:10}.skip:focus{top:12px}
 aside{position:fixed;inset:0 auto 0 0;width:286px;background:#f7f9fb;border-right:1px solid var(--line);padding:24px 20px 32px;overflow-y:auto;z-index:3;font-size:14px;line-height:1.55}.bookname{font-size:18px;font-weight:700;line-height:1.5;margin:0 0 15px;color:#000}.switch{display:flex;gap:8px;margin-bottom:22px}.switch a{padding:9px 12px;border:1px solid var(--line);border-radius:5px;text-decoration:none;background:white}.switch a[aria-current=page]{color:white;background:var(--accent);border-color:var(--accent)}label.search-label{display:block;margin-bottom:6px;font-weight:600}input[type=search]{width:100%;border:1px solid #a3b6c7;border-radius:5px;background:#fff;padding:10px;font-size:15px;color:var(--ink);min-height:44px}#search-status{font-size:12px;color:var(--muted);min-height:24px;margin:6px 0}#search-results{padding:0;list-style:none;margin:0 0 16px}#search-results:empty{display:none}#search-results a{display:block;font-size:13px;padding:8px;border-bottom:1px solid var(--line);text-decoration:none}#search-results small{display:block;color:var(--muted);font-size:12px;line-height:1.6;margin-top:4px}aside details{border:0;background:none;padding:0;margin:12px 0}aside summary{font-weight:600;margin:0 0 8px;padding:7px 0;color:#000}nav a{display:block;padding:8px 9px;margin:2px 0;border-left:3px solid transparent;border-radius:0 4px 4px 0;text-decoration:none;color:#445569}nav a:hover{background:#eaf0f5}nav a[aria-current=location]{background:var(--soft);color:var(--accent);border-left-color:var(--accent);font-weight:600}.nav-hint{font-size:12px;color:var(--muted);margin-top:18px}
@@ -7,8 +7,8 @@ main{margin-left:286px;padding:42px 6vw 80px;max-width:1320px}.paper{background:
 @media print{@page{size:A4;margin:19mm 16mm}html{scroll-padding:0}body{background:white;font-size:10.5pt;line-height:1.7;color:#000}aside,.toolbar,.skip,.pairlink,.toplink,.endnav{display:none!important}main{margin:0;padding:0;max-width:none}.paper{padding:0;border:0;max-width:none}.topline{font-size:9pt;margin-bottom:12pt}h1{font-size:24pt}h2{font-size:17pt}h3{font-size:12.5pt}.intro{font-size:10.5pt}.chapter{padding:22pt 0 8pt;border-bottom:0}h1,h2,h3,summary{break-after:avoid}p{orphans:3;widows:3;margin-bottom:10pt}table{min-width:0;font-size:9pt}th,td{padding:7pt}tr{break-inside:avoid}thead{display:table-header-group}.table-wrap{overflow:visible;margin:12pt 0}.source,figcaption{font-size:8.5pt}pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow:visible;font-size:8pt;break-inside:auto}figure{break-inside:avoid}.diagram-scroll{overflow:visible;padding:4pt}.diagram-scroll svg.diagram{min-width:0}article details{break-inside:auto;font-size:10pt;background:white;padding:8pt}.references{break-before:page}a{color:#000;text-decoration:none}.flow{font-size:9pt}.flow span{padding:4pt 6pt}footer{font-size:8pt}strong{color:#000}}
 @media print{.flow{break-inside:avoid}.references ul{font-size:8.5pt;line-height:1.5}.references li{margin-bottom:6pt;break-inside:avoid}.references small{font-size:7.5pt}footer{margin-top:14pt;break-inside:avoid}}
 
-main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-decoration:none;color:#7a8b9c;opacity:.4}.heading-link:hover,.heading-link:focus{opacity:1}.chapter-return{font-size:13px;margin-top:24px}.bread{font-size:14px;margin-bottom:18px}.bread a{text-decoration:none}.lead-route{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;margin:24px 0}.lead-route a{padding:8px 12px;background:var(--soft);border:1px solid var(--line);border-radius:4px;text-decoration:none}.demo{margin:30px 0;padding:22px;background:#f1f7fa;border:1px solid #bfd1df;border-radius:5px}.demo h4{margin:0 0 12px;font-size:21px;color:#132e45}.demo p{font-size:15px}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px 22px;margin:15px 0 20px}.demo-grid label{font-size:15px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}.demo-grid select{width:100%;min-height:44px;padding:8px;background:white;border:1px solid #9ab1c4;border-radius:4px;font:inherit;color:inherit}.demo-grid input{width:19px;height:19px;accent-color:var(--accent)}#demo-result{margin:17px 0 0;padding:13px;background:#fff;border-left:3px solid var(--accent)}.progress-text{font-size:12px;color:var(--muted);margin:10px 0}.jump-top{display:block;font-size:13px;margin-bottom:15px}.intro{margin-top:25px}.references p,.references li{overflow-wrap:anywhere}@media(max-width:520px){.demo{padding:17px}.demo-grid{grid-template-columns:1fr}h1{font-size:29px}.lead-route{gap:8px}}@media print{.bread,.lead-route,.chapter-return,.heading-link,.demo{display:none!important}}
-</style></head><body><a class="skip" href="#main">跳到正文</a><aside aria-label="讲义导航"><p class="bookname">软件工程与计算 II</p><div class="switch"><a href="#top" aria-current="page">本篇讲义</a><a href="../handbooks/">全部讲义</a></div><label class="search-label" for="search">在讲义中查找</label><input id="search" type="search" placeholder="例如 冻结 用例 数据库" autocomplete="off"><p id="search-status" role="status" aria-live="polite"></p><ul id="search-results" aria-label="内容搜索结果"></ul><details open><summary>章节目录 共23章</summary><nav aria-label="章节"><a href="#c0" data-chapter="0">0 从一条需求看懂软件开发全程</a><a href="#c1" data-chapter="1">1 先读懂案例 从原文到法律论证结构</a><a href="#c2" data-chapter="2">2 项目启动 团队 范围 质量与配置</a><a href="#c3" data-chapter="3">3 需求基础 把目标写成可验收的约定</a><a href="#c4" data-chapter="4">4 需求获取 访谈 原型 冲突与决策</a><a href="#c5" data-chapter="5">5 用例建模 从角色目标到完整场景</a><a href="#c6" data-chapter="6">6 领域建模 找到概念 身份和关联</a><a href="#c7" data-chapter="7">7 系统顺序图 先约定黑箱行为</a><a href="#c8" data-chapter="8">8 状态建模 让阶段门禁可以执行</a><a href="#c9" data-chapter="9">9 详细顺序图 分配内部对象职责</a><a href="#c10" data-chapter="10">10 教学支持 标准 练习 尝试与反馈</a><a href="#c11" data-chapter="11">11 结构化分析 ERD DFD与数据字典</a><a href="#c12" data-chapter="12">12 需求规格 评审 验收与基线</a><a href="#c13" data-chapter="13">13 体系结构 模块 接口与设计取舍</a><a href="#c14" data-chapter="14">14 交互设计 让保存 提交 冻结各有含义</a><a href="#c15" data-chapter="15">15 详细设计 模块化 信息隐藏与模式</a><a href="#c16" data-chapter="16">16 数据设计 快照 嵌套 引用与并发</a><a href="#c17" data-chapter="17">17 Web与构造 把接口契约变成实现</a><a href="#c18" data-chapter="18">18 测试 从规则到有区分力的证据</a><a href="#c19" data-chapter="19">19 变更与AI协作 追踪 判断与纠偏</a><a href="#c20" data-chapter="20">20 交付与维护 让别人能用 以后能改</a><a href="#c21" data-chapter="21">21 过程模型 按风险和反馈组织增量</a><a href="#c22" data-chapter="22">22 综合复习 用同一案例串起全部产物</a><a href="#references">资料与使用范围</a></nav></details><p class="nav-hint">正文完整可搜索<br>按 / 聚焦搜索 按 Esc 清除<br>自测参考答案可点击展开</p></aside><main id="main"><article class="paper" id="top"><header><p class="bread"><a href="../handbooks/">Finn 的学习讲义</a> / 软件工程与计算 II</p><div class="topline"><span>完整学习讲义 2026年10月26日版</span><div class="toolbar" aria-label="阅读工具"><button type="button" id="font-size" aria-pressed="false">放大字号</button><button type="button" id="print">打印或存为PDF</button></div></div><h1>软件工程与计算 II 从需求到交付</h1><p class="roadmap">理论 案例 作业与验证 放在同一条开发主线上</p><div class="lead-route"><a href="#c0">从头学习</a><a href="#c5">理解用例作业</a><a href="#c9">理解顺序图作业</a><a href="#c18">设计验证证据</a></div><div class="intro"><p>这份讲义面向第一次系统学习软件工程的同学，以裁判文书论证结构标注系统贯穿项目启动、需求、分析、设计、构造、测试、交付与维护。每一阶段把概念与案例放在一起，解释为什么要做、怎样做、留下什么，以及怎样检查。</p><p>全篇围绕同一条规则反复推导：<strong>命题集先裁定并冻结，关系标注再基于统一版本展开。</strong>把这条规则从用例讲到状态、接口、数据库和测试，就能理解各份工程产物为什么必须互相一致。</p><p><strong>阅读约定：</strong>资料明确、版本差异、教学示例和待确认事项分别标注。演示不是已运行系统，示例不是老师新增的提交规定。建议从第0章顺序阅读，做作业时通过目录和搜索回查。</p></div></header><section class="chapter" id="c0" aria-labelledby="h0"><h2 id="h0">0 从一条需求看懂软件开发全程</h2><h3 id="c0-s1">0.1 软件项目最后交付的是什么 <a class="heading-link" href="#c0-s1" aria-label="链接到本小节">#</a></h3>
+.bread{font-size:14px;margin-bottom:20px}.bread a{text-decoration:none}.heading-link{font-size:14px;color:#6c8194;text-decoration:none}.switch{flex-wrap:wrap}.doc-purpose{font-size:16px;color:var(--muted);margin:18px 0 24px}.book-links{display:flex;gap:12px;flex-wrap:wrap}.book-links a{display:inline-flex;align-items:center;padding:6px 13px;border:1px solid var(--line);border-radius:4px;text-decoration:none;font-size:14px}.demo{margin:28px 0;padding:20px;background:var(--soft);border:1px solid var(--line);border-radius:5px}.demo h4{font-size:20px;margin:0 0 12px}.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:20px}.demo-grid label{font-size:15px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}.demo-grid select{width:100%;font:inherit;min-height:44px;padding:8px;background:#fff;color:inherit;border:1px solid #91a8ba}.demo-grid input{width:18px;height:18px}#demo-result{background:white;padding:12px;margin:18px 0 0;border-left:3px solid var(--accent)}@media(max-width:520px){.demo-grid{grid-template-columns:1fr}}@media print{.bread,.doc-purpose,.heading-link,.demo{display:none!important}}
+</style></head><body class="theory"><a class="skip" href="#main">跳到正文</a><aside aria-label="文档导航"><p class="bookname">软件工程与计算 II</p><div class="switch"><a href="/se/" aria-current="page">理论知识讲义</a><a href="/se/homework/" >作业讲解</a></div><label class="search-label" for="search">在本篇中查找</label><input id="search" type="search" placeholder="例如 冻结 用例 测试" autocomplete="off"><p id="search-status" role="status" aria-live="polite"></p><ul id="search-results" aria-label="内容搜索结果"></ul><details open><summary>章节目录 共21章</summary><nav aria-label="章节"><a href="#c0" data-chapter="0">0 先看懂整个开发流程</a><a href="#c1" data-chapter="1">1 软件工程基础  为什么不能只写代码</a><a href="#c2" data-chapter="2">2 项目启动  先把协作和范围建立起来</a><a href="#c3" data-chapter="3">3 需求工程  先弄清要解决什么问题</a><a href="#c4" data-chapter="4">4 需求获取  从材料和用户那里找证据</a><a href="#c5" data-chapter="5">5 用例与用户故事  说明用户怎样完成目标</a><a href="#c6" data-chapter="6">6 面向对象分析  找到业务概念及其关系</a><a href="#c7" data-chapter="7">7 动态分析  读懂系统顺序图 详细顺序图和状态图</a><a href="#c8" data-chapter="8">8 结构化分析  从数据和处理过程理解系统</a><a href="#c9" data-chapter="9">9 需求规格 确认与变更  形成大家共同遵守的约定</a><a href="#c10" data-chapter="10">10 体系结构设计  把系统分成能够协作的大块</a><a href="#c11" data-chapter="11">11 人机交互设计  让用户看得懂 做得到 知道结果</a><a href="#c12" data-chapter="12">12 详细设计  给对象分配职责</a><a href="#c13" data-chapter="13">13 模块化与信息隐藏  控制变化的影响</a><a href="#c14" data-chapter="14">14 设计模式  在需要的变化处使用已有经验</a><a href="#c15" data-chapter="15">15 Web开发基础  看懂浏览器到数据库的一次请求</a><a href="#c16" data-chapter="16">16 软件构造与AI协作  把设计变成可靠实现</a><a href="#c17" data-chapter="17">17 软件测试  用有区分力的证据检查行为</a><a href="#c18" data-chapter="18">18 软件交付与维护  让别人能用 以后能改</a><a href="#c19" data-chapter="19">19 软件过程模型  决定怎样组织反复开发</a><a href="#c20" data-chapter="20">20 复习与查阅  把知识连成一条链</a><a href="#references">资料与阅读说明</a></nav></details><p class="nav-hint">理论与作业分别阅读<br>按 / 搜索 按 Esc 清除</p></aside><main id="main"><article class="paper" id="top"><header><p class="bread"><a href="/handbooks/">Finn 的学习讲义</a> / 软件工程与计算 II</p><div class="topline"><span>理论知识讲义 共21章</span><div class="toolbar" aria-label="阅读工具"><button type="button" id="font-size" aria-pressed="false">放大字号</button><button type="button" id="print">打印或存为PDF</button></div></div><h1>软件工程理论知识讲义</h1><p class="doc-purpose">先把概念和方法学清楚 再对照作业应用</p><div class="intro"><p>这份讲义从零讲解软件工程的概念与方法，按照项目启动、需求、分析、设计、构造、测试、交付和维护的正常顺序展开。每个知识点先说明解决什么问题，再用简单例子推导做法，并配上比较、自测与示意图。</p><p>法律论证标注系统只作为帮助理解理论的贯穿例子。具体用例UC2、UC6、UC12、顺序图SD1至SD4及原型修订，放在独立的<a href="/se/homework/">作业讲解</a>中，学习时可以按章节对照。</p></div></header><section class="chapter" id="c0" aria-labelledby="h0"><h2 id="h0">0 先看懂整个开发流程</h2><h3 id="c0-s1">0.1 软件项目最后交付的是什么 <a class="heading-link" href="#c0-s1" aria-label="链接到本小节">#</a></h3>
 <p>假设老师说：“做一个系统，让两名标注员分别标注裁判文书，由裁定者形成统一结果。”你可能马上想到做网页、建数据库。先停一下：两个人什么时候能看对方的结果？命题都没确定，关系应该连到谁？裁定后还能修改吗？这些问题决定代码应当怎样工作。</p>
 <p>软件不仅包括可执行程序，还包括支撑运行的数据、配置和必要文档。一个能在你电脑上打开的页面，只证明部分程序能运行。完整交付还要让别人理解怎么使用、能够重现运行，并知道出问题怎样恢复。</p>
 <div class="flow"><span>项目启动</span><b>→</b><span>需求获取与分析</span><b>→</b><span>需求规格与确认</span><b>→</b><span>体系结构</span><b>→</b><span>交互与详细设计</span><b>→</b><span>构造与集成</span><b>→</b><span>测试与交付</span><b>→</b><span>维护与演化</span></div>
@@ -16,93 +16,51 @@ main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-d
 <h3 id="c0-s2">0.2 每一步解决一个不同的问题 <a class="heading-link" href="#c0-s2" aria-label="链接到本小节">#</a></h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">阶段</th><th scope="col">核心问题</th><th scope="col">典型产物</th></tr></thead><tbody><tr><td>项目启动</td><td>谁来做，在什么限制下做</td><td>范围、分工、计划、仓库、风险清单</td></tr><tr><td>需求工程</td><td>用户到底需要系统做什么</td><td>用例、业务规则、分析模型、需求规格</td></tr><tr><td>体系结构设计</td><td>系统分成哪些大块，如何协作</td><td>模块图、接口、部署图、架构决策</td></tr><tr><td>详细设计</td><td>每块内部由哪些对象完成任务</td><td>设计类图、详细顺序图、算法、数据设计</td></tr><tr><td>软件构造</td><td>怎样把设计实现并持续集成</td><td>代码、构建配置、单元测试、评审记录</td></tr><tr><td>验证与交付</td><td>有没有做对，别人能否使用</td><td>测试证据、部署包、操作与维护文档</td></tr><tr><td>维护与演化</td><td>变化来了，怎样可靠修改</td><td>变更记录、修复、新版本、回归结果</td></tr></tbody></table></div>
 <h3 id="c0-s3">0.3 用一条需求贯穿全书 <a class="heading-link" href="#c0-s3" aria-label="链接到本小节">#</a></h3>
-<p>本讲义反复使用一个案例规则：<strong>命题集裁定并冻结后，才能开始关系标注。</strong>需求阶段要定义“冻结”的条件；设计阶段要确定谁控制状态；实现阶段要阻止非法请求；测试阶段要证明冻结前不能写、冻结后引用正确版本；维护阶段要处理命题变更对旧关系的影响。</p>
+<p>本书反复使用一个案例规则：<strong>命题集裁定并冻结后，才能开始关系标注。</strong>需求阶段要定义“冻结”的条件；设计阶段要确定谁控制状态；实现阶段要阻止非法请求；测试阶段要证明冻结前不能写、冻结后引用正确版本；维护阶段要处理命题变更对旧关系的影响。</p>
 <p>你暂时不必懂法律论证。把“命题”理解为从文书中识别出的判断，把“关系”理解为这些判断之间的支持、反对等连接即可。系统负责保存与检查结构，人的业务判断决定连接在语义上是否成立。</p>
 <p><strong>本章自测：</strong>“页面上按钮变灰了”足以证明冻结前不能新增关系吗？</p>
 <details><summary>展开答案</summary><p>不足。用户可能直接调用接口，页面状态也可能过期。还要检查服务端是否依据权限、阶段和版本拒绝写入，以及数据库里是否没有新增关系。</p></details>
+<p class="source">课件对应：课程概览；01 软件工程基础；软件交付。</p>
 <h3 id="c0-s4">0.4 怎样把这份讲义当作一门课来学 <a class="heading-link" href="#c0-s4" aria-label="链接到本小节">#</a></h3>
 <p>第一次通读时，先抓住一条线：<strong>用户问题 → 可验收需求 → 分析模型 → 设计契约 → 实现 → 验证 → 交付 → 变更。</strong>每到一个阶段，问自己“输入是什么、我需要作出什么决定、留下什么产物、下一步靠它做什么”。这样就不会把用例、类图和数据库当成彼此独立的几次作业。</p>
 <p>本讲义把一般方法与裁判文书论证结构标注案例放在同一章。概念讲解回答为什么，案例讲解说明怎么落地，练习检查你能否自己推导。第一次看不懂框架名可以先略过；业务对象、状态、版本和验收条件不要跳过。</p>
 <p><strong>本讲义的边界：</strong>标注指南用于说明业务规则，原型用于理解交互意图，已有用例和顺序图用于分析修订。接口、表名、代码和测试编号若标为教学示例，就不是对已运行系统的描述。未决策问题保持待确认，不通过编写讲义替需求方作决定。</p>
 <h3 id="c0-s5">0.5 准备一张贯穿全程的练习纸 <a class="heading-link" href="#c0-s5" aria-label="链接到本小节">#</a></h3>
-<p>在纸上写出五栏：规则、谁执行、操作条件、成功变化、失败保证。以“冻结后才能标关系”为第一行。接下来每章只为这条规则增加一层解释，直到能把它从业务目标讲到数据库和测试。你不需要一次记住整套软件工程术语。</p><p class="source">资料对应 课程概览 软件工程基础 软件交付。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c1" aria-labelledby="h1"><h2 id="h1">1 先读懂案例 从原文到法律论证结构</h2><h3 id="c1-s1">1.1 系统到底处理什么 <a class="heading-link" href="#c1-s1" aria-label="链接到本小节">#</a></h3>
-<p>系统面向裁判文书说理部分，把原文分成要素，为要素标类型，再描述命题之间的关系，最终形成结构化数据和论证图。案件基本信息与法律论证标注是两个相关但不同的任务：案号、法院、日期帮助管理材料，命题与关系表达说理结构。</p>
-<p>以指南中的劳务报酬例子为基础，先只看三段：P7“根据原告提交的欠条、微信转账记录可以认定”，P8“被告尚欠原告劳务报酬11000元”，P9“被告应向原告支付该11000元”。指南把前两者列为SF，P9列为SM。这里是在学习所给指南的标注方式，不进行案件法律意见判断。</p>
-<p>要素类型和论证角色不是同一回事。SF、SM等是判断性质；“前提、子结论、结论”是某个判断在关系结构中的作用。指南第3节说明，后者不作为独立标注项目，而由关系结构分析推导。</p>
-<h3 id="c1-s2">1.2 切割不是遇到标点就结束 <a class="heading-link" href="#c1-s2" aria-label="链接到本小节">#</a></h3>
-<p>修订指南2.3节要求先按句号与分号初切，再检查其中逗号分隔的子句。连续子句性质相同、相互没有明显支持或反对关系时，可以作为一个要素；性质不同或存在相关论证关系时，需要进一步区分。</p>
-<p>引号内容有特殊切割要求；非论证成分一般按句号处理，指南还列出判决依据、态度声明等例外；“因此”“综上来看”等过渡语词与后面的第一个要素一起切割。自动切割只能提供候选，人工仍需依规则检查。</p>
-<p>为什么先统一切割？如果一个人把两句话标成一个要素，另一个人分成两个，即使他们都写SF，也不能直接逐行比标签。先对齐边界，再比较类型，能减少把同一个边界问题重复算成多种差异。</p>
-<h3 id="c1-s3">1.3 命题类型怎样记 <a class="heading-link" href="#c1-s3" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">维度</th><th scope="col">个别判断</th><th scope="col">一般判断</th></tr></thead><tbody><tr><td>事实</td><td>SF，具体案件对象的事实</td><td>GF，经验、常识、科学规律等一般事实</td></tr><tr><td>规范</td><td>SM，具体主体的法律意义评价</td><td>GM，一般规范基础</td></tr></tbody></table></div>
-<p>GM在修订指南中分为GM-L法律条文、GM-I法律解释、GM-U习惯与行业惯例、GM-M道德与价值观念、GM-O其他规范判断。SM中单列SM-C合同及合同解释。指南所称“司法解释”属于其法律条文类别，不应因为名称带“解释”就机械标为GM-I。</p>
-<p>还要保存非命题要素：IS争议焦点、AS态度声明、SS总结性陈述、JG判决依据、JD判决结果、Non-O其他非论证成分。不能把所有文本强塞进四类命题，也不能把这些要素毫无区别地放进命题关系端点列表。具体标注范围按材料类型与确认规则确定。</p>
-<h3 id="c1-s4">1.4 五种关系先理解含义 <a class="heading-link" href="#c1-s4" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">关系</th><th scope="col">读法</th><th scope="col">需要避免的误解</th></tr></thead><tbody><tr><td>S(P1,P2)</td><td>P1为P2成立提供理由</td><td>不是简单的上下句相邻；不自动补全传递边</td></tr><tr><td>A(P1,P2)</td><td>P1反对P2</td><td>出现“但是”不一定构成反对，需要找到实际反对对象</td></tr><tr><td>J(P1,P2)</td><td>两者共同构成缺一不可的组合</td><td>两条可独立支持的理由不应强行组合</td></tr><tr><td>M(Ps,Pg)</td><td>个别判断与一般判断形成匹配，方向由个别指向一般</td><td>不能当作没有方向的任意配对</td></tr><tr><td>I(P1,P2)</td><td>两者语义同一</td><td>一般规则的具体化不等于同一</td></tr></tbody></table></div>
-<p>指南要求J按序号组织，允许发生在不同命题要素之间；不能把“通常同类”实现成“类型不同一律禁止”。I要求同一而非具体化，并说明后续使用最大序号命题继续标注。涉及内容语义的判断由人完成，程序的类型检查只是辅助。</p>
-<h3 id="c1-s5">1.5 嵌套关系为什么影响软件设计 <a class="heading-link" href="#c1-s5" aria-label="链接到本小节">#</a></h3>
-<p>先看两个独立支持：S(P1,P3)、S(P2,P3)。它们表示每一条都是自己的理由。S(J(P1,P2),P3)表示两者合起来才支持P3，含义不同。</p>
-<p>再看A(P4,S(P1,P3))：P4攻击的是“P1支持P3”这条连接，而不是直接攻击P1或P3。如果数据表只有fromProposition和toProposition两个字段，就保存不了这个对象。</p>
-<p>一个教学用分步结构是：R1=J(P1,P2)，R2=M(R1,P3)，R3=S(R2,P4)，R4=A(P5,R3)。P3需为相应一般判断，P1、P2及整个结构是否满足语义，仍由标注规则与人判断。这串表达说明：关系本身也可能成为另一关系的操作数。</p>
-<h3 id="c1-s6">1.6 图示是数据的一种表达 <a class="heading-link" href="#c1-s6" aria-label="链接到本小节">#</a></h3>
-<p>命题用矩形，图中主要显示序号；S用实心圆与有向边，A用空心圆与有向边，J用带加号圆与无向连线，M用带加号圆与有向边，I用矩形框内斜线。仅用不同颜色的直线不能完整实现指南图元规范。</p>
-<p>修订指南6.3节对某些嵌套做显示简化：组合与匹配可能共享一个加号节点；匹配再支持时可以从被匹配的一般判断处画支持起点。<strong>显示简化不等于逻辑数据删掉中间关系。</strong>数据库仍应保留可重现的完整层级。</p>
-<p><strong>本章自测：</strong>为什么一个只能“选两个P编号并连线”的关系编辑器不够？</p>
-<details><summary>展开答案</summary><p>J与I可能有多个成员；M与S可以包含其他关系；A可以指向支持关系。编辑器需要按关系类型提供成员集合或有方向的操作数，并允许引用合适的关系对象。</p></details>
-<h3 id="c1-s7">1.7 一个可以反复使用的完整小样本 <a class="heading-link" href="#c1-s7" aria-label="链接到本小节">#</a></h3>
-<p>为了让后面的模型都有具体对象，使用指南文书一中的四个命题，重新编号为E1至E4。这里的E表示示例稳定ID，不是指南原有的显示序号。</p>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">稳定ID</th><th scope="col">示例文本</th><th scope="col">指南中的位置与类型</th></tr></thead><tbody><tr><td>E1</td><td>原、被告之间系劳务合同关系</td><td>原P4，SM</td></tr><tr><td>E2</td><td>原告已依约提供劳务</td><td>原P5，SF</td></tr><tr><td>E3</td><td>当事人应当按照约定全面履行自己的义务</td><td>原P2，GM-L</td></tr><tr><td>E4</td><td>被告应按照原、被告之间的约定给付劳务报酬</td><td>原P6，SM</td></tr></tbody></table></div>
-<p>按照指南示例的组合思路，可用R1=J(E1,E2)、R2=M(R1,E3)、R3=S(R2,E4)逐层表达。先把具体关系保存在结构里，再按指南图示规则生成显示。这是对所给样本的教学重编号，不能把它作为所有文书都应具有的固定推理模板。</p>
-<p>现在让甲乙分别完成切割和类型标注，裁定者确认统一结果，生成PV-1。关系标注员丙丁的关系版本都引用PV-1。他们可以对R3是否成立有不同答案，但至少讨论的是同一批E1至E4。若甲的E2与乙的E2来自不同切割，直接对比关系编号就会失真。</p>
-<h3 id="c1-s8">1.8 实际操作时先检查哪一层 <a class="heading-link" href="#c1-s8" aria-label="链接到本小节">#</a></h3>
-<p>先问选中的原文区间是否对；再问它是命题还是非命题；再问命题性质；再问关系类型、方向和嵌套；最后核对图示。前一层错误会传播到后一层。例如把两个命题误合并，可能同时表现为“标签不一致”“关系缺失”和“图中少节点”，它们未必是三个独立缺陷。</p>
-<details><summary>练习 一个边界错误为什么会造成多项差异</summary><p>假设甲把“E1文本，E2文本”切成一个要素，乙切成两个。先识别这是边界与对齐问题，不能直接认定甲少标了一条J、一个M和多个标签。应根据确认的对齐规则先还原比较单位，再分类报告后续差异。</p></details><p class="source">资料对应 标注指南v1.2修订版第2至7节。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c2" aria-labelledby="h2"><h2 id="h2">2 项目启动 团队 范围 质量与配置</h2><h3 id="c2-s1">2.1 软件工程研究怎样持续做成软件 <a class="heading-link" href="#c2-s1" aria-label="链接到本小节">#</a></h3>
+<p>在纸上写出五栏：规则、谁执行、操作条件、成功变化、失败保证。以“冻结后才能标关系”为第一行。接下来每章只为这条规则增加一层解释，直到能把它从业务目标讲到数据库和测试。你不需要一次记住整套软件工程术语。</p><p class="pairlink"><a href="/se/homework/#c0">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c1" aria-labelledby="h1"><h2 id="h1">1 软件工程基础  为什么不能只写代码</h2><h3 id="c1-s1">1.1 软件工程研究怎样持续做成软件 <a class="heading-link" href="#c1-s1" aria-label="链接到本小节">#</a></h3>
 <p>软件工程强调用系统化、规范化、可度量的方法开展软件开发、运行和维护。通俗地说，就是让“做出满足需要的软件”成为团队可以规划、检查、复现和改进的工作。</p>
 <p>小程序的主要难点可能是某个算法。系统变大后，难点还包括：不同人对需求的理解不一样；一个模块改动影响其他模块；运行环境不同；人员更换后无人理解旧代码。软件工程用需求、设计、管理和验证来控制这些问题。</p>
 <p>软件具有复杂性、易变性和不可见性。屏幕截图能展示界面，却无法直接展示内部依赖、状态和数据一致性，所以需要模型、文档、代码结构和测试证据帮助大家理解它。软件不会像机械零件那样物理磨损，但持续修改会引入结构退化与缺陷，运行环境也会变化。</p>
-<h3 id="c2-s2">2.2 几个经常混淆的词 <a class="heading-link" href="#c2-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c1-s2">1.2 几个经常混淆的词 <a class="heading-link" href="#c1-s2" aria-label="链接到本小节">#</a></h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">名称</th><th scope="col">它回答什么</th><th scope="col">本案例中的例子</th></tr></thead><tbody><tr><td>需求</td><td>系统需要提供什么能力和约束</td><td>未冻结时拒绝新增关系</td></tr><tr><td>分析</td><td>怎样理解问题和业务概念</td><td>找到命题版本、关系版本、裁定等概念</td></tr><tr><td>设计</td><td>怎样组织解决方案</td><td>由流程服务协调冻结与开放关系轮</td></tr><tr><td>实现</td><td>怎样用程序落实方案</td><td>写状态检查、事务和接口</td></tr><tr><td>验证</td><td>产物是否满足规定</td><td>测试未冻结请求被拒绝</td></tr><tr><td>确认</td><td>规定和产品是否满足实际需要</td><td>标注员认可分轮流程能够完成工作</td></tr></tbody></table></div>
 <p>英文 verification 常译“验证”，validation 常译“确认”。不同课件可能也使用“需求验证”统称需求质量检查。理解时看检查对象：是在检查文档内部是否正确一致，还是在与真实涉众确认需要。</p>
-<h3 id="c2-s3">2.3 软件质量不能只看有没有报错 <a class="heading-link" href="#c2-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c1-s3">1.3 软件质量不能只看有没有报错 <a class="heading-link" href="#c1-s3" aria-label="链接到本小节">#</a></h3>
 <p>系统能打开，但学生作答会覆盖正式数据，仍然是不合格的。质量既包括符合约定，也包括实际使用价值。正确性、可靠性、性能、安全性、可用性、可维护性等质量目标会影响需求和设计。</p>
 <p>质量保障是一组贯穿过程的活动。需求评审检查“是不是做错了目标”；设计评审检查“结构是否支持目标”；静态分析在不运行程序时检查潜在问题；动态测试通过运行观察行为；配置审计检查发布内容是否与批准的版本一致。这些活动互相补充。</p>
 <p><strong>学到这里应能说清：</strong>为什么“代码生成出来”与“软件工程任务完成”之间，还隔着需求确认、集成、验证和交付。</p>
-<h3 id="c2-s4">2.4 项目计划从目标与边界开始 <a class="heading-link" href="#c2-s4" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：01 软件工程基础；01 项目管理基础；复习提纲第一二章与第四章。</p><p class="pairlink"><a href="/se/homework/#c0">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c2" aria-labelledby="h2"><h2 id="h2">2 项目启动  先把协作和范围建立起来</h2><h3 id="c2-s1">2.1 项目计划从目标与边界开始 <a class="heading-link" href="#c2-s1" aria-label="链接到本小节">#</a></h3>
 <p>先说明“给谁解决什么问题”，再约定首版范围。对标注系统，可以先让一份文书完整经过独立标注、裁定、冻结、关系标注和导出。批量统计是否进入首版，应依据时间和需求决定。</p>
 <p>范围、时间、成本互相影响，质量是约束下必须管理的结果。时间和人数固定时，新加功能往往意味着删减其他范围、延后交付或增加风险。不能仅靠“大家再努力一点”消除工作量。</p>
 <p>把工作拆成可交付任务，比“前端一个人、后端一个人”更具体。例如“完成冻结接口及非法状态测试”就能验收。给每项任务记录负责人、依赖、完成条件和预计工作量；通过里程碑检查重要结果，而非只统计忙了多久。</p>
-<h3 id="c2-s5">2.5 团队结构与分工 <a class="heading-link" href="#c2-s5" aria-label="链接到本小节">#</a></h3>
+<h3 id="c2-s2">2.2 团队结构与分工 <a class="heading-link" href="#c2-s2" aria-label="链接到本小节">#</a></h3>
 <p>主程序员团队由核心负责人集中决策，协调快，但依赖关键个人；民主团队共同讨论，能发挥集体经验，但决策成本可能较高；开放团队结合明确职责与开放交流。选择取决于规模、任务和成员经验，不存在万能结构。</p>
 <p>角色是责任，不一定等于某个固定的人。需求、架构、开发、测试可以分阶段轮换主导，但关键知识需要共享。一个功能至少应有另一名成员能够解释、评审和接手。</p>
-<h3 id="c2-s6">2.6 风险管理要提前产生行动 <a class="heading-link" href="#c2-s6" aria-label="链接到本小节">#</a></h3>
+<h3 id="c2-s3">2.3 风险管理要提前产生行动 <a class="heading-link" href="#c2-s3" aria-label="链接到本小节">#</a></h3>
 <p>风险是尚未发生的不确定事件，问题是已经发生的障碍。例如“指南解析可能不可靠”是风险；“今天导入文件报错”是问题。识别风险后，评估发生可能性与影响，安排应对和观察信号。</p>
 <p>对解析风险，行动可以是尽早用三种真实样本做技术试验，并准备人工确认入口。风险清单若只写“加强沟通”“注意进度”，没有责任人和触发措施，就很难起作用。</p>
-<h3 id="c2-s7">2.7 配置管理管理的不只是代码 <a class="heading-link" href="#c2-s7" aria-label="链接到本小节">#</a></h3>
+<h3 id="c2-s4">2.4 配置管理管理的不只是代码 <a class="heading-link" href="#c2-s4" aria-label="链接到本小节">#</a></h3>
 <p><strong>配置项</strong>是需要受控管理的制品，例如需求文档、指南、模型、源码、数据库迁移和部署配置。<strong>版本</strong>表示某个制品的一次状态。<strong>基线</strong>是经过评审、作为后续工作依据的受控版本，修改需要约定的变更程序；不是所有 Git 提交都自动构成基线。</p>
 <p>配置管理包括标识配置项、版本管理、变更控制、状态报告、配置审计及发布管理。比如需求已改为六阶段流程，而顺序图、数据库和代码仍按四阶段实现，这就是制品之间不一致，不能只靠“Git 里都有”解决。</p>
 <p>Git 中，工作区是正在编辑的文件，暂存区是准备提交的变更，本地仓库保存提交历史，远程仓库用于团队共享。commit 保存本地历史，push 才把提交传到远程；分支用于隔离工作，合并时还需要检查业务冲突。</p>
 <p>建议在短分支完成一个明确任务，提交后进行评审和自动检查，再合并到主干。具体使用 main、dev 还是其他名称由团队约定。CI 指持续集成中的自动构建和检查；CD 可能指持续交付或持续部署，后者才强调自动进入生产环境，不能混为一谈。</p>
 <p><strong>本章自测：</strong>“把命题标签配置文件提交到 Git”能否替代系统中保存每个任务绑定的指南版本？</p>
 <details><summary>展开答案</summary><p>不能。Git 管理开发制品，业务数据还需要记录某次任务实际使用的指南版本、原文版本和作答版本。两个层面的版本管理相关，但对象不同。</p></details>
-<h3 id="c2-s8">2.8 先写一页项目目标 <a class="heading-link" href="#c2-s8" aria-label="链接到本小节">#</a></h3>
-<p>可以用这段教学示例作为讨论起点：“本系统为法学研究与教学提供论证结构标注能力。正式模式形成经过多人独立标注和裁定的可追溯结果；教学模式支持基于教师标准的练习与反馈。首版优先完成一份文书从创建到导出的闭环。”</p>
-<p>这段话定义目标，后续还需要明确首版是否覆盖批量上传、OCR、自动差异比对、统计和多种导出。不要把原型里展示过的全部入口默认变成首版必须做完的范围。</p>
-<h3 id="c2-s9">2.9 分工按交付链路组织 <a class="heading-link" href="#c2-s9" aria-label="链接到本小节">#</a></h3>
-<p>可以让不同成员分别主导需求与规则、服务端与流程、工作台与图示、测试与交付，再轮换主导和交叉评审。每项功能有一个责任人，同时安排另一人能解释关键行为。</p>
-<p>把“大作业”拆成“指南版本绑定”“独立提交与隔离”“命题裁定冻结”“关系嵌套编辑”“教学练习”“终稿导出”等任务，每项写输入、产出与完成条件。“开发后端”范围太大，无法反映实际完成程度。</p>
-<h3 id="c2-s10">2.10 仓库最先应该有什么 <a class="heading-link" href="#c2-s10" aria-label="链接到本小节">#</a></h3>
-<p>README说明目标、目录、环境和运行入口；docs保存需求、设计、决策与过程记录；src保存源码；tests保存验证代码；部署目录保存迁移和配置示例。目录名称可自定，重要的是别人能找到。</p>
-<p>先让最小项目可构建，并在CI中运行编译和基础检查。随后让每条真实业务规则进入相应测试。需求、指南与模型都需要版本记录，不能只把最终代码提交一次。</p>
-<h3 id="c2-s11">2.11 P0和P1哪些内容可借鉴 <a class="heading-link" href="#c2-s11" aria-label="链接到本小节">#</a></h3>
-<p>CampusHub的P0要求团队章程、轮换、工具评估、签署AI协作契约、Git与CI；契约模板还列出人工审查、提交标记和手写核心函数要求。P1列出调研、SRS、用例、用户故事、AI盲区对比和反思日志。</p>
-<p>这些文件中的4人、10周、20份问卷、8人次访谈、15个用例或故事等，属于该方案的原要求。它们不能仅因在同一个课件目录中，就自动成为法律论证作业的评分标准。可借鉴方法，数量和提交规定要对应当前任务书。</p>
-<p><strong>本章产出：</strong>目标与范围、分工、初始计划、仓库、环境、风险、已确认的过程规则。此处讲的是你应该准备什么，没有假定这些材料已经存在。</p>
-<h3 id="c2-s12">2.12 把目标拆成可验收的任务 <a class="heading-link" href="#c2-s12" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：01 02 项目管理基础；00 02 开发工具链与 Git 工作流；P0。</p>
+<h3 id="c2-s5">2.5 把目标拆成可验收的任务 <a class="heading-link" href="#c2-s5" aria-label="链接到本小节">#</a></h3>
 <p>“本周做完冻结功能”还太粗。可拆成：确认冻结条件；更新用例与状态；定义冻结请求和错误；实现快照与状态的共同提交；实现并发控制；补充成功与拒绝测试；在页面中显示新基准。每个任务都有产物与检查方式，才能知道卡在哪里。</p>
 <p>估算时区分工作量和日历时间。一个需要6人时的任务，若依赖周五的业务确认，未必周二投入两个人就能提前完成。记录依赖、缓冲与主要不确定性，比填写一个过于精确却没有依据的日期更实用。</p>
 <p><strong>完成定义示例：</strong>代码已合并；接口契约与SRS一致；正常和非法路径已实际验证；别人能按说明运行；相关模型已更新。它是团队关于“完成”的约定，不是要求每个小修改都写一篇大报告。</p>
-<h3 id="c2-s13">2.13 质量 风险和配置怎样一起工作 <a class="heading-link" href="#c2-s13" aria-label="链接到本小节">#</a></h3>
-<p>风险清单说“回退可能破坏关系引用”，设计就要安排版本策略；测试计划就要包含旧版保留与影响关系复核；配置管理就要让需求、模型、代码与验证记录属于同一次受控修改。三张表彼此没有关联，就容易只剩形式。</p><p class="source">资料对应 软件工程基础 项目管理基础 Git工作流 P0与P1方法示例。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c3" aria-labelledby="h3"><h2 id="h3">3 需求基础 把目标写成可验收的约定</h2><h3 id="c3-s1">3.1 需求有三个常用层次 <a class="heading-link" href="#c3-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c2-s6">2.6 质量 风险和配置怎样一起工作 <a class="heading-link" href="#c2-s6" aria-label="链接到本小节">#</a></h3>
+<p>风险清单说“回退可能破坏关系引用”，设计就要安排版本策略；测试计划就要包含旧版保留与影响关系复核；配置管理就要让需求、模型、代码与验证记录属于同一次受控修改。三张表彼此没有关联，就容易只剩形式。</p><p class="pairlink"><a href="/se/homework/#c3">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c3" aria-labelledby="h3"><h2 id="h3">3 需求工程  先弄清要解决什么问题</h2><h3 id="c3-s1">3.1 需求有三个常用层次 <a class="heading-link" href="#c3-s1" aria-label="链接到本小节">#</a></h3>
 <p><strong>业务需求</strong>说明组织为什么做项目，例如“建立经过复核的法律论证数据集”。<strong>用户需求</strong>说明用户为了这个目标要完成什么工作，例如“裁定者希望比较多人结果并确认统一命题集”。<strong>系统级需求</strong>进一步规定系统应提供的具体行为，例如“所需提交不齐时，冻结请求应被拒绝并列出缺失人员”。</p>
 <p>三个层次由目的逐步走向具体行为。不能把“使用 MySQL”当成用户的业务目标，也不能只写“提高效率”就期待开发者实现出来。</p>
 <h3 id="c3-s2">3.2 层次与类型是两条分类轴 <a class="heading-link" href="#c3-s2" aria-label="链接到本小节">#</a></h3>
@@ -113,16 +71,17 @@ main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-d
 <p>这几个活动会循环。比如原型让老师发现“命题和关系必须分轮裁定”，你就要重新分析状态，再更新规格和模型，重新确认。不是第一次写完需求文档后，需求工作就结束。</p>
 <h3 id="c3-s4">3.4 需求怎样才算写清楚 <a class="heading-link" href="#c3-s4" aria-label="链接到本小节">#</a></h3>
 <p>“系统快速生成正确图示”包含两个问题：“快速”没有指标，“正确”没有判定依据。更好的写法应说明输入规模、运行环境、目标时间、图元规则、失败行为和验收方式。</p>
-<p>例如，教学用的性能目标可以暂定为“在约定电脑、100 个命题与150条关系的样本上，刷新图示的第95百分位耗时不超过2秒”。这些数字只是<strong>示范如何写可测量要求</strong>，不是这项课程作业已经确认的指标。真正数值需要需求方与工程方商定。</p>
+<p>例如，教学用的性能目标可以暂定为“在约定电脑、100 个命题与150条关系的样本上，刷新图示的第95百分位耗时不超过2秒”。这些数字只是<strong>示范如何写可测量要求</strong>，不是你的作业已经确认的指标。真正数值需要需求方与工程方商定。</p>
 <p>一条好需求通常应必要、明确、完整到足以实施、前后一致、可行、可验证、可追踪。尽量一条只表达一个可独立验证的要求；给它编号，记录来源与状态。</p>
 <p><strong>小练习：</strong>把“标注员可以修改数据”改写成更明确的一句话。</p>
 <details><summary>参考答案</summary><p>被分配到命题轮的标注员，在该文书处于命题标注阶段且个人版本尚未提交时，可以修改自己的要素类型；修改成功后只更新自己的草稿，不改变其他标注员或已冻结版本。提交后的修改策略另行规定。</p></details>
+<p class="source">课件对应：02 01 需求工程基础；slides26 2 的 02 需求基础；第14章 后期阶段的需求文档。</p>
 <h3 id="c3-s5">3.5 同一目标逐层改写一次 <a class="heading-link" href="#c3-s5" aria-label="链接到本小节">#</a></h3>
 <p>业务目标可以写成“形成不同人可以比较、结果可以重现的论证数据”。用户需求是“关系标注员希望基于裁定后的共同命题集工作”。系统需求则要进一步说明：关系写入请求引用哪份基准、何时允许、错误时返回什么、存储不得产生什么变化。</p>
 <p>不要把层次展开误解为不断加字。每往下一层，都应消除一种不确定性。如果三个层次只是分别写“提高质量”“提升标注质量”“系统保证高质量标注”，并没有真正变得可实现。</p>
 <h3 id="c3-s6">3.6 把不可验收形容词拆开 <a class="heading-link" href="#c3-s6" aria-label="链接到本小节">#</a></h3>
 <p>“安全”可拆成身份认证、文书分配、轮次职责、状态门禁、数据范围和审计。“快速”要指定数据规模、环境、统计口径和阈值。“准确”要区分结构合法、规则提示、人工语义判断和对教师标准的比对，不同准确性的判定对象不同。</p>
-<details><summary>练习 “系统自动正确裁定全部法律关系”有什么问题</summary><p>它没有定义正确答案、适用范围和可接受错误，而且把人的法律语义裁定责任转给了不明确的自动能力。可先约定系统自动检查引用和结构、展示疑似差异，由有职责的人确认语义。若另有AI建议功能，应单独约定候选输出、人工复核和评估口径。</p></details><p class="source">资料对应 需求工程基础 需求基础。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c4" aria-labelledby="h4"><h2 id="h4">4 需求获取 访谈 原型 冲突与决策</h2><h3 id="c4-s1">4.1 先找涉众 再问具体工作 <a class="heading-link" href="#c4-s1" aria-label="链接到本小节">#</a></h3>
+<details><summary>练习 “系统自动正确裁定全部法律关系”有什么问题</summary><p>它没有定义正确答案、适用范围和可接受错误，而且把人的法律语义裁定责任转给了不明确的自动能力。可先约定系统自动检查引用和结构、展示疑似差异，由有职责的人确认语义。若另有AI建议功能，应单独约定候选输出、人工复核和评估口径。</p></details><p class="pairlink"><a href="/se/homework/#c4">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c4" aria-labelledby="h4"><h2 id="h4">4 需求获取  从材料和用户那里找证据</h2><h3 id="c4-s1">4.1 先找涉众 再问具体工作 <a class="heading-link" href="#c4-s1" aria-label="链接到本小节">#</a></h3>
 <p>涉众包括使用系统的人，也包括提出目标、制定规则、维护系统或承受结果的人。标注员、裁定者、教师、学生、负责人和维护者关注点不同。只问开发同学，会遗漏真实工作的困难。</p>
 <p>系统边界说明哪些责任由本系统承担，哪些留给人或外部系统。例如系统可展示分歧和保存专家结论，但法律语义争议仍由相关人员裁定。边界明确后，再判断外部参与者和系统接口。</p>
 <h3 id="c4-s2">4.2 不同方法寻找不同的信息 <a class="heading-link" href="#c4-s2" aria-label="链接到本小节">#</a></h3>
@@ -134,23 +93,13 @@ main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-d
 <h3 id="c4-s4">4.4 冲突不是坏事 隐藏冲突才危险 <a class="heading-link" href="#c4-s4" aria-label="链接到本小节">#</a></h3>
 <p>同一需求可能同时写着“只存最后提交”和“保留历史版本”。先记录各自来源，再说明冲突影响哪些业务，提出选项，交由有权决定的人确认。不要悄悄挑一个写进代码。</p>
 <p>疑问清单只是待办列表。它需要逐条转成“问题—决定—依据—责任人—日期—影响范围”的决策记录，才形成闭环。AI 可以帮助发现矛盾、草拟问题，不能把它生成的回答记成用户已经确认。</p>
-<h3 id="c4-s5">4.5 先从疑问清单选出影响建模的项目 <a class="heading-link" href="#c4-s5" aria-label="链接到本小节">#</a></h3>
-<p>案例疑问清单已经按角色、文本、标签、切割、关系、裁定、导出、版本和教学等模块组织。学习时不要一次背107条。先找“如果不决定，就会使模型相互矛盾”的问题。</p>
-<p>例如RQ-18影响标签层次；RQ-31影响原文副本与索引；RQ-48影响嵌套操作；RQ-69影响是否实现自动比对；RQ-79与RQ-98影响回退和历史保存；RQ-101影响切割指标。清单中的阻塞分类是原文的整理判断，不代表本讲义已经替需求方作出决定。</p>
-<h3 id="c4-s6">4.6 核对最关键的版本差异 <a class="heading-link" href="#c4-s6" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">问题</th><th scope="col">材料中的不同说法</th><th scope="col">讲解与处理</th></tr></thead><tbody><tr><td>合同标签</td><td>初始需求和第一次用例为GM-C；修订指南为SM-C</td><td>讲指南业务时采用SM-C；旧作业需同步修订，不能宣称新指南本身仍是GM-C</td></tr><tr><td>切割标点</td><td>修订指南为句号和分号初切；原型提示句号初切</td><td>需统一执行规则并处理指南中的例外</td></tr><tr><td>切割阈值</td><td>修订指南为二人一致性超过80%；原型为差异度不超过10%</td><td>必须定义公式和口径，二者不能直接互换</td></tr><tr><td>差异比对</td><td>需求正文要自动识别，补充答复说人工比对；原型及后续分析有自动预筛</td><td>自动能力的实现范围仍需确定，裁定不能被预筛替代</td></tr><tr><td>最终确认</td><td>早期用例写全一致自动入库；后续分析要求人工检查完整性</td><td>将零差异与最终确认分开，并确认正式口径</td></tr><tr><td>历史保存</td><td>初始需求提只保留最后提交；指南与后续分析要求历史追溯</td><td>明确草稿、提交、裁定、冻结和终稿分别保留哪些版本</td></tr><tr><td>变更与再导入</td><td>早期说不可回退，又要求导出再导入；后续分析提出新版本回退</td><td>定义再导入是新任务、教学材料还是受控修订</td></tr><tr><td>原文修改</td><td>普通标注描述含临时修改；补充解释关联学生独立页面</td><td>区分正式原文与教学副本，变动后重建索引基准</td></tr></tbody></table></div>
-<h3 id="c4-s7">4.7 阈值问题要问到能算为止 <a class="heading-link" href="#c4-s7" aria-label="链接到本小节">#</a></h3>
-<p>“一致性80%”还缺比较单位、公式、对齐方式、遗漏处理和人数推广。以边界集合为例，A切出边界{10,20,30}，B为{10,25,30}，交集2个、并集4个，若采用Jaccard相似度则为2/4=50%。这个计算只是<strong>公式示例</strong>，并非指南已指定的算法。</p>
-<p>若另一个指标按字符区间重叠计算，结果可能不同。因此不能推断“一致性超过80%”就是“差异度低于20%”，更不能拿它替换原型的10%。即使公式是互补的，也还要确认严格大于与不超过的边界区别。</p>
-<h3 id="c4-s8">4.8 访谈应该怎样问 <a class="heading-link" href="#c4-s8" aria-label="链接到本小节">#</a></h3>
-<p>找标注员走一次实际切割与提交，找裁定者走一次分歧处理，找教师走一次练习发布。围绕具体材料追问：遗漏由谁补；两人不一致怎么办；已经冻结后发现错字怎么办；学生关系练习的基准是什么；导出再导入的目的是什么。</p>
-<p>访谈后把结论写回决策记录，例如“DR-03：关系阶段命题错误采用新修订，不覆盖旧冻结版；影响需求FR-04、SD1回退分支、版本表及回归测试”。若尚未访谈，就标记待确认，不编造已经签字的结论。</p>
-<h3 id="c4-s9">4.9 需求决策记录的完整例子 <a class="heading-link" href="#c4-s9" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：第10章 需求获取方法；02 02 AI辅助需求获取；需求疑问清单。</p>
+<h3 id="c4-s5">4.5 需求决策记录的完整例子 <a class="heading-link" href="#c4-s5" aria-label="链接到本小节">#</a></h3>
 <p>可以把“是否自动比对”记录为一个候选决策，而不是藏在段落中：问题是自动识别与人工比对在材料中冲突；备选项是仅并排展示、自动预筛后人工确认、全自动裁定；影响是算法、界面、测试及责任边界。由需求方确认采用哪一项，记录依据与适用范围。</p>
 <p>若最终采用自动预筛，也要继续确定：边界不同怎样对齐；关系成员不同怎样比；嵌套等价是否按结构或表达式判断；零差异是否仍人工确认。一个“是”字还没有解决具体契约。</p>
-<h3 id="c4-s10">4.10 原型评估脚本比泛泛讨论更有用 <a class="heading-link" href="#c4-s10" aria-label="链接到本小节">#</a></h3>
+<h3 id="c4-s6">4.6 原型评估脚本比泛泛讨论更有用 <a class="heading-link" href="#c4-s6" aria-label="链接到本小节">#</a></h3>
 <p>给裁定者一份两人切割不同的文书，请他完成统一切割，再问他怎样知道当前修改影响谁。观察是否找不到入口、是否误以为已经冻结、是否看不见未完成条件。记录“遇到了什么、用户怎样理解、系统怎样反馈”，再形成需求或交互修改。</p>
-<p>访谈者不要提前说“这个按钮当然就是提交”，否则会把自己的解释当成界面本身的可理解性。让用户先独立完成，再追问原因。</p><p class="source">资料对应 第10章需求获取 需求疑问清单 修订指南与原型。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c5" aria-labelledby="h5"><h2 id="h5">5 用例建模 从角色目标到完整场景</h2><h3 id="c5-s1">5.1 先用自然语言讲一个完整场景 <a class="heading-link" href="#c5-s1" aria-label="链接到本小节">#</a></h3>
+<p>访谈者不要提前说“这个按钮当然就是提交”，否则会把自己的解释当成界面本身的可理解性。让用户先独立完成，再追问原因。</p><p class="pairlink"><a href="/se/homework/#c4">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c5" aria-labelledby="h5"><h2 id="h5">5 用例与用户故事  说明用户怎样完成目标</h2><h3 id="c5-s1">5.1 先用自然语言讲一个完整场景 <a class="heading-link" href="#c5-s1" aria-label="链接到本小节">#</a></h3>
 <p>用例描述外部参与者通过系统完成某个有价值目标的交互。名称通常用“动词＋业务对象”，例如“发布标注任务”“提交命题标注”“裁定并冻结命题集”。“点击按钮”“调用数据库”通常粒度太低。</p>
 <p>参与者是与系统交互的角色，可以是人，也可以是外部系统。数据库若是本系统内部组成部分，就不作为用例图的外部参与者。一个真实用户可能拥有多个业务角色。</p>
 <h3 id="c5-s2">5.2 用例描述比椭圆图更重要 <a class="heading-link" href="#c5-s2" aria-label="链接到本小节">#</a></h3>
@@ -166,36 +115,15 @@ main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-d
 <p>MoSCoW 把候选范围分为必须、应该、可以和本次不做。优先级要反映用户价值、风险和依赖，不应把所有功能都写成必须。</p>
 <p><strong>本章自测：</strong>“生成关系图”一定是“关系标注”的 include 吗？</p>
 <details><summary>展开答案</summary><p>不一定。要看目标粒度和行为定义。如果它只是系统在标注过程中的一个内部步骤，直接写在用例流程中即可；只有作为有意义且可复用的行为抽取时，才考虑单独建模。</p></details>
-<h3 id="c5-s5">5.5 案例用例图已经在回答谁完成什么目标 <a class="heading-link" href="#c5-s5" aria-label="链接到本小节">#</a></h3>
-<p>drawio中包含任务创建者、标注员、裁定者、学生等角色，并列出导入文本与指南、配置、分配、命题与关系标注、裁定、导出、独立练习和反馈。它帮助划分系统外部责任，不能单独表达六阶段先后。</p>
-<p>按后续流程修订时，可以展开命题与关系两种标注职责、两种裁定职责，并补足教师发布标准与练习的目标。一个人兼任多个职责，不妨碍模型把这些责任分清。</p>
-<p>不要为了用例数量把“选文本”“点击确认”“写数据库”都变成独立椭圆。先问用户完成什么目标，再决定哪些公共行为值得抽取。流程顺序移交给活动图、状态图和用例前置条件。</p>
-<h3 id="c5-s6">5.6 UC2 从文件导入标注指南 <a class="heading-link" href="#c5-s6" aria-label="链接到本小节">#</a></h3>
-<p><strong>原稿含义：</strong>任务创建者上传指南，系统解析标签和关系，显示摘要，经确认后初始化配置并记录版本。原稿有不支持格式、解析失败、人工调整与已有体系覆盖等扩展，说明你已考虑主路径之外的行为。</p>
-<p><strong>需要同步的内容：</strong>原稿后置条件仍列GM-C和四类命题，按修订指南应说明SM-C及非命题要素；解析不仅提取名称，还需考虑方向、嵌套和图示规则。导入文件不等于解析结果已经正确，候选结果需要人工核对。</p>
-<p><strong>教学用改写流程：</strong>创建草稿任务；上传指南；登记原始文件与候选版本；解析或人工整理候选配置；显示摘要和冲突；创建者核对确认；系统绑定一个确定版本。解析失败不绑定候选，保留草稿允许重试。</p>
-<p>“覆盖已有体系”必须加条件。任务已有作答时，直接覆盖会改变旧数据含义；更安全的待确认方案是登记新版本并明确迁移范围。任务未发布且无相关数据时，是否允许更换绑定也应写清楚。</p>
-<h3 id="c5-s7">5.7 UC6 命题标注 <a class="heading-link" href="#c5-s7" aria-label="链接到本小节">#</a></h3>
-<p><strong>原稿含义：</strong>标注员选取文本，系统编号，选择类型，显示全文并更新图。原稿明确按原文顺序编号和显示全文，这两个要求应该保留。</p>
-<p><strong>为什么要拆开：</strong>原稿把学生作为标注员的一种情况，又允许修改原文，容易使正式数据和练习副本边界不清。后续分析已采用教学独立模式，修订时应分别描述正式命题用例和学生练习用例，而非只在同一用例里加一个E5。</p>
-<p>正式流程还需要前置“统一切割已确认”，约束“只修改个人未提交版本”，提交时检查必填与覆盖，成功生成个人提交快照。命题轮内不能写关系；命题冻结后旧版本不能直接改。</p>
-<p>“先编号后补标签”可以作为草稿行为，但提交时哪些未标项允许存在要明确。按原文重排序时只改变显示序号，不改变稳定ID。删除还应考虑依赖，不能默认把后续引用静默移到另一个命题上。</p>
-<h3 id="c5-s8">5.8 UC12 裁定关系标注 <a class="heading-link" href="#c5-s8" aria-label="链接到本小节">#</a></h3>
-<p><strong>原稿含义：</strong>裁定者并排看多人结果，人工选择认可结果或重标，逐条确认后形成终稿。原稿同时写“至少一名标注员已完成”和“多人完全一致自动进入最终库”。这些条件要与后续双人独立、分轮和人工完整性检查统一。</p>
-<p><strong>教学用新前置条件：</strong>当前文书处于关系待裁定；本轮所需提交齐备；它们引用同一有效冻结命题基准；当前用户有本工作项关系裁定职责。若有特殊单人配置，要作为经过批准的例外写清，不能由“只收到一份”自动降级。</p>
-<p>基本流可写为：读取原文和冻结基准；展示各个人关系版本；按范围人工比对或使用已确认的预筛；对差异择一、重标或提交专家；复核方向、引用、遗漏与图示；确认并生成终稿快照。零差异不自动证明没有共同遗漏，仍按最终确认规则处理。</p>
-<p>若关系裁定时发现命题有误，应发起命题修订流程，不让关系裁定者顺手覆盖已冻结基准。成功后置条件是有完整可追溯终稿，失败保证是现有快照不被破坏。</p>
-<h3 id="c5-s9">5.9 交作业前怎样检查一个用例 <a class="heading-link" href="#c5-s9" aria-label="链接到本小节">#</a></h3>
-<p>逐项问：角色和目标清楚吗；前置条件是否与状态模型一致；每个动作后有没有系统响应；异常有没有恢复方式；成功与失败分别留下什么数据；条目有没有夹带未确认规则；标签和术语与其他文档一致吗。</p>
-<p><strong>本章产出：</strong>更新后的角色与用例图、UC2、UC6、UC12，以及必要的教学用例。此处给的是理解与修订方法，不声称已经修改原始Word文件。</p>
-<h3 id="c5-s10">5.10 一份写完整的冻结用例 <a class="heading-link" href="#c5-s10" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：第9章 基于用例场景模型开发用户需求；02 03 用例建模与用户故事。</p>
+<h3 id="c5-s5">5.5 一份写完整的冻结用例 <a class="heading-link" href="#c5-s5" aria-label="链接到本小节">#</a></h3>
 <p>以下是教学用例UC-FREEZE，不与旧作业UC编号强行对应。<strong>目标</strong>是形成后续关系轮共同引用的只读命题基准。<strong>主参与者</strong>是本工作项的命题裁定者。<strong>触发</strong>是裁定者请求冻结。<strong>前置条件</strong>是身份已认证、拥有当前工作项职责且工作项处于命题裁定阶段。</p>
 <p>基本流可以这样写：1 系统展示当前裁定修订、所需提交和待处理事项；2 裁定者检查结果并确认冻结；3 系统读取当前有效状态并校验提交、切割、裁定与完整性；4 系统生成只读命题快照，记录来源版本与操作者；5 系统将该快照设为关系轮基准并返回版本与状态；6 界面显示冻结完成及关系轮入口。</p>
 <p>替代流A：提交不齐或仍有待处理项，系统拒绝冻结，列出问题，裁定草稿与工作项状态不变。替代流B：页面修订过期，系统返回冲突，提示重新读取后检查，不把用户确认应用到另一份数据。替代流C：同一已冻结修订重复请求，按约定返回已有结果，不再创建冲突快照。替代流D：保存失败，相关写入共同回滚，关系轮不能提前开放。</p>
 <p><strong>成功保证：</strong>存在可读取的冻结基准，相关关系工作项引用确定版本。<strong>最小保证：</strong>失败不破坏既有提交与裁定结果。<strong>业务规则：</strong>冻结版不可原地覆盖，后续修订走受控版本流程。这里的并发与幂等细节还要在设计与接口契约中进一步规定。</p>
-<h3 id="c5-s11">5.11 从用例到验收 不是把步骤直接照抄成测试 <a class="heading-link" href="#c5-s11" aria-label="链接到本小节">#</a></h3>
+<h3 id="c5-s6">5.6 从用例到验收 不是把步骤直接照抄成测试 <a class="heading-link" href="#c5-s6" aria-label="链接到本小节">#</a></h3>
 <p>基本流给出正常目标；替代流产生拒绝、恢复和重复请求测试。测试还要检查数据变化，例如“没有生成第二个冻结快照”。同样的屏幕提示可能对应不同后端行为，不能只检查最后一句文本。</p>
-<details><summary>练习 用例前置条件与执行校验为什么可能都出现权限</summary><p>用例前置描述典型场景开始时假定成立的条件，真实接口仍需在执行时验证，因为页面可能过期，调用者也可能绕过页面。需求模型中的假设不能自动替代安全与一致性机制。</p></details><p class="source">资料对应 第9章用例场景模型 第一次用例分析UC2 UC6 UC12。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c6" aria-labelledby="h6"><h2 id="h6">6 领域建模 找到概念 身份和关联</h2><h3 id="c6-s1">6.1 领域模型描述问题世界 <a class="heading-link" href="#c6-s1" aria-label="链接到本小节">#</a></h3>
+<details><summary>练习 用例前置条件与执行校验为什么可能都出现权限</summary><p>用例前置描述典型场景开始时假定成立的条件，真实接口仍需在执行时验证，因为页面可能过期，调用者也可能绕过页面。需求模型中的假设不能自动替代安全与一致性机制。</p></details><p class="pairlink"><a href="/se/homework/#c5">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c6" aria-labelledby="h6"><h2 id="h6">6 面向对象分析  找到业务概念及其关系</h2><h3 id="c6-s1">6.1 领域模型描述问题世界 <a class="heading-link" href="#c6-s1" aria-label="链接到本小节">#</a></h3>
 <p>领域模型也常称概念类图或分析类图，帮助团队统一业务概念。分析阶段主要关注“有哪些业务对象、属性和联系”。课程中的概念类图通常只列必要属性，不展开实现方法。</p>
 <p>在标注系统中，“文书”“标注任务”“个人标注版本”“冻结命题版本”“关系”“裁定记录”都是候选概念。“提交按钮”“MySQL连接”“某个前端组件”通常不是核心领域概念。</p>
 <p>可先从用例中找名词，再筛选：它是否有业务意义？是否有独立身份或状态？是否只是一段描述？名词抽取是起点，不能遇到名词就建类。</p>
@@ -209,413 +137,221 @@ main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-d
 <h3 id="c6-s4">6.4 从分析类图走向设计类图 <a class="heading-link" href="#c6-s4" aria-label="链接到本小节">#</a></h3>
 <p>分析类图先表达业务理解。设计类图进一步加入方法、接口、可见性、技术辅助类和依赖。例如概念“冻结命题版本”可以落实为领域对象，服务类负责协调事务，仓储接口负责读写。</p>
 <p>这不是把每个概念机械地变成一张表、一个Service和一个Controller。先看职责、变化和一致性要求，再决定代码中的映射。</p>
-<h3 id="c6-s5">6.5 从用例名词中筛出核心概念 <a class="heading-link" href="#c6-s5" aria-label="链接到本小节">#</a></h3>
-<p>“用户”“任务”“文书工作项”“指南版本”“原文版本”“切割版本”“轮次分配”“个人标注版本”“要素”“关系”“裁定记录”“冻结命题版本”“终稿快照”“练习”“练习尝试”“标准答案版本”都有明确业务意义。</p>
-<p>任务通常是一批材料与配置的组织单位，文书工作项维护单份文书的进度。不要把每一份文书都依附在一个会同时推进的全局stage上。个人标注版本表达某人在某轮的作答，提交快照表达一次确定交付，二者也不应混成一个共享数组。</p>
-<h3 id="c6-s6">6.6 一组足够开始讨论的关联 <a class="heading-link" href="#c6-s6" aria-label="链接到本小节">#</a></h3>
-<p>一个任务包含多个文书工作项；一个工作项绑定确定的原文与指南版本，并有多条轮次分配；一个分配连接用户、轮次与职责；一个工作项有多个人标注版本和裁定记录；一个冻结命题版本包含确定的要素集合；一个关系版本引用一个冻结命题版本，并包含多条关系。</p>
-<p>一个终稿快照绑定具体命题版本与关系结果；一个练习绑定教学材料与标准版本；一名学生可以有多个练习尝试。若允许一次尝试只针对一个练习，则尝试到练习是1，练习到尝试是0..*。其他多重性需按允许的草稿、空任务与发布规则确定。</p>
-<h3 id="c6-s7">6.7 属性先表达业务含义 <a class="heading-link" href="#c6-s7" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">概念</th><th scope="col">关键属性示例</th><th scope="col">为什么需要</th></tr></thead><tbody><tr><td>文书工作项</td><td>ID、状态、当前有效基准</td><td>每份文书独立推进</td></tr><tr><td>轮次分配</td><td>用户、轮次、职责、生效状态</td><td>防止同角色跨文书越权</td></tr><tr><td>原文版本</td><td>内容、版本、指纹</td><td>确定字符定位的依据</td></tr><tr><td>要素</td><td>稳定ID、原文区间、显示序号、类型</td><td>防止重编号破坏引用</td></tr><tr><td>个人版本</td><td>所有人、轮次、基准版本、提交状态</td><td>实现独立作答与复现</td></tr><tr><td>关系</td><td>稳定ID、类型、操作数引用</td><td>支持嵌套与方向</td></tr><tr><td>裁定记录</td><td>对象、选用结果、理由、裁定者、依据</td><td>说明结果怎么形成</td></tr><tr><td>练习尝试</td><td>学生、标准版本、提交与反馈</td><td>允许重做并保留原口径</td></tr></tbody></table></div>
-<h3 id="c6-s8">6.8 分析图里先不要写满框架类 <a class="heading-link" href="#c6-s8" aria-label="链接到本小节">#</a></h3>
-<p>这一阶段重点是业务概念与联系，通常不写Controller和SQL方法。后续设计会增加FreezeService、RelationRepository等实现协作对象，但不能让技术名词掩盖“什么数据是谁的、属于哪一版”这些核心问题。</p>
-<p>画完后用三个问题走查：某个学生尝试能否误连到正式终稿；某条关系能否找到原文与命题基准；某份个人作答能否明确归属于一个用户和轮次。答不出来，通常说明关联或版本概念不完整。</p>
-<p><strong>本章产出：</strong>领域术语、概念类图、关键属性、多重性和约束说明。后续ERD与设计类图基于它发展，不能拿一张图替代所有层次。</p>
-<h3 id="c6-s9">6.9 把多重性逐句读出来 <a class="heading-link" href="#c6-s9" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：第11章 面向对象分析；02 04 需求分析与AI辅助建模。</p>
+<h3 id="c6-s5">6.5 把多重性逐句读出来 <a class="heading-link" href="#c6-s5" aria-label="链接到本小节">#</a></h3>
 <p>“任务1—工作项0..*”表示固定一个任务，允许有零个或多个工作项；固定一个工作项，它属于一个任务。如果发布时要求至少一份文书，应在发布约束中规定，不能让草稿阶段也被不必要地限制。</p>
 <p>“用户1—分配0..*”和“工作项1—分配0..*”共同表达多对多及其附加信息。分配还需有轮次和职责，所以它不仅是两条ID的连接。对同一工作项，命题标注与关系裁定是不同分配，权限不能只根据用户的全局角色推断。</p>
 <figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 900 365" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="关键业务概念及多重性"><title>关键业务概念及多重性</title><desc>任务关联多个文书工作项；工作项关联轮次分配和冻结版本；用户关联多个分配；一个冻结基准可被多个关系作答版本引用。</desc><defs><marker id="arr-900-365" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="30" y="28" width="220" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="140.0" y="61.5" text-anchor="middle" font-size="17" fill="#153249">标注任务</text><rect x="350" y="28" width="220" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="460.0" y="61.5" text-anchor="middle" font-size="17" fill="#153249">文书工作项</text><rect x="670" y="28" width="200" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="770.0" y="61.5" text-anchor="middle" font-size="17" fill="#153249">轮次分配</text><rect x="670" y="220" width="200" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="770.0" y="253.5" text-anchor="middle" font-size="17" fill="#153249">用户</text><rect x="350" y="220" width="220" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="460.0" y="253.5" text-anchor="middle" font-size="17" fill="#153249">冻结命题版本</text><rect x="30" y="220" width="220" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="140.0" y="253.5" text-anchor="middle" font-size="17" fill="#153249">关系作答版本</text><line x1="250" y1="56" x2="350" y2="56" stroke="#6f8b9f" stroke-width="1.8"/><text x="300" y="45" text-anchor="middle" font-size="15" fill="#203e55">1 : 0..*</text><line x1="570" y1="56" x2="670" y2="56" stroke="#6f8b9f" stroke-width="1.8"/><text x="620" y="45" text-anchor="middle" font-size="15" fill="#203e55">1 : 0..*</text><line x1="770" y1="83" x2="770" y2="220" stroke="#6f8b9f" stroke-width="1.8"/><text x="815" y="160" text-anchor="middle" font-size="15" fill="#203e55">0..* : 1</text><line x1="460" y1="83" x2="460" y2="220" stroke="#6f8b9f" stroke-width="1.8"/><text x="520" y="160" text-anchor="middle" font-size="15" fill="#203e55">1 : 0..*</text><line x1="350" y1="247" x2="250" y2="247" stroke="#6f8b9f" stroke-width="1.8"/><text x="300" y="235" text-anchor="middle" font-size="15" fill="#203e55">0..* : 1</text><text x="450" y="333" text-anchor="middle" font-size="15" fill="#536376">示意只选关键关联 草稿允许空集合 发布时另检查必需配置</text></svg></div><figcaption>概念关联教学示意 连线表示关联 不表示操作先后 比例从左到右或从上到下阅读</figcaption></figure>
-<h3 id="c6-s10">6.10 概念类图不要过早承诺存储细节 <a class="heading-link" href="#c6-s10" aria-label="链接到本小节">#</a></h3>
-<p>概念上的“个人提交快照”可以通过不可变版本引用或单独副本实现；概念类图先确认其身份和关系，详细设计再选实现。反过来，如果分析里没有个人版本和冻结基准，数据库再精巧也难以凭空补出一致业务含义。</p><p class="source">资料对应 第11章面向对象分析 指南版本追溯要求。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c7" aria-labelledby="h7"><h2 id="h7">7 系统顺序图 先约定黑箱行为</h2><h3 id="c7-s1">7.1 系统顺序图把系统当黑箱 <a class="heading-link" href="#c7-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c6-s6">6.6 概念类图不要过早承诺存储细节 <a class="heading-link" href="#c6-s6" aria-label="链接到本小节">#</a></h3>
+<p>概念上的“个人提交快照”可以通过不可变版本引用或单独副本实现；概念类图先确认其身份和关系，详细设计再选实现。反过来，如果分析里没有个人版本和冻结基准，数据库再精巧也难以凭空补出一致业务含义。</p><p class="pairlink"><a href="/se/homework/#c6">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c7" aria-labelledby="h7"><h2 id="h7">7 动态分析  读懂系统顺序图 详细顺序图和状态图</h2><h3 id="c7-s1">7.1 系统顺序图把系统当黑箱 <a class="heading-link" href="#c7-s1" aria-label="链接到本小节">#</a></h3>
 <p>系统顺序图（SSD）通常画参与者与一个“系统”生命线，按时间从上到下列出系统事件和返回。它回答“外部什么时候给系统什么请求，系统怎样响应”。不要在这张黑箱图里继续画Controller、数据库和内部服务。</p>
 <p>例如：裁定者发出 freezePropositions(workItemId)，系统返回 frozenVersionId 和可进入关系轮的状态。这是外部可观察的契约，不规定内部要调用多少个对象。</p>
-<h3 id="c7-s2">7.2 UML常用元素 <a class="heading-link" href="#c7-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c7-s2">7.2 详细顺序图打开内部协作 <a class="heading-link" href="#c7-s2" aria-label="链接到本小节">#</a></h3>
+<p>详细顺序图展示内部对象如何完成同一个场景。在分析表达中常用边界对象、控制对象和实体对象：边界接收与展示，控制协调一次用例，实体保存业务状态并承担相关业务规则。设计阶段还可加入仓储、外部接口等技术对象。</p>
+<p>例如“创建关系”可以分成：标注界面接收输入；关系控制检查当前文书、角色和版本；规则对象检查引用；标注版本保存关系；图示组件根据保存的结构生成显示。每条消息都意味着接收者承担相应职责，需要与类图保持一致。</p>
+<h3 id="c7-s3">7.3 UML常用元素 <a class="heading-link" href="#c7-s3" aria-label="链接到本小节">#</a></h3>
 <p>生命线代表交互中的参与者或对象；时间向下流动。同步调用通常用实线和实心箭头，异步消息用开放箭头，返回常用虚线；图中应有清楚的图例。激活条表示执行中的控制。对象创建从创建消息处开始，终止叉号表示生命线真正结束，不是“这次操作做完了”。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">片段</th><th scope="col">含义</th><th scope="col">例子</th></tr></thead><tbody><tr><td>alt</td><td>根据守卫条件选择互斥分支</td><td>合法则保存，否则返回错误</td></tr><tr><td>opt</td><td>条件成立时可执行的一段</td><td>用户调整布局时保存坐标</td></tr><tr><td>loop</td><td>满足条件时重复交互</td><td>对每名被分配用户接收提交</td></tr><tr><td>ref</td><td>引用另一段已命名交互</td><td>引用统一切割裁定流程</td></tr></tbody></table></div>
 <p>loop 说明重复，不自动表示真实用户必须排队串行。多个标注员可能各自操作，图中需要表达个人版本隔离。返回箭头应回到直接调用者；通过多层处理的结果应沿协作链返回，避免图与职责分配矛盾。</p>
-<h3 id="c7-s3">7.3 这张图只回答外部交互 <a class="heading-link" href="#c7-s3" aria-label="链接到本小节">#</a></h3>
-<p>SD1的主角是命题标注员、命题裁定者、关系标注员和关系裁定者，系统本身是一条黑箱生命线。有输出权限的角色可以在末尾请求导出。不要在同一张SSD里再展开数据库、关系服务和渲染对象。</p>
-<p>下面把SD1中“冻结”这一小段单独画出来，便于第一次阅读。它是教学简图，完整作业还要包含前后的两轮提交与裁定。</p>
-<figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 700 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="冻结命题集的系统顺序图"><title>冻结命题集的系统顺序图</title><desc>裁定者请求冻结，系统按条件返回版本或错误；系统内部不展开。</desc><defs><marker id="arr-700-410" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="65" y="20" width="150" height="48" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="140.0" y="50.0" text-anchor="middle" font-size="17" fill="#153249">命题裁定者</text><rect x="455" y="20" width="170" height="48" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="540.0" y="50.0" text-anchor="middle" font-size="17" fill="#153249">标注系统</text><line x1="140" y1="68" x2="140" y2="390" stroke="#91a5b5" stroke-dasharray="5 5"/><line x1="540" y1="68" x2="540" y2="390" stroke="#91a5b5" stroke-dasharray="5 5"/><line x1="140" y1="120" x2="540" y2="120" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-700-410)" /><text x="340.0" y="110" text-anchor="middle" font-size="15" fill="#18364e">请求冻结 工作项与预期修订</text><rect x="290" y="146" width="370" height="116" rx="4" fill="#f7fafc" stroke="#a0b0bd"/><text x="308" y="172" font-size="15" fill="#153249">alt 条件满足：创建快照并开放关系轮</text><text x="308" y="203" font-size="15" fill="#153249">else 条件不满足：不推进并返回缺失项</text><text x="308" y="238" font-size="14" fill="#536376">此处仅描述系统结果，不展开内部调用</text><line x1="540" y1="310" x2="140" y2="310" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-700-410)" stroke-dasharray="6 5"/><text x="340.0" y="300" text-anchor="middle" font-size="15" fill="#18364e">冻结版本ID与新状态 或具体错误</text><text x="340" y="374" text-anchor="middle" font-size="15" fill="#536376">前置：已分配裁定职责；后置：成功有快照，失败状态不变</text></svg></div><figcaption>图1 教学简图只展开冻结这一段 详细时序见正文步骤</figcaption></figure>
-<h3 id="c7-s4">7.4 按时间从上到下读完整主线 <a class="heading-link" href="#c7-s4" aria-label="链接到本小节">#</a></h3>
-<p>第一，命题标注员打开被分配文书，系统返回原文、指南与当前权限。此时不能返回另一人尚未公开的答案，否则独立标注不成立。</p>
-<p>第二，分别提交切割，裁定者检查并确认统一切割版本。你可以用ref引用命名子交互，但应在正文或另一张图中说明子交互含什么；ref不是隐藏未定义业务的借口。</p>
-<p>第三，各人在统一切割上标类型与要素归属，保存个人草稿，提交时形成独立快照。直到当前轮次所需人员提交齐备，才进入命题待裁定。两个人是两个真实身份与版本，不是同一用户点击两次。</p>
-<p>第四，命题裁定者查看结果，处理分歧与遗漏，必要时反馈修改。确认完整后发出冻结请求，系统校验并返回冻结版本ID，开放关系轮。裁定者点击确认与系统生成快照，是不同责任。</p>
-<p>第五，关系标注员读取同一个冻结命题版本，分别完成并提交自己的关系结构。所需提交齐备后，关系裁定者处理分歧并核查完整图示，确认后生成终稿。</p>
-<p>第六，有输出职责的用户选择终稿导出。系统返回实际文件或文件获取信息，并保存导出记录。只弹“成功”没有文件，不满足这里的后置条件。</p>
-<h3 id="c7-s5">7.5 loop alt和ref应放在哪里 <a class="heading-link" href="#c7-s5" aria-label="链接到本小节">#</a></h3>
-<p>loop适合表达“每个被分配者分别提交”或“持续编辑直到提交”。守卫应能看懂，例如“仍有未完成提交的本轮人员”，不能只写一个无含义的i++。它不要求真实用户串行工作。</p>
-<p>alt适合“冻结条件满足/不满足”“允许导出/拒绝导出”等分支。冻结失败要返回缺失条件并保持状态；成功才生成版本并推进。若使用ref表示回退，必须有明确的发起者、条件、处理责任与结果。</p>
-<h3 id="c7-s6">7.6 原型能帮助你发现哪些遗漏 <a class="heading-link" href="#c7-s6" aria-label="链接到本小节">#</a></h3>
-<p>原型v3.0用S.stage、S.subProp、S.subRel及共享SEG、REL等变量演示流程，并提供“模拟另一名标注员提交”。这些设计便于展示门禁，但实际系统必须将状态按文书、身份和版本保存。</p>
-<p>原型submitCut()显示固定4.8%的提示，不能作为真正计算了一致性指标的证据。SD1应依据确认规则表达“计算/人工确认/阻止推进”等职责，不把固定演示值写成业务事实。</p>
-<h3 id="c7-s7">7.7 这张图交前检查 <a class="heading-link" href="#c7-s7" aria-label="链接到本小节">#</a></h3>
-<p>确认先有统一切割、再有类型标注；先有命题提交与裁定、再有冻结；先冻结、再关系；先完成关系裁定、再输出。确认失败不跳状态，其他人的作答不被泄露，每条消息都能在用例中找到依据。</p>
-<p><strong>复述练习：</strong>不用术语，向室友解释为什么命题和关系不能让两个人从头各做各的再直接合并。</p>
-<details><summary>参考说法</summary><p>两人可能把文本分成不同句段，连“P3指谁”都不一致。先统一命题边界和含义，再让他们基于同一版本标关系，最后比较的才是同一组对象之间的连接。</p></details>
-<h3 id="c7-s8">7.8 从一句基本流提取系统事件 <a class="heading-link" href="#c7-s8" aria-label="链接到本小节">#</a></h3>
-<p>“裁定者检查结果并请求冻结”可以提取为freezePropositions(workItemId, expectedRevision)。workItemId说明操作哪份文书；expectedRevision说明用户确认时看到哪次修订。调用者身份从认证会话取得，不应由用户随意填写一个actorId来冒充。</p>
-<p>系统成功返回snapshotId、state与revision，失败返回稳定错误及可恢复信息。SSD关注外部事件与响应，所以不在同图展开它使用悲观锁还是乐观锁；这些决定留到详细设计。</p>
-<h3 id="c7-s9">7.9 怎样审查一次返回 <a class="heading-link" href="#c7-s9" aria-label="链接到本小节">#</a></h3>
-<p>问“用户下一步能做什么”“界面怎样判断保存成功”“失败后原输入还在吗”。只返回一个true可能不足以帮助后续读取基准和应对版本变化；返回全部内部对象又可能泄露不该看到的数据。响应应围绕用例后置条件组织。</p><p class="source">资料对应 面向对象分析 第二次顺序图分析SD1。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c8" aria-labelledby="h8"><h2 id="h8">8 状态建模 让阶段门禁可以执行</h2><h3 id="c8-s1">8.1 状态图描述一个对象的生命周期 <a class="heading-link" href="#c8-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c7-s4">7.4 状态图描述一个对象的生命周期 <a class="heading-link" href="#c7-s4" aria-label="链接到本小节">#</a></h3>
 <p>顺序图关注一次交互，状态图关注一个业务对象经历哪些稳定状态。转换可写成“事件 [守卫] / 动作”。例如“请求冻结 [提交齐备且裁定完成] / 创建冻结版本”。状态是“待裁定”“已定稿”，按钮文字或页面名称不一定是状态。</p>
 <p>把某份文书的状态与整个批次任务分开。一个任务可能有100份文书，其中一份已定稿，另一份还在切割；一个全局stage变量无法真实表达这种情况。</p>
-<h3 id="c8-s2">8.2 活动图和其他模型怎样配合 <a class="heading-link" href="#c8-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c7-s5">7.5 活动图和其他模型怎样配合 <a class="heading-link" href="#c7-s5" aria-label="链接到本小节">#</a></h3>
 <p>活动图擅长工作流程、分支、并行与职责泳道；状态图擅长生命周期与允许操作；顺序图擅长消息与协作。它们从不同角度描述同一个系统，不应互相矛盾。</p>
 <p>检查一致性的办法很具体：用例写“冻结前拒绝”，状态图要没有非法写入转换，顺序图要有拒绝分支，后续代码和测试也要落实。模型价值在于暴露问题，不在图的数量。</p>
 <p><strong>本章自测：</strong>一张顺序图同时画“标注员—系统—关系服务—数据库”，并把“系统”当黑箱，哪里有问题？</p>
 <details><summary>展开答案</summary><p>抽象层次混在一起了。应拆成系统顺序图与详细顺序图，或明确这是内部设计图并直接使用承担边界职责的对象，而不是保留一个含义不清的黑箱系统。</p></details>
-<h3 id="c8-s3">8.3 正式标注的六阶段主线 <a class="heading-link" href="#c8-s3" aria-label="链接到本小节">#</a></h3>
-<div class="flow"><span>创建任务</span><b>→</b><span>命题标注</span><b>→</b><span>命题裁定与冻结</span><b>→</b><span>关系标注</span><b>→</b><span>关系裁定与定稿</span><b>→</b><span>图示与结果输出</span></div>
-<p>这是原型v3.0与后续分析采用的主线。第二阶段内部还应理解为“独立切割 → 提交切割 → 裁定统一切割 → 独立类型标注与提交”，不能把进入第二阶段就理解为任何时候都能直接改标签。</p>
-<p>两名标注员分别交出自己的答案；命题裁定者处理差异、遗漏和明显错误，确认统一命题集并冻结；关系标注员基于该冻结集分别作答；关系裁定者检查完整关系与图示，形成终稿；输出从终稿生成文件。</p>
-<p>原始需求文档是“创建—标注—冲突解决—输出”四阶段。六阶段把“标注”与“冲突解决”按命题和关系展开。更新作业时，要同时改用例前置条件、状态模型和详细顺序图，不能只把流程图拆成六个框。</p>
-<h3 id="c8-s4">8.4 回退应怎样理解 <a class="heading-link" href="#c8-s4" aria-label="链接到本小节">#</a></h3>
-<p>原材料存在“流程不可逆”“输出后不可编辑”与后续“解冻生成新版本”的不同表述。一个可供确认的工程方案是：旧冻结版和终稿保持只读；有权用户提出修订；生成新命题版本；识别受影响关系并重新复核；生成新终稿。</p>
-<p>这样既能追溯旧结果，也能纠正错误。但“谁能申请、谁批准、哪些状态可发起、旧关系如何迁移”仍需要业务决定。不能仅把界面的stage减一，就宣称版本化回退已经实现。</p>
-<h3 id="c8-s5">8.5 为一份文书建立清楚的状态机 <a class="heading-link" href="#c8-s5" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：第11章 面向对象分析；04 01 详细设计。</p>
+<h3 id="c7-s6">7.6 从一句基本流提取系统事件 <a class="heading-link" href="#c7-s6" aria-label="链接到本小节">#</a></h3>
+<p>“裁定者检查结果并请求冻结”可以提取为freezePropositions(workItemId, expectedRevision)。workItemId说明操作哪份文书；expectedRevision说明用户确认时看到哪次修订。调用者身份从认证会话取得，不应由用户随意填写一个actorId来冒充。</p>
+<p>系统成功返回snapshotId、state与revision，失败返回稳定错误及可恢复信息。SSD关注外部事件与响应，所以不在同图展开它使用悲观锁还是乐观锁；这些决定留到详细设计。</p>
+<h3 id="c7-s7">7.7 怎样审查一次返回 <a class="heading-link" href="#c7-s7" aria-label="链接到本小节">#</a></h3>
+<p>问“用户下一步能做什么”“界面怎样判断保存成功”“失败后原输入还在吗”。只返回一个true可能不足以帮助后续读取基准和应对版本变化；返回全部内部对象又可能泄露不该看到的数据。响应应围绕用例后置条件组织。</p>
+<h3 id="c7-s8">7.8 为一份文书建立清楚的状态机 <a class="heading-link" href="#c7-s8" aria-label="链接到本小节">#</a></h3>
 <p>可以采用以下教学状态：草稿、切割中、切割待确认、类型标注中、命题待裁定、关系标注中、关系待裁定、已定稿。六个业务阶段可以把其中部分子状态合并展示；持久状态怎样细分是设计选择，必须能执行相同业务约束。</p>
 <figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 970 375" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="文书工作项的主要状态"><title>文书工作项的主要状态</title><desc>草稿发布后进入切割，经统一切割确认后类型标注，提交齐备进入命题裁定，冻结后关系标注，最后裁定定稿。</desc><defs><marker id="arr-970-375" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="20" y="35" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="120.0" y="69.0" text-anchor="middle" font-size="17" fill="#153249">草稿</text><rect x="260" y="35" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="360.0" y="69.0" text-anchor="middle" font-size="17" fill="#153249">切割中</text><rect x="500" y="35" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="600.0" y="69.0" text-anchor="middle" font-size="17" fill="#153249">切割待确认</text><rect x="740" y="35" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="840.0" y="69.0" text-anchor="middle" font-size="17" fill="#153249">类型标注中</text><rect x="740" y="205" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="840.0" y="239.0" text-anchor="middle" font-size="17" fill="#153249">命题待裁定</text><rect x="500" y="205" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="600.0" y="239.0" text-anchor="middle" font-size="17" fill="#153249">关系标注中</text><rect x="260" y="205" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="360.0" y="239.0" text-anchor="middle" font-size="17" fill="#153249">关系待裁定</text><rect x="20" y="205" width="200" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="120.0" y="239.0" text-anchor="middle" font-size="17" fill="#153249">已定稿</text><line x1="220" y1="63" x2="260" y2="63" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="240.0" y="53" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="240.0" y="111" text-anchor="middle" font-size="14" fill="#536376">发布</text><line x1="460" y1="63" x2="500" y2="63" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="480.0" y="53" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="480.0" y="111" text-anchor="middle" font-size="14" fill="#536376">提交齐备</text><line x1="700" y1="63" x2="740" y2="63" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="720.0" y="53" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="720.0" y="111" text-anchor="middle" font-size="14" fill="#536376">统一切割确认</text><line x1="840" y1="91" x2="840" y2="205" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="840.0" y="81" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="745" y="155" text-anchor="end" font-size="14" fill="#536376">类型提交齐备</text><line x1="740" y1="233" x2="700" y2="233" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="720.0" y="223" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="720.0" y="291" text-anchor="middle" font-size="14" fill="#536376">裁定并冻结</text><line x1="500" y1="233" x2="460" y2="233" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="480.0" y="223" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="480.0" y="291" text-anchor="middle" font-size="14" fill="#536376">关系提交齐备</text><line x1="260" y1="233" x2="220" y2="233" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-970-375)" /><text x="240.0" y="223" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="240.0" y="291" text-anchor="middle" font-size="14" fill="#536376">裁定并定稿</text><text x="480" y="344" text-anchor="middle" font-size="15" fill="#536376">受控修订是保留历史的新版本路径 不用反向减小stage代替</text></svg></div><figcaption>状态教学示意 上排从左到右 下排从右到左 守卫条件见转换表</figcaption></figure>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">当前状态</th><th scope="col">事件</th><th scope="col">守卫或检查</th><th scope="col">动作与新状态</th></tr></thead><tbody><tr><td>草稿</td><td>发布</td><td>材料 指南 分配完整</td><td>生成工作项，进入切割中</td></tr><tr><td>切割中</td><td>完成本轮切割提交</td><td>所需独立提交齐备</td><td>进入切割待确认</td></tr><tr><td>切割待确认</td><td>确认统一切割</td><td>按确认口径审查完成</td><td>绑定切割版本，开放类型标注</td></tr><tr><td>类型标注中</td><td>完成所需提交</td><td>必填 覆盖与独立提交符合约定</td><td>进入命题待裁定</td></tr><tr><td>命题待裁定</td><td>冻结</td><td>裁定与完整性完成</td><td>创建命题基准，进入关系标注中</td></tr><tr><td>关系标注中</td><td>完成所需提交</td><td>同一有效基准且提交齐备</td><td>进入关系待裁定</td></tr><tr><td>关系待裁定</td><td>确认定稿</td><td>关系 引用 图示与遗漏检查完成</td><td>创建终稿，进入已定稿</td></tr></tbody></table></div>
 <p>守卫不满足时，不执行转换，也不产生半套动作。界面上的“待裁定”与后端值可以不同，但含义应一致。关系轮里保存一次草稿通常不是新的流程状态，只是当前个人版本修订发生变化。</p>
-<h3 id="c8-s6">8.6 版本与状态是两条不同的轴 <a class="heading-link" href="#c8-s6" aria-label="链接到本小节">#</a></h3>
+<h3 id="c7-s9">7.9 版本与状态是两条不同的轴 <a class="heading-link" href="#c7-s9" aria-label="链接到本小节">#</a></h3>
 <p>状态回答现在允许做什么；版本回答数据是哪一次确定内容。PV-1和PV-2都可能曾经冻结，它们有不同身份与来源。工作项可以指向当前有效基准，旧基准仍作为历史存在。不要用一个stage整数同时替代流程、版本和历史。</p>
-<h3 id="c8-s7">8.7 状态机如何暴露原型问题 <a class="heading-link" href="#c8-s7" aria-label="链接到本小节">#</a></h3>
+<h3 id="c7-s10">7.10 状态机如何暴露原型问题 <a class="heading-link" href="#c7-s10" aria-label="链接到本小节">#</a></h3>
 <p>若冻结成功从阶段三进入阶段四，但解冻函数只允许阶段三执行，入口就可能不可达。先在状态转换表里明确“受控修订从哪些状态可申请、由谁批准、产生什么新版本”，再更新权限和页面。只放一个“回退”按钮不能补完这个契约。</p>
-<details><summary>练习 任务有十份文书 其中一份冻结后是否整个任务都应进入关系轮</summary><p>除非业务明确要求全批次同步，否则应按文书工作项独立推进，任务展示汇总进度。全局一个stage会把不同文书错误地绑定到同一生命周期。</p></details><section class="demo" aria-labelledby="demo-title"><h4 id="demo-title">动手检查一次冻结条件</h4><p>教学模拟只检查下面选择的条件，不连接正式系统，也不写入数据。改变一个条件，再观察拒绝原因。</p><form id="freeze-demo"><div class="demo-grid"><label>当前职责<select id="d-duty"><option value="judge">本工作项命题裁定者</option><option value="annotator">普通标注员</option></select></label><label>当前工作项状态<select id="d-state"><option value="adjudication">命题待裁定</option><option value="editing">类型标注中</option><option value="relation">关系标注中</option></select></label><label><input id="d-revision" type="checkbox" checked> 请求修订与当前一致</label><label><input id="d-submissions" type="checkbox" checked> 所需独立提交已齐备</label><label><input id="d-complete" type="checkbox"> 裁定与完整性检查完成</label></div><button type="submit">检查冻结条件</button> <button type="reset">恢复示例</button><p id="demo-result" role="status" aria-live="polite">当前示例还缺“裁定与完整性检查完成”。</p></form></section><p class="source">资料对应 状态建模 原型六阶段 修订版SD1与回退讨论。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c9" aria-labelledby="h9"><h2 id="h9">9 详细顺序图 分配内部对象职责</h2><h3 id="c9-s1">9.1 详细顺序图打开内部协作 <a class="heading-link" href="#c9-s1" aria-label="链接到本小节">#</a></h3>
-<p>详细顺序图展示内部对象如何完成同一个场景。在分析表达中常用边界对象、控制对象和实体对象：边界接收与展示，控制协调一次用例，实体保存业务状态并承担相关业务规则。设计阶段还可加入仓储、外部接口等技术对象。</p>
-<p>例如“创建关系”可以分成：标注界面接收输入；关系控制检查当前文书、角色和版本；规则对象检查引用；标注版本保存关系；图示组件根据保存的结构生成显示。每条消息都意味着接收者承担相应职责，需要与类图保持一致。</p>
-<h3 id="c9-s2">9.2 为什么要从SSD继续展开 <a class="heading-link" href="#c9-s2" aria-label="链接到本小节">#</a></h3>
-<p>SSD说“系统接收关系并保存”，SD2需要解释系统内部谁完成检查和保存。案例分析采用标注交互、关系标注控制、标注版本、标注指南和论证图示等对象：它们是职责分配，不意味着必须创建完全同名的Java类。</p>
-<p>边界收集操作并展示结果；控制对象组织场景；版本对象提供状态与基准；指南对象提供结构约束；图示对象生成展示。落到设计后，还可以分出仓储和渲染适配器。</p>
-<figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="创建关系的内部协作简图"><title>创建关系的内部协作简图</title><desc>用户经界面发起请求，服务检查版本与规则，合法时保存并生成图示，再逐层返回。存储与图示在此合并展示。</desc><defs><marker id="arr-900-560" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="9" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="85.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">关系标注员</text><line x1="85" y1="64" x2="85" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="189" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="265.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">标注界面</text><line x1="265" y1="64" x2="265" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="369" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="445.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">关系应用服务</text><line x1="445" y1="64" x2="445" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="549" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="625.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">版本与规则</text><line x1="625" y1="64" x2="625" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="729" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="805.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">存储与图示</text><line x1="805" y1="64" x2="805" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><line x1="85" y1="112" x2="265" y2="112" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="175.0" y="102" text-anchor="middle" font-size="15" fill="#18364e">确认关系</text><line x1="265" y1="170" x2="445" y2="170" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="355.0" y="160" text-anchor="middle" font-size="15" fill="#18364e">类型与带类别引用</text><line x1="445" y1="228" x2="625" y2="228" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="535.0" y="218" text-anchor="middle" font-size="15" fill="#18364e">检查权限 阶段 基准 引用</text><line x1="625" y1="280" x2="445" y2="280" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="535.0" y="270" text-anchor="middle" font-size="15" fill="#18364e">合法 或具体错误</text><line x1="445" y1="337" x2="805" y2="337" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="625.0" y="327" text-anchor="middle" font-size="15" fill="#18364e">合法时保存结构并生成同修订图示</text><line x1="805" y1="389" x2="445" y2="389" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="625.0" y="379" text-anchor="middle" font-size="15" fill="#18364e">关系ID 修订号 图示状态</text><line x1="445" y1="441" x2="265" y2="441" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="355.0" y="431" text-anchor="middle" font-size="15" fill="#18364e">保存结果与恢复提示</text><line x1="265" y1="485" x2="85" y2="485" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="175.0" y="475" text-anchor="middle" font-size="15" fill="#18364e">展示结果</text><text x="440" y="535" text-anchor="middle" font-size="15" fill="#536376">教学简图：非法请求不保存；渲染失败可重建展示，不重复创建关系</text></svg></div><figcaption>图2 教学协作简图 存储与图示为压缩表达 实际详细设计可分别展开</figcaption></figure>
-<h3 id="c9-s3">9.3 第一步 明确请求到底包含什么 <a class="heading-link" href="#c9-s3" aria-label="链接到本小节">#</a></h3>
-<p>教学示例输入包括workItemId、personalVersionId、basePropositionVersionId、关系类型与操作数。S、A、M通常有来源和目标，J、I有成员集合；操作数要说明它是命题还是关系。</p>
-<p>例如创建R4=A(P5,R3)，传入的两个引用应能区分element与relation，不能都用一个不带类型的数字。ID空间是否全局唯一、哪些对象可以作为各关系操作数，由数据契约规定。</p>
-<h3 id="c9-s4">9.4 第二步 把校验分成几层 <a class="heading-link" href="#c9-s4" aria-label="链接到本小节">#</a></h3>
-<p>先检查身份、工作项分配和轮次职责；再检查工作项处于可写关系阶段；再检查个人版本、冻结基准和当前有效版本一致；最后检查成员数量、重复成员、对象存在、命题资格、引用范围和嵌套循环。</p>
-<p>结构校验通过表示“这条数据可以被系统解释”，不表示“这条法律论证在语义上正确”。J是不是缺一不可、A到底攻击哪个对象，仍需要标注和裁定人员判断。</p>
-<p>循环引用特指递归对象结构，例如R1引用R2而R2又引用R1，会让展开结构无法结束。不要据此把所有命题图里的语义环路一概自动禁止；后者需要单独业务规则。</p>
-<h3 id="c9-s5">9.5 第三步 保存与图示分开理解 <a class="heading-link" href="#c9-s5" aria-label="链接到本小节">#</a></h3>
-<p>合法时先保存结构，返回稳定关系ID和结构修订号，然后根据这份结构生成图示。非法时不新增关系，返回具体错误且保留输入。若保存成功而图示失败，应明确“数据已保存，图示待刷新”，允许只重建展示，防止用户重复创建。</p>
-<p>列表与图示都要标明或内部绑定同一修订。否则列表是新关系，图示还是旧结构，用户会误以为数据丢了。是否异步渲染、怎样通知完成属于设计决定，应写进接口和交互说明。</p>
-<h3 id="c9-s6">9.6 第四步 处理布局和依赖删除 <a class="heading-link" href="#c9-s6" aria-label="链接到本小节">#</a></h3>
-<p>只移动节点就走opt保存布局坐标，关系类型、方向和成员不变。若修改成员或方向，需要重新走结构校验。</p>
-<p>删除R1前若R2引用它，应列出依赖。可以选择阻止删除，或者在明确确认后处理依赖；不能不告知就留下悬空引用。教学初版可先实现阻止并定位依赖，是否支持级联操作需业务确认。</p>
-<h3 id="c9-s7">9.7 画图时常见的错误 <a class="heading-link" href="#c9-s7" aria-label="链接到本小节">#</a></h3>
-<p>不要让界面直接读取数据库后决定能否写；不要在非法分支后仍画保存；不要所有返回都跨层直达用户；不要用销毁叉号表示一次渲染结束；不要把所有校验写成一句“检查合法”却无法解释检查对象。</p>
-<p><strong>本章产出：</strong>一张职责清楚的详细顺序图、一组操作数与校验契约，以及成功、非法、渲染失败、依赖删除等场景说明。</p>
-<h3 id="c9-s8">9.8 SD3 创建任务怎样逐步展开 <a class="heading-link" href="#c9-s8" aria-label="链接到本小节">#</a></h3>
-<p>有创建职责的用户请求建立草稿，系统先检查权限再生成草稿ID。任务集合或仓储已存在时，由它创建新任务记录；不要因为图中出现“创建任务”，就把整个集合对象画成刚刚诞生。</p>
-<p>上传指南后形成候选版本，返回摘要与错误。只有候选有效且创建者核对确认时，才绑定到任务。用loop表达未绑定且未取消时的重试，用opt表达“有效且确认”时绑定，比无条件写入更准确。</p>
-<p>随后导入文书，确认裁判理由范围和原文版本，分别配置命题轮与关系轮标注员及裁定职责。发布时检查材料、指南和分配是否完整；成功才开放可领取工作项，失败保留草稿并说明缺什么。</p>
-<h3 id="c9-s9">9.9 发布检查不能只看总人数 <a class="heading-link" href="#c9-s9" aria-label="链接到本小节">#</a></h3>
-<p>总共分配4个人，但全部在命题轮，关系轮仍然没有人员。应分别检查两轮要求。修订分析把指南的双人独立标注落实到两轮配置，这是一个可追溯的建模解释；具体兼任、回避、特殊人数和后续替换规则应形成确认记录。</p>
-<p>取消创建不应产生可领取任务。草稿是否保留、临时上传多久清理、发布后新增文书怎样继承指南等，不必在顺序图上挤满文字，但应在场景说明或业务规则中有答案。</p>
-<h3 id="c9-s10">9.10 让每条内部消息都有接收者职责 <a class="heading-link" href="#c9-s10" aria-label="链接到本小节">#</a></h3>
+<details><summary>练习 任务有十份文书 其中一份冻结后是否整个任务都应进入关系轮</summary><p>除非业务明确要求全批次同步，否则应按文书工作项独立推进，任务展示汇总进度。全局一个stage会把不同文书错误地绑定到同一生命周期。</p></details>
+<h3 id="c7-s11">7.11 让每条内部消息都有接收者职责 <a class="heading-link" href="#c7-s11" aria-label="链接到本小节">#</a></h3>
 <p>把“校验并保存”拆开看：应用服务接收用例请求；工作项提供当前状态与有效基准；分配或权限组件确认当前人的职责；关系验证器检查结构；仓储执行受控保存；图示组件生成展示。消息接收者的类或接口，应在设计模型中有相应能力。</p>
 <p>不要为了让图短，就让“标注版本”凭空知道当前登录用户、教师答案策略和网络响应格式。掌握业务数据不意味着应该承担所有技术责任。反过来，应用服务也不应重新实现所有领域规则。</p>
-<h3 id="c9-s11">9.11 详细顺序图怎样表达一个失败分支 <a class="heading-link" href="#c9-s11" aria-label="链接到本小节">#</a></h3>
+<h3 id="c7-s12">7.12 详细顺序图怎样表达一个失败分支 <a class="heading-link" href="#c7-s12" aria-label="链接到本小节">#</a></h3>
 <p>先画读取和校验，再用alt分出“合法”“非法”；合法分支才包含保存消息；非法分支返回具体错误。若图把保存放在alt之后，所有分支都会继续执行保存，就与正文“非法不写入”矛盾。</p>
-<p>图示失败属于保存之后的另一种结果，需要说明关系是否已提交。不要用一个catch把业务保存失败与展示失败混为同一种“请重试”，否则客户端可能重复创建关系。</p><p class="source">资料对应 第二次顺序图分析SD2 SD3 详细设计。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c10" aria-labelledby="h10"><h2 id="h10">10 教学支持 标准 练习 尝试与反馈</h2><h3 id="c10-s1">10.1 为什么有这么多角色 <a class="heading-link" href="#c10-s1" aria-label="链接到本小节">#</a></h3>
-<p>任务创建者负责材料、指南与分配；命题标注员负责切割与类型；命题裁定者确认统一命题基准；关系标注员建立论证关系；关系裁定者确认完整结构；教师发布标准和练习；学生独立作答。</p>
-<p>角色描述职责，同一个真实用户可以承担多个角色，但是否允许同一人在同一文书上既标注又裁定，需要回避规则。界面有角色切换不等于服务端已经授权，任务分配和当前阶段也必须同时成立。</p>
-<h3 id="c10-s2">10.2 教学练习是另一条业务链 <a class="heading-link" href="#c10-s2" aria-label="链接到本小节">#</a></h3>
-<p>教师在教学材料上建立标准要素、关系和图示，发布绑定材料、指南和标准版本的练习；学生在个人尝试中作答；系统按策略比较并给出反馈；允许重做时保留多次尝试。</p>
-<p>仅命题练习在命题反馈后结束；仅关系练习可使用教师提供的统一命题集；命题加关系练习需要先决定后半程使用哪份命题基准。标准答案何时可见、提交后能否重做、是否允许学生修改副本，都是需要教师策略的内容。</p>
-<p>正式裁定是在没有预设正确答案的新文书上形成结果，教学反馈是在已绑定标准下比较学生作答。两者可以共享编辑器、规则和图示代码，但入口、数据范围与写入权限需要区分。</p>
-<h3 id="c10-s3">10.3 SD4 为什么单独表示教学 <a class="heading-link" href="#c10-s3" aria-label="链接到本小节">#</a></h3>
-<p>修订版增加独立教学系统顺序图，使教师和学生目标清楚。教师建立标准，发布练习；学生领取个人尝试，完成命题或关系标注；系统依据绑定标准对齐和比对，按策略开放反馈；教师查看学情。</p>
-<p>独立“系统黑箱”是为了说明教学业务边界，不自动表示必须单独部署。实现上可以共用规则、编辑器和图示组件，同时通过模块、查询范围和权限隔离数据。</p>
-<h3 id="c10-s4">10.4 教学流程最容易漏的三个条件 <a class="heading-link" href="#c10-s4" aria-label="链接到本小节">#</a></h3>
-<p><strong>标准必须匹配材料。</strong>不能因为系统里有任意标准答案就允许发布；必须绑定同一材料、指南和适用范围。<strong>关系练习必须有命题基准。</strong>命题边界不一致时，先对齐，不要逐编号硬比。<strong>反馈要有开放策略。</strong>练习前查看全部答案与独立作答目标可能冲突，需要教师决定开放时间和范围。</p>
-<p>学生修改原文时，应限于明确允许的个人副本，并重新检查定位与对齐；不能改教师原文后继续用旧索引。标准更新时建立新版本，已有尝试和反馈继续绑定原口径，重做建立新尝试而非覆盖旧记录。</p>
-<h3 id="c10-s5">10.5 三张图还是四张图 <a class="heading-link" href="#c10-s5" aria-label="链接到本小节">#</a></h3>
-<p>第二次作业原文是SD1、SD2、SD3三个主要场景，v3.0修订版又加入SD4教学支持。讲解会覆盖四个场景；提交时采用几个图、哪些属于正式要求，应对应当前任务书。增加教学图是为把独立模式解释完整，不是本讲义替老师新增必交数量。</p>
-<h3 id="c10-s6">10.6 练习比对需要先对齐对象 <a class="heading-link" href="#c10-s6" aria-label="链接到本小节">#</a></h3>
-<p>假设标准有区间[0,10)、[10,20)，学生有[0,20)。标准的P2与学生的P2根本不存在直接对应关系。系统应先报告边界差异，再根据确定策略进行匹配；没有匹配的元素单独列为未对齐，不用相同显示序号硬配。</p>
-<p>对齐后，再比较要素类型。关系比较要把操作数映射到相同基准，并区分类型、方向、成员集合与嵌套结构。对J和I这类集合结构，成员顺序是否影响比较需按指南和规范化约定处理；对S、A、M，来源目标不能交换。</p>
-<h3 id="c10-s7">10.7 不要过早把反馈压成一个总分 <a class="heading-link" href="#c10-s7" aria-label="链接到本小节">#</a></h3>
-<p>可以先展示可解释的差异：未对齐区间、类型不同、关系缺失或多余、方向不同、嵌套对象不同。若需要综合分数，要确定各类权重、部分正确、边界差异传播与重复计错规则，并由教师确认。</p>
-<p>两人正式标注的一致性、学生与教师标准的匹配程度、模型的预测指标，是不同评价问题。它们都叫“准确率”会让结果无法解释。</p>
-<h3 id="c10-s8">10.8 三种练习的基准策略 <a class="heading-link" href="#c10-s8" aria-label="链接到本小节">#</a></h3>
-<p>初学关系时，提供统一的教师命题集，能把学习重点放在关系。综合练习若保留学生自己的命题集，就必须处理到标准的对齐。命题练习后是否直接给标准命题集进入关系轮，会改变教学反馈目的，发布时要说明，而不是由程序临时决定。</p><p class="source">资料对应 初始需求的教学补充 修订版SD4。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c11" aria-labelledby="h11"><h2 id="h11">11 结构化分析 ERD DFD与数据字典</h2><h3 id="c11-s1">11.1 为什么还要学另一套分析方法 <a class="heading-link" href="#c11-s1" aria-label="链接到本小节">#</a></h3>
+<p>图示失败属于保存之后的另一种结果，需要说明关系是否已提交。不要用一个catch把业务保存失败与展示失败混为同一种“请重试”，否则客户端可能重复创建关系。</p>
+<figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 700 410" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="冻结命题集的系统顺序图"><title>冻结命题集的系统顺序图</title><desc>裁定者请求冻结，系统按条件返回版本或错误；系统内部不展开。</desc><defs><marker id="arr-700-410" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="65" y="20" width="150" height="48" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="140.0" y="50.0" text-anchor="middle" font-size="17" fill="#153249">命题裁定者</text><rect x="455" y="20" width="170" height="48" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="540.0" y="50.0" text-anchor="middle" font-size="17" fill="#153249">标注系统</text><line x1="140" y1="68" x2="140" y2="390" stroke="#91a5b5" stroke-dasharray="5 5"/><line x1="540" y1="68" x2="540" y2="390" stroke="#91a5b5" stroke-dasharray="5 5"/><line x1="140" y1="120" x2="540" y2="120" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-700-410)" /><text x="340.0" y="110" text-anchor="middle" font-size="15" fill="#18364e">请求冻结 工作项与预期修订</text><rect x="290" y="146" width="370" height="116" rx="4" fill="#f7fafc" stroke="#a0b0bd"/><text x="308" y="172" font-size="15" fill="#153249">alt 条件满足：创建快照并开放关系轮</text><text x="308" y="203" font-size="15" fill="#153249">else 条件不满足：不推进并返回缺失项</text><text x="308" y="238" font-size="14" fill="#536376">此处仅描述系统结果，不展开内部调用</text><line x1="540" y1="310" x2="140" y2="310" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-700-410)" stroke-dasharray="6 5"/><text x="340.0" y="300" text-anchor="middle" font-size="15" fill="#18364e">冻结版本ID与新状态 或具体错误</text><text x="340" y="374" text-anchor="middle" font-size="15" fill="#536376">前置：已分配裁定职责；后置：成功有快照，失败状态不变</text></svg></div><figcaption>图1 教学简图只展开冻结这一段 详细时序见正文步骤</figcaption></figure>
+<figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="创建关系的内部协作简图"><title>创建关系的内部协作简图</title><desc>用户经界面发起请求，服务检查版本与规则，合法时保存并生成图示，再逐层返回。存储与图示在此合并展示。</desc><defs><marker id="arr-900-560" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="9" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="85.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">关系标注员</text><line x1="85" y1="64" x2="85" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="189" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="265.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">标注界面</text><line x1="265" y1="64" x2="265" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="369" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="445.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">关系应用服务</text><line x1="445" y1="64" x2="445" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="549" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="625.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">版本与规则</text><line x1="625" y1="64" x2="625" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><rect x="729" y="18" width="152" height="46" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="805.0" y="47.0" text-anchor="middle" font-size="17" fill="#153249">存储与图示</text><line x1="805" y1="64" x2="805" y2="495" stroke="#91a5b5" stroke-dasharray="5 5"/><line x1="85" y1="112" x2="265" y2="112" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="175.0" y="102" text-anchor="middle" font-size="15" fill="#18364e">确认关系</text><line x1="265" y1="170" x2="445" y2="170" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="355.0" y="160" text-anchor="middle" font-size="15" fill="#18364e">类型与带类别引用</text><line x1="445" y1="228" x2="625" y2="228" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="535.0" y="218" text-anchor="middle" font-size="15" fill="#18364e">检查权限 阶段 基准 引用</text><line x1="625" y1="280" x2="445" y2="280" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="535.0" y="270" text-anchor="middle" font-size="15" fill="#18364e">合法 或具体错误</text><line x1="445" y1="337" x2="805" y2="337" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" /><text x="625.0" y="327" text-anchor="middle" font-size="15" fill="#18364e">合法时保存结构并生成同修订图示</text><line x1="805" y1="389" x2="445" y2="389" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="625.0" y="379" text-anchor="middle" font-size="15" fill="#18364e">关系ID 修订号 图示状态</text><line x1="445" y1="441" x2="265" y2="441" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="355.0" y="431" text-anchor="middle" font-size="15" fill="#18364e">保存结果与恢复提示</text><line x1="265" y1="485" x2="85" y2="485" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-900-560)" stroke-dasharray="6 5"/><text x="175.0" y="475" text-anchor="middle" font-size="15" fill="#18364e">展示结果</text><text x="440" y="535" text-anchor="middle" font-size="15" fill="#536376">教学简图：非法请求不保存；渲染失败可重建展示，不重复创建关系</text></svg></div><figcaption>图2 教学协作简图 存储与图示为压缩表达 实际详细设计可分别展开</figcaption></figure><section class="demo" aria-labelledby="demo-title"><h4 id="demo-title">动手检查一次冻结条件</h4><p>教学模拟只检查下面选择的条件，不连接正式系统，也不写入数据。改变一个条件，再观察拒绝原因。</p><form id="freeze-demo"><div class="demo-grid"><label>当前职责<select id="d-duty"><option value="judge">本工作项命题裁定者</option><option value="annotator">普通标注员</option></select></label><label>当前工作项状态<select id="d-state"><option value="adjudication">命题待裁定</option><option value="editing">类型标注中</option><option value="relation">关系标注中</option></select></label><label><input id="d-revision" type="checkbox" checked> 请求修订与当前一致</label><label><input id="d-submissions" type="checkbox" checked> 所需独立提交已齐备</label><label><input id="d-complete" type="checkbox"> 裁定与完整性检查完成</label></div><button type="submit">检查冻结条件</button> <button type="reset">恢复示例</button><p id="demo-result" role="status" aria-live="polite">当前示例还缺“裁定与完整性检查完成”。</p></form></section><p class="pairlink"><a href="/se/homework/#c7">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c8" aria-labelledby="h8"><h2 id="h8">8 结构化分析  从数据和处理过程理解系统</h2><h3 id="c8-s1">8.1 为什么还要学另一套分析方法 <a class="heading-link" href="#c8-s1" aria-label="链接到本小节">#</a></h3>
 <p>面向对象分析围绕业务对象、状态和协作组织理解；结构化分析围绕数据如何进入系统、经过哪些处理、保存到哪里组织理解。二者可以对同一需求提供补充视角。除非任务书要求，不必为了显得完整把所有图重复画一套。</p>
 <p>结构化分析常用实体关系图（ERD）描述数据，数据流图（DFD）描述处理，数据字典统一数据定义，决策表或决策树表达复杂规则。</p>
-<h3 id="c11-s2">11.2 DFD的四种元素 <a class="heading-link" href="#c11-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c8-s2">8.2 DFD的四种元素 <a class="heading-link" href="#c8-s2" aria-label="链接到本小节">#</a></h3>
 <p>外部实体是系统边界外的数据来源或接收者；处理把输入数据转换成输出数据；数据流说明流动的数据是什么；数据存储保存后续还会使用的数据。处理名称一般用动宾短语，数据流一般用名词。</p>
 <p>以关系提交为例：外部实体“关系标注员”提供“关系提交数据”，处理“校验并提交关系”读取“冻结命题数据”和“任务分配数据”，写入“个人关系提交库”，输出“提交结果”。图上不需要画“用户先点哪个按钮”。DFD不是控制流程图。</p>
 <p>不能把外部实体直接连到数据存储来代替系统处理，也不能用存储到存储的箭头跳过处理。处理只有输入没有有意义输出，可能是“黑洞”；只有输出没有合理输入，可能是“奇迹”；输入不足以产生输出，是“灰洞”。</p>
-<h3 id="c11-s3">11.3 分层与平衡 <a class="heading-link" href="#c11-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c8-s3">8.3 分层与平衡 <a class="heading-link" href="#c8-s3" aria-label="链接到本小节">#</a></h3>
 <p>上下文图把整个系统视为一个处理，展示边界外的交互；再分解为较大处理，逐层细化。不同教材对“第0层”的命名可能不同，读图时先说明自己的层级约定。</p>
 <p>父图的某处理被展开为子图后，跨边界的输入输出应保持平衡。若父图只有“关系数据”输入，子图却凭空出现一份外部标准答案，应检查是否漏掉了边界数据流。</p>
-<h3 id="c11-s4">11.4 数据字典 决策表和ERD <a class="heading-link" href="#c11-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c8-s4">8.4 数据字典 决策表和ERD <a class="heading-link" href="#c8-s4" aria-label="链接到本小节">#</a></h3>
 <p>数据字典要让“关系提交数据”有确定含义，例如由工作项ID、个人版本ID、命题基准版本ID、关系集合组成；关系集合中的引用需明确对象类型和ID。它不能只解释名称，还要说明结构、类型、取值、可空性与约束。</p>
 <p>决策表把条件组合与动作对应起来，适合“有权限、阶段正确、版本有效”共同决定能否保存的规则。决策树适合按判断路径阅读。组合很多时可以先按优先级约定错误处理，避免漏掉规则或让不同实现返回互相矛盾的结果。</p>
 <p>ERD表示实体、属性与联系。例如“用户—分配—文书工作项”，分配连接用户、文书与轮次。概念ERD尚不等于最终表结构；逻辑设计再决定主外键、关联表、约束与索引。</p>
-<h3 id="c11-s5">11.5 先画数据而非直接写建表语句 <a class="heading-link" href="#c11-s5" aria-label="链接到本小节">#</a></h3>
-<p>概念ERD先确认用户、文书、任务、分配、版本和关系的联系。用户与工作项通过轮次分配关联；冻结命题与关系版本通过基准引用关联；练习与标准通过发布绑定关联。每条联系都应解释“一个对象可关联几个，能否暂时没有”。</p>
-<p>“一份文书只能有一份标注”明显不够，因为存在多人、轮次、草稿和历史。可以说“一次个人作答版本属于一个人和一个工作项”，再用版本与提交关联表达历史。</p>
-<h3 id="c11-s6">11.6 用DFD检查输入输出是否完整 <a class="heading-link" href="#c11-s6" aria-label="链接到本小节">#</a></h3>
-<p>上下文层展示创建者、标注员、裁定者、教师和学生与系统交换的数据。展开时可分为任务配置、个人标注、裁定版本、教学练习和结果输出等处理。</p>
-<p>“生成终稿导出”需要确定终稿快照、指南版本、原文和关系结构，输出文件及导出记录。若图中只有“用户点击导出”而没有所需数据来源，就还没有把处理分析清楚。</p>
-<p>数据存储要经处理读写；DFD箭头写“导出请求”“终稿数据”，不要写“先做”“然后”。层次分解时检查父处理边界输入输出与子图一致。</p>
-<h3 id="c11-s7">11.7 数据字典至少统一这些对象 <a class="heading-link" href="#c11-s7" aria-label="链接到本小节">#</a></h3>
-<p>原文版本要定义字符编码、换行与偏移基准；要素要定义稳定ID、范围、类型；关系要定义有方向操作数和集合操作数；提交要定义身份、轮次、版本与状态；终稿要定义所绑定快照；练习反馈要定义对齐、标签与关系差异。</p>
-<p>例如原文范围可以采用“从0开始、左闭右开”的区间约定，但还需说明偏移单位是Unicode码点还是UTF-16码元。JavaScript字符串位置与Python处理中文扩展字符、表情时可能不同，不能只写“字符索引”就认为一致。换行与规范化也必须在生成版本时固定。</p>
-<h3 id="c11-s8">11.8 一个最小数据流图样例 <a class="heading-link" href="#c11-s8" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：第12章 结构化分析。</p>
+<h3 id="c8-s5">8.5 一个最小数据流图样例 <a class="heading-link" href="#c8-s5" aria-label="链接到本小节">#</a></h3>
 <p>下面只展示“提交关系”的数据流。箭头写的是数据内容，不表示用户界面的点击先后；权限、阶段与基准检查在处理中使用相关存储数据。</p>
 <figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 920 375" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="关系提交的局部数据流示意"><title>关系提交的局部数据流示意</title><desc>关系标注员输入关系提交数据，处理读取分配、状态、冻结基准和个人版本，保存有效提交并返回结果。</desc><defs><marker id="arr-920-375" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="25" y="80" width="180" height="125" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="115.0" y="148.5" text-anchor="middle" font-size="17" fill="#153249">关系标注员</text><rect x="350" y="80" width="230" height="125" rx="25" fill="#edf4fa" stroke="#7793a8"/><text x="465" y="150" text-anchor="middle" font-size="17" fill="#153249">处理 校验并提交关系</text><path d="M700 80H890M700 205H890" stroke="#7793a8" stroke-width="2" fill="none"/><text x="795.0" y="148.5" text-anchor="middle" font-size="17" fill="#153249">个人关系版本</text><path d="M350 285H580M350 340H580" stroke="#7793a8" stroke-width="2" fill="none"/><text x="465.0" y="318.5" text-anchor="middle" font-size="17" fill="#153249">分配 状态 冻结基准</text><line x1="205" y1="110" x2="350" y2="110" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-920-375)" /><text x="277.5" y="100" text-anchor="middle" font-size="15" fill="#18364e">关系提交数据</text><line x1="350" y1="174" x2="205" y2="174" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-920-375)" /><text x="277.5" y="164" text-anchor="middle" font-size="15" fill="#18364e">提交结果</text><line x1="580" y1="110" x2="700" y2="110" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-920-375)" /><text x="640.0" y="100" text-anchor="middle" font-size="15" fill="#18364e">有效提交快照</text><line x1="700" y1="174" x2="580" y2="174" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-920-375)" /><text x="640.0" y="164" text-anchor="middle" font-size="15" fill="#18364e">个人版本数据</text><line x1="465" y1="285" x2="465" y2="205" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-920-375)" /><text x="465.0" y="275" text-anchor="middle" font-size="15" fill="#18364e"></text><text x="480" y="258" font-size="14" fill="#536376">所需校验数据</text></svg></div><figcaption>局部数据流教学示意 矩形为外部实体 圆角框为处理 平行线为存储 箭头为数据流</figcaption></figure>
 <p>可以再把“校验并提交”分解为读分配与状态、检查结构、写提交快照、组织提交结果。但分解图对外仍应接收相同关系提交数据、输出相同提交结果，不能偷偷增加父图没有的外部输入。</p>
-<h3 id="c11-s9">11.9 从ERD走到关系表的一次转换 <a class="heading-link" href="#c11-s9" aria-label="链接到本小节">#</a></h3>
+<h3 id="c8-s6">8.6 从ERD走到关系表的一次转换 <a class="heading-link" href="#c8-s6" aria-label="链接到本小节">#</a></h3>
 <p>用户与工作项的多对多，通过assignment关联表展开，外加round和duty。一个关系版本有多条关系，可在relation中保存version_id；一条关系有多个带槽位的操作数，可用relation_operand保存。这样“成员”是多行数据，不需要把E1,E2,E3拼在一个逗号字符串里。</p>
-<p>这只是逻辑结构起点。之后仍需决定多态引用怎样约束、操作数唯一性如何定义、关系循环在哪一层检查，以及如何防止跨工作项连接。</p><p class="source">资料对应 第12章结构化分析 数据与关系需求疑问。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c12" aria-labelledby="h12"><h2 id="h12">12 需求规格 评审 验收与基线</h2><h3 id="c12-s1">12.1 SRS要能支撑设计和验收 <a class="heading-link" href="#c12-s1" aria-label="链接到本小节">#</a></h3>
+<p>这只是逻辑结构起点。之后仍需决定多态引用怎样约束、操作数唯一性如何定义、关系循环在哪一层检查，以及如何防止跨工作项连接。</p><p class="pairlink"><a href="/se/homework/#c10">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c9" aria-labelledby="h9"><h2 id="h9">9 需求规格 确认与变更  形成大家共同遵守的约定</h2><h3 id="c9-s1">9.1 SRS要能支撑设计和验收 <a class="heading-link" href="#c9-s1" aria-label="链接到本小节">#</a></h3>
 <p>SRS是软件需求规格说明书。它通常包含目的和范围、术语、总体描述、用户和外部接口、功能需求、质量需求、约束、业务规则、模型、验收和追踪。课程文件引用某个模板时，以该任务书要求为准；模板提供结构，不能代替真实需求内容。</p>
 <p>每条重要需求最好有稳定编号。一个可用的记录是：“FR-REL-01；来源为已确认业务规则；关系标注员仅能在关系轮向自己的有效版本添加关系；引用的命题基准必须是本工作项当前有效的冻结版本；失败不新增关系；验收见T-REL-01至T-REL-04。”</p>
 <p>“实现语言用Java”属于设计或技术约束的内容；“关系必须有稳定引用”是对可重现行为的要求。需求允许出现必要的数据约定，但不要把所有内部类和算法先写死。</p>
-<h3 id="c12-s2">12.2 评审不仅检查错别字 <a class="heading-link" href="#c12-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c9-s2">9.2 评审不仅检查错别字 <a class="heading-link" href="#c9-s2" aria-label="链接到本小节">#</a></h3>
 <p>先检查完整性：成功、失败、边界、权限、并发和恢复是否考虑到了。再检查一致性：原型、用例、状态、术语和字段是否相互吻合。最后检查可验证性和可行性：怎么证明符合要求，团队是否能在约束内做到。</p>
 <p>可以组织场景走查：请标注员实际从领取任务走到提交，再让裁定者走到冻结。每遇到“这里应该怎样”就记录问题；未决定的内容用明确的待决策状态管理，不能靠开发者各自理解。</p>
-<h3 id="c12-s3">12.3 需求追踪把产物连起来 <a class="heading-link" href="#c12-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c9-s3">9.3 需求追踪把产物连起来 <a class="heading-link" href="#c9-s3" aria-label="链接到本小节">#</a></h3>
 <p>追踪链可以是“来源 → 需求 → 用例 → 分析与设计 → 代码 → 测试”。它不一定是一张巨大表格，但必须能回答：需求有没有实现；这段代码为什么存在；需求改了影响哪里；测试覆盖了哪些要求。</p>
 <p>例如改变“冻结前置条件”时，至少要检查用例、状态转换、冻结服务、事务条件、接口错误和回归测试。只更新Word标题上的版本号，不等于完成变更。</p>
-<h3 id="c12-s4">12.4 一个可靠的变更过程 <a class="heading-link" href="#c12-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c9-s4">9.4 一个可靠的变更过程 <a class="heading-link" href="#c9-s4" aria-label="链接到本小节">#</a></h3>
 <p>记录变更原因和来源；分析影响与成本；由有权决定的人确定范围；修改需求、模型与实现；执行相关验证；更新基线与记录。小团队不需要复杂审批仪式，但必须知道谁决定、改了什么以及验证结果。</p>
 <p>“冻结”并不表示永远不能变化，而是不能无控制地覆盖。业务版本与工程基线都可以通过明确的新版本演化，并保留旧依据。</p>
-<h3 id="c12-s5">12.5 写成SRS的组织方式 <a class="heading-link" href="#c12-s5" aria-label="链接到本小节">#</a></h3>
-<p>可按“引言与范围—术语与角色—业务流程—功能需求—业务规则与数据—质量与约束—接口—分析模型—验收与追踪—待决策事项”组织。功能需求用稳定编号关联用例与图，而不是把几张图截图贴进去就结束。</p>
-<p>质量要求不要复制CampusHub的两秒、三步等指标。本系统的8至10页文书还需换算为实际字符、要素、关系和并发规模，再确定可测目标。扫描件是否OCR、支持哪些导出格式、浏览器与部署环境，也应明确列入范围。</p>
-<h3 id="c12-s6">12.6 可以立即使用的需求片段 <a class="heading-link" href="#c12-s6" aria-label="链接到本小节">#</a></h3>
-<p><strong>教学示例FR-REL-02：</strong>系统应拒绝引用另一工作项或无效命题版本的关系请求；拒绝后个人关系版本不产生新增记录。<strong>FR-TEACH-01：</strong>学生提交只保存到其练习尝试，不改变正式文书版本。<strong>FR-EXPORT-01：</strong>导出应从同一终稿快照生成，并包含关联版本信息。</p>
-<p>这些条目应补齐来源、优先级、状态与验收，再进入你的SRS。还应保留前面的待确认决策，不能把教学示例全部改成“用户已经确认”。</p>
-<h3 id="c12-s7">12.7 把质量需求写成一个六要素场景 <a class="heading-link" href="#c12-s7" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：第14章 后期阶段的需求文档；02 05 需求文档化验证与冲突检测。</p>
+<h3 id="c9-s5">9.5 把质量需求写成一个六要素场景 <a class="heading-link" href="#c9-s5" aria-label="链接到本小节">#</a></h3>
 <p>以导出为例：刺激来源是有输出职责的用户；刺激是导出指定终稿；环境是该终稿已确定且系统处于正常负载；对象是导出服务及其数据源；响应是从同一快照产生可读取文件并记录来源；响应度量包括文件内容一致、可解析、元数据齐全和约定时间。</p>
 <p>时间阈值先标待测待定，不从别的项目抄一个两秒。先固定样本规模与环境做基线测量，再与需求方约定目标。质量目标需要付出设计与验证成本，不能只出现在文档开头的口号中。</p>
-<h3 id="c12-s8">12.8 一条SRS记录的完整字段 <a class="heading-link" href="#c12-s8" aria-label="链接到本小节">#</a></h3>
+<h3 id="c9-s6">9.6 一条SRS记录的完整字段 <a class="heading-link" href="#c9-s6" aria-label="链接到本小节">#</a></h3>
 <p>需求编号、标题、业务描述、来源、确认状态、优先级、前置与触发、输入输出、失败保证、关联用例、验收标准和变更记录。不必每条都用大表格铺开；字段齐全、能找到信息即可。</p>
-<p>例如状态约束可以在业务规则表中集中定义，再由多个功能需求引用，避免四个页面各写一套不同的冻结条件。复用的是同一条知识，不是把模糊句子复制到多个章节。</p><p class="source">资料对应 第14章需求文档 02 05需求文档化与验证。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c13" aria-labelledby="h13"><h2 id="h13">13 体系结构 模块 接口与设计取舍</h2><h3 id="c13-s1">13.1 先理解结构中的三个要素 <a class="heading-link" href="#c13-s1" aria-label="链接到本小节">#</a></h3>
+<p>例如状态约束可以在业务规则表中集中定义，再由多个功能需求引用，避免四个页面各写一套不同的冻结条件。复用的是同一条知识，不是把模糊句子复制到多个章节。</p><p class="pairlink"><a href="/se/homework/#c10">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c10" aria-labelledby="h10"><h2 id="h10">10 体系结构设计  把系统分成能够协作的大块</h2><h3 id="c10-s1">10.1 先理解结构中的三个要素 <a class="heading-link" href="#c10-s1" aria-label="链接到本小节">#</a></h3>
 <p>组件承担职责，连接器说明组件怎样交互，约束规定允许的组合与依赖。模块名字的列表还不是完整架构；需要说明谁调用谁、传什么、怎样处理失败、部署在哪里。</p>
 <p>架构设计从关键功能、质量属性和约束出发。比如“多人独立提交”要求数据隔离；“冻结后可重现”要求版本化；“图示刷新失败不丢标注”要求把业务保存与展示计算的结果区分开。</p>
 <p>质量属性应写成具体场景：发生什么刺激、处于什么环境、作用于哪个对象、系统怎样响应、如何测量。只在图旁写“高可用、高性能、可扩展”，不能证明设计满足这些目标。</p>
-<h3 id="c13-s2">13.2 读懂常见风格的取舍 <a class="heading-link" href="#c13-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c10-s2">10.2 读懂常见风格的取舍 <a class="heading-link" href="#c10-s2" aria-label="链接到本小节">#</a></h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">风格</th><th scope="col">核心组织方式</th><th scope="col">适合与代价</th></tr></thead><tbody><tr><td>分层</td><td>展示、业务、数据等职责分层</td><td>便于分工与替换；跨层限制和数据转换会增加成本</td></tr><tr><td>客户端服务器</td><td>客户端发请求，服务器提供能力</td><td>适合Web交互；需处理网络失败和状态一致性</td></tr><tr><td>MVC</td><td>模型、视图、控制职责分离</td><td>支持交互和多视图；具体框架对三者边界有差别</td></tr><tr><td>管道过滤器</td><td>数据依次经过独立转换步骤</td><td>适合解析、清洗、转换；交互与共享状态不总容易表达</td></tr><tr><td>事件驱动</td><td>组件发布和处理事件</td><td>减少直接依赖；调用链追踪、重复消息与时序更复杂</td></tr><tr><td>主程序子程序</td><td>主程序组织调用子程序</td><td>简单直接；共享数据和集中控制可能增加耦合</td></tr><tr><td>面向对象</td><td>对象通过接口协作</td><td>便于封装变化；划分不当仍会形成复杂依赖</td></tr><tr><td>微服务</td><td>多个可独立部署的服务协作</td><td>支持独立演化；引入通信、数据一致性与运维成本</td></tr></tbody></table></div>
 <p>这些风格可以组合。一个系统可以总体采用客户端服务器，服务端采用分层，展示端采用MVC。高并发不必然要求微服务；先找实际瓶颈和团队约束，再决定是否需要拆分。</p>
 <p>严格分层限制只能访问相邻下层，松散分层允许按约定跨层访问。这里说的是逻辑依赖。三个逻辑层可以在同一服务端进程中运行，也可以分布在不同部署节点；“三层”不等于“三台服务器”。</p>
-<h3 id="c13-s3">13.3 从需求到架构的七步 <a class="heading-link" href="#c13-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c10-s3">10.3 从需求到架构的七步 <a class="heading-link" href="#c10-s3" aria-label="链接到本小节">#</a></h3>
 <p>先识别关键需求；选择合适风格；划分子系统和模块；设计接口；决定物理部署；验证是否满足需求；组织评审并改进。逻辑设计往往需要多次调整，不能仅按网页菜单分包。</p>
 <p>标注系统的一个教学方案是：浏览器工作台通过HTTP调用服务端；服务端包含任务、标注、裁定、教学、导出模块；共享规则与图示能力；通过数据访问层保存版本和记录。教学独立入口与数据范围可以在同一服务端实现，不自动要求两个微服务。</p>
 <p>接口至少要说明操作、输入、输出、前后条件、错误、权限、版本与重试语义。远程接口不是写个方法名就结束，还要考虑网络不可靠和重复请求。</p>
-<h3 id="c13-s4">13.4 多视图描述不同问题 <a class="heading-link" href="#c13-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c10-s4">10.4 多视图描述不同问题 <a class="heading-link" href="#c10-s4" aria-label="链接到本小节">#</a></h3>
 <p>4+1中，逻辑视图描述主要对象与职责；开发视图描述代码模块和包；进程视图描述运行时并发与通信；物理视图描述部署节点；“+1”用典型用例串联并验证其他视图。</p>
 <p>C4从系统上下文、容器、组件、代码逐级放大。C4的“容器”指可运行应用或数据存储等单元，不专指Docker容器。C4与4+1是不同组织方法，不是逐项一一对应。</p>
 <p>包设计还要注意变化与依赖：一起变化的类适合靠近；共同复用的类适合聚集；避免循环依赖；依赖尽量指向稳定抽象。画包图时要说明箭头是编译依赖、运行调用还是数据流，不能用一根箭头同时含混表达所有关系。</p>
-<h3 id="c13-s5">13.5 用ADR记录取舍 <a class="heading-link" href="#c13-s5" aria-label="链接到本小节">#</a></h3>
+<h3 id="c10-s5">10.5 用ADR记录取舍 <a class="heading-link" href="#c10-s5" aria-label="链接到本小节">#</a></h3>
 <p>架构决策记录（ADR）保留背景、选项、决定、理由和后果。例如“图示同步生成还是异步生成”：同步流程简单，但大图可能拖慢响应；异步需要任务状态、轮询或通知。决定以后还应记录条件，规模变化时可以重新评估。</p>
 <p>验证架构可以用场景走查、风险原型、接口集成测试和结构检查。自顶向下集成常需要桩代替下层，自底向上集成常需要驱动代替上层；不要等全部模块写完才一次性拼装。</p>
-<h3 id="c13-s6">13.6 一个适合讲解的初始方案 <a class="heading-link" href="#c13-s6" aria-label="链接到本小节">#</a></h3>
-<p>本讲义采用“浏览器前端＋一个模块化分层服务端＋数据库”作为教学方案。它让你先把复杂性集中在真实业务上：多人隔离、两轮流程、嵌套、版本与追溯。是否实际采用，还要结合现有项目框架和任务书。</p>
-<figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 800 550" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="模块化分层服务端教学方案"><title>模块化分层服务端教学方案</title><desc>浏览器调用接口层，服务端按任务、标注裁定、教学导出模块组织，共享规则，通过数据与文件接口存储。</desc><defs><marker id="arr-800-550" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="210" y="18" width="380" height="58" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="400.0" y="53.0" text-anchor="middle" font-size="17" fill="#153249">浏览器工作台 正式标注与教学入口</text><line x1="400" y1="77" x2="400" y2="130" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="112" text-anchor="middle" font-size="15" fill="#18364e">HTTP与JSON</text><rect x="60" y="140" width="680" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="400.0" y="174.0" text-anchor="middle" font-size="17" fill="#153249">接口层 身份检查 参数与错误契约</text><line x1="400" y1="197" x2="400" y2="228" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="187" text-anchor="middle" font-size="15" fill="#18364e"></text><rect x="60" y="235" width="216" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="168.0" y="268.5" text-anchor="middle" font-size="17" fill="#153249">任务与分配</text><rect x="292" y="235" width="216" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="400.0" y="268.5" text-anchor="middle" font-size="17" fill="#153249">标注与裁定</text><rect x="524" y="235" width="216" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="632.0" y="268.5" text-anchor="middle" font-size="17" fill="#153249">教学与导出</text><rect x="60" y="327" width="680" height="55" rx="4" fill="#f1f7f3" stroke="#7793a8"/><text x="400.0" y="360.5" text-anchor="middle" font-size="17" fill="#153249">共享领域能力 状态与版本 关系校验 图示规则</text><line x1="168" y1="291" x2="168" y2="327" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="168.0" y="281" text-anchor="middle" font-size="15" fill="#18364e"></text><line x1="400" y1="291" x2="400" y2="327" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="281" text-anchor="middle" font-size="15" fill="#18364e"></text><line x1="632" y1="291" x2="632" y2="327" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="632.0" y="281" text-anchor="middle" font-size="15" fill="#18364e"></text><line x1="400" y1="383" x2="400" y2="420" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="373" text-anchor="middle" font-size="15" fill="#18364e"></text><rect x="60" y="428" width="322" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="221.0" y="461.5" text-anchor="middle" font-size="17" fill="#153249">数据访问 数据库中的版本与记录</text><rect x="418" y="428" width="322" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="579.0" y="461.5" text-anchor="middle" font-size="17" fill="#153249">文件接口 原始材料与导出文件</text><text x="400" y="525" text-anchor="middle" font-size="15" fill="#536376">单个服务端可以有多个逻辑层；教学独立不自动要求独立部署</text></svg></div><figcaption>图3 本书用于讲解的初始架构方案 不是现有代码的实测结构图</figcaption></figure>
-<p>浏览器负责工作台和反馈；Controller接收请求与转换参数；应用服务协调任务、标注、裁定、教学和导出；领域规则保护状态与引用；仓储或DAO访问数据库；文件存储保留原始材料与导出产物。</p>
-<h3 id="c13-s7">13.7 模块怎样分才有业务含义 <a class="heading-link" href="#c13-s7" aria-label="链接到本小节">#</a></h3>
-<p>任务模块管理文书、指南绑定和分配；标注模块保存个人作答与提交；裁定和流程模块维护检查、冻结、定稿与修订；教学模块管理标准、练习、尝试和反馈；导出模块读取终稿生成文件。</p>
-<p>共享规则校验与图示能力可以被正式和教学调用，但调用者要提供明确上下文，不能自动把教学保存写进正式库。权限、错误、审计和事务是跨模块关注点，也需要明确责任。</p>
-<h3 id="c13-s8">13.8 依赖方向与运行拓扑要分开画 <a class="heading-link" href="#c13-s8" aria-label="链接到本小节">#</a></h3>
-<p>包图说明源码和模块依赖；部署图说明浏览器、应用服务、数据库与文件存储在哪里运行，通过什么网络连接。Repository接口与实现可以分离，应用服务依赖抽象，具体实现由装配注入。</p>
-<p>浏览器不能直接拿数据库密码读写正式表。也不要把“数据库有外键”画成浏览器与数据库之间的调用。一个服务端进程里有多层，不妨碍它具有清楚的逻辑分层。</p>
-<h3 id="c13-s9">13.9 用三个ADR证明你做过判断 <a class="heading-link" href="#c13-s9" aria-label="链接到本小节">#</a></h3>
-<p>第一，为什么先采用一个模块化服务端：记录团队与部署约束、单体与多服务的选项及后果。第二，为什么冻结产生不可变快照：解释多人比较与重现需要，说明存储与迁移代价。第三，图示为何与保存结果分开：解释展示失败的恢复和用户反馈。</p>
-<p>每个ADR要写选择条件和代价。不能只说“便于维护、扩展性好”，而要讲具体哪种变化被隔离、增加了哪些实现成本。</p>
-<h3 id="c13-s10">13.10 早期怎样验证架构 <a class="heading-link" href="#c13-s10" aria-label="链接到本小节">#</a></h3>
-<p>先用一份文书让页面、服务端和数据库真正连通；验证两个账号的草稿隔离；再验证一次冻结和一次嵌套关系；最后验证教学和正式数据不会串写。通过小范围贯通验证关键风险，再扩展功能范围。</p>
-<h3 id="c13-s11">13.11 用一次请求同时检查不同架构视图 <a class="heading-link" href="#c13-s11" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：03 01至03 03；体系结构交互课件；复习提纲第九十章。</p>
+<h3 id="c10-s6">10.6 用一次请求同时检查不同架构视图 <a class="heading-link" href="#c10-s6" aria-label="链接到本小节">#</a></h3>
 <p>在逻辑视图中，冻结涉及工作项、提交、裁定与快照；在开发视图中，对应流程、标注和存储模块；在进程视图中，考虑同时请求和后台渲染；在物理视图中，标明浏览器、应用服务、数据库与文件位置；用例场景把它们串起来。</p>
 <p>如果部署图中有消息队列，进程视图就要说明谁生产、谁消费、失败怎样处理。若只是一个同步服务，就不必为了“架构完整”添加并不使用的中间件。</p>
-<h3 id="c13-s12">13.12 用变化场景验证模块边界 <a class="heading-link" href="#c13-s12" aria-label="链接到本小节">#</a></h3>
+<h3 id="c10-s7">10.7 用变化场景验证模块边界 <a class="heading-link" href="#c10-s7" aria-label="链接到本小节">#</a></h3>
 <p>场景一：导出从JSON增加SVG，主要影响格式与文件生成，不应重写命题裁定。场景二：增加新的图布局算法，主要影响布局实现，不应改变关系真值或引用。场景三：教学标准更新，旧尝试应保持原标准口径，影响标准版本与反馈绑定，不应覆盖正式终稿。</p>
-<p>变化实际涉及多个模块并不一定是错误；关键是依赖有依据、影响可解释，而不是每个新需求都要求修改一切。</p><p class="source">资料对应 03 01至03 03架构课件 体系结构交互课件。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c14" aria-labelledby="h14"><h2 id="h14">14 交互设计 让保存 提交 冻结各有含义</h2><h3 id="c14-s1">14.1 可用性有具体的任务情境 <a class="heading-link" href="#c14-s1" aria-label="链接到本小节">#</a></h3>
+<p>变化实际涉及多个模块并不一定是错误；关键是依赖有依据、影响可解释，而不是每个新需求都要求修改一切。</p>
+<figure><div class="diagram-scroll" tabindex="0" role="region" aria-label="可横向滚动的教学示意图"><svg class="diagram" viewBox="0 0 800 550" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="模块化分层服务端教学方案"><title>模块化分层服务端教学方案</title><desc>浏览器调用接口层，服务端按任务、标注裁定、教学导出模块组织，共享规则，通过数据与文件接口存储。</desc><defs><marker id="arr-800-550" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2f526c"/></marker></defs><rect x="210" y="18" width="380" height="58" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="400.0" y="53.0" text-anchor="middle" font-size="17" fill="#153249">浏览器工作台 正式标注与教学入口</text><line x1="400" y1="77" x2="400" y2="130" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="112" text-anchor="middle" font-size="15" fill="#18364e">HTTP与JSON</text><rect x="60" y="140" width="680" height="56" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="400.0" y="174.0" text-anchor="middle" font-size="17" fill="#153249">接口层 身份检查 参数与错误契约</text><line x1="400" y1="197" x2="400" y2="228" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="187" text-anchor="middle" font-size="15" fill="#18364e"></text><rect x="60" y="235" width="216" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="168.0" y="268.5" text-anchor="middle" font-size="17" fill="#153249">任务与分配</text><rect x="292" y="235" width="216" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="400.0" y="268.5" text-anchor="middle" font-size="17" fill="#153249">标注与裁定</text><rect x="524" y="235" width="216" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="632.0" y="268.5" text-anchor="middle" font-size="17" fill="#153249">教学与导出</text><rect x="60" y="327" width="680" height="55" rx="4" fill="#f1f7f3" stroke="#7793a8"/><text x="400.0" y="360.5" text-anchor="middle" font-size="17" fill="#153249">共享领域能力 状态与版本 关系校验 图示规则</text><line x1="168" y1="291" x2="168" y2="327" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="168.0" y="281" text-anchor="middle" font-size="15" fill="#18364e"></text><line x1="400" y1="291" x2="400" y2="327" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="281" text-anchor="middle" font-size="15" fill="#18364e"></text><line x1="632" y1="291" x2="632" y2="327" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="632.0" y="281" text-anchor="middle" font-size="15" fill="#18364e"></text><line x1="400" y1="383" x2="400" y2="420" stroke="#2f526c" stroke-width="1.7" marker-end="url(#arr-800-550)" /><text x="400.0" y="373" text-anchor="middle" font-size="15" fill="#18364e"></text><rect x="60" y="428" width="322" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="221.0" y="461.5" text-anchor="middle" font-size="17" fill="#153249">数据访问 数据库中的版本与记录</text><rect x="418" y="428" width="322" height="55" rx="4" fill="#edf4fa" stroke="#7793a8"/><text x="579.0" y="461.5" text-anchor="middle" font-size="17" fill="#153249">文件接口 原始材料与导出文件</text><text x="400" y="525" text-anchor="middle" font-size="15" fill="#536376">单个服务端可以有多个逻辑层；教学独立不自动要求独立部署</text></svg></div><figcaption>图3 本书用于讲解的初始架构方案 不是现有代码的实测结构图</figcaption></figure><p class="pairlink"><a href="/se/homework/#c11">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c11" aria-labelledby="h11"><h2 id="h11">11 人机交互设计  让用户看得懂 做得到 知道结果</h2><h3 id="c11-s1">11.1 可用性有具体的任务情境 <a class="heading-link" href="#c11-s1" aria-label="链接到本小节">#</a></h3>
 <p>可用性关注特定用户在特定情境下，能否有效、有效率且满意地完成任务。它不等于界面漂亮。标注员能否准确选中文本、看清当前版本、恢复未提交草稿，都直接影响任务成功。</p>
 <p>用户有自己的精神模型：他认为点击“保存”只是存草稿，开发者却把它实现为“提交并锁定”，就会出现理解差异。按钮名称、反馈和真实状态应匹配用户预期。</p>
-<h3 id="c14-s2">14.2 六个可直接检查的原则 <a class="heading-link" href="#c14-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c11-s2">11.2 六个可直接检查的原则 <a class="heading-link" href="#c11-s2" aria-label="链接到本小节">#</a></h3>
 <p><strong>系统状态可见。</strong>显示当前文书、角色、轮次、冻结版本、保存情况，让用户知道自己在哪里。<strong>语言和业务一致。</strong>不要让用户猜“PR-01”和“RV-02”的含义，必要时同时展示中文说明。</p>
 <p><strong>一致性。</strong>同一种操作在不同页面使用相同名称。<strong>及时反馈。</strong>保存后说明保存的是草稿还是提交快照；图示失败时不要把已保存的数据也说成失败。</p>
 <p><strong>防错与恢复。</strong>冻结前列出条件与影响；删除被引用关系前展示依赖；网络失败保留输入。<strong>降低记忆负担。</strong>把相关原文、要素和图示联动展示，避免用户在多个页面记住编号再回来。</p>
-<h3 id="c14-s3">14.3 原型怎样评估 <a class="heading-link" href="#c14-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c11-s3">11.3 原型怎样评估 <a class="heading-link" href="#c11-s3" aria-label="链接到本小节">#</a></h3>
 <p>让真实用户执行任务，例如“找到未完成切割的文书并提交”“判断为什么不能冻结”“在图中找到反对关系的目标”。观察完成情况、错误、耗时和求助点，再问原因。不要只收集“看着不错”的评价。</p>
 <p>交互设计还应考虑差异：熟练用户需要快捷操作，新用户需要解释；颜色需要文字或符号辅助；拖拽操作应有可点击或键盘替代。关键状态不能只靠颜色区分，焦点要可见，缩放后内容仍应可读。</p>
-<h3 id="c14-s4">14.4 布局动作与业务动作要分开 <a class="heading-link" href="#c14-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c11-s4">11.4 布局动作与业务动作要分开 <a class="heading-link" href="#c11-s4" aria-label="链接到本小节">#</a></h3>
 <p>拖动节点可能是调整位置，也可能是建立关系。界面需要明确模式和反馈。位置改变通常只更新坐标；改变关系类型、方向或成员会修改业务结构，需要重新校验。将两者混用会让用户在整理版面时意外改掉论证含义。</p>
-<h3 id="c14-s5">14.5 从现有布局理解工作任务 <a class="heading-link" href="#c14-s5" aria-label="链接到本小节">#</a></h3>
-<p>原型把原文、要素列表、操作与图示放在工作台中，这有助于对照阅读。继续设计时要保证显示全文的要求、选区定位、当前角色与轮次、草稿和提交状态都清楚。</p>
-<p>不要让一个按钮叫“保存”，实际却推进到下一轮。现有原型saveWork()按阶段调用submitRound()，说明演示中保存和提交有所混合；真实系统应明确区分“保存草稿”“提交本轮”“确认冻结”“确认定稿”。</p>
-<h3 id="c14-s6">14.6 门禁要解释为什么不能做 <a class="heading-link" href="#c14-s6" aria-label="链接到本小节">#</a></h3>
-<p>关系轮未开时，显示“命题集尚未冻结”；提交不齐时，显示缺哪项；用户无分配时，说明此文书不在其可操作范围。界面禁用操作并给出下一步，比只有一个灰色按钮更容易理解。</p>
-<p>页面读到阶段四后，其他人可能已发起受控修订。此时提交失败要提示版本已变化、保留输入并给出重新关联方式，不能简单让用户重新输入所有关系。</p>
-<h3 id="c14-s7">14.7 原型需要补足的真实行为 <a class="heading-link" href="#c14-s7" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">演示行为</th><th scope="col">实现时需要补什么</th><th scope="col">验收证据</th></tr></thead><tbody><tr><td>模拟另一人提交</td><td>真实账号与个人版本隔离</td><td>两个会话分别提交，各自记录可查</td></tr><tr><td>固定切割通过提示</td><td>确认的算法或人工流程</td><td>变化输入产生相应结果与记录</td></tr><tr><td>解冻提示生成新版本</td><td>新旧版本、权限、依赖复核</td><td>旧版可查，新版ID不同，影响可追踪</td></tr><tr><td>导出成功提示</td><td>实际文件生成与获取</td><td>文件可打开，内容与终稿一致</td></tr><tr><td>标准发布或学生比对演示</td><td>标准绑定、个人尝试、答案策略</td><td>不同材料不会错配，答案按策略开放</td></tr></tbody></table></div>
-<h3 id="c14-s8">14.8 原型中的具体规则也要核对 <a class="heading-link" href="#c14-s8" aria-label="链接到本小节">#</a></h3>
-<p>v3.0提示M发生在一般与个别之间，但未完整表达单向保存约束；提示J只发生在同类之间，比指南“任何命题要素之间”更严格。导入页仍有针对旧GM-C的冲突提示，不能让系统对已采用SM-C的新指南也假报冲突。</p>
-<p>冻结后进入阶段四，而unfreezeProp()仍通过阶段三的canJudgeP()检查；这使解冻入口的可达性与权限需要重新设计。输出页还保留不可回退文字，也应与批准的修订策略统一。</p>
-<p>这些都是把原型用于需求评审的好例子：发现问题后，写成规则与场景，更新所有相关产物，不只是修一句提示语。</p>
-<p><strong>本章产出：</strong>明确的交互状态、保存与提交区分、错误与恢复、布局与结构操作区分，以及用真实任务开展的评估记录。</p>
-<h3 id="c14-s9">14.9 把关键反馈写成用户能采取行动的话 <a class="heading-link" href="#c14-s9" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：03 04 人机交互设计。</p>
+<h3 id="c11-s5">11.5 把关键反馈写成用户能采取行动的话 <a class="heading-link" href="#c11-s5" aria-label="链接到本小节">#</a></h3>
 <p>“冻结失败”不如“尚有1名命题标注员未提交，当前裁定结果已保留，请等待提交后再确认”。“版本错误”不如“命题基准已更新，当前输入已保留，请重新读取并复核引用”。前提是系统确实做到了保留，而非先写一句好听的提示。</p>
 <p>保存草稿显示保存范围和时间；提交显示本轮锁定或后续修改策略；冻结显示基准版本；定稿显示终稿版本。用户通过这些反馈形成正确的精神模型，减少把不同动作当成同一件事。</p>
-<h3 id="c14-s10">14.10 破坏性动作先解释影响 <a class="heading-link" href="#c14-s10" aria-label="链接到本小节">#</a></h3>
-<p>删除被引用关系时，显示会受影响的外层关系。受控修订命题时，说明旧版本会保留、哪些关系要重新复核，以及当前账号是否有批准权限。拖动节点仅调整布局时，不要弹出“关系已修改”这种含混提示。</p><p class="source">资料对应 03 04人机交互 原型v3.0关键演示函数。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c15" aria-labelledby="h15"><h2 id="h15">15 详细设计 模块化 信息隐藏与模式</h2><h3 id="c15-s1">15.1 从大模块走向可实现的协作 <a class="heading-link" href="#c15-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c11-s6">11.6 破坏性动作先解释影响 <a class="heading-link" href="#c11-s6" aria-label="链接到本小节">#</a></h3>
+<p>删除被引用关系时，显示会受影响的外层关系。受控修订命题时，说明旧版本会保留、哪些关系要重新复核，以及当前账号是否有批准权限。拖动节点仅调整布局时，不要弹出“关系已修改”这种含混提示。</p><p class="pairlink"><a href="/se/homework/#c12">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c12" aria-labelledby="h12"><h2 id="h12">12 详细设计  给对象分配职责</h2><h3 id="c12-s1">12.1 从大模块走向可实现的协作 <a class="heading-link" href="#c12-s1" aria-label="链接到本小节">#</a></h3>
 <p>体系结构确定任务、关系、教学等模块后，详细设计继续明确类、方法、接口、数据结构和算法。输入来自需求、分析模型与架构约束，输出包括设计类图、详细顺序图、数据与接口细节，以及验证这些协作的测试设计。</p>
 <p>“职责”包括知道什么和做什么。“知道”是维护什么信息及关系，“做”是计算、创建、检查或协调什么行为。设计时同时考虑静态结构与动态协作：先有类没有场景，容易漏方法；先画消息没有职责，又容易让某个控制类做所有事情。</p>
-<h3 id="c15-s2">15.2 GRASP给职责分配提供线索 <a class="heading-link" href="#c15-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c12-s2">12.2 GRASP给职责分配提供线索 <a class="heading-link" href="#c12-s2" aria-label="链接到本小节">#</a></h3>
 <p>信息专家原则：把职责分给拥有所需信息的对象。例如标注版本最清楚自己引用哪个命题基准，适合提供版本一致性判断。创建者原则：让包含、聚合、使用或掌握初始化信息的对象负责创建相关对象。</p>
 <p>控制器原则：由适当的非界面对象接收系统事件，协调一次用例。低耦合和高内聚原则帮助比较不同分配：尽量减少不必要依赖，让每个对象的职责围绕清楚的目的。</p>
 <p>例如FreezeService协调读取工作项、检查提交、生成快照与保存状态；领域对象维护“什么状态可冻结”的约束；仓储接口负责获取和保存。把所有规则写进按钮点击函数，会让其他入口无法可靠复用。</p>
-<h3 id="c15-s3">15.3 集中 委托与分散控制 <a class="heading-link" href="#c15-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c12-s3">12.3 集中 委托与分散控制 <a class="heading-link" href="#c12-s3" aria-label="链接到本小节">#</a></h3>
 <p>集中控制由一个对象主导，大流程易追踪，但容易形成过大的控制类。委托控制让协调对象把局部责任交给信息更合适的对象。分散控制使多个对象各自承担局部行为，但整体流程可能更难阅读。</p>
 <p>选择看业务复杂度与团队理解成本。不能因为“面向对象”就追求最大限度分散，也不能把“有Service”当作设计已经合理。若一个类同时处理授权、切割、裁定、导出和布局，它的变化原因太多。</p>
-<h3 id="c15-s4">15.4 契约与一致性边界 <a class="heading-link" href="#c15-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c12-s4">12.4 契约与一致性边界 <a class="heading-link" href="#c12-s4" aria-label="链接到本小节">#</a></h3>
 <p>方法契约包含前置条件、后置条件和对象不变式。不变式是在允许操作前后都应成立的约束，例如“每条关系的引用都存在于同一有效版本范围”。</p>
 <p>一次冻结如果同时创建快照和推进状态，这两项需要共同成功或共同失败，通常应在事务边界内协调。只把方法名写成freeze，并不会自动获得原子性。还要考虑两个用户同时请求、旧页面提交、网络重试等情况。</p>
-<h3 id="c15-s5">15.5 高内聚 低耦合到底在说什么 <a class="heading-link" href="#c15-s5" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：04 01 详细设计。</p>
+<h3 id="c12-s5">12.5 从一个过大的控制器开始重构 <a class="heading-link" href="#c12-s5" aria-label="链接到本小节">#</a></h3>
+<p>假设AnnotationController同时解析指南、检查分配、切割文本、冻结命题、渲染图和导出文件。问题不是行数本身，而是多个变化原因挤在同一处：指南格式、业务规则、布局和文件输出互相影响。</p>
+<p>先提取清楚职责：GuideParser返回候选配置；WorkflowService协调状态与版本；RelationValidator检查结构；GraphRenderer生成展示；ExportFormatter生成特定格式。Controller只把请求交给用例并映射响应。提取后运行回归，确保外部行为未改变。</p>
+<h3 id="c12-s6">12.6 抽象应该围绕真实变化 <a class="heading-link" href="#c12-s6" aria-label="链接到本小节">#</a></h3>
+<p>如果两个导出格式共有“读取终稿”却有不同的编码方式，可以共享数据读取并替换格式实现。不要让所有格式继承一个包含几十个空方法的父类；使用者只应依赖需要的接口。也不要把规则都做成可配置，反而失去审查与验证的确定性。</p>
+<details><summary>练习 类字段都是private 为什么仍可能没有信息隐藏</summary><p>如果它把内部可变集合直接返回，或要求调用者知道内部字段组合才能完成业务，外部依旧依赖实现细节。信息隐藏关心变化是否被隔离，private只是其中一种机制。</p></details><p class="pairlink"><a href="/se/homework/#c13">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c13" aria-labelledby="h13"><h2 id="h13">13 模块化与信息隐藏  控制变化的影响</h2><h3 id="c13-s1">13.1 高内聚 低耦合到底在说什么 <a class="heading-link" href="#c13-s1" aria-label="链接到本小节">#</a></h3>
 <p>内聚关注一个模块内部的职责是否紧密相关；耦合关注模块之间的依赖强度。关系规则校验放在一起通常有较高内聚；规则校验还顺手发送教师统计邮件，就混入了别的职责。</p>
 <p>依赖不仅是import或调用次数。共享全局变量、依赖别人的内部字段、传入控制标志要求对方切换行为、依赖过多数据，都可能增加耦合。接口少也不一定低耦合，一个暴露全部内部状态的大接口仍可能非常脆弱。</p>
-<h3 id="c15-s6">15.6 信息隐藏把可能变化的决定关在边界内 <a class="heading-link" href="#c15-s6" aria-label="链接到本小节">#</a></h3>
+<h3 id="c13-s2">13.2 信息隐藏把可能变化的决定关在边界内 <a class="heading-link" href="#c13-s2" aria-label="链接到本小节">#</a></h3>
 <p>封装提供把状态与行为组织起来及控制访问的机制；信息隐藏进一步强调：其他模块不应依赖那些容易变化的设计决定。例如导出模块只调用图示接口，不应知道布局算法的内部节点数组怎样存储。</p>
 <p>即使字段都设为private，若通过getAllData()把可变内部集合直接交出去，其他对象仍能绕过约束。应暴露有业务意义的操作和受控结果，而不是用getter/setter把所有内部细节重新公开。</p>
-<h3 id="c15-s7">15.7 常用原则要能联系具体问题 <a class="heading-link" href="#c15-s7" aria-label="链接到本小节">#</a></h3>
+<h3 id="c13-s3">13.3 常用原则要能联系具体问题 <a class="heading-link" href="#c13-s3" aria-label="链接到本小节">#</a></h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">原则</th><th scope="col">可以怎样理解</th><th scope="col">标注系统中的应用</th></tr></thead><tbody><tr><td>单一职责 SRP</td><td>一个模块围绕相关变化原因组织</td><td>导出格式变化不应迫使冻结逻辑变化</td></tr><tr><td>开闭原则 OCP</td><td>通过扩展处理已识别的变化</td><td>新增导出格式时增加实现，而非重写所有调用者</td></tr><tr><td>依赖倒置 DIP</td><td>高层政策与细节依赖适当抽象</td><td>冻结服务依赖仓储接口，不直接拼接SQL</td></tr><tr><td>接口隔离 ISP</td><td>使用者只依赖所需能力</td><td>学生练习接口不包含正式任务裁定操作</td></tr><tr><td>里氏替换 LSP</td><td>子类型遵守上层契约</td><td>替换实现后仍满足规定的成功、失败和状态保证</td></tr><tr><td>迪米特法则 LoD</td><td>减少跨越对象内部关系的消息链</td><td>不让界面一路取任务再取版本再直接改其内部列表</td></tr><tr><td>DRY</td><td>同一知识不要在多处独立维护</td><td>同一关系合法性规则不要各页面各写一份</td></tr></tbody></table></div>
 <p>依赖注入DI是把依赖从外部提供给对象的装配方式；依赖倒置DIP是设计上的依赖原则。用了注入框架不等于自动符合DIP。</p>
 <p>LSP不只是“语法上能向上转型”。子类型不能要求更强的前置条件、不能提供更弱的后置保证，还应维护不变式。仅为复用列表代码而让栈继承一个允许任意插入删除的集合，可能暴露不符合栈语义的操作；组合通常更合适。</p>
 <p><strong>本章自测：</strong>把所有方法都放进CommonUtil，是否实现了代码复用和高内聚？</p>
 <details><summary>展开答案</summary><p>未必。相同的代码可以复用，但无关职责集中在一个工具类会形成杂物箱。应按稳定职责和变化原因划分。DRY关注重复知识，也不能作为把所有相似代码强行抽象的理由。</p></details>
-<h3 id="c15-s8">15.8 模式解决反复出现的设计问题 <a class="heading-link" href="#c15-s8" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：04 02 面向对象的模块化与信息隐藏；代码设计。</p>
+<h3 id="c13-s4">13.4 信息隐藏中两种需要隔离的变化 <a class="heading-link" href="#c13-s4" aria-label="链接到本小节">#</a></h3>
+<p>一种变化是职责本身可能调整，例如导出以后要包含哪些业务信息；另一种变化是实现方法调整，例如使用不同文件库生成相同格式。前者影响模块应该提供什么，后者影响模块内部怎样做。设计时分别识别，避免调用方依赖这些容易变化的细节。</p>
+<h3 id="c13-s5">13.5 用一个变更判断耦合是否合理 <a class="heading-link" href="#c13-s5" aria-label="链接到本小节">#</a></h3>
+<p>假设图示布局算法从分层改为另一种算法。如果关系裁定、教学标准和冻结逻辑都需要修改，说明布局细节可能穿透了模块边界。若只需替换布局实现并重新验证坐标输出，变化就得到了较好的隔离。低耦合不等于没有依赖，而是依赖稳定且必要的契约。</p><p class="pairlink"><a href="/se/homework/#c13">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c14" aria-labelledby="h14"><h2 id="h14">14 设计模式  在需要的变化处使用已有经验</h2><h3 id="c14-s1">14.1 模式解决反复出现的设计问题 <a class="heading-link" href="#c14-s1" aria-label="链接到本小节">#</a></h3>
 <p>模式包含问题情境、结构、适用条件与后果。学习时要先说“哪里会变，当前设计为什么难改”，再选择模式。没有变化需求时增加很多抽象类，反而让系统难读。</p>
 <p>策略模式把可替换算法放到共同接口后面。例如图示布局有不同算法，调用者只依赖LayoutStrategy；切换算法不改变冻结和裁定流程。若目前只有一个简单实现，可以先保持结构清楚，再根据真实变化抽取。</p>
 <p>抽象工厂提供一组相互配套的对象。例如一种已确定的指南图元方案同时需要命题图元、支持图元与匹配图元，可由同一工厂产出，避免混入其他方案。它与“仅创建一个对象”的简单工厂概念不同。</p>
-<h3 id="c15-s9">15.9 另外几个课程常见模式 <a class="heading-link" href="#c15-s9" aria-label="链接到本小节">#</a></h3>
+<h3 id="c14-s2">14.2 另外几个课程常见模式 <a class="heading-link" href="#c14-s2" aria-label="链接到本小节">#</a></h3>
 <p>单件或单例模式限制某类在某个运行范围内只有一个实例，并提供访问方式。它可能带来全局状态、测试困难与并发问题；多进程部署时，每个进程的单例也不自动成为整个分布式系统唯一实例。</p>
 <p>迭代器提供统一遍历方式，隐藏集合内部组织。观察者让对象变化后通知订阅者，适合列表和图示同步，但要处理通知时机、解除订阅和循环更新。适配器把已有接口转换成使用者期望的接口，可隔离文件解析库或图示库的接口差异。</p>
 <p>模式之间可以配合，但每一种都应有明确理由。考试或作业中若要求用模式改写，先指出旧设计的具体问题，再给出接口与协作，最后解释新方案的代价，不能只画一个模式标准图。</p>
-<h3 id="c15-s10">15.10 设计类与原则怎样对应 <a class="heading-link" href="#c15-s10" aria-label="链接到本小节">#</a></h3>
-<p>FreezeService协调冻结事务；WorkItem维护允许的状态转换；SubmissionRepository读取所需提交；SnapshotRepository保存只读结果；RelationValidator校验结构；GraphRenderer将结构转为展示；ExportService读取同一终稿并组织输出。</p>
-<p>这套职责体现高内聚与信息隐藏。新增SVG导出不应迫使冻结服务变化；修改布局算法不应改变关系存储。可通过ExportFormatter、LayoutStrategy等接口隔离真实变化点，不必为尚不存在的需求预先制造大量空接口。</p>
-<p><strong>本章产出：</strong>设计类与协作、表结构或存储设计、约束、事务、版本与并发策略，以及对应验证方法。</p>
-<h3 id="c15-s11">15.11 从一个过大的控制器开始重构 <a class="heading-link" href="#c15-s11" aria-label="链接到本小节">#</a></h3>
-<p>假设AnnotationController同时解析指南、检查分配、切割文本、冻结命题、渲染图和导出文件。问题不是行数本身，而是多个变化原因挤在同一处：指南格式、业务规则、布局和文件输出互相影响。</p>
-<p>先提取清楚职责：GuideParser返回候选配置；WorkflowService协调状态与版本；RelationValidator检查结构；GraphRenderer生成展示；ExportFormatter生成特定格式。Controller只把请求交给用例并映射响应。提取后运行回归，确保外部行为未改变。</p>
-<h3 id="c15-s12">15.12 抽象应该围绕真实变化 <a class="heading-link" href="#c15-s12" aria-label="链接到本小节">#</a></h3>
-<p>如果两个导出格式共有“读取终稿”却有不同的编码方式，可以共享数据读取并替换格式实现。不要让所有格式继承一个包含几十个空方法的父类；使用者只应依赖需要的接口。也不要把规则都做成可配置，反而失去审查与验证的确定性。</p>
-<details><summary>练习 类字段都是private 为什么仍可能没有信息隐藏</summary><p>如果它把内部可变集合直接返回，或要求调用者知道内部字段组合才能完成业务，外部依旧依赖实现细节。信息隐藏关心变化是否被隔离，private只是其中一种机制。</p></details><p class="source">资料对应 04 01详细设计 04 02模块化与信息隐藏 代码设计 设计模式。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c16" aria-labelledby="h16"><h2 id="h16">16 数据设计 快照 嵌套 引用与并发</h2><h3 id="c16-s1">16.1 先分清五种容易混淆的数据 <a class="heading-link" href="#c16-s1" aria-label="链接到本小节">#</a></h3>
-<p>原文版本定义文字和定位基准；个人草稿允许持续修改；个人提交快照是某次确定作答；裁定结果说明选择或重标后形成什么；冻结版与终稿是后续引用的只读依据。它们可能共享部分存储机制，但业务含义不能混在一个不断覆盖的记录中。</p>
-<p>例如甲提交后乙尚未提交，系统不应因为乙继续编辑而改变甲快照。裁定者采用甲的某个答案，也不应把甲原始答案直接改成裁定结果，否则无法知道裁定做过什么。</p>
-<h3 id="c16-s2">16.2 一套教学用表结构 <a class="heading-link" href="#c16-s2" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">表或记录类型</th><th scope="col">关键字段示例</th><th scope="col">主要约束</th></tr></thead><tbody><tr><td>task</td><td>id、name、guide_version_id</td><td>任务配置有确定指南依据</td></tr><tr><td>work_item</td><td>id、task_id、text_version_id、state、revision</td><td>单份文书独立维护状态</td></tr><tr><td>assignment</td><td>work_item_id、user_id、round、duty、active</td><td>分配明确到文书 轮次 职责</td></tr><tr><td>text_version</td><td>id、text、offset_unit、hash</td><td>原文与偏移约定不可隐式变化</td></tr><tr><td>annotation_version</td><td>id、owner_id、work_item_id、round、base_id、status</td><td>明确个人归属与基准</td></tr><tr><td>element</td><td>id、version_id、start、end、display_no、type</td><td>范围有效，显示号与身份分开</td></tr><tr><td>relation</td><td>id、relation_version_id、type</td><td>操作数另有结构化表示</td></tr><tr><td>relation_operand</td><td>relation_id、slot、ref_kind、ref_id、position</td><td>区分来源 目标 成员及引用类别</td></tr><tr><td>adjudication</td><td>work_item_id、round、object_ref、decision、reason、actor</td><td>结果与依据可追溯</td></tr><tr><td>frozen_snapshot</td><td>id、work_item_id、text_version_id、guide_version_id、source_revision</td><td>快照只读，重复操作有约束</td></tr><tr><td>final_snapshot</td><td>id、work_item_id、proposition_snapshot_id、relation_result_id</td><td>终稿中的基准必须相互匹配</td></tr><tr><td>exercise 和 attempt</td><td>material_id、standard_version_id、student_id、status</td><td>标准与材料一致，个人尝试隔离</td></tr><tr><td>export_record</td><td>id、final_snapshot_id、actor、format、result</td><td>记录输出来源与结果</td></tr></tbody></table></div>
-<p>这是一套理解职责的示例，不要求逐表照搬。比如冻结快照可以通过独立副本或不可变版本引用实现；采用哪种方案，需解释如何防止旧数据被改、如何查询历史与控制存储量。</p>
-<h3 id="c16-s3">16.3 用结构化引用表达嵌套 <a class="heading-link" href="#c16-s3" aria-label="链接到本小节">#</a></h3>
-<p>下面示例保存R1=J(E1,E2)、R2=M(R1,E3)、R3=S(R2,E4)。E1和E2是个别命题，E3是一般命题，E4为被支持命题。具体语义仅作为结构演示。</p>
-<pre><code class="language-json">{
-  &quot;relationVersionId&quot;: &quot;RV-7&quot;,
-  &quot;basePropositionVersionId&quot;: &quot;PV-3&quot;,
-  &quot;relations&quot;: [
-    {
-      &quot;id&quot;: &quot;R1&quot;, &quot;type&quot;: &quot;J&quot;,
-      &quot;members&quot;: [
-        {&quot;kind&quot;: &quot;element&quot;, &quot;id&quot;: &quot;E1&quot;},
-        {&quot;kind&quot;: &quot;element&quot;, &quot;id&quot;: &quot;E2&quot;}
-      ]
-    },
-    {
-      &quot;id&quot;: &quot;R2&quot;, &quot;type&quot;: &quot;M&quot;,
-      &quot;source&quot;: {&quot;kind&quot;: &quot;relation&quot;, &quot;id&quot;: &quot;R1&quot;},
-      &quot;target&quot;: {&quot;kind&quot;: &quot;element&quot;, &quot;id&quot;: &quot;E3&quot;}
-    },
-    {
-      &quot;id&quot;: &quot;R3&quot;, &quot;type&quot;: &quot;S&quot;,
-      &quot;source&quot;: {&quot;kind&quot;: &quot;relation&quot;, &quot;id&quot;: &quot;R2&quot;},
-      &quot;target&quot;: {&quot;kind&quot;: &quot;element&quot;, &quot;id&quot;: &quot;E4&quot;}
+<p class="source">课件对应：设计模式；代码设计；04 01与04 02。</p>
+<h3 id="c14-s3">14.3 策略模式的一段小例子 <a class="heading-link" href="#c14-s3" aria-label="链接到本小节">#</a></h3>
+<p>下面代码只展示结构。调用者依赖布局接口，各算法实现相同契约；节点和关系的业务含义由输入模型决定，布局不能悄悄修改它们。</p>
+<pre><code class="language-java">interface LayoutStrategy {
+    LayoutResult layout(ArgumentGraph graph);
+}
+
+final class GraphPresenter {
+    private final LayoutStrategy strategy;
+
+    GraphPresenter(LayoutStrategy strategy) {
+        this.strategy = strategy;
     }
-  ]
+
+    LayoutResult present(ArgumentGraph graph) {
+        return strategy.layout(graph);
+    }
 }</code></pre>
-<p>display_no可以显示P1、P2等阅读顺序，但ID如E1不随重排改变。表达式字符串可作为显示或导出字段，不能只保存一串字符串而没有明确解析与引用契约。</p>
-<p>采用ref_kind＋ref_id这种多态引用时，普通外键未必能直接约束所有目标表。可以通过统一对象标识表、分开的引用表、应用校验与受控写入等方案保证完整性；数据库与应用分别保障什么要写清楚。</p>
-<h3 id="c16-s4">16.4 冻结要成为一个一致操作 <a class="heading-link" href="#c16-s4" aria-label="链接到本小节">#</a></h3>
-<p>冻结不是设置frozen=true那么简单。它至少需要：确认操作者职责；确认文书当前状态；确认所需提交与裁定完成；创建确定快照；更新当前有效基准；开放关系轮；记录操作。这些修改应有共同成功或失败的边界。</p>
-<p>如果两个请求同时冻结，系统不应生成互相冲突的两个当前版本。可在事务中锁定工作项后读取状态，或使用revision条件更新并结合唯一约束；具体机制要按数据库实现验证。仅“先查有没有，再插入”仍可能竞争。</p>
-<p>重复请求也要有契约。例如同一冻结修订的重复调用返回已生成版本；不同预期修订号的请求返回冲突。这是幂等和版本检查，不能通过“禁止用户双击”替代。</p>
-<h3 id="c16-s5">16.5 受控回退需要依赖信息 <a class="heading-link" href="#c16-s5" aria-label="链接到本小节">#</a></h3>
-<p>命题从PV-3修订到PV-4后，旧关系仍绑定PV-3，不应偷偷重定向。通过引用与变更映射识别受影响关系，标为待复核；无需变化的关系能否迁移、怎样留下依据，需要确认策略。</p>
-<p>旧终稿继续指向PV-3及原关系结果，新终稿指向PV-4与复核后的关系结果。这样导出历史版本时不会因今天的修改而改变昨天的文件含义。</p>
-<h3 id="c16-s6">16.6 数据库基础要落实到完整性 <a class="heading-link" href="#c16-s6" aria-label="链接到本小节">#</a></h3>
-<p>主键唯一标识记录；外键关联对象并约束引用；唯一约束阻止不应重复的数据；索引帮助查询，但会增加写入和维护成本。事务把一组需要共同成功的修改组织起来。</p>
-<p>一个事务里“先查询再保存”不必然解决并发。两个事务可能都读到旧状态，需要结合锁、带版本条件的更新或数据库唯一约束等机制保证竞争下的正确结果。具体方案在详细设计中确定。</p>
-<p>Controller常负责接收请求和参数映射；Service组织用例与事务；Repository或DAO读写；领域对象表达业务状态与规则。DTO用于边界传输，持久对象对应存储，界面展示对象面向呈现。没有必要在小项目中为每一层都复制相同字段，但要理解边界，避免直接泄露内部对象。</p>
-<h3 id="c16-s7">16.7 一个字符区间的全过程 <a class="heading-link" href="#c16-s7" aria-label="链接到本小节">#</a></h3>
-<p>先固定原文版本TV-1及偏移单位，再记录要素E2覆盖[start,end)。原文规范化、换行替换或插入一个字符，都可能让后续范围变化。不要在展示端悄悄处理后还继续使用旧偏移。</p>
-<p>如果新原文成为TV-2，应明确重新对齐或重标策略。TV-1中的E2不能只改一个text_version_id就假装属于TV-2。显示摘要可以变化，引用基准与原文范围必须有确定对应。</p>
-<h3 id="c16-s8">16.8 乐观并发控制的一次时间线 <a class="heading-link" href="#c16-s8" aria-label="链接到本小节">#</a></h3>
-<p>甲乙都读到工作项revision=7。甲冻结时用“当前仍为7”作为更新条件并成功，revision变为8；乙随后携带7写入时，条件不成立，返回版本冲突。相关快照写入与状态更新仍需同一事务或相应一致性机制，否则可能留下孤立快照。</p>
-<p>悲观锁则先在事务里取得适当锁，再读取、检查和修改。两种方法都需要控制读写范围和失败重试；“用了事务”本身不保证业务检查在竞争下仍成立。</p>
-<h3 id="c16-s9">16.9 迁移与恢复也属于数据设计 <a class="heading-link" href="#c16-s9" aria-label="链接到本小节">#</a></h3>
-<p>新增版本关联字段时，旧数据如何填充、无法确定的数据如何标记、迁移失败怎样恢复，都要事先设计。若数据库已升级，旧程序可能不再兼容；回滚不是简单git checkout。测试中至少验证升级后的关键读写，重要迁移还要演练备份恢复。</p><p class="source">资料对应 指南追溯与嵌套规则 修订分析 数据设计教学方案。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c17" aria-labelledby="h17"><h2 id="h17">17 Web与构造 把接口契约变成实现</h2><h3 id="c17-s1">17.1 前后端分别负责什么 <a class="heading-link" href="#c17-s1" aria-label="链接到本小节">#</a></h3>
+<p>ArgumentGraph与LayoutResult是示意类型。真实契约还要定义不可变性、异常和性能要求。这个例子说明抽象如何隔离算法变化，不意味着每个函数都需要增加一层接口。</p><p class="pairlink"><a href="/se/homework/#c13">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c15" aria-labelledby="h15"><h2 id="h15">15 Web开发基础  看懂浏览器到数据库的一次请求</h2><h3 id="c15-s1">15.1 前后端分别负责什么 <a class="heading-link" href="#c15-s1" aria-label="链接到本小节">#</a></h3>
 <p>HTML描述页面结构，CSS描述外观与布局，JavaScript处理交互和请求。DOM是浏览器中的文档对象结构，事件让程序响应点击和输入。组件化前端进一步把界面拆成可组合单元；先理解状态与数据流，再学习具体框架。</p>
 <p>后端接收请求、验证身份与业务条件、组织计算和读写数据，再返回响应。数据库负责持久保存和约束。前端显示“已保存”只有在真实请求与保存结果对应时才有依据。</p>
-<h3 id="c17-s2">17.2 一次创建关系请求的全过程 <a class="heading-link" href="#c17-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c15-s2">15.2 一次创建关系请求的全过程 <a class="heading-link" href="#c15-s2" aria-label="链接到本小节">#</a></h3>
 <p>用户选好来源、目标与类型后，前端组装数据并发送HTTP请求；服务端检查登录和文书分配，读取当前状态与基准版本，校验结构，在事务内保存；然后返回关系ID、修订号与展示状态；前端依据响应更新列表。</p>
 <p>HTTP方法表达操作语义：GET用于读取，POST常用于创建或发起操作，PUT常用于对目标资源整体替换，PATCH用于部分更新，DELETE用于删除。具体接口还要有统一契约；不能因为使用POST，就假设重复请求一定只执行一次。</p>
 <p>JSON是结构化的数据表示，字段必须有约定。服务端不能只信任前端传来的userId或“我是裁定者”；应根据认证上下文和当前分配判定权限。</p>
-<h3 id="c17-s3">17.3 状态码与业务结果 <a class="heading-link" href="#c17-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c15-s3">15.3 状态码与业务结果 <a class="heading-link" href="#c15-s3" aria-label="链接到本小节">#</a></h3>
 <p>常见示例：200表示请求成功，201常用于创建成功，400表示请求本身有问题，401用于未通过身份认证，403用于无权操作，404用于资源未找到，409可用于状态或版本冲突，500表示服务端错误。项目应约定具体使用方式，不同错误还需要稳定的业务错误码与可理解说明。</p>
 <p>“已登录”“是关系标注员”“被分配到该文书”“当前阶段可写”“版本有效”是不同检查。前端门禁改善体验，后端检查保障执行，数据约束与事务保障一致性。</p>
-<h3 id="c17-s4">17.4 构造包括编码之外的工作 <a class="heading-link" href="#c17-s4" aria-label="链接到本小节">#</a></h3>
-<p>软件构造涉及详细实现、调试、单元测试、构建与集成等活动。代码应清晰表达意图：名字说明对象和动作；函数保持职责集中；错误处理与业务结果明确；不要用大量隐藏副作用和魔法数字制造理解成本。</p>
-<p>防御式编程检查外部和不可信输入，对非法状态给出明确处理；契约式设计明确调用者与被调用者的责任。不能用“捕获全部异常然后返回成功”掩盖错误，也不能只弹出“失败”而不保留可恢复输入和定位信息。</p>
-<p>当条件分支围绕固定规则反复出现时，可考虑表驱动：把“状态—操作—允许职责”集中成可审查的数据或规则映射。它能减少散落的条件，但仍要说明优先级和不支持组合，不能把复杂业务盲目塞进一张巨大表。</p>
-<h3 id="c17-s5">17.5 按一条完整业务链做增量 <a class="heading-link" href="#c17-s5" aria-label="链接到本小节">#</a></h3>
-<p>先完成一条小而完整的链路，例如“登录后领取文书 → 保存类型草稿 → 刷新后恢复”，再扩展多人提交、裁定和冻结。这样能尽早验证接口、数据与部署连接。</p>
-<p>只把所有页面画完，再把所有后端写完，最后联调，会把接口不一致和流程误解集中到项目末期。每个增量都应有明确的完成条件，并实际集成运行。</p>
-<p>重构是在保持外部可观察行为的前提下改善内部结构。改名、提取职责、消除重复都可以是重构；新增回退功能改变行为，属于功能变更，不能仅称为重构。结对编程强调两人共同观察和思考，不是把工作简单分成一个人写、另一个人完全不看。</p>
-<h3 id="c17-s6">17.6 先把接口契约说清楚 <a class="heading-link" href="#c17-s6" aria-label="链接到本小节">#</a></h3>
-<p>以下路径是教学命名，不表示现有项目已经使用它们。</p>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">接口示例</th><th scope="col">输入和结果要点</th><th scope="col">关键失败情况</th></tr></thead><tbody><tr><td>POST /tasks</td><td>创建草稿，返回任务ID</td><td>无创建职责、参数无效</td></tr><tr><td>POST /tasks/{id}/publish</td><td>携带期望配置修订，发布工作项</td><td>指南未确认、原文或分配缺失</td></tr><tr><td>PUT /versions/{id}/draft</td><td>保存本人可写草稿，带预期修订</td><td>非本人、已提交、修订冲突</td></tr><tr><td>POST /versions/{id}/submit</td><td>提交某一确定个人版本</td><td>必填未完成、基准失效</td></tr><tr><td>POST /work-items/{id}/freeze</td><td>带预期工作项修订，返回冻结ID</td><td>提交不齐、裁定未完、版本冲突</td></tr><tr><td>POST /relation-versions/{id}/relations</td><td>类型、操作数、命题基准，返回关系ID与修订</td><td>越权、阶段不对、引用不合法</td></tr><tr><td>POST /work-items/{id}/finalize</td><td>确认完整关系结果，返回终稿ID</td><td>遗漏未处理、基准不一致</td></tr><tr><td>POST /final-snapshots/{id}/exports</td><td>格式，返回文件结果或导出任务</td><td>无权、终稿无效、生成失败</td></tr><tr><td>POST /exercises/{id}/attempts</td><td>创建学生个人尝试</td><td>未开放、不可见、已截止</td></tr></tbody></table></div>
-<p>接口契约还应定义认证方式、字段类型、错误码、重复请求、事务结果、分页或大小限制，以及异步任务状态。表里的“版本冲突”可以用409等约定响应，但最终采用什么状态码与错误结构要全项目统一。</p>
-<h3 id="c17-s7">17.7 先完成最小的真实贯通 <a class="heading-link" href="#c17-s7" aria-label="链接到本小节">#</a></h3>
-<p>第一步，使用测试材料建立文书和指南版本，前端能读取。第二步，一个账号保存草稿，刷新后仍存在。第三步，第二个账号拥有独立草稿且看不到第一人的未开放答案。第四步，提交后能查到固定快照，状态推进依据真实所需分配计算。</p>
-<p>有了这条链，再做裁定、冻结与关系写入。否则后面看到的“人数”“差异”“定稿”可能一直只是前端变量，直到联调才发现数据模型不支持业务。</p>
-<h3 id="c17-s8">17.8 冻结服务的教学伪代码 <a class="heading-link" href="#c17-s8" aria-label="链接到本小节">#</a></h3>
-<pre><code class="language-text">freeze(workItemId, expectedRevision, actor):
-  begin transaction
-  item = loadWorkItemWithConcurrencyControl(workItemId)
-  require actor has proposition adjudication duty for item
-  if same adjudicated revision already frozen:
-      return its snapshot under the agreed retry policy
-  require item.revision == expectedRevision
-  require item.state == PROPOSITION_ADJUDICATION
-  require all required independent submissions exist
-  require unified cut is confirmed
-  require adjudication and completeness checks passed
-  snapshot = createImmutablePropositionSnapshot(item)
-  item.openRelationRound(snapshot.id)
-  save item and audit record
-  commit
-  return snapshot.id and item.revision</code></pre>
-<p>这是说明执行顺序的伪代码，不是可直接运行的Java。真正实现要用一致的锁或版本机制、异常与事务处理，重复冻结的识别范围还需契约。失败时回滚，不允许快照创建失败却已开放关系轮。</p>
-<h3 id="c17-s9">17.9 关系写入的教学伪代码 <a class="heading-link" href="#c17-s9" aria-label="链接到本小节">#</a></h3>
-<pre><code class="language-text">createRelation(personalVersionId, request, actor):
-  begin transaction
-  load writable version and current work item consistently
-  require version belongs to actor and the current work item
-  require actor is assigned to the relation round
-  require work item allows relation editing
-  require request.baseId matches the valid frozen base
-  validate type, members, typed references and nesting
-  save relation and advance structure revision
-  commit
-  request rendering for this exact structure revision
-  return relationId, revision and renderingStatus</code></pre>
-<p>这里的“一致读取”很关键：若校验后另一个事务就回退了命题，保存仍应能够检测冲突。事务边界、锁或条件写要与流程更新互相协调。渲染可以在提交后执行或排队，失败不应让客户端误以为关系从未保存。</p>
-<h3 id="c17-s10">17.10 错误需要让人知道下一步 <a class="heading-link" href="#c17-s10" aria-label="链接到本小节">#</a></h3>
-<p>“BASE_VERSION_EXPIRED”可提示“命题基准已更新，输入已保留，请复核后关联新版本”；“PENDING_SUBMISSIONS”列出仍缺哪些提交；“REFERENCED_RELATION”列出哪些外层关系依赖当前对象。</p>
-<p>不要把全部业务失败变成500，也不要把所有失败都返回200并靠一段文字判断。网络断开后结果未知时，应提供查询或幂等重试机制；不能仅再次创建来试运气。</p>
-<h3 id="c17-s11">17.11 一个完整的关系创建请求与响应 <a class="heading-link" href="#c17-s11" aria-label="链接到本小节">#</a></h3>
+<h3 id="c15-s4">15.4 数据库基础要落实到完整性 <a class="heading-link" href="#c15-s4" aria-label="链接到本小节">#</a></h3>
+<p>主键唯一标识记录；外键关联对象并约束引用；唯一约束阻止不应重复的数据；索引帮助查询，但会增加写入和维护成本。事务把一组需要共同成功的修改组织起来。</p>
+<p>一个事务里“先查询再保存”不必然解决并发。两个事务可能都读到旧状态，需要结合锁、带版本条件的更新或数据库唯一约束等机制保证竞争下的正确结果。具体方案在详细设计中确定。</p>
+<p>Controller常负责接收请求和参数映射；Service组织用例与事务；Repository或DAO读写；领域对象表达业务状态与规则。DTO用于边界传输，持久对象对应存储，界面展示对象面向呈现。没有必要在小项目中为每一层都复制相同字段，但要理解边界，避免直接泄露内部对象。</p>
+<p class="source">课件对应：00 04 前端开发基础；00 05 Java Web后端开发及其优化版。</p>
+<h3 id="c15-s5">15.5 一个字符区间的全过程 <a class="heading-link" href="#c15-s5" aria-label="链接到本小节">#</a></h3>
+<p>先固定原文版本TV-1及偏移单位，再记录要素E2覆盖[start,end)。原文规范化、换行替换或插入一个字符，都可能让后续范围变化。不要在展示端悄悄处理后还继续使用旧偏移。</p>
+<p>如果新原文成为TV-2，应明确重新对齐或重标策略。TV-1中的E2不能只改一个text_version_id就假装属于TV-2。显示摘要可以变化，引用基准与原文范围必须有确定对应。</p>
+<h3 id="c15-s6">15.6 乐观并发控制的一次时间线 <a class="heading-link" href="#c15-s6" aria-label="链接到本小节">#</a></h3>
+<p>甲乙都读到工作项revision=7。甲冻结时用“当前仍为7”作为更新条件并成功，revision变为8；乙随后携带7写入时，条件不成立，返回版本冲突。相关快照写入与状态更新仍需同一事务或相应一致性机制，否则可能留下孤立快照。</p>
+<p>悲观锁则先在事务里取得适当锁，再读取、检查和修改。两种方法都需要控制读写范围和失败重试；“用了事务”本身不保证业务检查在竞争下仍成立。</p>
+<h3 id="c15-s7">15.7 迁移与恢复也属于数据设计 <a class="heading-link" href="#c15-s7" aria-label="链接到本小节">#</a></h3>
+<p>新增版本关联字段时，旧数据如何填充、无法确定的数据如何标记、迁移失败怎样恢复，都要事先设计。若数据库已升级，旧程序可能不再兼容；回滚不是简单git checkout。测试中至少验证升级后的关键读写，重要迁移还要演练备份恢复。</p>
+<h3 id="c15-s8">15.8 一个完整的关系创建请求与响应 <a class="heading-link" href="#c15-s8" aria-label="链接到本小节">#</a></h3>
 <p>下面用创建R3=S(R2,E4)为例。actor身份来自认证上下文；requestId用于约定范围内的重复请求识别；expectedRevision防止覆盖更新。路径、字段和错误码均为教学命名。</p>
 <pre><code class="language-json">{
   &quot;requestId&quot;: &quot;create-rel-003&quot;,
@@ -631,130 +367,100 @@ main{max-width:1420px}.paper{max-width:990px}.heading-link{font-size:15px;text-d
   &quot;message&quot;: &quot;命题基准已更新，请读取新基准并复核当前关系&quot;,
   &quot;details&quot;: {&quot;submittedBaseId&quot;: &quot;PV-1&quot;, &quot;currentBaseId&quot;: &quot;PV-2&quot;}
 }</code></pre>
-<h3 id="c17-s12">17.12 编码前先写一份操作清单 <a class="heading-link" href="#c17-s12" aria-label="链接到本小节">#</a></h3>
-<p>读取什么；信任什么；必须验证什么；修改哪些记录；哪些修改必须共同成功；成功返回什么；失败保留什么；重复调用怎样处理。清单完成后再写函数，往往比一边编码一边猜业务更容易。</p><p class="source">资料对应 前后端基础 软件构造 代码设计。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c18" aria-labelledby="h18"><h2 id="h18">18 测试 从规则到有区分力的证据</h2><h3 id="c18-s1">18.1 从需求开始设计预期 <a class="heading-link" href="#c18-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c15-s9">15.9 编码前先写一份操作清单 <a class="heading-link" href="#c15-s9" aria-label="链接到本小节">#</a></h3>
+<p>读取什么；信任什么；必须验证什么；修改哪些记录；哪些修改必须共同成功；成功返回什么；失败保留什么；重复调用怎样处理。清单完成后再写函数，往往比一边编码一边猜业务更容易。</p><p class="pairlink"><a href="/se/homework/#c14">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c16" aria-labelledby="h16"><h2 id="h16">16 软件构造与AI协作  把设计变成可靠实现</h2><h3 id="c16-s1">16.1 构造包括编码之外的工作 <a class="heading-link" href="#c16-s1" aria-label="链接到本小节">#</a></h3>
+<p>软件构造涉及详细实现、调试、单元测试、构建与集成等活动。代码应清晰表达意图：名字说明对象和动作；函数保持职责集中；错误处理与业务结果明确；不要用大量隐藏副作用和魔法数字制造理解成本。</p>
+<p>防御式编程检查外部和不可信输入，对非法状态给出明确处理；契约式设计明确调用者与被调用者的责任。不能用“捕获全部异常然后返回成功”掩盖错误，也不能只弹出“失败”而不保留可恢复输入和定位信息。</p>
+<p>当条件分支围绕固定规则反复出现时，可考虑表驱动：把“状态—操作—允许职责”集中成可审查的数据或规则映射。它能减少散落的条件，但仍要说明优先级和不支持组合，不能把复杂业务盲目塞进一张巨大表。</p>
+<h3 id="c16-s2">16.2 按一条完整业务链做增量 <a class="heading-link" href="#c16-s2" aria-label="链接到本小节">#</a></h3>
+<p>先完成一条小而完整的链路，例如“登录后领取文书 → 保存类型草稿 → 刷新后恢复”，再扩展多人提交、裁定和冻结。这样能尽早验证接口、数据与部署连接。</p>
+<p>只把所有页面画完，再把所有后端写完，最后联调，会把接口不一致和流程误解集中到项目末期。每个增量都应有明确的完成条件，并实际集成运行。</p>
+<p>重构是在保持外部可观察行为的前提下改善内部结构。改名、提取职责、消除重复都可以是重构；新增回退功能改变行为，属于功能变更，不能仅称为重构。结对编程强调两人共同观察和思考，不是把工作简单分成一个人写、另一个人完全不看。</p>
+<h3 id="c16-s3">16.3 给AI一个能验收的任务 <a class="heading-link" href="#c16-s3" aria-label="链接到本小节">#</a></h3>
+<p>一份任务说明应包含背景与目标、相关来源、允许修改的范围、输入输出、关键约束、验收方式和禁止自行猜测的事项。将大任务分成可独立审查的步骤，并提供实际项目上下文。</p>
+<p>例如：“实现冻结前拒绝新增关系。工作项状态由服务端读取；不得新增绕过接口；使用已有错误格式；补充非法状态、合法状态和版本过期三个测试；说明修改的文件与结果。”这比“帮我把系统完善一下”更容易检查。</p>
+<p>采用“明确任务 → 生成或实施 → 人工审查 → 运行验证并纠正”的闭环。AI生成的需求不能充当真实访谈，生成的代码不能自行证明正确，生成的测试也可能与错误实现采用同一个假设。人要保留独立的业务预期。</p>
+<h3 id="c16-s4">16.4 过程记录要体现判断 <a class="heading-link" href="#c16-s4" aria-label="链接到本小节">#</a></h3>
+<p>日志不仅记录用了什么工具，还应记录提供了什么上下文、发现什么错误、怎样判断和修改，以及运行证据。不要为了完整而编造访谈、测试、会议或人工审查；尚未执行的步骤应保持待完成状态。</p>
+<p class="source">课件对应：软件构造；代码设计；00 01至00 03；00 06 项目级VibeCoding；课程概览。</p>
+<h3 id="c16-s5">16.5 需求变更的一次完整传播 <a class="heading-link" href="#c16-s5" aria-label="链接到本小节">#</a></h3>
+<p>假设批准增加“冻结后可受控修订”。先记录旧约定和新目标；分析权限、状态、版本、关系依赖、导出与教学是否受影响；更新用例中的回退流与状态转换；设计新修订和复核标记；实现接口与存储；运行旧版可查、越权拒绝、影响关系复核和历史导出的测试；更新手册与基线。</p>
+<p>如果只改页面提示为“已生成新版本”，而没有新的ID、不可变历史和引用变化，这条变更没有真正完成。追踪矩阵让这种断链变得可见。</p>
+<h3 id="c16-s6">16.6 与AI协作时保留独立判断 <a class="heading-link" href="#c16-s6" aria-label="链接到本小节">#</a></h3>
+<p>让AI先列出不确定点和来源，再限定已确认规则；让它实现一条明确契约，再人工审查差异；测试预期先来自业务与样本，不从实现倒推。发现问题时区分需求不清、上下文不足、模型推断错误和实现缺陷，后续改进才有针对性。</p>
+<p>如果测试失败，不应让AI通过删断言或把预期改成当前结果来“修复”。先确认预期是否正确，再判断应该改测试、代码还是需求。每次修改都留下理由与实际验证。</p><p class="pairlink"><a href="/se/homework/#c14">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c17" aria-labelledby="h17"><h2 id="h17">17 软件测试  用有区分力的证据检查行为</h2><h3 id="c17-s1">17.1 从需求开始设计预期 <a class="heading-link" href="#c17-s1" aria-label="链接到本小节">#</a></h3>
 <p>测试通过执行并比较预期与实际，发现缺陷和提供质量信息。它通常不能证明一个复杂系统不存在任何缺陷。测试用例需要前置条件、输入或动作、预期结果和可重复的检查方式。</p>
 <p>同一个需求可以在不同层次验证：单元测试检查局部规则；集成测试检查模块、接口与真实存储协作；系统测试检查完整系统；验收测试检查是否满足用户约定。黑盒与白盒是设计测试的视角，与这些测试层次不是一一对应关系。</p>
-<h3 id="c18-s2">18.2 黑盒方法怎样选 <a class="heading-link" href="#c18-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s2">17.2 黑盒方法怎样选 <a class="heading-link" href="#c17-s2" aria-label="链接到本小节">#</a></h3>
 <p>等价类把预期行为相似的输入归组，再选择代表。关系成员至少两个时，可分为0个、1个、合法多个、重复成员、引用不存在等类别。边界值关注条件两侧，例如最小成员数2附近的1、2、3；不能把所有异常都叫边界值。</p>
 <p>决策表适合多个条件共同决定结果：有权限吗、阶段正确吗、基准有效吗。状态转换测试检查哪些状态允许哪些操作，既测合法转换，也测非法转换。场景测试按用户目标走完整链路；探索性测试在学习系统时动态设计操作，适合发现规格遗漏和交互问题。</p>
-<h3 id="c18-s3">18.3 白盒覆盖不是质量结论 <a class="heading-link" href="#c18-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s3">17.3 白盒覆盖不是质量结论 <a class="heading-link" href="#c17-s3" aria-label="链接到本小节">#</a></h3>
 <p>语句覆盖检查可执行语句是否执行，分支覆盖检查各判断结果是否经历，路径覆盖关注执行路径。循环会造成大量甚至无限路径，完整路径覆盖通常不可行。</p>
 <p>例如条件“hasPermission &amp;&amp; isRelationRound”在某语言里是一段复合判定。让整体判断分别为真和假，可以达到判定分支覆盖，但不代表每个子条件及短路组合都充分测试。覆盖报告要说明统计口径。</p>
 <p>100%语句覆盖仍可能缺少断言、遗漏业务规则或没有并发场景。测试的价值在于错误实现能否被区分。例如“返回非空”抓不到版本错误，“新关系基准ID等于指定冻结版本ID”才更有判断力。</p>
-<h3 id="c18-s4">18.4 桩 驱动与Mock <a class="heading-link" href="#c18-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s4">17.4 桩 驱动与Mock <a class="heading-link" href="#c17-s4" aria-label="链接到本小节">#</a></h3>
 <p>桩（Stub）替代被测对象依赖的下层，返回预设结果；驱动（Driver）替代调用被测对象的上层，主动发起调用；Mock还常用于验证预期的交互，例如是否调用保存以及调用参数。</p>
 <p>测试冻结协调逻辑时，可以用仓储替身快速检查非法状态不会保存。但要证明事务、唯一约束和并发竞争有效，还需要使用实际数据库行为的集成测试。不能把所有依赖都Mock掉后宣称整个系统已经可靠。</p>
-<h3 id="c18-s5">18.5 缺陷 回归和测试驱动 <a class="heading-link" href="#c18-s5" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s5">17.5 缺陷 回归和测试驱动 <a class="heading-link" href="#c17-s5" aria-label="链接到本小节">#</a></h3>
 <p>发现缺陷后记录环境、步骤、输入、预期、实际、证据和影响。修复时先构造能暴露该缺陷的复现，再修改，运行相关回归；必要时扩大到受影响链路。回归测试检查修改是否破坏原有行为。</p>
 <p>测试驱动开发通常采用“先写失败测试 → 最小实现使其通过 → 重构”的循环。它有助于接口与可测性设计，但不能替代需求确认和系统测试。</p>
 <p>测试报告要区分通过、失败、未执行、阻塞。计划测试多少项与实际跑过多少项不是一回事；覆盖率也需要真实工具报告及口径，不能填一个理想数字。</p>
 <p><strong>本章自测：</strong>测试“未冻结不能新增关系”时，除了检查返回错误，还要检查什么？</p>
 <details><summary>展开答案</summary><p>检查没有新增关系、没有错误推进状态、既有草稿未被破坏，且返回原因与当前条件一致。还应考虑请求来自绕过前端的接口调用，以及页面读到旧状态的情况。</p></details>
-<h3 id="c18-s6">18.6 先准备可复现的测试场景 <a class="heading-link" href="#c18-s6" aria-label="链接到本小节">#</a></h3>
-<p>准备一份短文书、一个明确指南版本、两名命题标注员、一名命题裁定者、两名关系标注员和一名关系裁定者；角色能否兼任按测试用例设定。再准备教师、学生、标准和练习。使用可重复初始化的测试数据，避免每个测试依赖上一轮手工操作。</p>
-<p>测试数据与业务预期应人工核对。不能让同一个错误规则既生成实现，又生成“正确答案”，否则测试可能全部通过但业务仍错。</p>
-<h3 id="c18-s7">18.7 必须能解释的核心用例 <a class="heading-link" href="#c18-s7" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">编号</th><th scope="col">条件与操作</th><th scope="col">预期与检查</th></tr></thead><tbody><tr><td>T01</td><td>未分配用户保存某文书草稿</td><td>拒绝，无越权写入</td></tr><tr><td>T02</td><td>甲乙分别保存不同命题草稿</td><td>归属正确，互不覆盖，未公开答案不泄露</td></tr><tr><td>T03</td><td>只有甲提交就请求进入裁定</td><td>不推进，指出缺失提交</td></tr><tr><td>T04</td><td>同一用户重复提交</td><td>不当成另一个人的提交</td></tr><tr><td>T05</td><td>统一切割未确认时写类型</td><td>按确认规则拒绝，数据不变</td></tr><tr><td>T06</td><td>切割指标处于阈值两侧及恰好等于阈值</td><td>严格按已确认公式与大于或不超过关系处理</td></tr><tr><td>T07</td><td>冻结前直接调用新增关系接口</td><td>拒绝，关系数与阶段不变</td></tr><tr><td>T08</td><td>条件齐备后请求冻结</td><td>生成可读取只读基准，开放关系轮</td></tr><tr><td>T09</td><td>重复或并发冻结同一修订</td><td>仅一个有效结果，重复与冲突按契约返回</td></tr><tr><td>T10</td><td>请求携带旧命题基准或另一文书对象</td><td>拒绝，不产生跨版本或跨文书关系</td></tr><tr><td>T11</td><td>J只有1个成员或重复成员</td><td>返回具体结构错误</td></tr><tr><td>T12</td><td>不同类型命题形成候选J</td><td>不仅因类型不同自动拒绝，仍检查已确认规则</td></tr><tr><td>T13</td><td>一般判断反向指向个别判断创建M</td><td>不按错误方向保存</td></tr><tr><td>T14</td><td>依次建立J、嵌套M、嵌套S及指向S的A</td><td>引用、类型、层级可保存和重新读取</td></tr><tr><td>T15</td><td>构造悬空或递归循环引用</td><td>拒绝并定位，展开过程不会无限循环</td></tr><tr><td>T16</td><td>保存成功但渲染失败，再次刷新</td><td>关系只保存一次，可恢复图示，反馈明确</td></tr><tr><td>T17</td><td>只拖动节点位置</td><td>结构ID、类型、方向、成员保持不变</td></tr><tr><td>T18</td><td>删除被其他关系引用的对象</td><td>按约定阻止或受控处理，无悬空引用</td></tr><tr><td>T19</td><td>两人结果一致但有共同遗漏</td><td>不因零差异跳过最终完整性确认</td></tr><tr><td>T20</td><td>命题受控修订</td><td>旧版仍可读，新版独立，受影响关系需复核</td></tr><tr><td>T21</td><td>学生提交练习</td><td>只改变个人尝试，不修改正式库或教师标准</td></tr><tr><td>T22</td><td>标准与材料不匹配或答案尚未开放</td><td>阻止错配发布，未授权接口不返回答案</td></tr><tr><td>T23</td><td>导出指定终稿并打开文件</td><td>数据与版本匹配，嵌套完整，图元可读</td></tr><tr><td>T24</td><td>按契约再导入导出文件</td><td>校验来源版本和结构，结果符合约定的导入用途</td></tr></tbody></table></div>
-<p>这些是教学测试设计，不代表已经执行或通过。T24只有在再导入被纳入范围、契约确定后才能给出正式验收结论。对阈值、回退等未决策规则，先确认预期，不能一边测试一边临时猜答案。</p>
-<h3 id="c18-s8">18.8 把测试分配到合适层次 <a class="heading-link" href="#c18-s8" aria-label="链接到本小节">#</a></h3>
-<p>单元层重点测试关系成员数、方向、版本匹配和状态规则，使用依赖替身提升定位速度。服务集成层使用真实存储验证事务、唯一约束、并发冻结、跨账号与跨版本拒绝。系统层从不同账号完成整条流程，检查显示、恢复与文件。</p>
-<p>测试两个账号隔离，不只是换一个前端名字。应在两个独立会话里发出真实请求，检查服务端返回与存储归属；接口查询也不能泄露隐藏作答。</p>
-<h3 id="c18-s9">18.9 一条测试应该怎样写得有判断力 <a class="heading-link" href="#c18-s9" aria-label="链接到本小节">#</a></h3>
-<p>以T07为例：初始化状态为命题待裁定、无冻结基准；用已分配关系标注员身份直接请求创建关系；断言返回约定错误；查询关系数量不变；检查状态未推进；已有草稿仍可读取。</p>
-<p>只断言“页面出现提示”无法证明后端没写。只断言HTTP失败也可能是别的错误，例如数据格式先错了，根本没测到冻结门禁。测试输入应满足其他条件，专门触发要验证的规则。</p>
-<h3 id="c18-s10">18.10 文件与图示要单独验收 <a class="heading-link" href="#c18-s10" aria-label="链接到本小节">#</a></h3>
-<p>JSON检查能解析、版本齐全、ID唯一、引用存在、嵌套不丢失；表格导出检查命题和关系怎样分表，普通邻接矩阵不足以完整表达嵌套；SVG或图片检查中文、方向、实心空心、加号、斜线和多结构布局。</p>
-<p>还应比较文件与同一终稿快照，防止命题读新版、关系读旧版。若要求无损往返，再导入后应比较结构语义，不能仅比较原JSON字符串是否字节完全相等。</p>
-<h3 id="c18-s11">18.11 缺陷报告和结果怎么记录 <a class="heading-link" href="#c18-s11" aria-label="链接到本小节">#</a></h3>
-<p>缺陷包含环境、版本、复现步骤、预期与实际、证据和影响。修复后补能暴露问题的回归用例。测试报告分别列已通过、失败、未执行、阻塞，附实际命令或操作与记录。</p>
-<p>不要把上面24条复制进报告后全部填“通过”，也不要编造覆盖率。本讲义提供的是测试设计起点，你要用真实执行把它变成证据。</p>
-<h3 id="c18-s12">18.12 用决策表设计冻结测试 <a class="heading-link" href="#c18-s12" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：软件测试；03 03 集成验证；04 01 协作测试。</p>
+<h3 id="c17-s6">17.6 用决策表设计冻结测试 <a class="heading-link" href="#c17-s6" aria-label="链接到本小节">#</a></h3>
 <p>先按确定优先级检查权限、状态、版本，再检查提交与裁定。下面的“任意”表示该行结果不依赖此条件，不表示生产代码可以跳过其他必要安全检查。错误优先级是教学约定，需要项目统一。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">权限有效</th><th scope="col">阶段正确</th><th scope="col">修订有效</th><th scope="col">提交与裁定完成</th><th scope="col">结果</th></tr></thead><tbody><tr><td>否</td><td>任意</td><td>任意</td><td>任意</td><td>拒绝且不改变数据</td></tr><tr><td>是</td><td>否</td><td>任意</td><td>任意</td><td>状态不允许</td></tr><tr><td>是</td><td>是</td><td>否</td><td>任意</td><td>版本冲突</td></tr><tr><td>是</td><td>是</td><td>是</td><td>否</td><td>缺失条件</td></tr><tr><td>是</td><td>是</td><td>是</td><td>是</td><td>生成快照并推进</td></tr></tbody></table></div>
 <p>对每个拒绝行，构造其他条件尽量正确的输入，避免请求因为无关字段错误提前失败。再增加重复和并发请求，以及事务中写入失败等场景。</p>
-<h3 id="c18-s13">18.13 区分断言业务和重复实现 <a class="heading-link" href="#c18-s13" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s7">17.7 区分断言业务和重复实现 <a class="heading-link" href="#c17-s7" aria-label="链接到本小节">#</a></h3>
 <p>不好的测试把生产代码的同一段if复制到测试，再比较两边计算结果；两边可能一起错。更好的测试从需求给出独立预期：未冻结返回约定错误、关系数量不变、工作项不推进、原草稿仍在。</p>
-<h3 id="c18-s14">18.14 一份缺陷记录的示范 <a class="heading-link" href="#c18-s14" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s8">17.8 一份缺陷记录的示范 <a class="heading-link" href="#c17-s8" aria-label="链接到本小节">#</a></h3>
 <p>教学缺陷BUG-01：在命题待裁定状态直接调用关系接口，接口返回成功并新增记录。期望是拒绝且数据不变。初步根因是仅前端隐藏按钮，服务端只校验角色。修复方案是增加工作项状态与基准校验，补接口回归，并检查其他写入口。实际项目必须以真实复现和日志为准，不能把这个示范填成已经发现的缺陷。</p>
-<h3 id="c18-s15">18.15 覆盖率为什么必须配合业务检查 <a class="heading-link" href="#c18-s15" aria-label="链接到本小节">#</a></h3>
-<p>一个方法每行都执行过，也可能没有测试另一文书的引用，或没有断言实际保存的base_id。覆盖率回答哪里被运行，需求追踪回答什么约定被验证，变异或错误注入帮助检查测试能否抓错。它们提供不同证据，不能互相代替。</p><p class="source">资料对应 软件测试 集成与协作验证 SD1至SD4验证点。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c19" aria-labelledby="h19"><h2 id="h19">19 变更与AI协作 追踪 判断与纠偏</h2><h3 id="c19-s1">19.1 给AI一个能验收的任务 <a class="heading-link" href="#c19-s1" aria-label="链接到本小节">#</a></h3>
-<p>一份任务说明应包含背景与目标、相关来源、允许修改的范围、输入输出、关键约束、验收方式和禁止自行猜测的事项。将大任务分成可独立审查的步骤，并提供实际项目上下文。</p>
-<p>例如：“实现冻结前拒绝新增关系。工作项状态由服务端读取；不得新增绕过接口；使用已有错误格式；补充非法状态、合法状态和版本过期三个测试；说明修改的文件与结果。”这比“帮我把系统完善一下”更容易检查。</p>
-<p>采用“明确任务 → 生成或实施 → 人工审查 → 运行验证并纠正”的闭环。AI生成的需求不能充当真实访谈，生成的代码不能自行证明正确，生成的测试也可能与错误实现采用同一个假设。人要保留独立的业务预期。</p>
-<h3 id="c19-s2">19.2 过程记录要体现判断 <a class="heading-link" href="#c19-s2" aria-label="链接到本小节">#</a></h3>
-<p>日志不仅记录用了什么工具，还应记录提供了什么上下文、发现什么错误、怎样判断和修改，以及运行证据。不要为了完整而编造访谈、测试、会议或人工审查；尚未执行的步骤应保持待完成状态。</p>
-<h3 id="c19-s3">19.3 用AI时怎样保持自己能解释 <a class="heading-link" href="#c19-s3" aria-label="链接到本小节">#</a></h3>
-<p>一次只委派一条可验证规则，把用例、版本约束、错误格式与允许改动范围提供进去。审查它是否绕开了业务层、只检查前端、覆盖旧版本、把多态引用压成两个P编号，或给出只会证明自身实现的测试。</p>
-<p>记录真实发现和修改。例如“生成代码只检查frozen字段，漏了工作项分配；补充未分配用户直接调用接口的测试并修正服务端”。这类记录能展示工程判断，不能由本讲义替你编造成已经发生的过程。</p>
-<h3 id="c19-s4">19.4 以四阶段改为六阶段为例 <a class="heading-link" href="#c19-s4" aria-label="链接到本小节">#</a></h3>
-<p>首先记录变更：正式标注拆成命题与关系两轮，中间增加命题裁定冻结，后面保留关系裁定定稿。说明来源与确认状态，而不是把历史文档删掉让人看不到变化。</p>
-<p>然后检查角色与用例：标注与裁定职责需分轮，关系用例加冻结前置；检查领域模型：增加个人轮次版本、冻结基准；检查动态模型：更新状态与顺序；检查设计与实现：调整服务、表、权限和接口；检查测试与文档：增加非法状态、旧基准及回退场景。</p>
-<h3 id="c19-s5">19.5 一张小追踪矩阵就能发现断链 <a class="heading-link" href="#c19-s5" aria-label="链接到本小节">#</a></h3>
-<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">需求示例</th><th scope="col">用例或流程</th><th scope="col">分析与设计</th><th scope="col">实现职责</th><th scope="col">验证</th></tr></thead><tbody><tr><td>FR-04 先冻结再标关系</td><td>冻结命题集、关系标注</td><td>SD1、SD2、状态机、基准关联</td><td>FreezeService、关系写入检查</td><td>T07至T10</td></tr><tr><td>FR-REL-02 引用范围正确</td><td>建立嵌套关系</td><td>操作数、版本范围、依赖</td><td>RelationValidator与存储约束</td><td>T10、T14、T15、T18</td></tr><tr><td>FR-TEACH-01 练习独立</td><td>发布与提交练习</td><td>SD4、标准与尝试关联</td><td>教学服务和数据范围检查</td><td>T21、T22</td></tr><tr><td>FR-EXPORT-01 同一终稿导出</td><td>导出结果</td><td>终稿快照、格式接口</td><td>ExportService与格式实现</td><td>T23与范围内的T24</td></tr></tbody></table></div>
-<p>这里的实现职责是设计建议。真正项目应把最后两列替换或补成实际代码位置、测试名称和执行证据；还没写就如实标待实现。</p>
-<h3 id="c19-s6">19.6 AI过程材料怎样写得可信 <a class="heading-link" href="#c19-s6" aria-label="链接到本小节">#</a></h3>
-<p>可以围绕一个真实错误讲清：给了什么材料；AI生成了什么；通过哪个业务依据发现错；改了哪些地方；用什么验证。比如“把M当无方向连接”或“将学生练习并入正式库”，都需要展示实际过程，而不是照抄本讲义例子。</p>
-<p>日志不要求把每次聊天都重新叙述成作文，但应能定位关键任务、输入、输出、审查和修正。课程若有指定契约与提交标记，应按该任务要求落实。</p>
-<h3 id="c19-s7">19.7 修订后再做一次横向检查 <a class="heading-link" href="#c19-s7" aria-label="链接到本小节">#</a></h3>
-<p>同一个词是否同义：要素、命题、标注版本、冻结版、终稿是否区分；同一条规则是否统一：指南、SRS、原型和代码中的SM-C、切割、M方向、J约束与回退策略是否一致；同一数据是否同源：界面、接口和导出是否引用同一版本。</p>
-<h3 id="c19-s8">19.8 需求变更的一次完整传播 <a class="heading-link" href="#c19-s8" aria-label="链接到本小节">#</a></h3>
-<p>假设批准增加“冻结后可受控修订”。先记录旧约定和新目标；分析权限、状态、版本、关系依赖、导出与教学是否受影响；更新用例中的回退流与状态转换；设计新修订和复核标记；实现接口与存储；运行旧版可查、越权拒绝、影响关系复核和历史导出的测试；更新手册与基线。</p>
-<p>如果只改页面提示为“已生成新版本”，而没有新的ID、不可变历史和引用变化，这条变更没有真正完成。追踪矩阵让这种断链变得可见。</p>
-<h3 id="c19-s9">19.9 与AI协作时保留独立判断 <a class="heading-link" href="#c19-s9" aria-label="链接到本小节">#</a></h3>
-<p>让AI先列出不确定点和来源，再限定已确认规则；让它实现一条明确契约，再人工审查差异；测试预期先来自业务与样本，不从实现倒推。发现问题时区分需求不清、上下文不足、模型推断错误和实现缺陷，后续改进才有针对性。</p>
-<p>如果测试失败，不应让AI通过删断言或把预期改成当前结果来“修复”。先确认预期是否正确，再判断应该改测试、代码还是需求。每次修改都留下理由与实际验证。</p><p class="source">资料对应 需求管理 AI协作课程 项目过程示例。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c20" aria-labelledby="h20"><h2 id="h20">20 交付与维护 让别人能用 以后能改</h2><h3 id="c20-s1">20.1 安装和部署都需要可复现 <a class="heading-link" href="#c20-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c17-s9">17.9 覆盖率为什么必须配合业务检查 <a class="heading-link" href="#c17-s9" aria-label="链接到本小节">#</a></h3>
+<p>一个方法每行都执行过，也可能没有测试另一文书的引用，或没有断言实际保存的base_id。覆盖率回答哪里被运行，需求追踪回答什么约定被验证，变异或错误注入帮助检查测试能否抓错。它们提供不同证据，不能互相代替。</p><p class="pairlink"><a href="/se/homework/#c15">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c18" aria-labelledby="h18"><h2 id="h18">18 软件交付与维护  让别人能用 以后能改</h2><h3 id="c18-s1">18.1 安装和部署都需要可复现 <a class="heading-link" href="#c18-s1" aria-label="链接到本小节">#</a></h3>
 <p>安装通常把程序放入目标环境；部署还包含配置应用、数据库、网络、权限、数据迁移与运行检查。目标环境不同于开发环境时，路径、时区、字符集、依赖和权限都可能导致问题。</p>
 <p>可交付材料需要说明环境要求、配置示例、数据库初始化与升级、启动和健康检查、初始账号、安全配置、备份与恢复、故障排查。不要把本机密码或真实密钥写进仓库；示例配置与真实环境配置应有明确边界。</p>
 <p>发布后用冒烟测试检查核心功能。回滚不仅是换回旧代码，还要考虑新数据库结构与旧代码是否兼容。数据已经被新版本修改时，恢复策略必须在发布前设计并验证。</p>
-<h3 id="c20-s2">20.2 文档有不同读者 <a class="heading-link" href="#c20-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c18-s2">18.2 文档有不同读者 <a class="heading-link" href="#c18-s2" aria-label="链接到本小节">#</a></h3>
 <p>用户文档教使用者怎样完成任务，重点是角色、入口、步骤、反馈和常见错误。系统文档帮助开发与维护人员理解结构、接口、数据、部署和决策。把一份API列表交给法学教师，通常不能算完成使用培训。</p>
 <p>验收演示可以选一份样本，完整走过创建、标注、裁定、冻结、关系、定稿和文件检查。然后让另一位同学按说明从干净环境启动。这比只展示自己的桌面和成功截图更能证明交付能力。</p>
-<h3 id="c20-s3">20.3 维护的四种常见类型 <a class="heading-link" href="#c20-s3" aria-label="链接到本小节">#</a></h3>
+<h3 id="c18-s3">18.3 维护的四种常见类型 <a class="heading-link" href="#c18-s3" aria-label="链接到本小节">#</a></h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">类型</th><th scope="col">主要动机</th><th scope="col">案例</th></tr></thead><tbody><tr><td>修正性</td><td>修复已存在缺陷</td><td>修复导出关系引用丢失</td></tr><tr><td>适应性</td><td>适应环境变化</td><td>适配数据库或运行环境升级</td></tr><tr><td>完善性</td><td>满足新增或改进的用户需要</td><td>新增按案例类型筛选</td></tr><tr><td>预防性</td><td>降低未来故障与修改困难</td><td>拆分过大的模块并补回归测试</td></tr></tbody></table></div>
 <p>维护同样需要需求分析、影响分析、设计、实现、验证与发布。逆向工程从已有系统提取理解或更高层表示；再工程在理解基础上改造系统。技术债表示为了当前交付而承担的后续额外成本，需要记录原因、后果、偿还条件和优先级，而非把所有欠完善之处笼统称为债务。</p>
 <p>一次故障的根因分析应解释触发条件、为什么现有设计或验证没阻止、怎样修复与预防。只写“成员粗心，今后注意”不能改变系统性问题。</p>
-<h3 id="c20-s4">20.4 交付清单怎样组织 <a class="heading-link" href="#c20-s4" aria-label="链接到本小节">#</a></h3>
-<p>需求材料解释为什么做以及边界；分析模型解释业务对象和行为；设计材料解释架构、职责、接口和数据；源码与构建支持复现；测试材料证明实际验证；运行文档支持部署、使用和维护；过程记录证明决策和贡献。</p>
-<p>交付的核心是相互一致。顺序图写两个独立账号，演示却只在一个共享数组里换名字，就不符合模型；报告写版本可追溯，数据库却覆盖旧记录，也不符合需求。</p>
-<h3 id="c20-s5">20.5 一条可复现的演示脚本 <a class="heading-link" href="#c20-s5" aria-label="链接到本小节">#</a></h3>
-<p>先展示材料与指南版本，创建并发布一份测试文书；两个账号完成切割与命题提交；裁定者确认统一结果并冻结；关系标注员建立包含嵌套的结构；关系裁定者检查完整性并定稿；导出并打开实际文件，核对版本。</p>
-<p>再展示一个失败例子：未冻结调用关系接口被拒绝，或携带过期基准提交被拒绝。然后展示教学练习，说明学生作答不改变正式数据，反馈绑定哪份标准。如果受控回退已纳入范围并实现，再演示旧版保留与关系复核。</p>
-<p>不要在演示前手工把数据库改成目标结果却不说明初始化方式。可以预置测试账号和材料，但核心业务行为要能真实发生。</p>
-<h3 id="c20-s6">20.6 让另一位同学从环境说明启动 <a class="heading-link" href="#c20-s6" aria-label="链接到本小节">#</a></h3>
-<p>运行说明应包括依赖、配置、数据库迁移、启动顺序、地址、初始账号、文件存储、常见错误和停止方式。发布时记录代码版本、配置与数据版本；准备备份、恢复和回滚，尤其说明数据库变化是否允许直接回到旧程序。</p>
-<p>用户手册按任务教：创建者怎样发布，标注员怎样提交，裁定者怎样确认，教师怎样发练习。开发手册按结构教：模块、接口、表、约束、关键决策和故障排查。两种读者不应被同一堆内部类名淹没。</p>
-<h3 id="c20-s7">20.7 答辩时可以怎样解释自己的设计 <a class="heading-link" href="#c20-s7" aria-label="链接到本小节">#</a></h3>
-<p>问“为什么分两轮”，回答共同命题基准与可比性；问“为什么保存稳定ID”，回答重编号不能改变身份；问“为什么需要新版本回退”，回答旧结果可复现与关系依赖；问“前端不是已经禁用了吗”，回答后端才是执行权限与状态约束的地方。</p>
-<p>每个回答最好接一个可观察证据：一条接口、一个版本记录、一个失败用例或一个实际文件。不会的部分如实区分已实现、已设计、待确认，工程判断比用术语掩盖空白更有价值。</p>
-<h3 id="c20-s8">20.8 用一条来源链演示可信交付 <a class="heading-link" href="#c20-s8" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：软件交付；软件维护与演化。</p>
+<h3 id="c18-s4">18.4 用一条来源链演示可信交付 <a class="heading-link" href="#c18-s4" aria-label="链接到本小节">#</a></h3>
 <p>打开一份终稿导出，指出它的finalSnapshotId；由此找到冻结命题版本与关系结果；再找到对应原文、指南与裁定记录；最后说明哪些测试验证了这条链。这样答辩者看到的是可核对的对象，而不是“我们做了版本管理”的口头陈述。</p>
-<h3 id="c20-s9">20.9 软件交付后的第一项新增需求 <a class="heading-link" href="#c20-s9" aria-label="链接到本小节">#</a></h3>
+<h3 id="c18-s5">18.5 软件交付后的第一项新增需求 <a class="heading-link" href="#c18-s5" aria-label="链接到本小节">#</a></h3>
 <p>假设教师需要增加一种练习反馈。先确定它改变的是标准、尝试还是展示；查看已有历史是否需要重新计算；决定新旧反馈的版本范围；更新接口与测试后再发布。维护阶段仍然沿着需求、设计、实现、验证的循环工作。</p>
-<h3 id="c20-s10">20.10 发布前最小核对清单 <a class="heading-link" href="#c20-s10" aria-label="链接到本小节">#</a></h3>
-<p>指定代码与配置版本；数据库迁移已验证；关键流程冒烟通过；账号和权限正确；文件目录可读写；日志能定位问题；备份恢复有依据；用户知道怎样使用与报告故障。根据真实系统调整，不能把“清单已勾选”当成实际执行证据。</p><p class="source">资料对应 软件交付 软件维护与演化。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c21" aria-labelledby="h21"><h2 id="h21">21 过程模型 按风险和反馈组织增量</h2><h3 id="c21-s1">21.1 活动与过程模型不是一回事 <a class="heading-link" href="#c21-s1" aria-label="链接到本小节">#</a></h3>
+<h3 id="c18-s6">18.6 发布前最小核对清单 <a class="heading-link" href="#c18-s6" aria-label="链接到本小节">#</a></h3>
+<p>指定代码与配置版本；数据库迁移已验证；关键流程冒烟通过；账号和权限正确；文件目录可读写；日志能定位问题；备份恢复有依据；用户知道怎样使用与报告故障。根据真实系统调整，不能把“清单已勾选”当成实际执行证据。</p><p class="pairlink"><a href="/se/homework/#c17">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c19" aria-labelledby="h19"><h2 id="h19">19 软件过程模型  决定怎样组织反复开发</h2><h3 id="c19-s1">19.1 活动与过程模型不是一回事 <a class="heading-link" href="#c19-s1" aria-label="链接到本小节">#</a></h3>
 <p>需求、设计、实现、测试是活动。过程模型决定这些活动以什么顺序、怎样反复、何时交付。选了迭代开发也要做需求和设计；选了顺序流程也应尽早考虑测试和风险。</p>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">模型</th><th scope="col">组织特点</th><th scope="col">适用考虑与局限</th></tr></thead><tbody><tr><td>边做边改</td><td>直接实现，遇到问题再补</td><td>小实验启动快；缺少结构和受控过程，规模扩大容易失控</td></tr><tr><td>瀑布</td><td>阶段顺序推进，形成评审产物</td><td>需求相对稳定时便于管理；晚发现问题时返工成本高</td></tr><tr><td>增量</td><td>分批增加可用功能</td><td>较早交付价值；需要接口与整体结构支持逐步扩展</td></tr><tr><td>迭代</td><td>对已有认识和方案反复改进</td><td>适合逐步学习；需要控制每轮目标和变更</td></tr><tr><td>演化</td><td>根据反馈持续形成产品与需求</td><td>适合不确定需求；容易积累结构问题，需持续重构</td></tr><tr><td>原型</td><td>通过样例探索需要或技术</td><td>能降低不确定性；要明确原型是否抛弃或继续演化</td></tr><tr><td>螺旋</td><td>围绕目标、风险分析、开发验证和下一轮计划反复</td><td>风险驱动；需要较强的风险识别与管理能力</td></tr></tbody></table></div>
 <p>增量与迭代经常结合：本轮新增关系标注是增量，同时改进上轮命题工作台是迭代。敏捷强调反馈、协作、应对变化与可用软件，不代表不写文档、不做设计或没有计划。</p>
-<h3 id="c21-s2">21.2 怎样用于这门课 <a class="heading-link" href="#c21-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c19-s2">19.2 怎样用于这门课 <a class="heading-link" href="#c19-s2" aria-label="链接到本小节">#</a></h3>
 <p>学习顺序可以从需求一路到交付，实施则采用几个可运行增量：单人基本标注；多人独立提交与裁定；冻结和关系；教学与导出；质量与交付完善。具体范围依据已确认任务要求调整。</p>
 <p>每轮都包括小范围需求确认、设计、实现、测试和回顾。质量、配置与追踪始终贯穿，不要把“P6质量保障”误读为前面五个阶段可以先不管质量。</p>
-<h3 id="c21-s3">21.3 把过程模型用在同一份作业上 <a class="heading-link" href="#c21-s3" aria-label="链接到本小节">#</a></h3>
+<p class="source">课件对应：软件开发过程模型；课程概览；00 大作业总览。</p>
+<h3 id="c19-s3">19.3 把过程模型用在同一份作业上 <a class="heading-link" href="#c19-s3" aria-label="链接到本小节">#</a></h3>
 <p>首轮做可持久化的单人标注，是一个增量；次轮增加独立提交、裁定与冻结，是另一个增量；重新设计不清楚的保存反馈，是迭代。每轮都有小规模需求、设计、实现与测试，而不是把需求只留在第一轮。</p>
-<p>若嵌套图示是高风险点，可以先做实验原型验证可行性，再决定正式实现。这个风险试验可能不直接交付新用户功能，却能减少后续返工。过程选择应服务于不确定性和交付目标。</p><p class="source">资料对应 软件开发过程模型 课程全过程路线。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="chapter" id="c22" aria-labelledby="h22"><h2 id="h22">22 综合复习 用同一案例串起全部产物</h2><h3 id="c22-s1">22.1 用同一条规则检查自己是否真的理解 <a class="heading-link" href="#c22-s1" aria-label="链接到本小节">#</a></h3>
+<p>若嵌套图示是高风险点，可以先做实验原型验证可行性，再决定正式实现。这个风险试验可能不直接交付新用户功能，却能减少后续返工。过程选择应服务于不确定性和交付目标。</p><p class="pairlink"><a href="/se/homework/#c18">对照阅读 作业讲解的相关章节</a></p></section><section class="chapter" id="c20" aria-labelledby="h20"><h2 id="h20">20 复习与查阅  把知识连成一条链</h2><h3 id="c20-s1">20.1 用同一条规则检查自己是否真的理解 <a class="heading-link" href="#c20-s1" aria-label="链接到本小节">#</a></h3>
 <p>请不看答案，解释“命题裁定并冻结后才能标关系”的完整链路：用户为什么需要它；需求怎样写；用例在哪里体现；领域模型需要哪些版本；系统顺序图有什么事件；详细顺序图谁校验；数据库怎样约束；接口如何返回冲突；测试怎样证明；旧版本怎样保留。</p>
 <p>如果某一步只能说术语，却讲不清本案例怎么做，就返回对应章节。会默写“高内聚低耦合”还不够，要能指出具体哪两项职责应该分开，以及这样分开后哪种变化更容易处理。</p>
-<h3 id="c22-s2">22.2 常用术语速查 <a class="heading-link" href="#c22-s2" aria-label="链接到本小节">#</a></h3>
+<h3 id="c20-s2">20.2 初学者可按四轮阅读 <a class="heading-link" href="#c20-s2" aria-label="链接到本小节">#</a></h3>
+<p>第一轮读第0至5章，建立流程、需求和用例理解。第二轮读第6至9章，拿着你的图逐条检查概念、流程和约束。第三轮读第10至16章，把分析走向设计和实现。第四轮读第17至19章，为系统验证、交付和变化设计证据。每轮同步阅读作业篇相应章节。</p>
+<p>不必第一次就记住所有设计模式和框架名。先能画出一条可信的交互、写出一条可验收需求、解释一个拒绝分支，再增加技术细节。</p>
+<h3 id="c20-s3">20.3 课件查阅索引 <a class="heading-link" href="#c20-s3" aria-label="链接到本小节">#</a></h3>
+<div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">学习主题</th><th scope="col">优先回看的材料</th></tr></thead><tbody><tr><td>总体路线与真实项目背景</td><td>slides26-2 的课程概览HTML与软工2课程简介</td></tr><tr><td>工程与项目管理</td><td>slides26-1 的01-01、01-02；slides26-2 的01基础</td></tr><tr><td>需求概念 获取 用例</td><td>slides26-1 的02-01至02-03；slides26-2 第9章、第10章</td></tr><tr><td>分析模型与规格</td><td>第11章面向对象分析、第12章结构化分析、第14章需求文档；02-04、02-05</td></tr><tr><td>架构与交互</td><td>03-01至03-04；体系结构交互课件</td></tr><tr><td>详细设计与模块化</td><td>04-01、04-02；代码设计、设计模式</td></tr><tr><td>实现与技术准备</td><td>00系列；前后端基础及其优化版；软件构造</td></tr><tr><td>质量与演化</td><td>软件测试、软件交付、软件维护与演化、软件开发过程模型</td></tr><tr><td>自查与拓展</td><td>复习提纲；SWEBOK v4作为术语和知识域拓展参考</td></tr></tbody></table></div>
+<p>同主题的PDF、PPTX和优化版合并成了这里的知识主线，不按文件名重复讲一遍。复习提纲中的旧题型、分值和日程不能自动视为本学期新通知；本书用于学习概念和方法，不把历史安排转成你的提交要求。</p>
+<h3 id="c20-s4">20.4 常用术语速查 <a class="heading-link" href="#c20-s4" aria-label="链接到本小节">#</a></h3>
 <div class="table-wrap" tabindex="0" role="region" aria-label="本节数据比较表"><table><thead><tr><th scope="col">术语</th><th scope="col">简单解释</th></tr></thead><tbody><tr><td>SRS</td><td>软件需求规格说明书，约定系统需要做什么</td></tr><tr><td>SSD</td><td>系统顺序图，以黑箱表达外部事件</td></tr><tr><td>DFD</td><td>数据流图，表达数据经过哪些处理</td></tr><tr><td>ERD</td><td>实体关系图，表达数据概念与联系</td></tr><tr><td>UML</td><td>用于表达结构和行为的一组建模语言符号</td></tr><tr><td>API</td><td>对外提供操作和数据交换的接口</td></tr><tr><td>ADR</td><td>架构决策记录，保存方案的理由和后果</td></tr><tr><td>DTO</td><td>跨边界传输的数据对象</td></tr><tr><td>CI</td><td>持续集成中的自动构建和检查</td></tr><tr><td>回归测试</td><td>修改后检查原有行为有没有被破坏</td></tr><tr><td>基线</td><td>经评审并受控的后续工作依据</td></tr><tr><td>幂等</td><td>相同操作重复执行，在约定范围内不产生额外业务效果</td></tr></tbody></table></div>
 <p><strong>最后一题：</strong>别人问你“为什么先学需求，再学设计”时，可以这样回答：需求先约定目标和约束，设计再选择实现这些约定的结构；两者通过原型、模型和验证不断相互校正。目标不清时，写得再快也可能做成另一个系统。</p>
-<h3 id="c22-s3">22.3 学完后应能回答的十个问题 <a class="heading-link" href="#c22-s3" aria-label="链接到本小节">#</a></h3>
-<ol><li>开发流程和标注业务流程有什么区别？</li><li>为什么先统一切割，再比较标签？</li><li>为什么关系标注必须绑定冻结命题版本？</li><li>系统顺序图和详细顺序图各画什么？</li><li>学生练习为什么不进入正式终稿？</li><li>显示P3和稳定ID有什么区别？</li><li>为什么两列命题ID不能表达所有嵌套关系？</li><li>回退为什么不能只把阶段变量改小？</li><li>哪些测试能证明前端门禁之外的后端规则？</li><li>如何从一份导出文件找到它使用的指南、原文、命题和关系版本？</li></ol>
-<details><summary>展开参考回答</summary><p>1 开发流程是工程师怎样做系统，业务流程是用户怎样使用系统。2 边界不同会让标签和关系无法直接比较。3 所有人需要共享同一批可重现对象。4 前者画外部事件与黑箱，后者画内部职责协作。5 教学有标准与反馈，正式模式是在形成新结果。6 显示序号可变，身份引用稳定。7 关系可有多个成员，也可引用其他关系。8 必须保留旧快照、权限和依赖复核。9 直接接口、数据不变、并发与跨版本等测试。10 导出带版本元数据，终稿关联到具体快照与来源记录。</p></details>
-<h3 id="c22-s4">22.4 一次综合练习 <a class="heading-link" href="#c22-s4" aria-label="链接到本小节">#</a></h3>
+<h3 id="c20-s5">20.5 一次综合练习 <a class="heading-link" href="#c20-s5" aria-label="链接到本小节">#</a></h3>
 <p>给定变化：“关系轮开始后发现统一命题集有边界错误，需要纠正，但历史导出必须可复现。”请依次写出需求、参与者、用例异常流、状态转换、概念与关联、接口、事务、关系影响和测试。</p>
 <details><summary>参考推导</summary><p>需求明确受控修订与历史可读；参与者区分申请者和命题裁定职责；异常流保留当前作答并发起申请；状态模型新增受控修订路径；数据形成新原文或命题版本并保留旧引用；接口带预期版本和理由；事务保证新基准生效与状态一致；关系按依赖标待复核；测试覆盖越权、并发、旧导出不变、新终稿绑定与影响提示。具体申请批准规则仍需需求方确认。</p></details>
-<h3 id="c22-s5">22.5 判断自己是否已经学会 <a class="heading-link" href="#c22-s5" aria-label="链接到本小节">#</a></h3>
-<p>你能够用一个短样本解释所有图，能够指出同一规则在不同产物中的位置，能够设计会让错误实现失败的测试，并能说清已确认、示例和待决定的边界，就已经建立了软件工程的基本工作方式。下一步是亲自完成一个小增量，再带着真实问题回到讲义查阅。</p><p class="source">资料对应 复习提纲与本讲义各章。</p><p class="chapter-return"><a href="#top">返回讲义开头</a></p></section><section class="references" id="references"><h2>资料与使用范围</h2><p>讲义依据所给《软件工程与计算 II》课件和案例材料重新组织。章节末标明对应主题，便于持有原材料的同学回查。此页提供解释、重构示例和练习，不附课程原文件及个人作业附件。</p><ul><li>课程概览与软件工程基础 项目管理基础 开发工具链与Git工作流</li><li>需求工程基础 AI辅助需求获取 用例建模与用户故事 需求分析与建模 需求文档化与验证</li><li>第9章基于用例场景模型开发用户需求 第10章需求获取方法 第11章面向对象分析 第12章结构化分析 第14章后期阶段的需求文档</li><li>03系列体系结构与人机交互课件 04系列详细设计与模块化课件 代码设计 设计模式</li><li>前后端开发基础 软件构造 软件测试 软件交付 软件维护与演化 软件开发过程模型</li><li>中文裁判文书说理部分法律论证结构标注与图示指南v1.2修订版 初始需求及疑问清单 原型v3.0</li><li>案例的用例分析 顺序图分析及v3.0修订方案</li><li>P0 P1和大作业总览中的CampusHub方案仅用于说明工程组织方法，不将其功能或数量要求套到法律论证作业</li></ul><p>关于切割指标、权限兼任、自动比对、修订与再导入等尚有不同说法的事项，以当前有效指南及相关人员确认记录形成最终契约。历史课件的题型、分值和日程不自动等于当期通知。</p></section><div class="endnav"><a href="../handbooks/">返回全部讲义</a><a href="#top">返回开头</a></div><footer>Finn 的学习讲义 软件工程与计算 II<br>按工程流程理解概念 以具体案例核对设计 用实际证据判断完成</footer></article></main><script>
+<h3 id="c20-s6">20.6 判断自己是否已经学会 <a class="heading-link" href="#c20-s6" aria-label="链接到本小节">#</a></h3>
+<p>你能够用一个短样本解释所有图，能够指出同一规则在不同产物中的位置，能够设计会让错误实现失败的测试，并能说清已确认、示例和待决定的边界，就已经建立了软件工程的基本工作方式。下一步是亲自完成一个小增量，再带着真实问题回到讲义查阅。</p><p class="pairlink"><a href="/se/homework/#c18">对照阅读 作业讲解的相关章节</a></p></section><section class="references" id="references"><h2>资料与阅读说明</h2><p>理论篇依据软件工程基础、项目管理、需求工程、用例与分析建模、体系结构、交互与详细设计、模块化、构造测试、交付维护和过程模型等课程材料编写。案例规则参考标注指南v1.2修订版及相关需求材料。</p><p>作业篇独立保留用例、顺序图与原型分析，具体提交要求以当前任务书及确认记录为准。此处不公开个人作业附件或本机原文件路径。</p></section><div class="endnav"><a href="/se/homework/">阅读 作业讲解</a><a href="/handbooks/">返回全部讲义</a></div><footer>软件工程与计算 II 理论知识讲义与作业讲解<br>示例与待确认事项按正文标注 打印时展开自测答案</footer></article></main><script>
 (()=>{
 const nav=[...document.querySelectorAll('nav a[data-chapter]')];
 const chapters=[...document.querySelectorAll('.chapter')];
@@ -773,5 +479,5 @@ document.getElementById('print').addEventListener('click',()=>window.print());
 let closed=[];addEventListener('beforeprint',()=>{closed=[...document.querySelectorAll('article details:not([open])')];closed.forEach(d=>d.open=true);});addEventListener('afterprint',()=>closed.forEach(d=>d.open=false));
 })();
 
-(()=>{const form=document.getElementById('freeze-demo'),out=document.getElementById('demo-result');form.addEventListener('submit',e=>{e.preventDefault();const v=id=>document.getElementById(id);let message;if(v('d-duty').value!=='judge')message='拒绝：当前账号没有本工作项的命题裁定职责。';else if(v('d-state').value!=='adjudication')message='拒绝：当前不处于命题待裁定状态。';else if(!v('d-revision').checked)message='拒绝：修订已变化，需重新读取并复核。';else if(!v('d-submissions').checked)message='拒绝：所需独立提交尚未齐备。';else if(!v('d-complete').checked)message='拒绝：裁定与完整性检查尚未完成。';else message='条件检查通过：真实实现还需在一致操作中创建快照、绑定基准并推进状态。本模拟没有修改任何数据库。';out.textContent=message;});form.addEventListener('reset',()=>{out.textContent='当前示例还缺“裁定与完整性检查完成”。';});})();
+(()=>{const f=document.getElementById('freeze-demo');if(!f)return;const o=document.getElementById('demo-result'),v=id=>document.getElementById(id);f.addEventListener('submit',e=>{e.preventDefault();let m;if(v('d-duty').value!=='judge')m='拒绝：当前账号没有本工作项的命题裁定职责。';else if(v('d-state').value!=='adjudication')m='拒绝：当前不处于命题待裁定状态。';else if(!v('d-revision').checked)m='拒绝：修订已变化，需重新读取并复核。';else if(!v('d-submissions').checked)m='拒绝：所需独立提交尚未齐备。';else if(!v('d-complete').checked)m='拒绝：裁定与完整性检查尚未完成。';else m='条件检查通过：真实实现还需在一致操作中创建快照、绑定基准并推进状态。本模拟没有修改任何数据库。';o.textContent=m;});f.addEventListener('reset',()=>o.textContent='当前示例还缺“裁定与完整性检查完成”。');})();
 </script></body></html>
