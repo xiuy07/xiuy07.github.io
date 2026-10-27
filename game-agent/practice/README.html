@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>前四课编程练习 · Game Agent</title><link rel="stylesheet" href="../study.css"><style>body{margin:0}.document-header,.document-reading{max-width:808px;margin:auto;padding:22px 44px}.document-header{font-size:14px;border-bottom:1px solid var(--line)}.document-reading{padding-top:42px}.document-reading h1{margin-bottom:28px}@media(max-width:760px){.document-header,.document-reading{padding:22px 24px}}</style></head><body><nav class="document-header"><a href="../index.html">Game Agent 讲义</a></nav><main class="document-reading"><article class="lesson reading-body"><header class="lesson-heading"><h1>前四课编程练习</h1></header>
+<p>先只做第1课。这个练习包配套讲义中的01—04课B2题，提供空白函数、公开测试和提交模板，不要求本周完成四题。</p>
+<p><a href="../downloads/game-agent-practice.zip">下载练习包</a>，解压后在game-agent-practice目录打开终端。它与含参考实现的“配套示例代码”下载包分开；开始时先使用这里的空白文件。</p>
+<h2>第一次运行</h2>
+<div class="code-shell"><div class="code-heading"><span>powershell</span><button type="button" data-copy>复制代码</button></div><pre><code><span class="n">python</span> <span class="p">-</span><span class="n">-version</span>
+<span class="n">python</span> <span class="n">start</span><span class="p">.</span><span class="n">py</span> <span class="n">01</span>
+</code></pre></div><p>编辑生成的work/task_01.py，实现summarize_basic，再运行：</p>
+<div class="code-shell"><div class="code-heading"><span>powershell</span><button type="button" data-copy>复制代码</button></div><pre><code><span class="n">python</span> <span class="n">check</span><span class="p">.</span><span class="n">py</span> <span class="n">01</span>
+</code></pre></div><p>第一次看到NotImplementedError是正常的：空白模板还没有完成。不要修改测试或把期望数字硬编码到函数里。start.py只在文件不存在时建立工作副本，重复运行不会覆盖已有代码。</p>
+<p>若终端不认识python，先使用你已有Python安装或IDE中配置的解释器，不必为第一周更换整套工具。检查器使用同一个解释器启动子进程；每题最多运行15秒，用于及时发现死循环。它不是安全沙箱，网页也不会接收或执行你的程序。</p>
+<h2>四道题的顺序</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>课</th>
+<th>函数</th>
+<th>本次重点</th>
+<th>依赖</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01</td>
+<td>summarize_basic(rows)</td>
+<td>输入验证、正确分母、空输入与合法失败</td>
+<td>标准库</td>
+</tr>
+<tr>
+<td>02</td>
+<td>predict_strict(X,w,b)</td>
+<td>二维样本、一维参数、有限数与输出形状</td>
+<td>NumPy</td>
+</tr>
+<tr>
+<td>03</td>
+<td>numerical_grad(fn,theta,h)</td>
+<td>中心差分、不修改原参数、步长边界</td>
+<td>NumPy</td>
+</tr>
+<tr>
+<td>04</td>
+<td>binary_metrics(truth,pred)</td>
+<td>混淆矩阵、比率分母、无定义指标</td>
+<td>标准库</td>
+</tr>
+</tbody>
+</table></div>
+<p>到相应课程后再运行python start.py 02等命令。第2、3题需要NumPy；可先用python -c &quot;import numpy; print(numpy.<strong>version</strong>)&quot;检查已有环境，第一周不需要安装PyTorch或MiniGrid。</p>
+<p>01只要求success与steps字段，其余字段忽略。先实现这个核心函数；第一周有余力再围绕data/episodes.json增加JSON读写和结束原因计数，不把扩展要求混进B2的返回字典。</p>
+<p>02约定返回浮点ndarray，形状(N,)；输入错误时拒绝，不用squeeze偷偷修正。03的fn是已给定的标量损失函数，作业只负责差分；不要调用自动微分。04没有正类预测时precision为None，没有真实正类时recall为None，含义与数值0不同。</p>
+<h2>检查与复测</h2>
+<p>每项公开检查的输入和期望位于cases目录。标签$float表示NaN或无穷，$array表示按指定shape建立数组；这些只用于描述测试数据，不属于你函数的输入协议。</p>
+<p>失败输出会给出用例名和具体原因。先看是类型、形状、数值还是异常约定不符，再缩小到一个用例复查。不要只反复修改代码直到输出全绿，却没有解释错误原因。</p>
+<p>公开用例不能证明所有输入正确，也不自动判断你是否掌握。全部通过后，关闭旧代码，从空文件重写关键部分，换一个自己构造的输入，再解释输出为何如此。</p>
+<h2>学完后交什么</h2>
+<p>提交work/task_01.py、检查输出、A1/B1自己的解答，以及<a href="%E6%8F%90%E4%BA%A4%E6%A8%A1%E6%9D%BF.html">提交模板</a>。不会的部分照实留空。先交第1课；我会据此决定哪些地方需要补练，再安排第2课。</p>
+<p>讲义中保留了参考解答，优先使用提示，确实卡住再核对；看过答案后要独立重做。自己的作业与反馈留在本地，不会由检查器上传。</p>
+</article></main></body></html>
