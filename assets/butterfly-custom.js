@@ -130,8 +130,6 @@
     const input=document.querySelector('.local-search-input input');
     input?.setAttribute('aria-label','搜索记录');
     document.querySelector('#nav')?.setAttribute('aria-label','主导航');
-    const announcement=document.querySelector('.card-announcement .item-headline span');
-    if(announcement)announcement.textContent='最近在做';
     document.querySelectorAll('.avatar-img img').forEach(avatar=>{if(!avatar.alt||avatar.alt==='avatar')avatar.alt='修源的头像';});
     const sidebar=document.getElementById('sidebar-menus');
     const trigger=document.querySelector('#toggle-menu .site-page');
